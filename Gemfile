@@ -1,0 +1,32 @@
+source 'https://rubygems.org'
+
+
+gem 'rails', '4.0.0'
+gem 'pg'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
+
+group :doc do
+  gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-nav'
+end
+
+gem "therubyracer"
+gem 'therubyrhino'  # If using JRuby
+gem "less-rails"
+gem 'nested_form'
+gem 'ransack'
+gem 'devise'
+gem 'font-awesome-rails'
+gem 'ckeditor'
+gem 'bootstrap-datepicker-rails'
+gem 'acts-as-taggable-on'
+gem 'paperclip'

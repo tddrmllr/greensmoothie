@@ -1,0 +1,79 @@
+// DEFAULT BOOTSTRAP VARIABLES //
+@import "variables.less";
+@import "mixins.less";
+
+// CUSTOM VARIABLES //
+
+
+// CUSTOMIZED BOOTSTRAP VARIABLES //
+@brand-primary: #5cb85c;
+@navbar-margin-bottom: 0px;
+@navbar-default-bg: #ffffff;
+@navbar-default-border: #ffffff;
+@navbar-default-link-color: @brand-primary;
+@navbar-default-link-hover-color: darken(@brand-primary, 10%);
+@btn-primary-bg: #4cdb4c;
+@btn-primary-border: rgba(0,0,0,0);
+
+// DEFAULT BOOTSTRAP STYLES //
+@import "bootstrap";
+
+// CUSTOMIZED BOOTSTRAP STYLES //
+
+body {
+  padding-top: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav.navbar-default {
+  .btn:first-of-type {
+    margin-right: -15px;
+  }
+  .btn {
+    margin-left: 5px;
+  }
+}
+
+
+div.jumbotron {
+  background-color: @brand-primary;
+  color: #ffffff;
+  h1 {
+    small {
+      color: white;
+      font-weight: 200;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .btn-hg {
+    margin-top: 10px;
+  }
+}
+
+.btn-hg {
+  font-size: 30px;
+  padding: 20px;
+}
+
