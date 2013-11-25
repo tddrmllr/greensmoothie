@@ -1,0 +1,16 @@
+<div class="index-header">
+	<h2>Recipes</h2>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		<%= text_field_tag :search, nil, id: "recipe-search", class: "ajax-search form-control input-lg", placeholder: "Search" %>
+	</div>
+	<div class="col-md-4">
+		<% if user_signed_in? %>
+			<%= link_to "New Recipe", new_recipe_path, class: "btn btn-lg btn-primary btn-block" %>
+		<% else %>
+			<%= link_to "Signup to Create Your Own", new_user_session_path, class: "btn btn-lg btn-primary btn-block "%>
+		<% end %>
+	</div>
+</div>

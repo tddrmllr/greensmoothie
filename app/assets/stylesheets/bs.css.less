@@ -12,17 +12,64 @@
 @navbar-default-border: #ffffff;
 @navbar-default-link-color: @brand-primary;
 @navbar-default-link-hover-color: darken(@brand-primary, 10%);
-@btn-primary-bg: #4cdb4c;
+@btn-primary-bg: #83e531;
 @btn-primary-border: rgba(0,0,0,0);
+@btn-success-border: rgba(0,0,0,0);
+@btn-warning-bg: #e1e500;
+@btn-warning-border: rgba(0,0,0,0);
+@btn-default-bg: #999999;
+@btn-default-color: #ffffff;
+@btn-default-border: rgba(0,0,0,0);
+@font-family-base: 'Open Sans', sans-serif;
+@input-color-placeholder: #cccccc;
 
 // DEFAULT BOOTSTRAP STYLES //
 @import "bootstrap";
+
+// CUSTOM CLASSES //
+.primary-background {
+  background-color: @brand-primary;
+}
+
+.border-radius-base {
+  border-radius: @border-radius-base;
+}
+
+.border-radius-large {
+  border-radius: @border-radius-large;
+}
+
+.default-font {
+  font-family: @font-family-base;
+}
 
 // CUSTOMIZED BOOTSTRAP STYLES //
 
 body {
   padding-top: 25px;
-  font-family: 'Open Sans', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  .default-font;
+}
+
+.btn {
+  font-weight: 200;
+}
+
+div.index-header {
+  padding: 30px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  .primary-background;
+  .border-radius-large;
+  h1, h2, h3, h4, h5 {
+    margin: 0px;
+  }
 }
 
 nav.navbar-default {
@@ -31,6 +78,15 @@ nav.navbar-default {
   }
   .btn {
     margin-left: 5px;
+  }
+  input.form-control {
+    width: 150px;
+  }
+  a.navbar-brand {
+    margin-left: -15px;
+  }
+  .navbar-toggle {
+    margin-right: 0px;
   }
 }
 
@@ -75,5 +131,47 @@ div.jumbotron {
 .btn-hg {
   font-size: 30px;
   padding: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid @input-border;
+}
+
+textarea, textarea.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid @input-border;
+}
+
+select:hover, select:focus, select:active, select.form-control:hover, select.form-control:focus, select.form-control:active {
+  background-color: #d8d8d8;
+  color: #666666;
+  outline: none;
+}
+
+
+select, select.form-control {
+  -webkit-appearance: none;
+  position: relative;
+  height: 34px;
+  border: none;
+  font-size: 14px;
+  letter-spacing: .01em;
+  color: #666666;
+  background-color: #e0e0e0;
+  border-collapse: separate;
+  background-image: url("/assets/select-caret.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  vertical-align: middle;
 }
 

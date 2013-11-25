@@ -1,22 +1,27 @@
 <div class="container">
 	<nav class="navbar navbar-default" role="navigation">
 		  <div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 		      <span class="sr-only">Toggle navigation</span>
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		    </button>
-		    <a class="navbar-brand" href="#"><%= fa_icon "leaf" %> Green Smoothie</a>
+		    <a class="navbar-brand" href="<%= root_path %>"><%= fa_icon "leaf" %> Green Smoothie</a>
 		  </div>
-		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <div class="collapse navbar-collapse" id="collapse">
 		    <ul class="nav navbar-nav">
-		      <li><a href="#">Recipes</a></li>
-		      <li><a href="#">Ingredients</a></li>
-		      <li><a href="#">Nutrition</a></li>
+		      <li><a href="<%= recipes_path %>">Recipes</a></li>
+		      <li><a href="<%= ingredients_path %>">Ingredients</a></li>
+		      <li><a href="<%= nutrients_path %>">Nutrition</a></li>
+		      <li><a href="#">Blog</a></li>
 		    </ul>
-		    <button type="button" class="btn btn-primary navbar-btn navbar-right">Sign Up</button>
-		    <button type="button" class="btn btn-primary navbar-btn navbar-right">Sign In</button>
+		    <% if user_signed_in? %>
+		    	<%= link_to "Signout", destroy_user_session_path, class: "btn btn-primary navbar-btn navbar-right" %>
+		    	<%= link_to "My Recipes", user_path(current_user), class: "btn btn-primary navbar-btn navbar-right" %>
+		    <% else %>
+		    	<%= link_to "Login or Signup", new_user_session_path, class: "btn btn-primary navbar-btn navbar-right" %>
+		    <% end %>
 		  </div>
 	</nav>
 </div>

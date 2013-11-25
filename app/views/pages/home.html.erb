@@ -19,18 +19,20 @@
 			<blockquote>
 				<p class="lead">Live a healthy lifestyle by including fruits and veggies in your diet.</p>
 			</blockquote>
-			<br>
+			<br class="visible-lg">
 			<div class="row">
 				<div class="col-lg-6">
-					<%= link_to "Get Started", "#", class: "btn btn-primary btn-hg btn-block" %>
+					<%= link_to "Sign Up", new_user_session_path, class: "btn btn-primary btn-hg btn-block" %>
 				</div>
 				<div class="col-lg-6">
-					<%= link_to "Learn", "#", class: "btn btn-primary btn-hg btn-block" %>
+					<%= link_to "Find Recipes", "#", class: "btn btn-primary btn-hg btn-block" %>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-6 text-center visible-lg">
-			<%= image_tag "glass.jpg", class: "img-rounded" %>
+		<div class="col-lg-6 text-center">
+			<div class="panel visible-lg">
+				<%= image_tag "glass.jpg", class: "img-rounded", style: "height: 420px" %>
+			</div>
 		</div>
 	</div>
 </div>

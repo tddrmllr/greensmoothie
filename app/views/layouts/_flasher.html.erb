@@ -1,0 +1,30 @@
+$(document).ready(function(){
+	<% if flash[:error] %>
+		$.pnotify({
+	    text: '<%= flash[:error] %>',
+	    type: 'error',
+	    history: false,
+	    icon: false,
+	    sticker: false,
+	    closer: true
+		});
+	<% elsif flash[:notice] %>
+		$.pnotify({
+	    text: '<%= flash[:notice] %>',
+	    type: 'info',
+	    history: false,
+	    icon: false,
+	    sticker: false,
+	    closer: true
+		});
+	<% elsif flash[:alert] %>
+		$.pnotify({
+	    text: '<%= flash[:alert] %>',
+	    type: 'error',
+	    history: false,
+	    icon: false,
+	    sticker: false,
+	    closer: true
+		});
+	<% end %>
+});

@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require pnotify
+//= require jquery_nested_form
 //= require_tree .
