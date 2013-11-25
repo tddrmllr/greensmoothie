@@ -4,7 +4,7 @@
 
 <%= nested_form_for @recipe do |f| %>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-7">
 			<div class="form-group">
 				<%= f.hidden_field :user_id, value: current_user.id %>
 				<%= f.label :name %>
@@ -13,17 +13,32 @@
 
 			<div class="form-group">
 				<%= f.label :description %>
-				<%= f.text_area :description, class: "form-control", rows: 5 %>
+
+				<%= f.text_field :description, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :instructions, "Instructions (Optional)" %>
+
+				<%= f.text_area :instructions, class: "form-control description", rows: 5 %>
+				<script type="text/javascript">
+				  $(document).ready(function(){
+
+				    $('.description').each(function(i, elem) {
+				      $(elem).wysihtml5({'font-styles': false, 'image': false});
+				    });
+
+				  })
+				</script>
 			</div>
 		</div>
-		<div class="col-md-6 text-center">
+		<div class="col-md-5 text-center">
 			<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
 			<br>
 			<%= link_to "Add Picture", "#" %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-7">
 			<h4>Ingredients</h4>
 			<%= f.fields_for :measurements do |m| %>
 				<div class="row form-group add-ingredient">
@@ -39,7 +54,7 @@
 						<%= m.text_field :unit, class: "form-control", placeholder: "Unit" %>
 					</div>
 					<div class="col-xs-1">
-						<%= m.link_to_remove raw(fa_icon "times-circle") %>
+						<%= m.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg" %>
 					</div>
 				</div>
 			<% end %>
