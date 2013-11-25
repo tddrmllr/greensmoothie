@@ -1,0 +1,9 @@
+<div class="index-header">
+	<h2><%= @recipe.name %></h2>
+</div>
+
+<% @recipe.ingredients.each do |i| %>
+
+	<%= i.name %>
+
+<% end %>

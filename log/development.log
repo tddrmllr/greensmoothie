@@ -37823,3 +37823,657 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 03:53:46
 
 
 Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 03:53:46 -0700
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2013-11-25 09:08:17 -0700
+Processing by RecipesController#new as HTML
+  [1m[35mUser Load (3.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered recipes/new.html.erb within layouts/application (23.4ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 927ms (Views: 902.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:08:18 -0700
+
+
+Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 09:08:19 -0700
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2013-11-25 09:09:21 -0700
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered recipes/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 522ms (Views: 518.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 09:09:22 -0700
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2013-11-25 09:10:13 -0700
+Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered recipes/new.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+Completed 200 OK in 459ms (Views: 456.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:14 -0700
+
+
+Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 09:10:15 -0700
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2013-11-25 09:10:31 -0700
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered recipes/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+Completed 200 OK in 517ms (Views: 514.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 09:10:32 -0700
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+Processing by RecipesController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered recipes/form.html.erb within layouts/application (51.7ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 233ms (Views: 111.7ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:19:05 -0700
+
+
+Started GET "/assets/favicon.png" for 127.0.0.1 at 2013-11-25 09:19:06 -0700
+
+
+Started POST "/recipes" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VPTpNX1g1I9hZw996FDJdQzbIQSetgwfyaiuseIzZSk=", "recipe"=>{"user_id"=>"1", "name"=>"Kale Ginger Limeade", "description"=>"A tasty smoothie with a little kick.", "instructions"=>"<ol><li>Juice green apples</li><li>Squeeze limes</li><li>Blend kale, lime juice, apple juice, ginger, and ice in blender</li><li>Drink and enjoy</li></ol>", "measurements_attributes"=>{"1385396523723"=>{"ingredients_attributes"=>{"name"=>"Kale"}, "amount"=>"1", "unit"=>"bunch", "_destroy"=>"false"}, "1385396532506"=>{"ingredients_attributes"=>{"name"=>"Lime"}, "amount"=>"2", "unit"=>"", "_destroy"=>"false"}, "1385396541021"=>{"ingredients_attributes"=>{"name"=>"Ginger"}, "amount"=>"1", "unit"=>"inch", "_destroy"=>"false"}, "1385396549723"=>{"ingredients_attributes"=>{"name"=>"Green Apples"}, "amount"=>"5", "unit"=>"", "_destroy"=>"false"}, "1385396572272"=>{"ingredients_attributes"=>{"name"=>"Ice"}, "amount"=>"1", "unit"=>"cup", "_destroy"=>"false"}}}, "_wysihtml5_mode"=>"1", "commit"=>"Save"}
+Unpermitted parameters: ingredients_attributes, _destroy
+Unpermitted parameters: ingredients_attributes, _destroy
+Unpermitted parameters: ingredients_attributes, _destroy
+Unpermitted parameters: ingredients_attributes, _destroy
+Unpermitted parameters: ingredients_attributes, _destroy
+  [1m[36m (1.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (42.5ms)[0m  INSERT INTO "recipes" ("created_at", "description", "instructions", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["description", "A tasty smoothie with a little kick."], ["instructions", "<ol><li>Juice green apples</li><li>Squeeze limes</li><li>Blend kale, lime juice, apple juice, ginger, and ice in blender</li><li>Drink and enjoy</li></ol>"], ["name", "Kale Ginger Limeade"], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["user_id", 1]]
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "measurements" ("amount", "created_at", "recipe_id", "unit", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", #<BigDecimal:7fd5ba8de608,'0.1E1',9(18)>], ["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["recipe_id", 1], ["unit", "bunch"], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "measurements" ("amount", "created_at", "recipe_id", "unit", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["amount", #<BigDecimal:7fd5b8dd2b20,'0.2E1',9(18)>], ["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["recipe_id", 1], ["unit", ""], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "measurements" ("amount", "created_at", "recipe_id", "unit", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", #<BigDecimal:7fd5b8cecfd0,'0.1E1',9(18)>], ["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["recipe_id", 1], ["unit", "inch"], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "measurements" ("amount", "created_at", "recipe_id", "unit", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["amount", #<BigDecimal:7fd5b8e50de0,'0.5E1',9(18)>], ["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["recipe_id", 1], ["unit", ""], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "measurements" ("amount", "created_at", "recipe_id", "unit", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", #<BigDecimal:7fd5b8b04088,'0.1E1',9(18)>], ["created_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00], ["recipe_id", 1], ["unit", "cup"], ["updated_at", Mon, 25 Nov 2013 16:25:03 UTC +00:00]]
+  [1m[35m (2.2ms)[0m  COMMIT
+Redirected to http://localhost:3001/recipes/1
+Completed 302 Found in 81ms (ActiveRecord: 54.3ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered recipes/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flasher.html.erb (0.1ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_nav.html.erb (5.1ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/jquery.pnotify.default.icons.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/wysihtml5.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/benefits.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/bs.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/ingredients.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/nutritions.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/pnotify/jquery.pnotify.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/pnotify/index.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/wysihtml5.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/benefits.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/bs.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/nutritions.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/ingredients.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-25 09:25:03 -0700
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2013-11-25 09:26:09 -0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered recipes/show.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (uninitialized constant Recipe::Ingredients):
+    2: 	<h2><%= @recipe.name %></h2>
+    3: </div>
+    4: 
+    5: <% @recipe.ingredients.each do |i| %>
+    6: 
+    7: 	<%= i.name %>
+    8: 
+  app/views/recipes/show.html.erb:5:in `_app_views_recipes_show_html_erb__1128174095391552494_70277971506560'
+
+
+  Rendered /Users/toddmiller/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/toddmiller/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/toddmiller/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
