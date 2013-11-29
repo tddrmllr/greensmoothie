@@ -1,0 +1,28 @@
+<div class="index-header">
+	<h2>Ingredients</h2>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		<%= text_field_tag :search, nil, id: "recipe-search", class: "ajax-search form-control input-lg", placeholder: "Search" %>
+	</div>
+	<div class="col-md-4">
+		<% if user_signed_in? %>
+			<%= link_to "New Ingredient", new_ingredient_path, class: "btn btn-lg btn-primary btn-block" %>
+		<% else %>
+			<%= link_to "Signup and Contribute to the Database", new_user_session_path, class: "btn btn-lg btn-primary btn-block "%>
+		<% end %>
+	</div>
+</div>
+
+<% @ingredients.each do |ingredient| %>
+	<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag "kale.jpg", class: "media-object img-thumbnail", size: "150x150" %>
+  </a>
+  <div class="media-body">
+    <h3 class="media-heading"><%= link_to ingredient.name, ingredient %></h3>
+    <%= ingredient.description %>
+  </div>
+</div>
+<% end %>

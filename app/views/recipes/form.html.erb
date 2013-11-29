@@ -19,22 +19,20 @@
 			<div class="form-group">
 				<%= f.label :instructions, "Instructions (Optional)" %>
 
-				<%= f.text_area :instructions, class: "form-control description", rows: 5 %>
-				<script type="text/javascript">
-				  $(document).ready(function(){
-
-				    $('.description').each(function(i, elem) {
+				<%= f.text_area :instructions, class: "form-control instructions", rows: 5 %>
+				<%= content_for :javascripts do %>
+					$(document).ready(function(){
+				    $('.instructions').each(function(i, elem) {
 				      $(elem).wysihtml5({'font-styles': false, 'image': false});
 				    });
-
 				  })
-				</script>
+				<% end %>
 			</div>
 		</div>
 		<div class="col-md-5 text-center">
 			<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
 			<br>
-			<%= link_to "Add Picture", "#" %>
+			<%= f.file_field :image %>
 		</div>
 	</div>
 	<div class="row">
@@ -43,9 +41,8 @@
 			<%= f.fields_for :measurements do |m| %>
 				<div class="row form-group add-ingredient">
 					<div class="col-xs-5">
-						<%= m.fields_for :ingredients, Ingredient.new do |i| %>
-							<%= i.text_field :name, class: "form-control", placeholder: "Name" %>
-						<% end %>
+						<%= text_field_tag :ingredient_name, nil, class: "form-control", placeholder: "Name" %>
+						<%= m.hidden_field :ingredient_id %>
 					</div>
 					<div class="col-xs-3">
 						<%= m.text_field :amount, class: "form-control", placeholder: "Amt." %>

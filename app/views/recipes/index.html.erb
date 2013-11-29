@@ -14,3 +14,15 @@
 		<% end %>
 	</div>
 </div>
+
+<% @recipes.each do |recipe| %>
+	<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag recipe.image.url(:thumb), class: "media-object img-thumbnail" %>
+  </a>
+  <div class="media-body">
+    <h3 class="media-heading"><%= link_to recipe.name, recipe %></h3>
+    <%= recipe.description %>
+  </div>
+</div>
+<% end %>

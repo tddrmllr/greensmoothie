@@ -18,4 +18,5 @@
 //= require jquery_nested_form
 //= require ckeditor/init
 //= require wysihtml5
+//= require jquery.Jcrop
 //= require_tree .

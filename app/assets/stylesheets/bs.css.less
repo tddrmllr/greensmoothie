@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 200;
 }
 
-div.index-header {
+.index-header {
   padding: 30px;
   color: #ffffff;
   margin-bottom: 15px;
@@ -89,6 +89,16 @@ div.index-header {
   .border-radius-large;
   h1, h2, h3, h4, h5 {
     margin: 0px;
+  }
+}
+
+div.show-header {
+  .index-header;
+  h2 {
+    display: inline;
+  }
+  .btn {
+    float: right;
   }
 }
 

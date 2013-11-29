@@ -1,5 +1,6 @@
-<div class="index-header">
-	<h2><%= @recipe.name %></h2>
+<div class="show-header">
+		<h2><%= @recipe.name %></h2>
+		<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary visible-md visible-lg" %>
 </div>
 
 <% @recipe.ingredients.each do |i| %>
@@ -7,3 +8,41 @@
 	<%= i.name %>
 
 <% end %>
+
+<%= image_tag @recipe.image.url(:thumb) %>
+
+<%= image_tag @recipe.image.url(:large), id: "cropbox", data: {width: "#{@recipe.image_geometry(:large).width}", heigth: "#{@recipe.image_geometry(:large).height}", ratio: @recipe.image_geometry(:original).width / @recipe.image_geometry(:large).width} %>
+
+<%= form_for @recipe do |f| %>
+	<% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= f.text_field attribute, :id => attribute %>
+  <% end %>
+  <%= f.submit "Save" %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $('#cropbox').Jcrop({
+    onChange: update_crop,
+    onSelect: update_crop,
+    setSelect: [0, 0, 500, 500],
+    aspectRatio: 1
+  });
+});
+
+function update_crop(coords) {
+  var rx = 100/coords.w;
+  var ry = 100/coords.h;
+  $('#preview').css({
+    width: Math.round(rx * <%= @recipe.image_geometry(:large).width %>) + 'px',
+    height: Math.round(ry * <%= @recipe.image_geometry(:large).height %>) + 'px',
+    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+  });
+  var ratio = <%= @recipe.image_geometry(:original).width %> / <%= @recipe.image_geometry(:large).width %>;
+  $("#crop_x").val(Math.round(coords.x * ratio));
+  $("#crop_y").val(Math.round(coords.y * ratio));
+  $("#crop_w").val(Math.round(coords.w * ratio));
+  $("#crop_h").val(Math.round(coords.h * ratio));
+}
+</script>

@@ -3,3 +3,5 @@ $(document).ready ->
     window["rangy"].initialized = false
     $(".description").each (i, elem) ->
       $(elem).wysihtml5()
+
+
