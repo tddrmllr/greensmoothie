@@ -18,7 +18,11 @@
 <% @recipes.each do |recipe| %>
 	<div class="media">
   <a class="pull-left" href="#">
-    <%= image_tag recipe.image.url(:thumb), class: "media-object img-thumbnail" %>
+  	<% if recipe.image? %>
+  		<%= image_tag recipe.image.image.url(:thumb), class: "media-object img-thumbnail" %>
+  	<% else %>
+    	<%= fa_icon "picture-o", style: "font-size: 100px; color: #dddddd" %>
+    <% end %>
   </a>
   <div class="media-body">
     <h3 class="media-heading"><%= link_to recipe.name, recipe %></h3>

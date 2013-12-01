@@ -3,8 +3,10 @@ Greensmoothie::Application.routes.draw do
   devise_for :users
   root :to => "pages#home"
 
-  resources :recipes
+  resources :images
   resources :ingredients
   resources :nutrients
+  resources :recipes
   resources :users
+
 end

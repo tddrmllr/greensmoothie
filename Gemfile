@@ -32,3 +32,4 @@ gem 'acts-as-taggable-on'
 gem 'paperclip'
 gem 'pnotify-rails'
 gem 'bootstrap-wysihtml5-rails'
+gem "jquery-fileupload-rails"

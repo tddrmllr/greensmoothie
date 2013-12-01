@@ -2,7 +2,8 @@
 	<h2><%= action_name.capitalize %> Recipe</h2>
 </div>
 
-<%= nested_form_for @recipe do |f| %>
+<%= nested_form_for @recipe, html: {id: "recipe-form"} do |f| %>
+	<%= f.hidden_field :image_token %>
 	<div class="row">
 		<div class="col-md-7">
 			<div class="form-group">
@@ -28,15 +29,6 @@
 				  })
 				<% end %>
 			</div>
-		</div>
-		<div class="col-md-5 text-center">
-			<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
-			<br>
-			<%= f.file_field :image %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-7">
 			<h4>Ingredients</h4>
 			<%= f.fields_for :measurements do |m| %>
 				<div class="row form-group add-ingredient">
@@ -56,9 +48,29 @@
 				</div>
 			<% end %>
 			<%= f.link_to_add "Add Ingredient", :measurements, class: "btn btn-xs btn-primary" %>
+			<br>
+			<br>
+			<%= link_to "Cancel", :back, class: "btn btn-default" %>
+			<%= f.submit "Save", class: "btn btn-success" %>
+			<% end %>
+		</div>
+		<div class="col-md-5 text-center">
+			<span id="img">
+				<% if @recipe.image? %>
+					<%= image_tag @recipe.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
+					<%= link_to "Crop Photo", edit_image_path(@image), class: "btn btn-primary btn-block", remote: true %>
+				<% else %>
+					<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
+				<% end %>
+			</span>
+			<br>
+			<%= form_for @image, remote: true, html: {id: "img-form"} do |image| %>
+				<%= image.file_field :image,  id: "img-file" %>
+				<%= link_to "Upload Photo", "#", class: "btn btn-primary btn-block", id: "img-btn" %>
+				<%= image.hidden_field :imageable_id, value: @recipe.id %>
+				<%= image.hidden_field :imageable_type, value: @recipe.class.name %>
+				<%= image.hidden_field :token, value: @recipe.image_token %>
+			<% end %>
 		</div>
 	</div>
-	<br>
-	<%= link_to "Cancel", :back, class: "btn btn-default" %>
-	<%= f.submit "Save", class: "btn btn-success" %>
-<% end %>
+

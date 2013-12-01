@@ -1,16 +1,17 @@
 module HasImage
-
   def self.included(base)
-    base.instance_eval("has_attached_file :image, :styles => { :medium => '300x300>', :thumb => '150x150>', large: '500x500' }, :default_url => '/images/:style/missing.png', processors: [:cropper]")
-    base.instance_eval("attr_accessor :crop_x, :crop_y, :crop_w, :crop_h")
+    base.instance_eval("after_initialize :random_token")
+    base.instance_eval("attr_accessor :image_token")
   end
 
-  def cropping?
-    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  def image?
+    !self.image.nil? && self.image.image.url != "/images/original/missing.png"
   end
 
-  def image_geometry(style = :original)
-    @image ||= {}
-    @image[style] ||= Paperclip::Geometry.from_file(image.path(style))
+  def random_token
+    self.image_token = SecureRandom.hex(10)
+    while Image.where(token: self.image_token).any?
+      self.image_token = SecureRandom.hex(10)
+    end
   end
 end

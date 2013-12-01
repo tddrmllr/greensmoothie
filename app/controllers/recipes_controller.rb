@@ -1,16 +1,20 @@
 class RecipesController < ApplicationController
 
+  include UpdateImage
+
   def index
     @recipes = Recipe.all
   end
 
   def new
     @recipe = Recipe.new(user_id: current_user.id)
+    @image = @recipe.build_image
     render 'form'
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @image = @recipe.image ||= @recipe.build_image
     render 'form'
   end
 
@@ -31,9 +35,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(recipe_params)
     if @recipe.save
-      if @recipe.cropping?
-        @recipe.image.reprocess!
-      end
       redirect_to @recipe
       flash[:notice] = "Recipe saved successfully."
     else
@@ -44,6 +45,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :instructions, :user_id, :image, :crop_x, :crop_y, :crop_h, :crop_w, measurements_attributes: [:amount, :unit, :ingredient_id, :id, :_destroy])
+    params.require(:recipe).permit(:name, :description, :instructions, :user_id, measurements_attributes: [:amount, :unit, :ingredient_id, :id, :_destroy])
   end
 end
