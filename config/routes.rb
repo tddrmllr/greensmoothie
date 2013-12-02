@@ -5,7 +5,9 @@ Greensmoothie::Application.routes.draw do
 
   resources :images
   resources :ingredients
-  resources :nutrients
+  resources :nutrients do
+    get 'add', on: :collection
+  end
   resources :recipes
   resources :users
 

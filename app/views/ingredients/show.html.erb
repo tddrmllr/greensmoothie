@@ -1,0 +1,12 @@
+<div class="index-header">
+	<h2><%= @ingredient.name %></h2>
+</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @ingredient.image.image.url(:medium), class: "img-thumbnail", style: "width: 100%" %>
+	</div><div class="col-md-9">
+		<%= @ingredient.description %>
+	</div>
+</div>
+

@@ -20,4 +20,5 @@
 //= require ckeditor/init
 //= require wysihtml5
 //= require jquery.Jcrop
+//= require typeahead
 //= require_tree .

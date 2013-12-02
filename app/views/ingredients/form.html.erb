@@ -1,0 +1,55 @@
+<div class="index-header">
+	<h2><%= action_name.capitalize %> Ingredient</h2>
+</div>
+
+<div class="row">
+	<div class="col-md-3 text-center">
+		<%= render 'images/imageable', resource: @ingredient %>
+		<br>
+	</div>
+	<div class="col-md-9">
+		<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
+			<%= f.hidden_field :image_token %>
+			<div class="form-group">
+				<%= f.label :name %>
+				<%= f.text_field :name, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :description %>
+				<%= f.text_area :description, class: "form-control", id: "description", rows: 3, placeholder: "Describe the ingredient's physcial attributes, flavor, culinary uses, etc. (add nutrients below)" %>
+				<script>
+					$(document).ready(function(){
+						console.log("WWWW")
+				    $('#description').each(function(i, elem) {
+				      $(elem).wysihtml5({'font-styles': false, 'image': false});
+				    });
+				  })
+				</script>
+			</div>
+				<%= label_tag :nutrients %>
+				<br>
+				<%= f.fields_for :citations do |c| %>
+					<div class="row form-group add-ingredient">
+						<div class="col-xs-5">
+							<%= text_field_tag :nutrients, nil, class: "form-control", placeholder: "Name" %>
+							<%= c.hidden_field :citer_id %>
+							<%= c.hidden_field :citer_type %>
+							<%= c.hidden_field :citable_id %>
+							<%= c.hidden_field :citable_type %>
+						</div>
+						<div class="col-xs-5">
+							<%= c.text_field :source, class: "form-control", placeholder: "Source" %>
+						</div>
+						<div class="col-xs-1">
+							<%= c.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg" %>
+						</div>
+					</div>
+				<% end %>
+				<%= f.link_to_add "Add Nutrient", :citations, class: "btn btn-xs btn-primary" %>
+			<br>
+			<br>
+			<%= link_to "Cancel", :back, class: "btn btn-default" %>
+			<%= f.submit "Save", class: "btn btn-success" %>
+		</div>
+	<% end %>
+</div>
