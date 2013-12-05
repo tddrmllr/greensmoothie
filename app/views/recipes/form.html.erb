@@ -19,27 +19,31 @@
 			<div class="form-group">
 				<%= f.label :description %>
 
-				<%= f.text_field :description, class: "form-control" %>
+				<%= f.text_area :description, class: "form-control", rows: 2 %>
 			</div>
 			<div class="form-group">
 				<%= f.label :instructions, "Instructions (Optional)" %>
 
 				<%= f.text_area :instructions, class: "form-control instructions", rows: 5 %>
-				<%= content_for :javascripts do %>
+				<script>
 					$(document).ready(function(){
 				    $('.instructions').each(function(i, elem) {
 				      $(elem).wysihtml5({'font-styles': false, 'image': false});
 				    });
 				  })
-				<% end %>
+				</script>
 			</div>
 			<%= label_tag :ingredients %>
 			<br>
+			<% x = 1 %>
 			<%= f.fields_for :measurements do |m| %>
 				<div class="row form-group add-ingredient">
-					<div class="col-xs-5">
-						<%= text_field_tag :ingredient_name, nil, class: "form-control ingredient-input", placeholder: "Name" %>
-						<%= m.hidden_field :ingredient_id %>
+					<div class="col-xs-5 ingredient">
+						<%= m.fields_for :ingredient do |i| %>
+							<%= i.text_field :name, class: "form-control ingredient-input", placeholder: "Name", value: (@measurements[x-1].ingredient.name unless x > @measurements.count) %>
+						<% end %>
+						<% x += 1 %>
+						<%= m.hidden_field :ingredient_id, class: "ingredient-id" %>
 					</div>
 					<div class="col-xs-3">
 						<%= m.text_field :amount, class: "form-control", placeholder: "Amt." %>

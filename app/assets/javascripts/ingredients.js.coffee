@@ -3,10 +3,22 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+
+  return unless $("#recipe-form").length > 0
+
   $(document.body).on "nested:fieldAdded", (event) ->
-    $(".ingredient-input").typeahead
+    initTypeahead()
+
+  $(document).on "ready", (event) ->
+    initTypeahead()
+
+  initTypeahead = ->
+    $(".ingredient-input").typeahead(
       name: "ingredients"
       valueKey: "name"
-      remote: "/ingredients"
+      prefetch: "/ingredients"
       limit: 10
+    ).on "typeahead:selected", (obj, datum, name) ->
+      console.log $(this).siblings(".ingredient-id")
+      $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
 

@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     @image = @recipe.image ||= @recipe.build_image
+    @measurements = @recipe.measurements
     render 'form'
   end
 

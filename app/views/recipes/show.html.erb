@@ -13,6 +13,8 @@
 		A description of the smoothie goes here.
 	</div>
 	<div class="col-lg-9">
-		A list of ingredients goes here.
+		<% @recipe.ingredients.each do |i| %>
+			<%= i.name %>
+		<% end %>
 	</div>
 </div>
