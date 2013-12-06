@@ -19,7 +19,6 @@
 				<%= f.text_area :description, class: "form-control", id: "description", rows: 3, placeholder: "Describe the ingredient's physcial attributes, flavor, culinary uses, etc. (add nutrients below)" %>
 				<script>
 					$(document).ready(function(){
-						console.log("WWWW")
 				    $('#description').each(function(i, elem) {
 				      $(elem).wysihtml5({'font-styles': false, 'image': false});
 				    });
@@ -28,14 +27,15 @@
 			</div>
 				<%= label_tag :nutrients %>
 				<br>
+				<% x = 1 %>
 				<%= f.fields_for :citations do |c| %>
 					<div class="row form-group add-ingredient">
 						<div class="col-xs-5">
-							<%= text_field_tag :nutrients, nil, class: "form-control", placeholder: "Name" %>
-							<%= c.hidden_field :citer_id %>
-							<%= c.hidden_field :citer_type %>
-							<%= c.hidden_field :citable_id %>
-							<%= c.hidden_field :citable_type %>
+							<%= c.fields_for :nutrient do |n| %>
+								<%= n.text_field :name, class: "form-control ingredient-input", placeholder: "Name", value: (@citations[x-1].nutrient.name unless x > @citations.count || @citations[x-1].nutrient.nil?) %>
+							<% end %>
+							<% x += 1 %>
+							<%= c.hidden_field :nutrient_id %>
 						</div>
 						<div class="col-xs-5">
 							<%= c.text_field :source, class: "form-control", placeholder: "Source" %>

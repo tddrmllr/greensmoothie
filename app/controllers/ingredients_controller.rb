@@ -12,12 +12,14 @@ class IngredientsController < ApplicationController
   def new
     @ingredient = Ingredient.new
     @image = @ingredient.build_image
+    @citations = @ingredient.citations
     render 'form'
   end
 
   def edit
     @ingredient = Ingredient.find(params[:id])
     @image = @ingredient.image ||= @ingredient.build_image
+    @citations = @ingredient.citations
     render 'form'
   end
 
@@ -34,9 +36,16 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
   end
 
+  def update
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.update_attributes(ingredient_params)
+    flash[:notice] = "Ingredient was updated."
+    redirect_to @ingredient
+  end
+
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :description, citations_attributes: [:source, :citable_type, :citable_id, :citer_type, :citer_id])
+    params.require(:ingredient).permit(:name, :description, citations_attributes: [:source, :nutrient_id, :_destroy])
   end
 end

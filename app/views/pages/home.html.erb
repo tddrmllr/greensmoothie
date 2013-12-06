@@ -1,38 +1,42 @@
-<div class="jumbotron">
-	<div class="row">
-		<div class="col-lg-6 text-center">
-			<h1><%= fa_icon "leaf" %> Green Smoothie</h1>
-		</div>
-		<div class="col-lg-6 text-center">
-			<h1><small>CREATE | SHARE | LIVE</small></h1>
-		</div>
-	</div>
+<div class="jumbotron" style="padding: 10px 0px; ">
+	<h1>CREATE | SHARE | LIVE</h1>
 	<br>
-	<div class="row">
-		<div class="col-lg-6">
-			<blockquote>
-				<p class="lead">Learn and experiment to create your own green smoothie recipes.</p>
-			</blockquote>
-			<blockquote>
-				<p class="lead">Share your creations with the world, and see what others are drinking too.</p>
-			</blockquote>
-			<blockquote>
-				<p class="lead">Live a healthy lifestyle by including fruits and veggies in your diet.</p>
-			</blockquote>
-			<br class="visible-lg">
-			<div class="row">
-				<div class="col-lg-6">
-					<%= link_to "Sign Up", new_user_session_path, class: "btn btn-primary btn-hg btn-block" %>
-				</div>
-				<div class="col-lg-6">
-					<%= link_to "Find Recipes", "#", class: "btn btn-primary btn-hg btn-block" %>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-6 text-center">
-			<div class="panel visible-lg">
-				<%= image_tag "glass.jpg", class: "img-rounded", style: "height: 420px" %>
-			</div>
-		</div>
+	<blockquote>
+		<p class="lead">Learn and experiment to create your own green smoothie recipes.</p>
+	</blockquote>
+	<blockquote>
+		<p class="lead">Share your creations with the world, and see what others are drinking too.</p>
+	</blockquote>
+	<blockquote>
+		<p class="lead">Live a healthy lifestyle by including fruits and veggies in your diet.</p>
+	</blockquote>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-4">
+		<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block" %>
+	</div>
+	<div class="col-md-4">
+		<%= link_to "Sign Up", new_user_session_path, class: "btn btn-primary btn-hg btn-block" %>
 	</div>
 </div>
+<br>
+<br>
+<div class="row">
+	<div class="col-md-8">
+		<p class="lead well primary-background" style="color: #ffffff">Green Smoothie is a user generated and moderated database of green smoothie recipes and nutritional information.</p>
+	</div>
+</div>
+
+
+<% content_for :styles do %>
+	body {
+	  background: url('/assets/home.jpg') no-repeat fixed top;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+<% end %>

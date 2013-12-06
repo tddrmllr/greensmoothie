@@ -1,7 +1,6 @@
 <div class="index-header">
 	<h2>
 		<%= @recipe.name %>
-		<small class="pull-right">Rating</small>
 		<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right" %>
 	</h2>
 </div>
@@ -10,11 +9,20 @@
 	<div class="col-lg-3">
 		<%= image_tag @recipe.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" if @recipe.image? %>
 		<br>
-		A description of the smoothie goes here.
+		<br>
+		<div class="alert alert-success">
+			<p><strong>Description</strong></p>
+			<%= @recipe.description %>
+		</div>
 	</div>
 	<div class="col-lg-9">
-		<% @recipe.ingredients.each do |i| %>
-			<%= i.name %>
+		<%= render @ingredients %>
+		<br>
+		<% unless @recipe.instructions.blank? %>
+			<div class="well">
+				<p><strong>Instructions</strong></p>
+				<%= @recipe.instructions.html_safe %>
+			</div>
 		<% end %>
 	</div>
 </div>

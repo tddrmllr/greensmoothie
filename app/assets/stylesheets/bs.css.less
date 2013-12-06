@@ -8,8 +8,12 @@
 // CUSTOMIZED BOOTSTRAP VARIABLES //
 @brand-primary: #5cb85c;
 @navbar-margin-bottom: 0px;
-@navbar-default-bg: #ffffff;
+@navbar-default-bg: rgba(0,0,0,0);
 @navbar-default-border: #ffffff;
+@navbar-inverse-border: rgba(0,0,0,0);
+@navbar-inverse-bg: rgba(0,0,0,0);
+@navbar-inverse-link-color: #ffffff;
+@navbar-inverse-link-hover-color: darken(@navbar-inverse-link-color, 10%);
 @navbar-default-link-color: @brand-primary;
 @navbar-default-link-hover-color: darken(@brand-primary, 10%);
 @btn-primary-bg: #83e531;
@@ -64,6 +68,10 @@
   background-color: #eeeeee;
 }
 
+.brand-color {
+  color: @brand-success;
+}
+
 // CUSTOMIZED BOOTSTRAP STYLES //
 
 body {
@@ -104,7 +112,8 @@ div.show-header {
   }
 }
 
-nav.navbar-default {
+nav {
+  border: none;
   .btn:first-of-type {
     margin-right: -15px;
   }
@@ -126,12 +135,8 @@ nav.navbar-default {
 div.jumbotron {
   background-color: @brand-primary;
   color: #ffffff;
-  h1 {
-    small {
-      color: white;
-      font-weight: 200;
-    }
-  }
+  text-shadow: 2px 2px black;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 768px) {
@@ -210,5 +215,13 @@ select, select.form-control {
 .well {
   border: none;
   box-shadow: none;
+}
+
+div.media {
+
+  a img {
+    width: 75px;
+    height: 75px;
+  }
 }
 

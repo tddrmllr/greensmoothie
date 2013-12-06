@@ -19,6 +19,5 @@ $(document).ready ->
       prefetch: "/ingredients"
       limit: 10
     ).on "typeahead:selected", (obj, datum, name) ->
-      console.log $(this).siblings(".ingredient-id")
       $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
 

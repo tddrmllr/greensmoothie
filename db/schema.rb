@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201214652) do
+ActiveRecord::Schema.define(version: 20131206040511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,8 @@ ActiveRecord::Schema.define(version: 20131201214652) do
   create_table "citations", force: true do |t|
     t.string  "source"
     t.integer "flags"
-    t.string  "citable_type"
-    t.integer "citable_id"
-    t.string  "citer_type"
-    t.integer "citer_id"
+    t.integer "nutrient_id"
+    t.integer "ingredient_id"
   end
 
   create_table "ckeditor_assets", force: true do |t|

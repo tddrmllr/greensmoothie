@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new(user_id: current_user.id)
     @image = @recipe.build_image
+    @measurements = @recipe.measurements
     render 'form'
   end
 
@@ -30,6 +31,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   def update

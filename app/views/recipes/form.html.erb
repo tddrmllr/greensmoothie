@@ -40,7 +40,7 @@
 				<div class="row form-group add-ingredient">
 					<div class="col-xs-5 ingredient">
 						<%= m.fields_for :ingredient do |i| %>
-							<%= i.text_field :name, class: "form-control ingredient-input", placeholder: "Name", value: (@measurements[x-1].ingredient.name unless x > @measurements.count) %>
+							<%= i.text_field :name, class: "form-control ingredient-input", placeholder: "Name", value: (@measurements[x-1].ingredient.name unless x > @measurements.count || @measurements[x-1].ingredient.nil?) %>
 						<% end %>
 						<% x += 1 %>
 						<%= m.hidden_field :ingredient_id, class: "ingredient-id" %>
