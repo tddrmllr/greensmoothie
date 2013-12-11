@@ -12,10 +12,10 @@ $(document).ready ->
     initTypeahead()
 
   initTypeahead = ->
-    $(".ingredient-input").typeahead(
-      name: "ingredients"
+    $(".nutrient-input").typeahead(
+      name: "nutrients"
       valueKey: "name"
-      prefetch: "/ingredients"
+      remote: "/nutrients"
       limit: 10
     ).on "typeahead:selected", (obj, datum, name) ->
-      $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
+      $(this).closest("div.nutrient").find(".citable-id").val(datum["id"])

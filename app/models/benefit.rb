@@ -1,5 +1,7 @@
 class Benefit < ActiveRecord::Base
 
-  belongs_to :benefactor, polymorphic: true
+  has_one :citation, as: :citable
+
+  accepts_nested_attributes_for :citation, allow_destroy: true
 
 end
