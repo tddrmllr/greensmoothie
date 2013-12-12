@@ -11,10 +11,13 @@
     		<%= link_to ingredient.name, ingredient %>
     		<% if @recipe %>
 		    	<% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
-		    		<span class="pull-right badge">
+		    		<small>
 			    		<%= measurement.amount %>
 			    		<%= measurement.unit %>
-			    	</span>
+			    	</small>
+		    <% end %>
+		    <% ingredient.nutrients.each do |i| %>
+		    	<%= content_tag(:span, link_to(i.name, i), class: "label label-primary") %>
 		    <% end %>
     	</h4>
     	<%= strip_tags(ingredient.description).truncate(200).html_safe %>
