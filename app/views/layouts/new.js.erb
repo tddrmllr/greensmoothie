@@ -1,0 +1,3 @@
+$('.modal-backdrop').remove()
+$("#modal-holder").html("<%= escape_javascript(render 'layouts/new') %>")
+$("#nutrient-modal").modal("show")

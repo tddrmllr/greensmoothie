@@ -1,0 +1,26 @@
+<% name = controller_name.singularize %>
+<%= nested_form_for instance_variable_get("@#{name}"), html: {id: "#{name}-form"}, remote: true do |f| %>
+	<div class="modal fade" id="nutrient-modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h3 class="modal-title">Add <%= name.capitalize %></h3>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="alert alert-danger">
+	      		<p>Sorry, we couldn't find that <%= name %>. If you're confident that your spelling is correct, go ahead and add it to the database.</p>
+	      	</div>
+					<%= render 'inputs', f: f %>
+					<div class="alert alert-success alert-sm">
+						<p>Remember, the integrity of information on Green Smoothie is your responsibility, so make sure you know what you're talking about.</p>
+					</div>
+		    </div>
+	      <div class="modal-footer">
+	        <a data-dismiss="modal" class="btn btn-default">Close</a>
+	        <%= f.submit 'Save', class: 'btn btn-primary' %>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+<% end %>

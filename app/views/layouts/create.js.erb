@@ -1,0 +1,3 @@
+$("#<%= controller_name %>").attr("data-array", "<%= escape_javascript(controller_name.classify.constantize.all.to_json) %>")
+$(".modal").modal("hide")
+$("#<%= @elem.to_s %>").val("<%= escape_javascript(instance_variable_get("@#{controller_name.singularize}").id.to_s) %>")

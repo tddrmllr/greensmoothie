@@ -1,5 +1,7 @@
 class NutrientsController < ApplicationController
 
+  respond_to :js, :html
+
   def index
     @nutrients = Nutrient.all
     if request.xhr?
@@ -8,21 +10,32 @@ class NutrientsController < ApplicationController
   end
 
   def new
-    @nutrient = Nutrient.new
-    @citations = @nutrient.citations
-    render 'form'
+    @nutrient = Nutrient.new(name: params[:name])
+    @elem = params[:elem]
+    respond_with(@nutrient) do |format|
+      format.js {render 'layouts/new'}
+      format.html {render 'form'}
+    end
   end
 
   def edit
     @nutrient = Nutrient.find(params[:id])
-    @citations = @nutrient.citations
     render 'form'
   end
 
   def create
     @nutrient = Nutrient.new(nutrient_params)
+    @elem = params[:elem]
     if @nutrient.save
-      redirect_to @nutrient
+      respond_with(@nutrient) do |format|
+        format.html {redirect_to @nutrient}
+        format.js {render 'layouts/create'}
+      end
+    else
+      respond_with(@nutrient) do |format|
+        format.html {render 'form'}
+        format.js {render 'layouts/errors'}
+      end
     end
   end
 
@@ -36,7 +49,7 @@ class NutrientsController < ApplicationController
       flash[:notice] = "Nutrient updated"
       redirect_to @nutrient
     else
-      raise 'heck'
+      render 'form'
     end
   end
 

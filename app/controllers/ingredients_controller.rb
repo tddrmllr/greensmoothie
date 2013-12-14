@@ -1,5 +1,7 @@
 class IngredientsController < ApplicationController
 
+  respond_to :js, :html
+
   include UpdateImage
 
   def index
@@ -10,25 +12,34 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    @ingredient = Ingredient.new
+    @ingredient = Ingredient.new(name: params[:name])
     @image = @ingredient.build_image
-    @citations = @ingredient.citations
-    render 'form'
+    @elem = params[:elem]
+    respond_with(@ingredient) do |format|
+      format.js {render 'layouts/new'}
+      format.html {render 'form'}
+    end
   end
 
   def edit
     @ingredient = Ingredient.find(params[:id])
     @image = @ingredient.image ||= @ingredient.build_image
-    @citations = @ingredient.citations
     render 'form'
   end
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
+    @elem = params[:elem]
     if @ingredient.save
-      redirect_to @ingredient
+      respond_with(@ingredient) do |format|
+        format.html {redirect_to @ingredient}
+        format.js {render 'layouts/create'}
+      end
     else
-      raise 'heck'
+      respond_with(@ingredient) do |format|
+        format.html {render 'form'}
+        format.js {render 'layouts/errors'}
+      end
     end
   end
 

@@ -1,3 +1,8 @@
+$(document).on "page:load", ->
+  console.log "remove"
+  $('.modal-backdrop').remove()
+
+
 $(document).ready ->
   $(document.body).on "page:load", ->
     window["rangy"].initialized = false
