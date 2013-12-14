@@ -5,8 +5,36 @@
 	</h2>
 </div>
 
-<% @nutrient.benefits.each do |b| %>
+<div class="row">
+	<div class="col-md-8">
+		<p class="lead"><%= @nutrient.description.html_safe %></p>
+	</div>
+	<div class="col-md-4 lead">
+		<% if @ingredients.any? %>
+			<div class="alert alert-success">
+				<%= content_tag :h3, "Sources", style: "margin: 0px 0px 5px 0px" %>
+				<ul class="list-unstyled">
+					<% @ingredients.each do |i| %>
+					 <%= content_tag(:li, link_to(i.name, i)) %>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+</div>
 
-	<%= b.name %>
+<div class="row">
+	<div class="col-md-8">
+		<% if @benefits.any? %>
+			<%= content_tag :h3, "Benefits"  %>
+			<% @benefits.each do |b| %>
+				<blockquote>
+			    <h4 class="media-heading"><%= b.name %></h4>
+			    <%= b.description %>
+			    <small><cite title="Citation Title"><%= link_to "View Source", b.citation.source %></cite></small>
+				</blockquote>
+		  <% end %>
+		<% end %>
+	</div>
+</div>
 
-<% end %>

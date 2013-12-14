@@ -1,6 +1,4 @@
-<div class="media">
-  <div class="media-body">
-    <h4 class="media-heading"><%= link_to nutrient.name, nutrient %></h4>
-    <%= nutrient.description %>
-  </div>
-</div>
+<a href="<%= nutrient_path(nutrient) %>" class="list-group-item">
+  <h4 class="list-group-item-heading"><%= nutrient.name %></h4>
+  <p class="list-group-item-text"><%= simple_format(strip_tags(nutrient.description).truncate(250)) %></p>
+</a>

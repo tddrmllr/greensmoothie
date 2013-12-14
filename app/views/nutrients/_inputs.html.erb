@@ -11,7 +11,7 @@
 	<%= f.fields_for :benefits do |b| %>
 		<div class="row form-group">
 			<div class="col-xs-12">
-				<div class="well">
+				<div class="well" style="margin-bottom: 0px">
 					<div class="row">
 						<div class="col-xs-12">
 							<%= b.text_field :name, class: "form-control input-sm", placeholder: "Name", style: "margin-bottom: 5px" %>
@@ -27,7 +27,7 @@
 						<div class="col-xs-12">
 							<% benefit = b.object %>
 							<%= b.fields_for :citation, Citation.where(citable_type: benefit.class.name, citable_id: benefit.id).first_or_initialize do |c| %>
-								<%= c.text_field :source, class: "form-control input-sm", placeholder: "Source" %>
+								<%= c.text_field :source, class: "form-control input-sm", placeholder: "Citation" %>
 								<%= c.hidden_field :citable_type %>
 								<%= c.hidden_field :citable_id %>
 								<%= c.hidden_field :citer_type %>
