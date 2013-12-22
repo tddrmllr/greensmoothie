@@ -2,12 +2,19 @@
 	<h2>
 		<%= @recipe.name %>
 		<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right" %>
+		<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger pull-right", method: :delete %>
 	</h2>
 </div>
 
 <div class="row">
 	<div class="col-lg-3">
-		<%= image_tag @recipe.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" if @recipe.image? %>
+		<% if @recipe.image? %>
+			<%= image_tag @recipe.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
+		<% else %>
+			<div class="text-center">
+				<%= fa_icon "glass", style: "font-size: 150px; color: #eeeeee" %>
+			</div>
+		<% end %>
 		<br>
 		<br>
 		<div class="alert alert-success">

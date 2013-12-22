@@ -1,0 +1,22 @@
+// Place all the styles related to the nutritions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.nutrient {
+  background-color: #83e531;
+  color: #ffffff;
+  padding: 1px 10px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+a.nutrient:hover {
+  background-color: darken(#83e531, 10%);
+}
+
+div.nutrient {
+  h4 {
+    display: inline;
+  }
+}

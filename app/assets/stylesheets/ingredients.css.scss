@@ -9,21 +9,14 @@ div.add-ingredient .col-xs-1 {
 }
 
 div.media.ingredient {
+  h4 {
+    display: inline;
+  }
   h4 small {
     background-color: #eeeeee;
     padding: 1px 5px;
     color: #000000;
     font-weight: bold;
     border-radius: 3px;
-  }
-  h4 span.label {
-    float: right;
-    font-size: 13px;
-    color: #ffffff;
-    margin-left: 5px;
-    font-weight: 200;
-    a {
-      color: #ffffff;
-    }
   }
 }

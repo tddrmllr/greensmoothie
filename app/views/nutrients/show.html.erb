@@ -8,23 +8,6 @@
 <div class="row">
 	<div class="col-md-8">
 		<p class="lead"><%= @nutrient.description.html_safe %></p>
-	</div>
-	<div class="col-md-4 lead">
-		<% if @ingredients.any? %>
-			<div class="alert alert-success">
-				<%= content_tag :h3, "Sources", style: "margin: 0px 0px 5px 0px" %>
-				<ul class="list-unstyled">
-					<% @ingredients.each do |i| %>
-					 <%= content_tag(:li, link_to(i.name, i)) %>
-					<% end %>
-				</ul>
-			</div>
-		<% end %>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-8">
 		<% if @benefits.any? %>
 			<%= content_tag :h3, "Benefits"  %>
 			<% @benefits.each do |b| %>
@@ -36,5 +19,16 @@
 		  <% end %>
 		<% end %>
 	</div>
+	<div class="col-md-4 lead">
+		<% if @ingredients.any? %>
+			<div class="alert alert-success">
+				<%= content_tag :h3, "Food Sources", style: "margin: 0px 0px 5px 0px" %>
+				<ul class="list-unstyled">
+					<% @ingredients.each do |i| %>
+					 <%= content_tag(:li, link_to(i.name, i)) %>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	</div>
 </div>
-

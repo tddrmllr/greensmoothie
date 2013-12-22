@@ -7,6 +7,7 @@
 
 // CUSTOMIZED BOOTSTRAP VARIABLES //
 @brand-primary: #5cb85c;
+
 @navbar-margin-bottom: 0px;
 @navbar-default-bg: rgba(0,0,0,0);
 @navbar-default-border: #ffffff;
@@ -16,23 +17,35 @@
 @navbar-inverse-link-hover-color: darken(@navbar-inverse-link-color, 10%);
 @navbar-default-link-color: @brand-primary;
 @navbar-default-link-hover-color: darken(@brand-primary, 10%);
+
 @btn-primary-bg: #83e531;
 @btn-primary-border: rgba(0,0,0,0);
 @btn-success-border: rgba(0,0,0,0);
+@btn-info-border: rgba(0,0,0,0);
 @btn-warning-bg: #e1e500;
 @btn-warning-border: rgba(0,0,0,0);
 @btn-default-bg: #999999;
 @btn-default-color: #ffffff;
 @btn-default-border: rgba(0,0,0,0);
+
 @font-family-base: 'Open Sans', sans-serif;
 @input-color-placeholder: #cccccc;
 @dropdown-link-hover-bg: @btn-primary-bg;
 @dropdown-link-hover-color: #ffffff;
 
+@label-default-bg: #bbbbbb;
+
+// CUSTOM VARIABLES //
+@facebook-color: #3b5998;
+
 // DEFAULT BOOTSTRAP STYLES //
 @import "bootstrap";
 
 // CUSTOM CLASSES //
+.btn.pull-right {
+  margin-left: 10px;
+}
+
 .alert-sm {
   font-size: 13px;
 }
@@ -41,6 +54,13 @@
   background-color: #ffffff;
   color: @brand-primary;
   border-color: @brand-primary;
+}
+
+.label {
+  padding: 1px 10px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 200;
 }
 
 .label-primary {
@@ -57,6 +77,15 @@
 
 .btn-primary-bg:hover {
   color: darken(@btn-primary-bg, 10%);
+}
+
+.btn-facebook {
+  background-color: @facebook-color;
+  color: #ffffff;
+}
+
+.btn-facebook:hover {
+  background-color: darken(@facebook-color, 10%)
 }
 
 .border-radius-base {

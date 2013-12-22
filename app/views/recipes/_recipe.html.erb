@@ -1,0 +1,15 @@
+<div class="media">
+  <a class="pull-left" href="<%= recipe_path(recipe) %>">
+  	<% if recipe.image? %>
+  		<%= image_tag recipe.image.image.url(:thumb), class: "media-object img-thumbnail" %>
+  	<% else %>
+    	<div class="well well-sm text-center" style="width: 75px; height: 75px; padding-top: 12px">
+    		<%= fa_icon "glass", style: "font-size: 50px; color: #ffffff" %>
+    	</div>
+    <% end %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to recipe.name, recipe %></h4>
+    <%= recipe.description %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <span id="img">
 	<% if resource.image? %>
 		<%= image_tag resource.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
-		<%= link_to "Crop Photo", edit_image_path(@image), class: "btn btn-primary btn-block", remote: true %>
+		<%= link_to "Crop Photo", edit_image_path(@image, imageable_type: resource.class.name, imageable_id: resource.id), class: "btn btn-primary btn-block", remote: true %>
 	<% else %>
 		<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
 	<% end %>
@@ -14,16 +14,3 @@
 	<%= image.hidden_field :imageable_type, value: resource.class.name %>
 	<%= image.hidden_field :token, value: resource.image_token %>
 <% end %>
-<script>
-	$(document).ready(function(){
-		$("#img-form").fileupload()
-
-		$("#img-file").mouseover(function() {
-		  return $("#img-btn").css("background-color", "#6ed31b");
-		});
-
-		$("#img-file").mouseout(function() {
-		  return $("#img-btn").css("background-color", "#83e531");
-		});
-	})
-</script>

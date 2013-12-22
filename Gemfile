@@ -19,7 +19,7 @@ group :development, :test do
   gem 'pry-nav'
 end
 
-gem "therubyracer"
+gem 'therubyracer'
 gem 'therubyrhino'  # If using JRuby
 gem "less-rails"
 gem 'nested_form'
@@ -32,4 +32,7 @@ gem 'acts-as-taggable-on'
 gem 'paperclip'
 gem 'pnotify-rails'
 gem 'bootstrap-wysihtml5-rails'
-gem "jquery-fileupload-rails"
+gem 'jquery-fileupload-rails'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'cancan'

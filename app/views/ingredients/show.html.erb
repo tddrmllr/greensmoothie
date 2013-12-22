@@ -2,6 +2,7 @@
 	<h2>
 		<%= @ingredient.name %>
 		<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary pull-right" %>
+		<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger pull-right", method: :delete %>
 	</h2>
 </div>
 
@@ -10,10 +11,14 @@
 		<% if @ingredient.image? %>
 			<%= image_tag @ingredient.image.image.url(:medium), class: "img-thumbnail", style: "width: 100%" %>
 		<% else %>
-			<%= fa_icon "picture-o", style: "font-size: 100px; color: #dddddd" %>
+			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .1" %>
 		<% end %>
-	</div><div class="col-md-9">
-		<%= @ingredient.description.html_safe %>
+	</div>
+	<div class="col-md-9">
+		<p class="lead"><%= @ingredient.description.html_safe %></p>
+		<% @nutrients.each do |n| %>
+			<%= link_to n.name, n, class: "nutrient" %>
+		<% end %>
 	</div>
 </div>
 
