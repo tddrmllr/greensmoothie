@@ -5,9 +5,9 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-    elsif user.role == "General"
+    elsif user.persisted?
       can :read, :all
-      can :manage, [Nutrient, Ingredient]
+      can [:create, :update, :edit], [Nutrient, Ingredient]
       can :manage, Recipe, user_id: user.id
     else
       can :read, :all

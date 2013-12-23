@@ -18,7 +18,7 @@
 		    </ul>
 		    <% if user_signed_in? %>
 		    	<%= link_to "Signout", destroy_user_session_path, class: "btn btn-primary navbar-btn navbar-right", method: :delete %>
-		    	<%= link_to "My Recipes", user_path(current_user), class: "btn btn-primary navbar-btn navbar-right" %>
+		    	<%= link_to "Account", user_path(current_user), class: "btn btn-primary navbar-btn navbar-right" %>
 		    <% else %>
 		    	<%= link_to "Login or Signup", new_user_session_path, class: "btn btn-primary navbar-btn navbar-right" %>
 		    <% end %>

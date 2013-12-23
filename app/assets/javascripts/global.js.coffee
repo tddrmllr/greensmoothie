@@ -1,12 +1,12 @@
-$(document).on "page:load", ->
-  console.log "remove"
-  $('.modal-backdrop').remove()
+ready = ->
+  $("[data-toggle='tooltip']").tooltip()
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
 
 
-$(document).ready ->
-  $(document.body).on "page:load", ->
-    window["rangy"].initialized = false
-    $(".description").each (i, elem) ->
-      $(elem).wysihtml5()
+
+
+
 
 

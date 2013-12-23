@@ -1,8 +1,8 @@
 <div class="index-header">
 	<h2>
 		<%= @ingredient.name %>
-		<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary pull-right" %>
-		<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger pull-right", method: :delete %>
+		<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary pull-right" if can? :edit, Ingredient %>
+		<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger pull-right", method: :delete if can? :destroy, Ingredient %>
 	</h2>
 </div>
 
@@ -16,9 +16,8 @@
 	</div>
 	<div class="col-md-9">
 		<p class="lead"><%= @ingredient.description.html_safe %></p>
-		<% @nutrients.each do |n| %>
-			<%= link_to n.name, n, class: "nutrient" %>
-		<% end %>
+		<%= raw("<h3>Nutrients</h3>") if @nutrients.any? %>
+		<%= render @nutrients %>
 	</div>
 </div>
 

@@ -5,6 +5,10 @@
 		<% nutrient.benefits.each do |b| %>
 			<span class="label label-default"><%= b.name %></span>
 		<% end %>
+		<% if @ingredient %>
+			<%= link_to "", nutrient.citers.where(citer_id: @ingredient.id, citer_type: "Ingredient").first.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
+			<%= link_to "", "#", class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag as inaccurate"} %>
+		<% end %>
     <p><%= strip_tags(nutrient.description).truncate(200).html_safe %></p>
   </div>
 </div>
