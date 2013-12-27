@@ -9,4 +9,9 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :measurements, allow_destroy: true
 
   validates :name, :description, presence: true
+  validate :has_ingredient
+
+  def has_ingredient
+    self.errors.add(:base, "Your recipe must have at least one ingredient") unless self.ingredients.any?
+  end
 end

@@ -2,12 +2,10 @@
   <div class="media-body">
     <h4 class="media-heading"><%= link_to nutrient.name, nutrient %></h4>
     &nbsp;
-		<% nutrient.benefits.each do |b| %>
-			<span class="label label-default"><%= b.name %></span>
-		<% end %>
 		<% if @ingredient %>
-			<%= link_to "", nutrient.citers.where(citer_id: @ingredient.id, citer_type: "Ingredient").first.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
-			<%= link_to "", "#", class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag as inaccurate"} %>
+		<% citation = nutrient.citers.where(citer_id: @ingredient.id, citer_type: "Ingredient").first %>
+			<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
+			<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
 		<% end %>
     <p><%= strip_tags(nutrient.description).truncate(200).html_safe %></p>
   </div>

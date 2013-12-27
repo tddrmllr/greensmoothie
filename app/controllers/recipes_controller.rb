@@ -27,7 +27,8 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe
     else
-      render 'layouts/errors'
+      @image = @recipe.image ||= @recipe.build_image
+      render 'form'
     end
   end
 
@@ -43,7 +44,8 @@ class RecipesController < ApplicationController
       redirect_to @recipe
       flash[:notice] = "Recipe saved successfully."
     else
-      render 'layouts/errors'
+      @image = @recipe.image ||= @recipe.build_image
+      render 'form'
     end
   end
 

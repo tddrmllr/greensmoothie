@@ -15,8 +15,18 @@ a.nutrient:hover {
   background-color: darken(#83e531, 10%);
 }
 
-div.nutrient {
+div.media.nutrient {
+  margin-top: 5px;
   h4 {
+    display: inline;
+  }
+  a.fa {
+    display: none;
+  }
+}
+
+div.nutrient:hover {
+  a.fa {
     display: inline;
   }
 }

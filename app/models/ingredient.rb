@@ -9,5 +9,13 @@ class Ingredient < ActiveRecord::Base
   has_many :nutrients, through: :citations, source: :citable, source_type: "Nutrient"
 
   accepts_nested_attributes_for :citations, allow_destroy: true
+  validate :citation_sources
+
   accepts_nested_attributes_for :measurements
+
+  validates :name, presence: true
+
+  def citation_sources
+    self.errors.add(:base, "All citations must have a valid source (i.e., http://www.article.com)") if self.citations.select {|x| !x.valid_source }.any?
+  end
 end

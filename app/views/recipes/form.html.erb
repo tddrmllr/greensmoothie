@@ -9,6 +9,7 @@
 		<br>
 	</div>
 	<div class="col-md-9">
+		<%= render 'layouts/errors', object: @recipe if @recipe.errors.any? %>
 		<%= nested_form_for @recipe, html: {id: "recipe-form"} do |f| %>
 			<%= f.hidden_field :image_token %>
 			<div class="form-group">

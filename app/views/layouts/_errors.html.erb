@@ -1,0 +1,8 @@
+<div class="alert alert-danger">
+	<strong>Please correct the following errors:</strong>
+	<ul>
+		<% object.errors.full_messages.each do |e| %>
+			<li><%= e %></li>
+		<% end %>
+	</ul>
+</div>
