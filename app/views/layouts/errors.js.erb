@@ -1,0 +1,2 @@
+$(".modal-body .alert-danger, .modal-body .alert-warning").remove()
+$("#new-modal .modal-body").prepend("<%= escape_javascript(render 'layouts/errors', object: instance_variable_get("@#{controller_name.singularize}")) %>")

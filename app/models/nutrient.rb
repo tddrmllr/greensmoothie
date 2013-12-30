@@ -6,4 +6,9 @@ class Nutrient < ActiveRecord::Base
 
   accepts_nested_attributes_for :benefits, allow_destroy: true
 
+
+  validates :name, presence: true
+
+
+
 end

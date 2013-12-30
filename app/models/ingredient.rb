@@ -16,6 +16,6 @@ class Ingredient < ActiveRecord::Base
   validates :name, presence: true
 
   def citation_sources
-    self.errors.add(:base, "All citations must have a valid source (i.e., http://www.article.com)") if self.citations.select {|x| !x.valid_source }.any?
+    self.errors.add(:base, "All citations must have a valid source (i.e., http://www.article.com)") if self.citations.select {|x| !x.valid_source? }.any?
   end
 end

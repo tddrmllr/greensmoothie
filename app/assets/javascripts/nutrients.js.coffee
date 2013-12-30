@@ -12,9 +12,9 @@ ready = ->
       valueKey: "name"
       local: nutrients
       limit: 10
-    ).on "typeahead:selected", (obj, datum, name) ->
+    ).off("typeahead:selected").on "typeahead:selected", (obj, datum, name) ->
       $(this).closest("div.nutrient").find(".citable-id").val(datum["id"])
-     .on "typeahead:closed", ->
+     .off("typeahead:selected").on "typeahead:closed", ->
        name = $(this).val()
        unless name is "" or checkValue(nutrients, name) is true
          elemID = $.now()
@@ -30,7 +30,7 @@ ready = ->
 
   initTypeahead()
 
-  $(document).on "nested:fieldAdded", ->
+  $(document).off("nested:fieldAdded").on "nested:fieldAdded", ->
     initTypeahead()
 
 $(document).ready(ready)

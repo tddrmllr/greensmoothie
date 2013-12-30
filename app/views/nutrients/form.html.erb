@@ -5,7 +5,8 @@
 <%= nested_form_for @nutrient, html: {id: "nutrient-form"} do |f| %>
 	<div class="row">
 		<div class="col-md-9">
-		<%= render 'inputs', f: f %>
+			<%= render 'layouts/errors', object: @nutrient if @nutrient.errors.any? %>
+			<%= render 'inputs', f: f %>
 		</div>
 		<div class="col-md-3">
 			<div class="alert alert-success">

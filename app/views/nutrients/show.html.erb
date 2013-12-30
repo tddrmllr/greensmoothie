@@ -11,11 +11,14 @@
 		<% if @benefits.any? %>
 			<%= content_tag :h3, "Benefits"  %>
 			<% @benefits.each do |b| %>
-				<blockquote>
-			    <h4 class="media-heading"><%= b.name %></h4>
-			    <%= b.description %>
-			    <small><cite title="Citation Title"><%= link_to "View Source", b.citation.source %></cite></small>
-				</blockquote>
+				<div class="benefit well">
+			    <h4><%= b.name %></h4>
+			    <% citation = b.citation %>
+					<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
+					<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
+			    <br>
+			    <p><%= b.description %></p>
+				</div>
 		  <% end %>
 		<% end %>
 	</div>

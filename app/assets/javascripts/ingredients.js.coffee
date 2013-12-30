@@ -13,9 +13,9 @@ ready = ->
       valueKey: "name"
       local: ingredients
       limit: 10
-    ).on "typeahead:selected", (obj, datum, name) ->
+    ).off("typeahead:selected").on "typeahead:selected", (obj, datum, name) ->
       $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
-     .on "typeahead:closed", ->
+     .off("typeahead:closed").on "typeahead:closed", ->
        name = $(this).val()
        unless name is "" or checkValue(ingredients, name) is true
          elemID = $.now()
@@ -31,7 +31,7 @@ ready = ->
 
   initTypeahead()
 
-  $(document).on "nested:fieldAdded", (event) ->
+  $(document).off("nested:fieldAdded").on "nested:fieldAdded", (event) ->
     initTypeahead()
 
 $(document).ready(ready)
