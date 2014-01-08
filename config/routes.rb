@@ -9,7 +9,13 @@ Greensmoothie::Application.routes.draw do
   resources :nutrients do
     get 'add', on: :collection
   end
-  resources :recipes
+  resources :posts do
+    resources :comments
+  end
+  get '/posts/:id/:title', to: 'posts#show'
+  resources :recipes do
+    resources :comments
+  end
   resources :users
 
 end

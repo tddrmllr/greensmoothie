@@ -2,11 +2,12 @@
 	<%= f.label :name %>
 	<%= f.text_field :name, class: "form-control" %>
 </div>
+
+<div class="form-group">
+	<%= f.label :description %>
+	<%= f.text_area :description, class: "form-control description", rows: 5, placeholder: "Describe the benefits and general traits of the nutrient" %>
+</div>
 <% unless @elem %>
-	<div class="form-group">
-		<%= f.label :description %>
-		<%= f.text_area :description, class: "form-control description", rows: 5, placeholder: "Describe the benefits and general traits of the nutrient and cite your sources below" %>
-	</div>
 	<%= label_tag :benefits %>
 		<br>
 		<%= f.fields_for :benefits do |b| %>

@@ -3,18 +3,19 @@
 	<%= f.label :name %>
 	<%= f.text_field :name, class: "form-control" %>
 </div>
+
+<div class="form-group">
+	<%= f.label :description %>
+	<%= f.text_area :description, class: "form-control", id: "description", rows: 3, placeholder: "Describe the ingredient's physical attributes, flavor, culinary uses, etc." %>
+	<script>
+		$(document).ready(function(){
+	    $('#description').each(function(i, elem) {
+	      $(elem).wysihtml5({'font-styles': false, 'image': false, 'link': false});
+	    });
+	  })
+	</script>
+</div>
 <% unless @elem %>
-	<div class="form-group">
-		<%= f.label :description %>
-		<%= f.text_area :description, class: "form-control", id: "description", rows: 3, placeholder: "Describe the ingredient's physical attributes, flavor, culinary uses, etc. (add nutrients below)" %>
-		<script>
-			$(document).ready(function(){
-		    $('#description').each(function(i, elem) {
-		      $(elem).wysihtml5({'font-styles': false, 'image': false, 'link': false});
-		    });
-		  })
-		</script>
-	</div>
 	<%= label_tag :nutrients %>
 	<br>
 	<span id="nutrients" data-array="<%= Nutrient.all.to_json %>"></span>

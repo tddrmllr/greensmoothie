@@ -1,0 +1,14 @@
+<div class="index-header">
+	<h2><%= action_name.capitalize %> Blog Post</h2>
+</div>
+
+<%= form_for @post do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title, class: "form-control" %>
+	<br>
+	<%= f.cktext_area :body, ckeditor: {height: "300px"} %>
+	<br>
+	<%= link_to "Cancel", :back, class: "btn btn-default" %>
+	<%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+<br>

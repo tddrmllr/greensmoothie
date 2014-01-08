@@ -1,8 +1,10 @@
 <div class="index-header">
 	<h2>
 		<%= @recipe.name %>
-		<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right" %>
-		<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger pull-right", method: :delete %>
+		<% if can? :manage, @recipe %>
+			<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right" %>
+			<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger pull-right", method: :delete %>
+		<% end %>
 	</h2>
 </div>
 
