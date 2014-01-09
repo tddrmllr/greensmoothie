@@ -1,20 +1,27 @@
 class PostsController < ApplicationController
 
+  include UpdateImage
+
   def index
     @posts = Post.all
+    @title = "Green Smoothie Blog"
   end
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
+    @title = @post.name
   end
 
   def new
     @post = Post.new
+    @image = @post.build_image
     render 'form'
   end
 
   def edit
     @post = Post.find(params[:id])
+    @image = @post.image ||= @post.build_image
     render 'form'
   end
 
@@ -23,6 +30,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
+      @image = @post.image ||= @post.build_image
       render 'form'
     end
   end
@@ -34,6 +42,7 @@ class PostsController < ApplicationController
       redirect_to @post
       flash[:notice] = "Post saved successfully."
     else
+      @image = @post.image ||= @post.build_image
       render 'form'
     end
   end

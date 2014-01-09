@@ -1,0 +1,1 @@
+HOST = YAML::load(File.open("#{Rails.root}/config/host.yml"))[Rails.env]

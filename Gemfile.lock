@@ -123,6 +123,8 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.0)
+    pin_it (0.0.7)
+      rails (>= 2.3.0)
     pnotify-rails (1.2.2)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -218,6 +220,7 @@ DEPENDENCIES
   omniauth-twitter
   paperclip
   pg
+  pin_it
   pnotify-rails
   pry
   pry-nav

@@ -2,13 +2,23 @@
 	<h2><%= action_name.capitalize %> Blog Post</h2>
 </div>
 
-<%= form_for @post do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title, class: "form-control" %>
-	<br>
-	<%= f.cktext_area :body, ckeditor: {height: "300px"} %>
-	<br>
-	<%= link_to "Cancel", :back, class: "btn btn-default" %>
-	<%= f.submit "Save", class: "btn btn-primary" %>
-<% end %>
+<div class="row">
+	<div class="col-md-3 text-center">
+		<%= render 'images/imageable', resource: @post %>
+	</div>
+	<div class="col-md-9">
+		<%= form_for @post do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name, class: "form-control" %>
+			<br>
+			<%= f.label :abstract %>
+			<%= f.text_area :abstract, class: "form-control", rows: 4 %>
+			<br>
+			<%= f.cktext_area :body %>
+			<br>
+			<%= link_to "Cancel", :back, class: "btn btn-default" %>
+			<%= f.submit "Save", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
 <br>

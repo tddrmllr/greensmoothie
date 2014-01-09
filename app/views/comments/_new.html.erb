@@ -1,0 +1,5 @@
+<%= form_for [resource, Comment.new], remote: true do |f| %>
+	<%= f.text_area :body, class: "form-control", placeholder: "Comment on this #{resource.class.name.downcase}", id: "comment" %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.submit "Submit", class: "btn btn-primary btn-sm", style: "margin-top: 10px" %>
+<% end %>

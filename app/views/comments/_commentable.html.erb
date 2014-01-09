@@ -1,0 +1,14 @@
+<div id="commentable" class="row">
+	<div class="col-md-6">
+		<h4>Comments</h4>
+		<% if user_signed_in? %>
+			<%= render 'comments/new', resource: resource %>
+		<% else %>
+			<%= link_to "Sign in or Sign up to Comment", new_user_session_path(return_path: request.url + "#comments"), class: "btn btn-primary" %>
+		<% end %>
+		<br>
+		<div id="comments">
+			<%= render @comments if @comments.any? %>
+		</div>
+	</div>
+</div>

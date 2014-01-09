@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  include HasImage
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
@@ -6,13 +9,16 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_many :authentications
+  has_many :comments
+  has_one :image, as: :imageable
 
   def admin?
     self.role == "Admin"
   end
 
   def apply_omniauth(auth)
-    self.email = auth.info.email if email.blank?
+    self.email = auth.info.email if self.email.blank?
+    self.name = auth.info.name if self.name.blank?
     authentications.build(provider: auth.provider, uid: auth.id)
   end
 
