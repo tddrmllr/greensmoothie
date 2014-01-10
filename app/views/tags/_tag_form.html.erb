@@ -1,0 +1,2 @@
+<%= label_tag :tag_field, "Add Tags" %>
+<%= text_field_tag :tag_field, nil, class: "form-control", id: "tag-field", data: {taglist: ActsAsTaggableOn::Tagging.where(taggable_type: object.class.name).joins(:tag).select('DISTINCT tags.name').map{ |x| x.name}.to_json} %>

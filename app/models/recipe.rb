@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
   include HasImage
+  acts_as_taggable
 
   belongs_to :user
   has_many :measurements

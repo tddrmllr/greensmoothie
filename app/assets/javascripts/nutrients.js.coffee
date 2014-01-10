@@ -12,9 +12,9 @@ ready = ->
       valueKey: "name"
       local: nutrients
       limit: 10
-    ).off("typeahead:selected").on "typeahead:selected", (obj, datum, name) ->
+    ).off("typeahead:selected, typeahead:autocompleted").on "typeahead:selected, typeahead:autocompleted", (obj, datum, name) ->
       $(this).closest("div.nutrient").find(".citable-id").val(datum["id"])
-     .off("typeahead:selected").on "typeahead:closed", ->
+     .off("typeahead:closed").on "typeahead:closed", ->
        name = $(this).val()
        unless name is "" or checkValue(nutrients, name) is true
          elemID = $.now()

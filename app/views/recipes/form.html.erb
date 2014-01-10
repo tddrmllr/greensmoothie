@@ -9,13 +9,25 @@
 		<br>
 	</div>
 	<div class="col-md-9">
+		<div class="row">
+			<div class="col-md-12" id="tag-list">
+
+			</div>
+		</div>
 		<%= render 'layouts/errors', object: @recipe if @recipe.errors.any? %>
 		<%= nested_form_for @recipe, html: {id: "recipe-form"} do |f| %>
 			<%= f.hidden_field :image_token %>
-			<div class="form-group">
-				<%= f.hidden_field :user_id, value: current_user.id %>
-				<%= f.label :name %>
-				<%= f.text_field :name, class: "form-control" %>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<%= f.hidden_field :user_id, value: current_user.id %>
+						<%= f.label :name %>
+						<%= f.text_field :name, class: "form-control" %>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<%= render 'tags/tag_form', object: @recipe %>
+				</div>
 			</div>
 			<div class="form-group">
 				<%= f.label :description %>
