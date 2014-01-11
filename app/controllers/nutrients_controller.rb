@@ -1,6 +1,7 @@
 class NutrientsController < ApplicationController
 
   respond_to :js, :html
+  authorize_resource
 
   def index
     @nutrients = Nutrient.all

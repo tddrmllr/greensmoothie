@@ -10,6 +10,7 @@ class Ability
       can [:create, :update, :edit], [Nutrient, Ingredient]
       can :manage, Recipe, user_id: user.id
       can :manage, Comment, user_id: user.id
+      can :manage, User, id: user.id
     else
       can :read, :all
     end

@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  authorize_resource
+
   before_filter :commentable
 
   def create

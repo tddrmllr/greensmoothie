@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
 
   respond_to :js, :html
+  authorize_resource
 
   include UpdateImage
 

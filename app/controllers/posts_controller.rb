@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  authorize_resource
+
   include UpdateImage
 
   def index

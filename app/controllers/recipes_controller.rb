@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   authorize_resource
 
   include UpdateImage
+  include UpdateTags
 
   def index
     @recipes = Recipe.all
