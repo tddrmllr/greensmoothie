@@ -17,8 +17,9 @@
 				<%= fa_icon "glass", style: "font-size: 150px; color: #eeeeee" %>
 			</div>
 		<% end %>
-		<br>
-		<br>
+		<div style="padding: 10px 0px">
+			<%= show_tags(@recipe) %>
+		</div>
 		<div class="alert alert-success">
 			<p><strong>Description</strong></p>
 			<%= @recipe.description %>
@@ -33,5 +34,11 @@
 				<%= @recipe.instructions.html_safe %>
 			</div>
 		<% end %>
+		<%= render 'layouts/social', sociable: @recipe %>
+		<div class="row">
+			<div class="col-md-7">
+				<%= render 'comments/commentable', commentable: @recipe %>
+			</div>
+		</div>
 	</div>
 </div>

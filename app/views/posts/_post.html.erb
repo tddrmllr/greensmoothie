@@ -4,6 +4,7 @@
 			<%= link_to "Edit", edit_post_path(post), class: "btn btn-xs pull-right btn-primary" if can? :manage, post %>
 			<h2><a href="/posts/<%= post.id %>/<%= post.named_url %>"><%= post.name %></a></h2>
 			<%= post.body.html_safe %>
+			<%= link_to fa_icon("comments") + " Comments" + comment_count(post), "/posts/#{post.id}/#{post.named_url}#commentable" %>
 		</div>
 	</div>
 </div>

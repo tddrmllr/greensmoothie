@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   authorize_resource
 
   include UpdateImage
+  include UpdateTags
 
   def index
     @posts = Post.all

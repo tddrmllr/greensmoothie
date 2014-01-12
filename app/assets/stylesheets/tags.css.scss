@@ -1,8 +1,9 @@
 #tag-list {
-  .label {
-    margin-right: 5px;
-  }
   padding-bottom: 10px;
+}
+
+span.label-tag {
+  margin-right: 5px;
 }
 
 .edit-tag {
@@ -11,4 +12,15 @@
 
 a.remove-tag {
   padding-right: 5px;
+}
+
+a.tag {
+  padding-right: 7px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+span.tags {
+  font-weight: bold;
+  font-size: 13px;
 }

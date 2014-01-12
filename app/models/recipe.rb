@@ -6,13 +6,9 @@ class Recipe < ActiveRecord::Base
   has_many :measurements
   has_many :ingredients, through: :measurements
   has_one :image, as: :imageable
+  has_many :comments, as: :commentable
 
   accepts_nested_attributes_for :measurements, allow_destroy: true
 
   validates :name, :description, presence: true
-  validate :has_ingredient
-
-  def has_ingredient
-    self.errors.add(:base, "Your recipe must have at least one ingredient") unless self.ingredients.any?
-  end
 end

@@ -8,13 +8,22 @@
 	</div>
 	<div class="col-md-9">
 		<%= form_for @post do |f| %>
-			<%= f.label :name %>
-			<%= f.text_field :name, class: "form-control" %>
+			<div class="row">
+				<div class="col-md-12">
+					<%= render 'tags/tag_list', taggable: @post %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<%= f.label :name %>
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+				<div class="col-md-6">
+					<%= render 'tags/tag_form', taggable: @recipe %>
+				</div>
+			</div>
 			<br>
-			<%= f.label :abstract %>
-			<%= f.text_area :abstract, class: "form-control", rows: 4 %>
-			<br>
-			<%= f.cktext_area :body %>
+			<%= f.cktext_area :body, ckeditor: {height: 300} %>
 			<br>
 			<%= link_to "Cancel", :back, class: "btn btn-default" %>
 			<%= f.submit "Save", class: "btn btn-primary" %>

@@ -9,7 +9,7 @@
     <% end %>
   </a>
   <div class="media-body">
-    <h4 class="media-heading"><%= link_to recipe.name, recipe %></h4>
+    <h4 class="media-heading"><%= link_to recipe.name, recipe %> &nbsp;<%= show_tags(recipe) %></h4>
     <%= recipe.description %>
   </div>
 </div>
