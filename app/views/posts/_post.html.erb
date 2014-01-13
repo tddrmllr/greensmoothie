@@ -2,9 +2,21 @@
 	<div class="col-lg-9">
 		<div class="post">
 			<%= link_to "Edit", edit_post_path(post), class: "btn btn-xs pull-right btn-primary" if can? :manage, post %>
+			<span class="pull-right hidden-xs"><%= link_to fa_icon("comments") + " Comments" + comment_count(post), "/posts/#{post.id}/#{post.named_url}#commentable" %></span>
 			<h2><a href="/posts/<%= post.id %>/<%= post.named_url %>"><%= post.name %></a></h2>
-			<%= post.body.html_safe %>
-			<%= link_to fa_icon("comments") + " Comments" + comment_count(post), "/posts/#{post.id}/#{post.named_url}#commentable" %>
+			<div class="row">
+				<div class="col-md-2">
+					<% image = image_tag post.image.image.url(:thumb), class: "img-thumbnail", style: "width: 100%" if post.image? %>
+					<%= link_to image, "/posts/#{post.id}/#{post.named_url}" %>
+				</div>
+				<div class="col-md-10">
+					<%= post.abstract %>
+					<br>
+					<div style="padding-top: 5px">
+						<p><%= show_tags(post) %></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

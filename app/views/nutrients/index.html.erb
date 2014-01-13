@@ -4,7 +4,9 @@
 
 <div class="row">
 	<div class="col-md-8">
-		<%= text_field_tag :search, nil, id: "recipe-search", class: "ajax-search form-control input-lg", placeholder: "Search" %>
+		<%= search_form_for @search, remote: true do |f| %>
+			<%= f.text_field :name_or_description_or_benefits_name_or_benefits_description_cont, id: "ingredient-search", class: "index-search form-control input-lg", placeholder: "Search"%>
+		<% end %>
 	</div>
 	<div class="col-md-4">
 		<% if user_signed_in? %>
@@ -16,7 +18,7 @@
 </div>
 <br>
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-8" id="nutrients">
 		<%= render @nutrients %>
 	</div>
 </div>

@@ -3,11 +3,10 @@ class NutrientsController < ApplicationController
   respond_to :js, :html
   authorize_resource
 
+  include Searchable
+
   def index
-    @nutrients = Nutrient.all
-    if request.xhr?
-      render json: @nutrients
-    end
+    # searchable
   end
 
   def new

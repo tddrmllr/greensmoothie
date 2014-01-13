@@ -23,7 +23,7 @@ gem 'therubyracer'
 gem 'therubyrhino'  # If using JRuby
 gem "less-rails"
 gem 'nested_form'
-gem 'ransack'
+gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'ckeditor'

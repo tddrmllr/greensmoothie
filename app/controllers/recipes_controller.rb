@@ -4,9 +4,10 @@ class RecipesController < ApplicationController
 
   include UpdateImage
   include UpdateTags
+  include Searchable
 
   def index
-    @recipes = Recipe.all
+    # searchable
   end
 
   def new

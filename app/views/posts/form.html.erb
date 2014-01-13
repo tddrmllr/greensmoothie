@@ -23,7 +23,9 @@
 				</div>
 			</div>
 			<br>
-			<%= f.cktext_area :body, ckeditor: {height: 300} %>
+			<%= f.text_area :abstract, class: "form-control", rows: 3 %>
+			<br>
+			<%= f.cktext_area :body %>
 			<br>
 			<%= link_to "Cancel", :back, class: "btn btn-default" %>
 			<%= f.submit "Save", class: "btn btn-primary" %>

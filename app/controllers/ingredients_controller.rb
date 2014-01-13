@@ -4,12 +4,10 @@ class IngredientsController < ApplicationController
   authorize_resource
 
   include UpdateImage
+  include Searchable
 
   def index
-    @ingredients = Ingredient.all
-    if request.xhr?
-      render json: @ingredients
-    end
+    # searchable
   end
 
   def new
