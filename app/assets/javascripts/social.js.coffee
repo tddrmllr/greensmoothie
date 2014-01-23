@@ -1,81 +1,39 @@
-### TWITTER ###
-
-twttr_events_bound = false
-
-$ ->
-  bindTwitterEventHandlers() unless twttr_events_bound
-
-bindTwitterEventHandlers = ->
-  $(document).on 'page:load', renderTweetButtons
-  twttr_events_bound = true
-
-renderTweetButtons = ->
-  $('.twitter-share-button').each ->
-    button = $(this)
-    button.attr('data-url', document.location.href) unless button.data('url')?
-    button.attr('data-text', document.title) unless button.data('text')?
-  twttr.widgets.load()
-
-### FACEBOOK ###
-
-fb_root = null
-fb_events_bound = false
-
-$ ->
-  loadFacebookSDK()
-  bindFacebookEvents() unless fb_events_bound
-
-bindFacebookEvents = ->
-  $(document)
-    .on('page:fetch', saveFacebookRoot)
-    .on('page:change', restoreFacebookRoot)
-    .on('page:load', ->
-      FB?.XFBML.parse()
-    )
-  fb_events_bound = true
-
-saveFacebookRoot = ->
-  fb_root = $('#fb-root').detach()
-
-restoreFacebookRoot = ->
-  if $('#fb-root').length > 0
-    $('#fb-root').replaceWith fb_root
-  else
-    $('body').append fb_root
-
-loadFacebookSDK = ->
-  window.fbAsyncInit = initializeFacebookSDK
-  $.getScript("//connect.facebook.net/en_US/all.js#xfbml=1")
-
-initializeFacebookSDK = ->
-  FB.init
-    appId     : '584721794928673'
-    status    : true
-    cookie    : true
-    xfbml     : true
 
 ready = ->
-  ### PINTEREST ###
 
-  ((d) ->
-    f = d.getElementsByTagName("SCRIPT")[0]
-    p = d.createElement("SCRIPT")
-    p.type = "text/javascript"
-    p.async = true
-    p.src = "//assets.pinterest.com/js/pinit.js"
-    f.parentNode.insertBefore p, f
-  ) document
+  return unless $("#social").length > 0
 
-  ### GOOGLE ###
+  $(".facebook").click ->
+    sharer = "https://www.facebook.com/sharer/sharer.php?p[url]="
+    left = (screen.width/2)-(626/2);
+    top = (screen.height/2)-(436/2);
+    url = $(this).data('url')
+    media = $(this).data('media')
+    title = $(this).data('title')
+    summary = $(this).data('summary')
+    window.open sharer + url + "&p[images][0]=" + media + "&p[title]=" + title + "&p[summary]=" + summary, "sharer", "menubar=no,toolbar=no,status=no,width=626,height=436,toolbar=no,left=" + left + ",top=" + top
+  $(".twitter").click ->
+    sharer = "https://twitter.com/intent/tweet?status="
+    left = (screen.width/2)-(626/2);
+    top = (screen.height/2)-(225/2);
+    title = $(this).data('desc')
+    url = $(this).data('url')
+    window.open sharer + title + " " + url, "sharer", "menubar=no,toolbar=no,status=no,width=626,height=225,toolbar=no,left=" + left + ",top=" + top
+  $(".pinterest").click ->
+    sharer = "//pinterest.com/pin/create/button/?url="
+    left = (screen.width/2)-(750/2);
+    top = (screen.height/2)-(300/2);
+    summary = $(this).data('summary')
+    media = $(this).data('media')
+    url = $(this).data('url')
+    window.open sharer + url + "&media=" + media + "&description=" + summary, "sharer", "menubar=no,toolbar=no,status=no,width=750,height=300,toolbar=no,left=" + left + ",top=" + top
+  $(".google").click ->
+    sharer = "https://plus.google.com/share?url="
+    left = (screen.width/2)-(550/2);
+    top = (screen.height/2)-(400/2);
+    url = $(this).data('url')
+    window.open sharer + url, "sharer", "menubar=no,toolbar=no,status=no,width=550,height=400,toolbar=no,left=" + left + ",top=" + top
 
-  (->
-    po = document.createElement("script")
-    po.type = "text/javascript"
-    po.async = true
-    po.src = "https://apis.google.com/js/plusone.js?onload=onLoadCallback"
-    s = document.getElementsByTagName("script")[0]
-    s.parentNode.insertBefore po, s
-  )()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

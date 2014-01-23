@@ -7,7 +7,7 @@ module UpdateTags
 
   def update_tags
     @taggable = instance_variable_get("@#{controller_name.singularize}")
-    @taggable.tag_list = params[:tags].map(&:inspect).join(', ').gsub("\"", "")
+    @taggable.tag_list = params[:tags].present? ? params[:tags].map(&:inspect).join(', ').gsub("\"", "") : nil
     @taggable.save
   end
 end

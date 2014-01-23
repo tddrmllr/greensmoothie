@@ -1,6 +1,6 @@
 <div id="social">
-	<%= pin_it_button media: HOST + sociable.image.image.url(:medium), description: sociable.name, url: request.url, count_layout: 'none' %>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
-	<div class="g-plusone" data-size="medium" data-annotation="none" data-href="<%= request.url %>"></div>
-	<div class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+	<%= link_to fa_icon("pinterest-square"), "#pi", class: "pinterest share", data: {url: request.url, desc: sociable.name, media: (HOST + sociable.image.image.url(:medium) if sociable.image?), summary: (sociable.abstract if sociable.class.name == "Post"), toggle: "tooltip", title: "Pin"} %>
+	<%= link_to fa_icon("facebook-square"), "#fb", class: "facebook share", data: {url: request.url, media: (HOST + sociable.image.image.url(:medium) if sociable.image?), title: sociable.name, summary: (sociable.abstract if sociable.class.name == "Post"), toggle: "tooltip", title: "Post"} %>
+	<%= link_to fa_icon("twitter-square"), "#tw", class: "twitter share", data: {url: request.url, desc: sociable.name, toggle: "tooltip", title: "Tweet"} %>
+	<%= link_to fa_icon("google-plus-square"), "#go", class: "google share", data: {url: request.url, toggle: "tooltip", title: "Plus One"} %>
 </div>

@@ -3,7 +3,7 @@
 	<% if user_signed_in? %>
 		<%= render 'comments/new', commentable: commentable %>
 	<% else %>
-		<%= link_to "Sign in or Sign up to Comment", new_user_session_path(return_path: request.url + "#comments"), class: "btn btn-primary" %>
+		<%= link_to "Signin or Signup to Comment", new_user_session_path(return_path: request.url + "#comments"), class: "btn btn-primary" %>
 		<br>
 	<% end %>
 	<br>
