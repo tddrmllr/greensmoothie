@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include HasImage
-  acts_as_taggable
+  unless (ARGV & ['assets:precompile', 'assets:clean']).any?
+    acts_as_taggable
+  end
 
   has_many :comments, as: :commentable
   has_one :image, as: :imageable

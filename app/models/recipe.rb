@@ -1,6 +1,8 @@
 class Recipe < ActiveRecord::Base
   include HasImage
-  acts_as_taggable
+  unless (ARGV & ['assets:precompile', 'assets:clean']).any?
+    acts_as_taggable
+  end
 
   belongs_to :user
   has_many :measurements
