@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activerecord-hackery/ransack.git
-  revision: 321040ba62b400cfcbf05c0f2122f518483a4d88
+  revision: 0a77a1b89cf6e00e0a63f93bfebaa7934a21ce93
   branch: rails-4
   specs:
     ransack (1.1.0)
@@ -62,8 +62,8 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
-    commonjs (0.2.6)
+    coffee-script-source (1.7.0)
+    commonjs (0.2.7)
     devise (3.2.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -72,27 +72,26 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     hashie (2.0.5)
     hike (1.2.3)
-    httpauth (0.2.0)
-    i18n (0.6.5)
-    jbuilder (1.5.2)
+    i18n (0.6.9)
+    jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-fileupload-rails (0.4.1)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    jquery-rails (3.0.4)
+    jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    jwt (0.1.8)
+    jwt (0.1.11)
       multi_json (>= 1.5)
-    less (2.3.2)
+    less (2.3.3)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
       actionpack (>= 3.1)
@@ -102,29 +101,32 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.2)
-    mime-types (1.25)
+    mime-types (1.25.1)
     minitest (4.7.5)
-    multi_json (1.8.2)
-    multipart-post (1.2.0)
+    multi_json (1.8.4)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nested_form (0.3.2)
     oauth (0.4.7)
-    oauth2 (0.8.1)
-      faraday (~> 0.8)
-      httpauth (~> 0.1)
-      jwt (~> 0.1.4)
-      multi_json (~> 1.0)
+    oauth2 (0.9.3)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 0.1.8)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
       rack (~> 1.2)
-    omniauth (1.1.4)
+    omniauth (1.2.1)
       hashie (>= 1.2, < 3)
-      rack
+      rack (~> 1.0)
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
-      omniauth (~> 1.0)
+    omniauth-oauth2 (1.1.2)
+      faraday (>= 0.8, < 0.10)
+      multi_json (~> 1.3)
+      oauth2 (~> 0.9.3)
+      omniauth (~> 1.2)
     omniauth-twitter (1.0.1)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
@@ -134,14 +136,14 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.17.0)
+    pg (0.17.1)
     pin_it (0.0.7)
       rails (>= 2.3.0)
     pnotify-rails (1.2.2)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
-    pry (0.9.12.3)
+    pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -163,20 +165,20 @@ GEM
       activesupport (= 4.0.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.0)
-    rdoc (3.12.2)
+    rake (10.1.1)
+    rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
-    sass (3.2.12)
+    sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    sdoc (0.3.20)
-      json (>= 1.1.3)
-      rdoc (~> 3.10)
+    sdoc (0.4.0)
+      json (~> 1.8)
+      rdoc (~> 4.0, < 5.0)
     slop (3.4.7)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -198,10 +200,10 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.0.0)
+    turbolinks (2.2.1)
       coffee-rails
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -212,31 +214,31 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (= 2.4.1)
-  bootstrap-datepicker-rails
-  bootstrap-wysihtml5-rails
-  cancan
-  ckeditor
+  bootstrap-datepicker-rails (= 1.1.1.9)
+  bootstrap-wysihtml5-rails (= 0.3.1.21)
+  cancan (= 1.6.10)
+  ckeditor (= 4.0.6)
   coffee-rails (~> 4.0.0)
-  devise
-  font-awesome-rails
+  devise (= 3.2.1)
+  font-awesome-rails (= 4.0.3.0)
   jbuilder (~> 1.2)
-  jquery-fileupload-rails
+  jquery-fileupload-rails (= 0.4.1)
   jquery-rails
-  less-rails
-  nested_form
-  omniauth-facebook
-  omniauth-twitter
-  paperclip
+  less-rails (= 2.3.3)
+  nested_form (= 0.3.2)
+  omniauth-facebook (= 1.4.1)
+  omniauth-twitter (= 1.0.1)
+  paperclip (= 3.5.2)
   pg
-  pin_it
-  pnotify-rails
+  pin_it (= 0.0.7)
+  pnotify-rails (= 1.2.2)
   pry
   pry-nav
   rails (= 4.0.0)
   ransack!
   sass-rails (~> 4.0.0)
   sdoc
-  therubyracer
-  therubyrhino
+  therubyracer (= 0.11.4)
+  therubyrhino (= 2.0.2)
   turbolinks
   uglifier (>= 1.3.0)
