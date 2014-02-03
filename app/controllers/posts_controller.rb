@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   include UpdateImage
   include UpdateTags
+  include Searchable
 
   def index
-    @posts = Post.all
     @title = "Green Smoothie Blog"
   end
 
@@ -19,12 +19,14 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @image = @post.build_image
+    @title = "New Post"
     render 'form'
   end
 
   def edit
     @post = Post.find(params[:id])
     @image = @post.image ||= @post.build_image
+    @title = "Edit Post"
     render 'form'
   end
 
@@ -53,6 +55,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :abstract, :user_id)
+    params.require(:post).permit(:name, :body, :abstract, :user_id)
   end
 end

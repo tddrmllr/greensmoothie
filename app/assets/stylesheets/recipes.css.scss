@@ -1,3 +1,31 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.recipe {
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-weight: 200;
+  box-shadow: 1px 1px 2px #cccccc;
+  margin-bottom: 15px;
+  a img {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  div.info {
+    padding: 10px;
+    h4 {
+      margin-top: 5px;
+    }
+  }
+  div.tags {
+    padding: 10px;
+    border-top: 1px solid #dddddd;
+  }
+}
+
+div.recipe:hover a img {
+  opacity:0.85;
+  filter:alpha(opacity=85);
+}

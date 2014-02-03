@@ -1,15 +1,20 @@
-<div class="media">
-  <a class="pull-left" href="<%= recipe_path(recipe) %>">
-  	<% if recipe.image? %>
-  		<%= image_tag recipe.image.image.url(:thumb), class: "media-object img-thumbnail" %>
-  	<% else %>
-    	<div class="well well-sm text-center" style="width: 75px; height: 75px; padding-top: 12px">
-    		<%= fa_icon "glass", style: "font-size: 50px; color: #ffffff" %>
-    	</div>
+<div class="col-sm-3 grid <%= 'size' if recipe == @recipes.first %>">
+	<div class="recipe">
+	  <a href="<%= recipe_path(recipe) %>">
+	  	<% if recipe.image? %>
+	  		<%= image_tag recipe.image.image.url(:large) %>
+	  	<% else %>
+	    	<%= image_tag "smoothie.png" %>
+	    <% end %>
+	  </a>
+	  <div class="info">
+	    <h4 ><%= link_to recipe.name, recipe %></h4>
+	    <%= recipe.description %>
+	  </div>
+	  <% if recipe.tags.any? %>
+		  <div class="tags">
+	    	<%= show_tags(recipe) %>
+	    </div>
     <% end %>
-  </a>
-  <div class="media-body">
-    <h4 class="media-heading"><%= link_to recipe.name, recipe %> &nbsp;<%= show_tags(recipe) %></h4>
-    <%= recipe.description %>
   </div>
 </div>

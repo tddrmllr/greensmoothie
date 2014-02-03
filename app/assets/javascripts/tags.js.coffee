@@ -1,5 +1,11 @@
 ready = ->
 
+  $(document).on "click", "a.tag", ->
+    search = $(".index-search")
+    search.val($(this).text())
+    search.submit()
+
+
   return unless $("#tag-field").length > 0
 
   $("a.remove-tag").on "click", ->

@@ -1,7 +1,3 @@
-<div class="index-header">
-	<h2>Recipes</h2>
-</div>
-
 <div class="row">
 	<div class="col-md-8">
 		<%= search_form_for @search, remote: true do |f| %>
@@ -17,9 +13,7 @@
 	</div>
 </div>
 <br>
-<div class="row">
-	<div class="col-md-8" id="recipes">
-		<%= render @recipes %>
-	</div>
+<div class="row" id="recipes">
+	<%= render @recipes %>
 </div>
 

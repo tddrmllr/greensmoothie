@@ -21,4 +21,5 @@
 //= require wysihtml5
 //= require jquery.Jcrop
 //= require typeahead
+//= require masonry
 //= require_tree .

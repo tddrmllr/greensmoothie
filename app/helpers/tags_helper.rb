@@ -18,7 +18,7 @@ module TagsHelper
     if taggable.tags.any?
       html = "<span class='tags'>Tags: &nbsp;</span>"
       taggable.tags.each do |t|
-        html += "<a href='/tags?name=#{t.name}' class='tag'>#{t.name}</a>"
+        html += "<a href='#tag' class='tag'>#{t.name}</a>"
       end
       html.html_safe
     end

@@ -6,12 +6,13 @@ class NutrientsController < ApplicationController
   include Searchable
 
   def index
-    # searchable
+    @title = "Nutrients"
   end
 
   def new
     @nutrient = Nutrient.new(name: params[:name])
     @elem = params[:elem]
+    @title = "New Nutrient"
     respond_with(@nutrient) do |format|
       format.js {render 'layouts/new'}
       format.html {render 'form'}
@@ -20,6 +21,7 @@ class NutrientsController < ApplicationController
 
   def edit
     @nutrient = Nutrient.find(params[:id])
+    @title = "Edit Nutrient"
     render 'form'
   end
 
@@ -43,6 +45,7 @@ class NutrientsController < ApplicationController
     @nutrient = Nutrient.find(params[:id])
     @benefits = @nutrient.benefits
     @ingredients = @nutrient.ingredients
+    @title = @nutrient.name
   end
 
   def update

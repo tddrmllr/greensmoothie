@@ -7,13 +7,14 @@ class IngredientsController < ApplicationController
   include Searchable
 
   def index
-    # searchable
+    @title = "Ingredients"
   end
 
   def new
     @ingredient = Ingredient.new(name: params[:name])
     @image = @ingredient.build_image
     @elem = params[:elem]
+    @title = "New Ingredient"
     respond_with(@ingredient) do |format|
       format.js {render 'layouts/new'}
       format.html {render 'form'}
@@ -23,6 +24,7 @@ class IngredientsController < ApplicationController
   def edit
     @ingredient = Ingredient.find(params[:id])
     @image = @ingredient.image ||= @ingredient.build_image
+    @title = "Edit Ingredient"
     render 'form'
   end
 
@@ -46,6 +48,7 @@ class IngredientsController < ApplicationController
   def show
     @ingredient = Ingredient.find(params[:id])
     @nutrients = @ingredient.nutrients
+    @title = @ingredient.name
   end
 
   def update

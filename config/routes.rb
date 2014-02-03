@@ -16,6 +16,7 @@ Greensmoothie::Application.routes.draw do
   resources :recipes do
     resources :comments
   end
+  resources :tags
   resources :users
 
 end

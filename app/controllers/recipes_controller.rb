@@ -7,13 +7,14 @@ class RecipesController < ApplicationController
   include Searchable
 
   def index
-    # searchable
+    @title = "Recipes"
   end
 
   def new
     @recipe = Recipe.new(user_id: current_user.id)
     @image = @recipe.build_image
     @measurements = @recipe.measurements
+    @title = "New Recipe"
     render 'form'
   end
 
@@ -21,6 +22,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @image = @recipe.image ||= @recipe.build_image
     @measurements = @recipe.measurements
+    @title = "Edit Recipe"
     render 'form'
   end
 
@@ -38,6 +40,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
     @comments = @recipe.comments
+    @title = @recipe.name
   end
 
   def update

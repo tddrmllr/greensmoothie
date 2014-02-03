@@ -32,4 +32,3 @@ production:
   database: greensmoothie_production
   pool: 5
   port: 5432
-  host: localhost
