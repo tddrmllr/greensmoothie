@@ -211,7 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
+  acts-as-taggable-on (= 2.4.1)
   bootstrap-datepicker-rails
   bootstrap-wysihtml5-rails
   cancan
