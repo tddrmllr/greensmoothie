@@ -6,12 +6,7 @@ ready = ->
 
   return unless $("#home").length > 0
 
-  $("body").css
-    'background': "url('/assets/home.jpg') no-repeat fixed top"
-    '-webkit-background-size': 'cover'
-    '-moz-background-size': 'cover'
-    '-o-background-size': 'cover'
-    'background-size': 'cover'
+  $("body").addClass("home")
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
