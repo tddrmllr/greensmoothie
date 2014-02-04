@@ -1,7 +1,11 @@
 Greensmoothie::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   root :to => "pages#home"
+
+  get '/posts/:id/:title', to: 'posts#show'
+  get '/recipes/:id/:title', to: 'recipes#show'
 
   resources :citations
   resources :images
@@ -12,7 +16,6 @@ Greensmoothie::Application.routes.draw do
   resources :posts do
     resources :comments
   end
-  get '/posts/:id/:title', to: 'posts#show'
   resources :recipes do
     resources :comments
   end

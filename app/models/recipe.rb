@@ -13,4 +13,8 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :measurements, allow_destroy: true
 
   validates :name, :description, presence: true
+
+  def named_url
+    self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
+  end
 end

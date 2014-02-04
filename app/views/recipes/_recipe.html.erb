@@ -1,6 +1,6 @@
 <div class="col-sm-3 grid <%= 'size' if recipe == @recipes.first %>">
 	<div class="recipe">
-	  <a href="<%= recipe_path(recipe) %>">
+	  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
 	  	<% if recipe.image? %>
 	  		<%= image_tag recipe.image.image.url(:large) %>
 	  	<% else %>
@@ -8,7 +8,7 @@
 	    <% end %>
 	  </a>
 	  <div class="info">
-	    <h4 ><%= link_to recipe.name, recipe %></h4>
+	    <h4 ><%= link_to recipe.name, recipe_path(recipe) + "/#{recipe.named_url}" %></h4>
 	    <%= recipe.description %>
 	  </div>
 	  <% if recipe.tags.any? %>
