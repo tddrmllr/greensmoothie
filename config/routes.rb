@@ -4,9 +4,6 @@ Greensmoothie::Application.routes.draw do
 
   root :to => "pages#home"
 
-  get '/posts/:id/:title', to: 'posts#show'
-  get '/recipes/:id/:title', to: 'recipes#show'
-
   resources :citations
   resources :images
   resources :ingredients
@@ -16,9 +13,11 @@ Greensmoothie::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  get '/posts/:id/:title', to: 'posts#show'
   resources :recipes do
     resources :comments
   end
+  get '/recipes/:id/:title', to: 'recipes#show'
   resources :tags
   resources :users
 
