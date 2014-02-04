@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
 
-  has_attached_file :image, :styles => { :medium => '300x300>', :thumb => '150x150>', large: '500x500' }, :default_url => '/images/:style/missing.png', processors: [:cropper]
+  has_attached_file :image, storage: :s3, s3_credentials: S3, :styles => { :medium => '300x300>', :thumb => '150x150>', large: '500x500' }, :default_url => '/images/:style/missing.png', processors: [:cropper]
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   belongs_to :imageable, polymorphic: true
