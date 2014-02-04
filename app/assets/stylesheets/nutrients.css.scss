@@ -3,16 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 a.nutrient {
-  background-color: #83e531;
-  color: #ffffff;
-  padding: 1px 10px;
-  border-radius: 2px;
   font-size: 13px;
-  font-weight: 200;
-}
-
-a.nutrient:hover {
-  background-color: darken(#83e531, 10%);
+  text-decoration: underline;
 }
 
 div.media.nutrient {

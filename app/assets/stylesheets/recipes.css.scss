@@ -3,15 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div.recipe {
-  border-radius: 6px;
+  border-radius: 0px;
   background-color: #ffffff;
   font-weight: 200;
   box-shadow: 1px 1px 2px #cccccc;
   margin-bottom: 15px;
-  a img {
+  img {
     width: 100%;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
   div.info {
     padding: 10px;
@@ -25,7 +25,19 @@ div.recipe {
   }
 }
 
-div.recipe:hover a img {
+div.recipe:hover a img.hover {
   opacity:0.85;
   filter:alpha(opacity=85);
+}
+
+h1.recipe {
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  h1.recipe {
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
 }

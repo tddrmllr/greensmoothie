@@ -1,28 +1,28 @@
 <div class="media ingredient">
   <a class="pull-left" href="<%= ingredient_path(ingredient) %>">
     <% if ingredient.image? %>
-  		<%= image_tag ingredient.image.image.url(:thumb), class: "media-object img-thumbnail" %>
+  		<%= image_tag ingredient.image.image.url(:thumb), class: "media-object" %>
   	<% else %>
-    	<div class="well well-sm text-center" style="width: 75px; height: 75px; padding-top: 14px; margin-bottom: 0px">
-    		<%= fa_icon "leaf", style: "font-size: 50px; color: #ffffff" %>
+    	<div class="well well-sm text-center" style="width: 30px; height: 30px; padding-top: 14px; margin-bottom: 0px">
+    		pic
     	</div>
     <% end %>
   </a>
   <div class="media-body">
   	<h4 class="media-heading">
   		<%= link_to ingredient.name, ingredient %>
-  		<% if @recipe %>
-	    	<% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
-	    		<small>
-		    		<%= measurement.amount %>
-		    		<%= measurement.unit %>
-		    	</small>
-	    <% end %>
   	</h4>
-  	&nbsp;
-  	<% ingredient.nutrients.each do |i| %>
-    	<%= link_to i.name, i, class: "nutrient" %>
-    <% end %>
-    <p style="margin-top: 5px"><%= strip_tags(ingredient.description).truncate(200).html_safe %></p>
+	  <span class="hidden-xs hidden-sm">
+	  	<% ingredient.nutrients.each do |i| %>
+	    	<%= link_to i.name, i, class: "nutrient" %>
+	    <% end %>
+	  </span>
   </div>
+  <% if @recipe %>
+	  <% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
+  	<div class="measurement">
+			<%= measurement.amount %>
+			<%= measurement.unit %>
+  	</div>
+	<% end %>
 </div>

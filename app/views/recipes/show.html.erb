@@ -1,35 +1,12 @@
-<div class="index-header">
-	<h2>
-		<%= @recipe.name %>
-		<% if can? :manage, @recipe %>
-			<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right" %>
-			<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger pull-right", method: :delete %>
-		<% end %>
-	</h2>
-</div>
+<h1 class="recipe"><%= @recipe.name %></h1>
 
 <div class="row">
-	<div class="col-lg-3">
-		<% if @recipe.image? %>
-			<%= image_tag @recipe.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
-		<% else %>
-			<div class="text-center">
-				<%= fa_icon "glass", style: "font-size: 150px; color: #eeeeee" %>
-			</div>
-		<% end %>
-		<div style="padding: 10px 0px">
-			<%= show_tags(@recipe) %>
-		</div>
-		<div class="alert alert-success">
-			<p><strong>Description</strong></p>
-			<%= @recipe.description %>
-		</div>
-	</div>
+	<%= render @recipe %>
 	<div class="col-lg-9">
 		<%= render @ingredients %>
 		<br>
 		<% unless @recipe.instructions.blank? %>
-			<div class="well">
+			<div class="well instructions">
 				<p><strong>Instructions</strong></p>
 				<%= @recipe.instructions.html_safe %>
 			</div>

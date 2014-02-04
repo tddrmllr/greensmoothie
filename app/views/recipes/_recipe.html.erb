@@ -1,14 +1,30 @@
-<div class="col-sm-3 grid <%= 'size' if recipe == @recipes.first %>">
+<div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>">
 	<div class="recipe">
-	  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
-	  	<% if recipe.image? %>
+		<% if !@recipes && can?(:manage, recipe) %>
+	  	<div class="row">
+	  		<div class="col-xs-12">
+					<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary col-xs-6" %>
+					<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger col-xs-6", method: :delete %>
+				</div>
+			</div>
+		<% end %>
+		<% if @recipes %>
+		  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
+		  	<% if recipe.image? %>
+		  		<%= image_tag recipe.image.image.url(:large), class: "hover" %>
+		  	<% else %>
+		    	<%= image_tag "smoothie.png", class: "hover" %>
+		    <% end %>
+		  </a>
+		<% else %>
+			<% if recipe.image? %>
 	  		<%= image_tag recipe.image.image.url(:large) %>
 	  	<% else %>
 	    	<%= image_tag "smoothie.png" %>
 	    <% end %>
-	  </a>
+	  <% end %>
 	  <div class="info">
-	    <h4 ><%= link_to recipe.name, recipe_path(recipe) + "/#{recipe.named_url}" %></h4>
+	    <%= content_tag :h4, link_to(recipe.name, recipe_path(recipe) + "/#{recipe.named_url}") if @recipes %>
 	    <%= recipe.description %>
 	  </div>
 	  <% if recipe.tags.any? %>
@@ -17,4 +33,5 @@
 	    </div>
     <% end %>
   </div>
+
 </div>

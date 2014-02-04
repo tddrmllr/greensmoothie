@@ -9,14 +9,45 @@ div.add-ingredient .col-xs-1 {
 }
 
 div.media.ingredient {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px #cccccc;
+  .media-object {
+    width: 40px;
+    height: 40px
+  }
+  .pull-left {
+    margin: 0px;
+  }
   h4 {
     display: inline;
   }
-  h4 small {
-    background-color: #eeeeee;
-    padding: 1px 5px;
-    color: #000000;
-    font-weight: bold;
-    border-radius: 3px;
+  div.media-body {
+    padding: 10px;
+    border-left: 1px solid #dddddd;
+    display: inline;
+    float: left;
+    .nutrient {
+      margin-left: 5px;
+    }
+  }
+  .measurement {
+    background-color: #5cb85c;
+    padding: 9.5px 5px;
+    color: #ffffff;
+    font-size: 16px;
+    float: right;
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div.media.ingredient div.media-body {
+    .hidden-sm, .hidden-xs {
+      display: inline !important;
+    }
+  }
+  .measurement {
+    min-width: 150px;
+    text-align: center;
   }
 }

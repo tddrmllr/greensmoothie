@@ -41,6 +41,10 @@
 @alert-success-border: rgba(0,0,0,0);
 @alert-warning-border: rgba(0,0,0,0);
 
+@border-radius-small: 0px;
+@border-radius-base: 0px;
+@border-radius-large: 0px;
+
 
 // CUSTOM VARIABLES //
 @facebook-color: #3b5998;
@@ -161,6 +165,7 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
   .default-font;
+  color: @brand-primary;
 }
 
 .btn {
@@ -211,8 +216,10 @@ nav {
 div.jumbotron {
   background-color: @brand-primary;
   color: #ffffff;
-  text-shadow: 2px 2px black;
   background-color: transparent;
+  h1 {
+    text-shadow: 2px 2px black;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -231,7 +238,8 @@ div.jumbotron {
 
 @media screen and (max-width: 768px) {
   .jumbotron h1 {
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
   }
 }
 
@@ -290,7 +298,10 @@ select, select.form-control {
 
 .well {
   border: none;
-  box-shadow: none;
+  box-shadow: 1px 1px 2px #cccccc;
+  background-color: #5cb85c;
+  color: #ffffff;
+  font-weight: 200;
 }
 
 div.media {
