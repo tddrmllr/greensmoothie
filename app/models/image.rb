@@ -11,7 +11,7 @@ class Image < ActiveRecord::Base
 
   def image_geometry(style = :original)
     @image ||= {}
-    @image[style] ||= Paperclip::Geometry.from_file(image.path(style))
+    @image[style] ||= Paperclip::Geometry.from_file(image.url(style))
   end
 
 end
