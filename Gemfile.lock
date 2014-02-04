@@ -108,6 +108,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.1)
+      rails
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
@@ -239,6 +241,7 @@ DEPENDENCIES
   jquery-fileupload-rails (= 0.4.1)
   jquery-rails
   less-rails (= 2.3.3)
+  masonry-rails
   nested_form (= 0.3.2)
   omniauth-facebook (= 1.4.1)
   omniauth-twitter (= 1.0.1)

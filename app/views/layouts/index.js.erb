@@ -1,14 +1,13 @@
 $("#<%= escape_javascript(controller_name)%>").html("<%= escape_javascript(render instance_variable_get("@#{controller_name}"))%>")
 
 <% if controller_name == "recipes" %>
-	var container, msnry;
-
-	container = document.querySelector("#recipes");
-
-	msnry = new Masonry(container, {
-	  itemSelector: ".grid",
-	  columnWidth: container.querySelector('.size')
+	$("#recipes").imagesLoaded(function() {
+	  $("#recipes").masonry({
+	    itemSelector: ".grid",
+	    columnWidth: function(containerWidth) {
+	      return containerWidth / 4;
+	    }
+	  });
+	  return $("#recipes").masonry("reload");
 	});
-
-	msnry.bindResize();
 <% end %>

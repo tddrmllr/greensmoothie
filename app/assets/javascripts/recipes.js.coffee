@@ -6,14 +6,11 @@ ready = ->
 
   return unless $("#recipes").length > 0
 
-  container = document.querySelector("#recipes")
-  msnry = new Masonry(container,
+  $("#recipes").imagesLoaded ->
+    $("#recipes").masonry
+      itemSelector: ".grid"
+      columnWidth: (containerWidth) ->
+        containerWidth / 4
 
-    # options
-    itemSelector: ".grid"
-    columnWidth: container.querySelector('.size')
-  )
-  msnry.bindResize()
-
-
+$(document).ready(ready)
 $(document).on('page:load', ready)

@@ -11,9 +11,11 @@ div.add-ingredient .col-xs-1 {
 div.media.ingredient {
   background-color: #ffffff;
   box-shadow: 1px 1px 2px #cccccc;
+  height: 50px;
   .media-object {
-    width: 40px;
-    height: 40px
+    width: 50px;
+    height: 50px;
+    padding: 5px;
   }
   .pull-left {
     margin: 0px;
@@ -23,7 +25,6 @@ div.media.ingredient {
   }
   div.media-body {
     padding: 10px;
-    border-left: 1px solid #dddddd;
     display: inline;
     float: left;
     .nutrient {

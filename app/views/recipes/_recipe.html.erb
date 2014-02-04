@@ -1,13 +1,5 @@
 <div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>">
 	<div class="recipe">
-		<% if !@recipes && can?(:manage, recipe) %>
-	  	<div class="row">
-	  		<div class="col-xs-12">
-					<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary col-xs-6" %>
-					<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger col-xs-6", method: :delete %>
-				</div>
-			</div>
-		<% end %>
 		<% if @recipes %>
 		  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
 		  	<% if recipe.image? %>
@@ -32,6 +24,14 @@
 	    	<%= show_tags(recipe) %>
 	    </div>
     <% end %>
+    <% if !@recipes && can?(:manage, recipe) %>
+	  	<div class="row">
+	  		<div class="col-xs-12">
+					<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary col-xs-6" %>
+					<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger col-xs-6", method: :delete %>
+				</div>
+			</div>
+		<% end %>
   </div>
 
 </div>
