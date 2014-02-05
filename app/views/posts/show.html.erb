@@ -1,9 +1,3 @@
-<div class="index-header">
-	<h2>
-		<%= @post.name %>
-		<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary pull-right" if can? :manage, @post %>
-	</h2>
-</div>
 <div class="row">
 	<div class="col-md-7">
 		<%= @post.body.html_safe %>
@@ -13,6 +7,8 @@
 		<div style="padding-top: 5px">
 			<%= show_tags(@post) %>
 		</div>
+		<br>
+		<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary btn-lg btn-block" if can? :manage, @post %>
 	</div>
 </div>
 <%= render 'layouts/social', sociable: @post %>

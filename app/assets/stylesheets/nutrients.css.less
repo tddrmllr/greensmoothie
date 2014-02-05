@@ -1,0 +1,48 @@
+// Place all the styles related to the nutritions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.nutrient {
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+div.well.nutrient {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 17px;
+  line-height: 27px;
+  font-family: @text-font;
+  font-weight: 400;
+  a {
+    color: @brand-primary;
+  }
+}
+
+div.media.nutrient {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px #cccccc;
+  height: 50px;
+  padding: 15px;
+  .media-object {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+  h4 {
+    display: inline;
+  }
+  a.fa {
+    display: none;
+  }
+}
+
+div.nutrient:hover {
+  a.fa {
+    display: inline;
+  }
+}
+
+div.well.food-sources {
+  font-size: 16px;
+}

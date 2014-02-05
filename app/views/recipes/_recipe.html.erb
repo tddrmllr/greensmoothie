@@ -1,37 +1,22 @@
 <div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>">
 	<div class="recipe">
-		<% if @recipes %>
-		  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
-		  	<% if recipe.image? %>
-		  		<%= image_tag recipe.image.image.url(:large), class: "hover" %>
-		  	<% else %>
-		    	<%= image_tag "smoothie.png", class: "hover" %>
-		    <% end %>
-		  </a>
-		<% else %>
-			<% if recipe.image? %>
-	  		<%= image_tag recipe.image.image.url(:large) %>
+	  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
+	  	<% if recipe.image? %>
+	  		<%= image_tag recipe.image.image.url(:large), class: "hover" %>
 	  	<% else %>
-	    	<%= image_tag "smoothie.png" %>
+	    	<%= image_tag "smoothie.png", class: "hover" %>
 	    <% end %>
-	  <% end %>
+	  </a>
 	  <div class="info">
 	    <%= content_tag :h4, link_to(recipe.name, recipe_path(recipe) + "/#{recipe.named_url}") if @recipes %>
 	    <%= recipe.description %>
 	  </div>
-	  <% if recipe.tags.any? %>
-		  <div class="tags">
-	    	<%= show_tags(recipe) %>
-	    </div>
-    <% end %>
-    <% if !@recipes && can?(:manage, recipe) %>
-	  	<div class="row">
-	  		<div class="col-xs-12">
-					<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary col-xs-6" %>
-					<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger col-xs-6", method: :delete %>
-				</div>
-			</div>
-		<% end %>
+	  <div class="ingredients">
+    	<strong>Ingredients</strong>
+    	<br>
+    	<% recipe.ingredients.each do |i| %>
+    		<%= link_to i.name, i %><%= ',' unless i == recipe.ingredients.last %>
+    	<% end %>
+    </div>
   </div>
-
 </div>

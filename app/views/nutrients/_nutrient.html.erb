@@ -7,6 +7,5 @@
 			<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
 			<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
 		<% end %>
-    <p><%= strip_tags(nutrient.description).truncate(200).html_safe %></p>
   </div>
 </div>

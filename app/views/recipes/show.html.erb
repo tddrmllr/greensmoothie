@@ -1,16 +1,40 @@
-<h1 class="recipe"><%= @recipe.name %></h1>
-
 <div class="row">
-	<%= render @recipe %>
-	<div class="col-lg-9">
-		<%= render @ingredients %>
-		<br>
-		<% unless @recipe.instructions.blank? %>
-			<div class="well instructions">
-				<p><strong>Instructions</strong></p>
-				<%= @recipe.instructions.html_safe %>
-			</div>
-		<% end %>
+	<div class="col-md-4">
+		<div class="recipe">
+			<% if @recipe.image? %>
+	  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
+	  	<% else %>
+	    	<%= image_tag "smoothie.png", class: "hover" %>
+	    <% end %>
+	    <div class="info" style="font-size: 17px">
+		    <%= @recipe.description %>
+		  </div>
+	    <% if @recipe.tags.any? %>
+			  <div class="tags">
+		    	<%= show_tags(@recipe) %>
+		    </div>
+		  <% end %>
+		  <div class="user">
+		  	<strong>Created by:</strong>
+		  	<%= @recipe.user.name %>
+		  </div>
+		</div>
+	</div>
+	<br class="visible-xs">
+	<div class="col-md-8">
+		<div id="recipe" class="well">
+			<% if can?(:manage, @recipe) %>
+				<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary btn-sm" %>
+				<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger btn-sm", method: :delete %>
+			<% end %>
+			<%= content_tag :h4, "Ingredients", class: "ribbon" %>
+			<%= render @ingredients %>
+			<% unless @recipe.instructions.blank? %>
+				<br>
+				<%= content_tag :h4, "Instructions", class: "ribbon" %>
+				<div class="instructions"><%= @recipe.instructions.html_safe %></div>
+			<% end %>
+		</div>
 		<%= render 'layouts/social', sociable: @recipe %>
 		<div class="row">
 			<div class="col-md-7">

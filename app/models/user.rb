@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_one :image, as: :imageable
 
+  validates :username, uniqueness: true
+
   def admin?
     self.role == "Admin"
   end

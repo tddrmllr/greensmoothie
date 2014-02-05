@@ -1,32 +1,30 @@
-<div class="index-header">
-	<h2>
-		<%= @nutrient.name %>
-		<%= link_to "Edit", edit_nutrient_path(@nutrient), class: "btn btn-primary pull-right" if can? :edit, Nutrient %>
-	</h2>
-</div>
-
 <div class="row">
 	<div class="col-md-8">
-		<p class="lead"><%= @nutrient.description.html_safe %></p>
-		<% if @benefits.any? %>
-			<%= content_tag :h3, "Benefits"  %>
-			<% @benefits.each do |b| %>
-				<div class="benefit well">
-			    <h4><%= b.name %></h4>
-			    <% citation = b.citation %>
-					<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
-					<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
-			    <br>
-			    <p><%= b.description %></p>
-				</div>
-		  <% end %>
-		<% end %>
+		<div class="well nutrient">
+			<%= content_tag :h4, "Summary", class: "ribbon" %>
+			<%= @nutrient.description.html_safe %>
+			<% if @benefits.any? %>
+				<br>
+				<br>
+				<%= content_tag :h4, "Benefits", class: "ribbon" %>
+				<% @benefits.each do |b| %>
+					<div class="benefit">
+				    <strong><%= b.name %><strong>
+				    <% citation = b.citation %>
+						<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
+						<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
+				    <br>
+				    <p><%= b.description %></p>
+					</div>
+			  <% end %>
+			<% end %>
+		</div>
 	</div>
-	<div class="col-md-4 lead">
+	<div class="col-md-4">
 		<% if @ingredients.any? %>
-			<div class="alert alert-success">
-				<%= content_tag :h3, "Food Sources", style: "margin: 0px 0px 5px 0px" %>
-				<ul class="list-unstyled">
+			<div class="well food-sources">
+				<%= content_tag :h4, "Food Sources", style: "margin: 0px 0px 5px 0px" %>
+				<ul class="list-square">
 					<% @ingredients.each do |i| %>
 					 <%= content_tag(:li, link_to(i.name, i)) %>
 					<% end %>

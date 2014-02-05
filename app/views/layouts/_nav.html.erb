@@ -11,15 +11,24 @@
 		  </div>
 		  <div class="collapse navbar-collapse" id="collapse">
 		    <ul class="nav navbar-nav">
-		      <li><a href="<%= recipes_path %>">Recipes</a></li>
-		      <li><a href="<%= ingredients_path %>">Ingredients</a></li>
-		      <li><a href="<%= nutrients_path %>">Nutrition</a></li>
-		      <li><a href="<%= posts_path %>">Blog</a></li>
-		      <li><a href="<%= about_path %>">About</a></li>
+		      <li class="<%= 'active' if controller_name == 'recipes' %>"><a href="<%= recipes_path %>">Recipes</a></li>
+		      <li class="<%= 'active' if controller_name == 'ingredients' %>"><a href="<%= ingredients_path %>">Ingredients</a></li>
+		      <li class="<%= 'active' if controller_name == 'nutrients' %>"><a href="<%= nutrients_path %>">Nutrition</a></li>
+		      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
+		      <li class="<%= 'active' if controller_name == 'pages' %>"><a href="<%= about_path %>">About</a></li>
 		    </ul>
 		    <% if user_signed_in? %>
-		    	<%= link_to "Signout", destroy_user_session_path, class: "btn btn-primary navbar-btn navbar-right", method: :delete %>
-		    	<%= link_to "Account", user_path(current_user), class: "btn btn-primary navbar-btn navbar-right" %>
+		    	<ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+		          <ul class="dropdown-menu">
+		            <li><%= link_to "My Recipes", user_path(current_user) %></li>
+		            <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>
+		            <li class="divider"></li>
+		            <li><%= link_to "Signout", destroy_user_session_path %></li>
+		          </ul>
+		        </li>
+		      </ul>
 		    <% else %>
 		    	<%= link_to "Login or Signup", new_user_session_path, class: "btn btn-primary navbar-btn navbar-right" %>
 		    <% end %>

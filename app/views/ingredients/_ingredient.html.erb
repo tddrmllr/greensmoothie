@@ -11,18 +11,20 @@
   <div class="media-body">
   	<h4 class="media-heading">
   		<%= link_to ingredient.name, ingredient %>
+  		<% if @recipe %>
+			  <% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
+		  	<small>
+					<%= measurement.amount %>
+					<%= measurement.unit %>
+		  	</small>
+			<% end %>
   	</h4>
-	  <span class="hidden-xs hidden-sm">
+  </div>
+  <% unless @recipe %>
+	  <span class="hidden-xs hidden-sm nutrients">
 	  	<% ingredient.nutrients.each do |i| %>
 	    	<%= link_to i.name, i, class: "nutrient" %>
 	    <% end %>
 	  </span>
-  </div>
-  <% if @recipe %>
-	  <% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
-  	<div class="measurement">
-			<%= measurement.amount %>
-			<%= measurement.unit %>
-  	</div>
-	<% end %>
+  <% end %>
 </div>

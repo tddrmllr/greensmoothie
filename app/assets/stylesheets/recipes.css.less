@@ -1,0 +1,74 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.recipe {
+  border-radius: 0px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px #cccccc;
+  img {
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  div.info {
+    padding: 10px;
+    font-family: @text-font;
+    font-size: 16px;
+    h4 {
+      margin-top: 5px;
+    }
+  }
+  div.ingredients, div.tags {
+    padding: 10px;
+    border-top: 1px solid #dddddd;
+    font-size: 13px;
+  }
+  div.user {
+    padding: 10px;
+    border-top: 1px solid #dddddd;
+    font-size: 13px;
+  }
+}
+
+div.recipe:hover a img.hover {
+  opacity:0.85;
+  filter:alpha(opacity=85);
+}
+
+#recipes {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+  .grid {
+    padding: 10px;
+  }
+}
+
+.clearfix:before, .clearfix:after {
+  content: ""; display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+div#recipe {
+  .btn {
+    display: inline;
+    float: right;
+  }
+  div.instructions {
+    font-family: @text-font;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div#recipe .btn  {
+    float: none;
+  }
+}

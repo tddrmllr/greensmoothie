@@ -6,7 +6,6 @@
 		<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
 	<% end %>
 </span>
-<br>
 <%= form_for @image, remote: true, html: {id: "img-form"} do |image| %>
 	<%= image.file_field :image,  id: "img-file" %>
 	<%= link_to "New Photo", "#", class: "btn btn-primary btn-block", id: "img-btn" %>

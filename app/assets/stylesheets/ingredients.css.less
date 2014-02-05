@@ -1,0 +1,61 @@
+// Place all the styles related to the ingredients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#ingredients {
+  background-color: #ffffff;
+  .shadow;
+  padding: 0px;
+}
+
+div.add-ingredient .col-xs-1 {
+  font-size: 20px;
+  font-weight: 200;
+  padding-top: 3px;
+}
+
+div.media.ingredient {
+  background-color: #ffffff;
+  height: 50px;
+  margin: 0px;
+  .media-object {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+  }
+  .pull-left {
+    margin: 0px;
+  }
+  h4 {
+    display: inline;
+  }
+  div.media-body {
+    padding: 15px;
+    display: inline;
+    float: left;
+  }
+  .nutrients {
+    padding: 15px;
+    float: right;
+  }
+  .measurement {
+    background-color: #5cb85c;
+    padding: 15px 5px;
+    color: #ffffff;
+    font-size: 16px;
+    float: right;
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div.media.ingredient div.media-body {
+    .hidden-sm, .hidden-xs {
+      display: inline !important;
+    }
+  }
+  .measurement {
+    min-width: 150px;
+    text-align: center;
+  }
+}
