@@ -1,15 +1,27 @@
 <div class="row">
 	<div class="col-md-3">
 		<% if @ingredient.image? %>
-			<%= image_tag @ingredient.image.image.url(:medium), class: "img-thumbnail", style: "width: 100%" %>
+			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
 		<% else %>
 			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .1" %>
 		<% end %>
+		<br>
+		<br>
 	</div>
 	<div class="col-md-9">
-		<p class="lead"><%= @ingredient.description.html_safe %></p>
-		<%= raw("<h3>Nutrients</h3>") if @nutrients.any? %>
-		<%= render @nutrients %>
+		<div class="well">
+			<% if can?(:manage, @ingredient) %>
+				<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" %>
+				<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger btn-sm manage", method: :delete %>
+			<% end %>
+			<h4 class="ribbon">Description</h4>
+			<p><%= @ingredient.description.html_safe %></p>
+			<br>
+			<%= content_tag :strong, "Nutrients:" if @nutrients.any? %>
+			<% @nutrients.each do |nutrient| %>
+				<%= link_to nutrient.name, nutrient %><%= ', ' unless nutrient == @nutrients.last %>
+			<% end %>
+		</div>
 	</div>
 </div>
 

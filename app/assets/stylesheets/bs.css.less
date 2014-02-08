@@ -176,6 +176,7 @@ h1, h2, h3, h4, h5 {
 h1 {
   margin-bottom: 20px;
   margin-top: 10px;
+  font-weight: 200;
 }
 
 @media screen and (min-width: 768px) {
@@ -332,6 +333,20 @@ select, select.form-control {
     border-width: 5px 5px;
     border-style: solid;
     border-color: #666 #666 transparent transparent;
+  }
+  .btn.manage {
+    display: inline;
+    float: right;
+  }
+  p {
+    font-family: @text-font;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .well .btn.manage  {
+    float: none;
   }
 }
 

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @image = @user.image ||= @user.build_image
+    @title = "Edit Account"
     render 'form'
   end
 

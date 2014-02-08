@@ -4,11 +4,13 @@
 		<br>
 	</div>
 	<div class="col-md-9">
-		<%= render 'layouts/errors', object: @ingredient if @ingredient.errors.any? %>
-		<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
-			<%= render 'inputs', f: f %>
-			<%= link_to "Cancel", :back, class: "btn btn-default" %>
-			<%= f.submit "Save", class: "btn btn-success" %>
+		<div class="well">
+			<%= render 'layouts/errors', object: @ingredient if @ingredient.errors.any? %>
+			<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
+				<%= render 'inputs', f: f %>
+				<%= link_to "Cancel", :back, class: "btn btn-default" %>
+				<%= f.submit "Save", class: "btn btn-success" %>
+			<% end %>
 		</div>
-	<% end %>
+	</div>
 </div>
