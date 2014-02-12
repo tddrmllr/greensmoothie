@@ -5,7 +5,6 @@
   .abstract {
     padding: 15px;
     p {
-      font-family: @text-font;
       font-size: 17px;
     }
   }
@@ -39,5 +38,24 @@
   }
   h2 {
     margin-top: 0px;
+  }
+  div.tags {
+    position: absolute;
+    right: 20px;
+    margin-top: -35px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .post .abstract {
+    padding-left: 0px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post .abstract {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }

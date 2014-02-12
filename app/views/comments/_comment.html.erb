@@ -1,14 +1,13 @@
 <div class="comment media" id="comment-<%= comment.id %>">
 	<a class="pull-left">
-    <%= thumbnail(comment.user) %>
+    <%= image_tag(comment.user.image.image.url(:thumb)) %>
   </a>
   <div class="media-body">
     <h5 class="media-heading">
-    	<%= comment.user.name %>
+    	<%= comment.user.username %>
     	<small><%= time_ago_in_words(comment.created_at) %> ago</small>
     	<%= link_to "Delete", eval("#{comment.commentable_type.downcase}_comment_path(comment.commentable_id, comment)"), method: :delete, class: "btn btn-danger btn-xs pull-right", remote: true if can? :manage, comment %>
     </h5>
-
     <%= comment.body %>
   </div>
 </div>

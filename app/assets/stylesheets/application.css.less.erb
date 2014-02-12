@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require pnotify
+ *= require pnotify.icons
+ *= require wysihtml5
+ *= require jquery.fileupload-ui
+ *= require jquery.Jcrop
+ *= require_self
+ *= require pages
+ */
+
+@import 'bs.css.less';
+
+@import 'benefits.css.less';
+@import 'comments.css.less';
+@import 'images.css.less';
+@import 'ingredients.css.less';
+@import 'nutrients.css.less';
+@import 'posts.css.less';
+@import 'recipes.css.less';
+@import 'social.css.less';
+@import 'tags.css.less';
+@import 'users.css.less';
+
+.wysihtml5-command-active, .btn.wysihtml5-command-active:hover {
+	background-color: #666666;
+}
+
+.wysihtml5-command-active i {
+	color: #ffffff;
+}
+
+div.sidebar {
+  width: 100%;
+  height: 75px;
+}
+
+#popular-recipes {
+  background: url(<%= image_path('recipes.jpg') %>) no-repeat center right;
+  background-size: 100%;
+}
+

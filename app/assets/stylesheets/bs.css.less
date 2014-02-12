@@ -17,22 +17,24 @@
 @btn-default-border: rgba(0,0,0,0);
 @btn-danger-border: rgba(0,0,0,0);
 
-@navbar-margin-bottom: 0px;
+@navbar-height: 75px;
 @navbar-default-bg: @brand-primary;
 @navbar-default-border: rgba(0,0,0,0);
 @navbar-inverse-border: rgba(0,0,0,0);
-@navbar-inverse-bg: rgba(0,0,0,0);
+@navbar-inverse-bg: rgba(94,182,82,0.85);
 @navbar-inverse-link-color: #ffffff;
 @navbar-inverse-link-hover-color: darken(@navbar-inverse-link-color, 10%);
+@navbar-inverse-link-hover-bg: rgba(131,229,49,0.75);
 @navbar-default-link-color: #ffffff;
 @navbar-default-link-hover-color: #ffffff;
-@navbar-default-brand-hover-bg: @btn-primary-bg;
 @navbar-default-brand-hover-color: #ffffff;
 @navbar-default-link-active-color: #ffffff;
 @navbar-default-link-hover-bg: @btn-primary-bg;
 @navbar-default-link-active-bg: @btn-primary-bg;
 
 @font-family-base: 'Open Sans', sans-serif;
+@font-size-base: 16px;
+@line-height-base: 1.5;
 @input-color-placeholder: #cccccc;
 @dropdown-link-hover-bg: @btn-primary-bg;
 @dropdown-link-hover-color: #ffffff;
@@ -50,9 +52,8 @@
 
 
 // CUSTOM VARIABLES //
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700);
 @facebook-color: #3b5998;
-@text-font: 'Josefin Slab', serif;
 
 // DEFAULT BOOTSTRAP STYLES //
 @import "bootstrap";
@@ -62,6 +63,10 @@
 body.cke-contents {
   font-family: 'Open Sans', sans-serif;
   padding: 20px;
+}
+
+.serif {
+  font-family: 'Josefin Slab', serif;
 }
 
 .fa-flag {
@@ -159,7 +164,6 @@ body.cke-contents {
 }
 
 body {
-  padding-top: 25px;
   padding-bottom: 25px;
   background-color: #eeeeee;
 }
@@ -169,7 +173,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5 {
-  .default-font;
+  .serif;
   color: @brand-primary;
 }
 
@@ -183,7 +187,7 @@ h1 {
   h1 {
     font-size: 50px;
     margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 5px;
   }
 }
 
@@ -213,6 +217,11 @@ div.show-header {
 }
 
 nav {
+  font-size: 16px;
+  font-weight: 200;
+  a.navbar-brand {
+    font-size: 20px;
+  }
   .navbar-inerse a.navbar-brand {
     margin-left: -15px;
   }
@@ -244,7 +253,7 @@ div.jumbotron {
     padding-right: 60px;
   }
   .jumbotron h1 {
-    font-size: 50px;
+    font-size: 60px;
   }
 }
 
@@ -339,7 +348,6 @@ select, select.form-control {
     float: right;
   }
   p {
-    font-family: @text-font;
     font-size: 17px;
   }
 }

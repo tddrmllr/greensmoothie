@@ -1,7 +1,7 @@
 <div class="post">
 	<div class="row">
 		<div class="col-md-5">
-			<% image = image_tag post.image.image.url(:thumb), style: "width: 100%" if post.image? %>
+			<% image = image_tag post.image.image.url(:medium), style: "width: 100%" if post.image? %>
 			<%= link_to image, "/posts/#{post.id}/#{post.named_url}" %>
 			<div class="overlay">
 				<%= link_to fa_icon("comments") + " Comments" + comment_count(post), "/posts/#{post.id}/#{post.named_url}#commentable" %>
@@ -12,10 +12,10 @@
 			<div class="abstract">
 				<h2><a href="/posts/<%= post.id %>/<%= post.named_url %>"><%= post.name %></a></h2>
 				<p><%= post.abstract %></p>
-				<div class="tags"><%= show_tags(post) %></div>
 			</div>
 		</div>
 	</div>
+	<div class="tags"><%= show_tags(post) %></div>
 </div>
 
 

@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_one :image, as: :imageable
 
+  default_scope order: 'created_at DESC'
+
   validates_length_of :abstract, :minimum => 50, :maximum => 400, :allow_blank => true
 
   def named_url

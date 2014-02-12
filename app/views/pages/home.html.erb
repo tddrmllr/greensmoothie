@@ -1,33 +1,35 @@
 <div class="jumbotron" style="padding: 10px 0px" id="home">
+	<br>
 	<h1>CREATE | SHARE | LIVE</h1>
 	<br>
-	<div class="row" data-no-turbolink>
-	<div class="col-md-4">
-		<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block" %>
-	</div>
-	<div class="col-md-4">
-		<%= link_to "Sign Up", new_user_session_path, class: "btn btn-primary btn-hg btn-block" %>
-	</div>
-	</div>
 </div>
 
-<div class="row">
-	<div class="col-md-8">
-		<div class="mission">
-			<blockquote>
-				<p class="lead">Learn and experiment to create your own green smoothie recipes.</p>
-			</blockquote>
-			<blockquote>
-				<p class="lead">Share your creations, and see what others are drinking too.</p>
-			</blockquote>
-			<blockquote>
-				<p class="lead">Live a healthy lifestyle by including fruits and veggies in your diet.</p>
-			</blockquote>
+<div id="overlay">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div id="mission">
+					<p class="lead">A community for green smoothie enthusiasts where you can learn, contribute, and find the freshest ideas and information.</p>
+					<div class="statement">
+						Learn and experiment to create your own green smoothie recipes
+					</div>
+					<br>
+					<div class="statement">
+						Share your creations, and see what others are drinking too
+					</div>
+					<br>
+					<div class="statement">
+						Live a healthy lifestyle by including fruits and veggies in your diet
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4" data-no-turbolink>
+				<br class="hidden-xs">
+				<br class="hidden-xs">
+				<br>
+				<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block", style: "margin-top: 10px" %>
+				<%= link_to "Sign Up", new_user_session_path, class: "btn btn-primary btn-hg btn-block" %>
+			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-

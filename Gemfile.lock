@@ -152,7 +152,6 @@ GEM
     pg (0.17.1)
     pin_it (0.0.7)
       rails (>= 2.3.0)
-    pnotify-rails (1.2.2)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -248,7 +247,6 @@ DEPENDENCIES
   paperclip (= 3.5.2)
   pg
   pin_it (= 0.0.7)
-  pnotify-rails (= 1.2.2)
   pry
   pry-nav
   rails (= 4.0.0)

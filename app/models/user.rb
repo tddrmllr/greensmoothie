@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_one :image, as: :imageable
 
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, allow_nil: true
+  validate :username_cannot_be_blank
 
   def admin?
     self.role == "Admin"
@@ -37,6 +38,12 @@ class User < ActiveRecord::Base
       update_attributes(params, *options)
     else
       super
+    end
+  end
+
+  def username_cannot_be_blank
+    if self.sign_in_count > 0 && self.username.blank?
+      errors.add(:username, "can't be blank")
     end
   end
 end

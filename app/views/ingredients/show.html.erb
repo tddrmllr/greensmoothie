@@ -10,10 +10,8 @@
 	</div>
 	<div class="col-md-9">
 		<div class="well">
-			<% if can?(:manage, @ingredient) %>
-				<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" %>
-				<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger btn-sm manage", method: :delete %>
-			<% end %>
+			<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" if can? :edit, @ingredient %>
+			<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger btn-sm manage", method: :delete if can? :manage, @ingredient %>
 			<h4 class="ribbon">Description</h4>
 			<p><%= @ingredient.description.html_safe %></p>
 			<br>

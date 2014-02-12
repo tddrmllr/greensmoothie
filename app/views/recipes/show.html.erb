@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-md-4">
-		<div class="recipe">
+		<div class="recipe" id="recipe-show">
 			<% if @recipe.image? %>
 	  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
 	  	<% else %>
 	    	<%= image_tag "smoothie.png", class: "hover" %>
 	    <% end %>
-	    <div class="info" style="font-size: 17px">
+	    <div class="info">
 		    <%= @recipe.description %>
 		  </div>
 	    <% if @recipe.tags.any? %>
@@ -16,7 +16,7 @@
 		  <% end %>
 		  <div class="user">
 		  	<strong>Created by:</strong>
-		  	<%= @recipe.user.name %>
+		  	<%= link_to @recipe.user.name, @recipe.user %>
 		  </div>
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 			<% unless @recipe.instructions.blank? %>
 				<br>
 				<%= content_tag :h4, "Instructions", class: "ribbon" unless @recipe.instructions.blank? %>
-				<p><%= @recipe.instructions.html_safe %></p>
+				<span><%= @recipe.instructions.html_safe %></span>
 			<% end %>
 		</div>
 		<%= render 'layouts/social', sociable: @recipe %>

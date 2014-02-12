@@ -3,38 +3,41 @@
 		<%= render 'images/imageable', resource: @user %>
 		<br>
 	</div>
-	<%= form_for @user do |f| %>
+	<%= form_for @user, html: {autocomplete: "off"} do |f| %>
 		<div class="col-md-9">
 			<%= f.hidden_field :image_token %>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="well">
+						<%= render 'layouts/errors', object: @user if @user.errors.any? %>
 						<div class="row">
 							<div class="col-md-6">
-								<div class="form-group">
-									<%= f.label :name %>
-									<%= f.text_field :name, class: "form-control" %>
-								</div>
 								<div class="form-group">
 									<%= f.label :email %>
 									<%= f.email_field :email, class: "form-control" %>
 								</div>
 								<div class="form-group">
 									<%= f.label :username %>
-									<%= f.text_field :username, autocomplete: "off", class: "form-control" %>
+									<%= f.text_field :username, class: "form-control" %>
 								</div>
 								<div class="form-group">
-									<%= f.label :password %>
-									<%= f.password_field :password, class: "form-control" %>
+									<%= f.label :name %>
+									<%= f.text_field :name, class: "form-control" %>
 								</div>
-								<div class="form-group">
-									<%= f.label :password_confirmation %>
-									<%= f.text_field :password_confirmation, class: "form-control" %>
-								</div>
+								<% unless params[:signup] == "true" %>
+									<div class="form-group">
+										<%= f.label :password, "Change password" %>
+										<%= f.password_field :password, class: "form-control" %>
+									</div>
+									<div class="form-group">
+										<%= f.label :password_confirmation %>
+										<%= f.text_field :password_confirmation, class: "form-control" %>
+									</div>
+								<% end %>
 							</div>
 							<div class="col-md-6">
 								<div id="emails">
-									<h4>Email Preferences</h4>
+									<h3>Email Preferences</h3>
 									<p class="lead">Want to get smoothie recipes and articles in your inbox? Sign up for our mailing list!</p>
 									<strong>Get email updates for:</strong>
 									<div class="checkbox">
@@ -51,8 +54,10 @@
 								<br>
 								<div class="row">
 									<div class="col-md-7">
-										<%= link_to raw("<i class='fa fa-twitter' style='font-size: 115%'></i> &nbsp;Login With Twitter"), user_omniauth_authorize_path(:twitter), class: "btn btn-twitter btn-block"  %>
-										<%= link_to raw("<i class='fa fa-facebook'></i> &nbsp;Login With Facebook"), user_omniauth_authorize_path(:facebook), class: "btn btn-facebook btn-block"  %>
+										<% unless params[:signup] == "true" %>
+											<%= link_to raw("<i class='fa fa-twitter' style='font-size: 115%'></i> &nbsp;Login With Twitter"), user_omniauth_authorize_path(:twitter), class: "btn btn-twitter btn-block" unless @user.provider?("twitter") %>
+											<%= link_to raw("<i class='fa fa-facebook'></i> &nbsp;Login With Facebook"), user_omniauth_authorize_path(:facebook), class: "btn btn-facebook btn-block" unless @user.provider?("facebook") %>
+										<% end %>
 									</div>
 								</div>
 							</div>

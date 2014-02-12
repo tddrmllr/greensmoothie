@@ -6,25 +6,28 @@ $(document).ready(function(){
 	    history: false,
 	    icon: false,
 	    sticker: false,
-	    closer: true
+	    closer: true,
+	    styling: 'fontawesome'
 		});
 	<% elsif flash[:notice] %>
 		$.pnotify({
 	    text: '<%= flash[:notice] %>',
-	    type: 'info',
+	    type: 'success',
 	    history: false,
 	    icon: false,
-	    sticker: false,
-	    closer: true
+			sticker: false,
+	    closer: true,
+	    styling: 'fontawesome'
 		});
 	<% elsif flash[:alert] %>
 		$.pnotify({
 	    text: '<%= flash[:alert] %>',
-	    type: 'error',
+	    type: 'notice',
 	    history: false,
 	    icon: false,
 	    sticker: false,
-	    closer: true
+	    closer: true,
+	    styling: 'fontawesome'
 		});
 	<% end %>
 });
