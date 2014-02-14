@@ -4,9 +4,10 @@ class RecipesController < ApplicationController
 
   include UpdateImage
   include UpdateTags
-  include Searchable
 
   def index
+    @search = Recipe.search(params[:q])
+    @recipes = Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(8)
     @title = "Recipes"
   end
 

@@ -99,6 +99,9 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     less (2.3.3)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
@@ -239,9 +242,11 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-fileupload-rails (= 0.4.1)
   jquery-rails
+  kaminari
   less-rails (= 2.3.3)
   masonry-rails
   nested_form (= 0.3.2)
+  nokogiri
   omniauth-facebook (= 1.4.1)
   omniauth-twitter (= 1.0.1)
   paperclip (= 3.5.2)
