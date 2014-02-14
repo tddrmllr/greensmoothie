@@ -21,6 +21,8 @@
 //= require wysihtml5
 //= require jquery.Jcrop
 //= require typeahead
+//= require spin.min
+//= require jquery.spin
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.masonry
 //= require_tree .

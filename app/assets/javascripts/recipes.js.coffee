@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-
   return unless $("#recipes").length > 0
 
   $("#recipes").imagesLoaded ->
@@ -11,11 +10,6 @@ ready = ->
       itemSelector: ".grid"
       columnWidth: (containerWidth) ->
         containerWidth / 4
-
-  $(window).scroll ->
-    if $(window).scrollTop() + $(window).height() is $(document).height()
-      $("#page").val($("#recipes").data("next"))
-      $(".index-search").parent().submit()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

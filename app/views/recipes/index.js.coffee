@@ -1,8 +1,16 @@
 <% if params[:page].to_i > 1 %>
-  $("#recipes").append("<%= escape_javascript(render @recipes) %>")
-  $("#recipes").data("next", <%= params[:page].to_i + 1 %>)
-  $("#recipes").imagesLoaded ->
-    $("#recipes").masonry "reload"
+  $(".spinner").remove()
+  unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
+    $("#recipes").append("<%= escape_javascript(render @recipes) %>")
+    $("#pages").data("next", <%= params[:page].to_i + 1 %>)
+    ids = <%= @recipes.map(&:id).to_json %>
+    elems = []
+    for i of ids
+      $("#recipe-" + ids[i]).hide()
+    $("#recipes").imagesLoaded ->
+      $("#recipes").masonry "reload"
+      for i of ids
+        $("#recipe-" + ids[i]).fadeIn()
 <% else %>
   $("#recipes").html "<%= escape_javascript(render @recipes) %>"
   $("#recipes").imagesLoaded ->
@@ -12,5 +20,5 @@
         containerWidth / 4
 
     $("#recipes").masonry "reload"
-    $("#recipes").data("next", 2)
+    $("#pages").data("next", 2)
 <% end %>

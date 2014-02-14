@@ -1,4 +1,4 @@
-<div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>">
+<div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>" id="recipe-<%= recipe.id %>">
 	<div class="recipe">
 	  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
 	  	<% if recipe.image? %>
