@@ -17,6 +17,7 @@ Greensmoothie::Application.routes.draw do
   get '/posts/:id/:title', to: 'posts#show'
   resources :recipes do
     resources :comments
+    resources :ratings
   end
   get '/recipes/:id/:title', to: 'recipes#show'
   resources :tags

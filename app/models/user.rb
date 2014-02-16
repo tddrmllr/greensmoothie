@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :comments
   has_one :image, as: :imageable
+  has_many :ratings
 
   validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, allow_nil: true
   validate :username_cannot_be_blank
@@ -31,6 +32,10 @@ class User < ActiveRecord::Base
 
   def provider?(provider)
     authentications.where(provider: provider.to_s).any?
+  end
+
+  def rating?(recipe)
+    ratings.where(recipe_id: recipe.id).any?
   end
 
   def update_with_password(params, *options)

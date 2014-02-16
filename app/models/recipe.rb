@@ -9,6 +9,7 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :measurements
   has_one :image, as: :imageable
   has_many :comments, as: :commentable
+  has_many :ratings
 
   accepts_nested_attributes_for :measurements, allow_destroy: true
 
@@ -16,5 +17,10 @@ class Recipe < ActiveRecord::Base
 
   def named_url
     self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
+  end
+
+  def update_rating
+    rating = self.ratings.sum(&:rating).to_f / self.ratings.count.to_f
+    update_column(:rating, rating)
   end
 end

@@ -1,0 +1,18 @@
+<div class="rating">
+	<% if !user_signed_in? || current_user.rating?(@recipe) %>
+		<%= render 'ratings/rating' %>
+	<% else %>
+		<%= form_for [@recipe, Rating.new], remote: true do |f| %>
+			<% i = 1 %>
+			<% taste = ["", "Yuck", "Could be better", "Okay", "Pretty good", "Loved it"] %>
+			<% 5.times do %>
+				<%= fa_icon "leaf", class: "grey rate", data: {rating: i, taste: taste[i]} %>
+				<% i += 1 %>
+				<%= f.hidden_field :rating %>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= f.hidden_field :recipe_id, value: @recipe.id %>
+			<% end %>
+		<% end %>
+		<div class="taste">How'd it taste?&nbsp;</div>
+	<% end %>
+</div>

@@ -57,3 +57,33 @@ div.recipe:hover a img.hover {
   zoom: 1;
 }
 
+div#recipe {
+  .rating {
+    float: right;
+    .taste {
+      color: #cccccc;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 200;
+    }
+    i {
+      font-size: 18px;
+    }
+    i.grey {
+      color: #cccccc;
+    }
+    i.green {
+      color: @brand-primary;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div#recipe > .rating {
+    float: none;
+    .taste {
+      text-align: left;
+    }
+  }
+}
+

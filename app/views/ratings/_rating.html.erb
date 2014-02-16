@@ -1,0 +1,12 @@
+<% if @recipe.rating.blank? %>
+	<div class="taste">Sign in to rate this smoothie</div>
+<% else %>
+	<% rating = @recipe.rating.round %>
+	<% grey = 5 - rating %>
+	<% rating.times do %>
+		<%= fa_icon "leaf", class: "green" %>
+	<% end %>
+	<% grey.times.do %>
+		<%= fa_icon "leaf", class: "grey" %>
+	<% end %>
+<% end %>
