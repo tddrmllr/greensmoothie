@@ -15,8 +15,11 @@ ready = ->
     $(".taste").text("How'd it taste?")
 
   $(document).off(".rate").on "click", ".rate", ->
-    $("#rating_rating").val $(this).data("rating"), ->
-      $("#new_rating").submit()
+    rating = $(this).data("rating")
+    recipe = $("#rating_recipe_id").val()
+    $.post '/recipes/' + recipe + '/ratings?rating=' + rating
+
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

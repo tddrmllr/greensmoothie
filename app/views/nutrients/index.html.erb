@@ -3,18 +3,13 @@
 		<%= search_form_for @search, remote: true do |f| %>
 			<%= f.text_field :name_or_description_or_benefits_name_or_benefits_description_cont, id: "ingredient-search", class: "index-search form-control input-lg", placeholder: "Search"%>
 		<% end %>
+		<br>
+		<div id="nutrients">
+			<%= render @nutrients %>
+		</div>
 	</div>
 	<div class="col-md-4">
-		<% if user_signed_in? %>
-			<%= link_to "Add Nutrient", new_nutrient_path, class: "btn btn-lg btn-primary btn-block" %>
-		<% else %>
-			<%= link_to "Signup to Contribute", new_user_session_path, class: "btn btn-lg btn-primary btn-block "%>
-		<% end %>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-md-8" id="nutrients">
-		<%= render @nutrients %>
+		<%= link_to "Add Nutrient", new_nutrient_path, class: "btn btn-lg btn-primary btn-block", style: "margin-bottom: 10px" if user_signed_in? %>
+		<%= render 'layouts/sidebar' %>
 	</div>
 </div>

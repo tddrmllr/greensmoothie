@@ -16,7 +16,6 @@
 	      <li class="<%= 'active' if controller_name == 'nutrients' %>"><a href="<%= nutrients_path %>">Nutrition</a></li>
 	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
 	      <li class="<%= 'active' if action_name == 'about' %>"><a href="<%= about_path %>">About</a></li>
-				<%= content_tag :li, link_to("Login", new_user_session_path) unless user_signed_in? %>
 				<% if user_signed_in? %>
 					<li class="dropdown <%= 'active' if controller_name == 'users' %>">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
@@ -27,6 +26,8 @@
 	            <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 	          </ul>
 	        </li>
+	      <% else %>
+	        <%= content_tag :li, link_to("Login", new_user_session_path) %>
 	      <% end %>
 	    </ul>
 	  </div>

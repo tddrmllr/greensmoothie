@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-8">
-		<div class="well">
+		<div class="well" id="post">
 			<%= image_tag @post.image.image.url(:original), style: "width: 100%" if @post.image? %>
 			<br>
 			<br>
@@ -9,8 +9,7 @@
 		</div>
 	</div>
 	<div class="col-md-4">
-		<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary btn-lg btn-block" if can? :manage, @post %>
-		<br>
+		<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary btn-lg btn-block", style: "margin-bottom: 10px" if can? :manage, @post %>
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>

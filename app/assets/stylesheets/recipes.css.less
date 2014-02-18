@@ -6,6 +6,13 @@ div.recipe {
   border-radius: 0px;
   background-color: #ffffff;
   box-shadow: 1px 1px 2px #cccccc;
+  .leaves {
+    position: absolute;
+    display: none;
+    top: 5px;
+    padding-left: 10px;
+    font-size: 30px;
+  }
   img {
     width: 100%;
     border-top-left-radius: 0px;
@@ -32,9 +39,14 @@ div.recipe {
   }
 }
 
-div.recipe:hover a img.hover {
-  opacity:0.85;
-  filter:alpha(opacity=85);
+div.recipe:hover {
+  .leaves {
+    display: block;
+  }
+  a img.hover {
+    opacity:0.85;
+    filter:alpha(opacity=85);
+  }
 }
 
 #recipes {
@@ -69,13 +81,14 @@ div#recipe {
     i {
       font-size: 18px;
     }
-    i.grey {
-      color: #cccccc;
-    }
-    i.green {
-      color: @brand-primary;
-    }
   }
+}
+
+i.grey {
+  color: #cccccc;
+}
+i.green {
+  color: @brand-primary;
 }
 
 @media screen and (max-width: 768px) {

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   include Searchable
 
   def index
-    @title = "Blog"
+    @title = "The Green Smoothie Blog"
   end
 
   def show

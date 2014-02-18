@@ -1,6 +1,10 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="well nutrient">
+			<% if can?(:manage, @nutrient) %>
+				<%= link_to "Edit", edit_nutrient_path(@nutrient), class: "btn btn-primary btn-sm manage" %>
+				<%= link_to "Delete", nutrient_path(@nutrient), class: "btn btn-danger btn-sm manage", method: :delete %>
+			<% end %>
 			<%= content_tag :h4, "Summary", class: "ribbon" %>
 			<%= @nutrient.description.html_safe %>
 			<% if @benefits.any? %>

@@ -39,13 +39,58 @@
 	color: #ffffff;
 }
 
-div.sidebar {
-  width: 100%;
-  height: 75px;
+.gradient {
+	background: -moz-linear-gradient(left,  rgba(92,184,92,1) 2%, rgba(65,130,65,1) 31%, rgba(0,0,0,0.01) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(2%,rgba(92,184,92,1)), color-stop(31%,rgba(65,130,65,1)), color-stop(100%,rgba(0,0,0,0.01))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cb85c', endColorstr='#03000000',GradientType=1 ); /* IE6-9 */
 }
 
-#popular-recipes {
-  background: url(<%= image_path('recipes.jpg') %>) no-repeat center right;
+div.sidebar {
+	font-weight: 200;
+	div:first-child, p.title {
+		font-weight: bold;
+		color: #ffffff;
+	}
+	div.overlay {
+		.gradient;
+		padding: 15px 15px 15px 0px;
+	}
+}
+
+a.sidebar {
+	border-width: 0px;
+	text-align: left;
+	font-size: @font-size-base;
+	color: #ffffff;
+	padding: 0px;
+	div.overlay {
+		.gradient;
+		padding: 15px 0px;
+	}
+	div.overlay:hover {
+		background-color: rgba(256,256,256,0.3)
+	}
+	p {
+		margin-bottom: 0px;
+	}
+}
+
+a#basics {
+	background: url(<%= image_path('recipes.jpg') %>) no-repeat center right;
+  background-size: 100%;
+}
+
+div#emails {
+	background: url(<%= image_path('fruits-veggies.jpg') %>) no-repeat center right;
+  background-size: 100%;
+}
+
+a#tools {
+	background: url(<%= image_path('blender.jpg') %>) no-repeat center right;
   background-size: 100%;
 }
 

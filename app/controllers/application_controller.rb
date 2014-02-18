@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :null_session
 
-  before_filter :username
+  before_filter :username, :popular_recipes
+
+  def popular_recipes
+    @popular_recipes ||= Recipe.order(rating: :asc).limit(3)
+  end
 
   protected
 

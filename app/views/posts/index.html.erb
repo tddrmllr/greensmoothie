@@ -3,17 +3,13 @@
 		<%= search_form_for @search, remote: true do |f| %>
 			<%= f.text_field :name_or_body_or_abstract_or_tags_name_cont, id: "post-search", class: "index-search form-control input-lg", placeholder: "Search"%>
 		<% end %>
+		<br>
+		<div id="posts">
+			<%= render @posts %>
+		</div>
 	</div>
 	<div class="col-md-4">
-		<%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg btn-block" if can? :manage, Post %>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-lg-8" id="posts">
-		<%= render @posts %>
-	</div>
-	<div class="col-lg-4">
-
+		<%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg btn-block", style: "margin-bottom: 10px" if can? :manage, Post %>
+		<%= render 'layouts/sidebar' %>
 	</div>
 </div>

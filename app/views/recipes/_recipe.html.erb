@@ -7,6 +7,7 @@
 	    	<%= image_tag "smoothie.png", class: "hover" %>
 	    <% end %>
 	  </a>
+	  <%= render 'ratings/rating', recipe: recipe %>
 	  <div class="info">
 	    <%= content_tag :h4, link_to(recipe.name, recipe_path(recipe) + "/#{recipe.named_url}") if @recipes %>
 	    <%= recipe.description %>

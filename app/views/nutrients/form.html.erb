@@ -1,14 +1,14 @@
-<h1><%= action_name.capitalize %> Nutrient</h1>
-
 <%= nested_form_for @nutrient, html: {id: "nutrient-form"} do |f| %>
 	<div class="row">
 		<div class="col-md-9">
-			<%= render 'layouts/errors', object: @nutrient if @nutrient.errors.any? %>
-			<%= render 'inputs', f: f %>
+			<div class="well">
+				<%= render 'layouts/errors', object: @nutrient if @nutrient.errors.any? %>
+				<%= render 'inputs', f: f %>
+			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="alert alert-success">
-				<h4>Cite Your Sources</h4>
+			<div class="well">
+				<h4 class="ribbon" style="width: 100%">Cite Your Sources</h4>
 				<p>Green Smoothie is meant to be a resource for people who care about what they eat, so please provide accurate information.</p>
 				<p>If you want to contribute, make sure to cite the source of the information you provide (that doesn't mean just providing a link to someone's blog).</p>
 				<p>Content on Green Smoothie is user generated and moderated, so it's up to you to keep it real.</p>
