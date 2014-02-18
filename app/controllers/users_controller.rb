@@ -34,8 +34,10 @@ class UsersController < ApplicationController
 
   def authorize
     @user = User.find(params[:id])
-    flash[:error] = "The page you attempted to view is unavailable."
-    redirect_to current_user unless can? :manage, @user
+    if cannot? :manage, @user
+      flash[:error] = "The page you attempted to view is unavailable."
+      redirect_to current_user
+    end
   end
 
   def user_params
