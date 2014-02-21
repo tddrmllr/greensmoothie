@@ -15,7 +15,7 @@
 	      <li class="<%= 'active' if controller_name == 'ingredients' %>"><a href="<%= ingredients_path %>">Ingredients</a></li>
 	      <li class="<%= 'active' if controller_name == 'nutrients' %>"><a href="<%= nutrients_path %>">Nutrition</a></li>
 	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
-	      <li class="<%= 'active' if action_name == 'about' %>"><a href="<%= about_path %>">About</a></li>
+	      <li class="<%= 'active' if action_name == 'learn' %>"><a href="<%= learn_path %>">Learn</a></li>
 				<% if user_signed_in? %>
 					<li class="dropdown <%= 'active' if controller_name == 'users' %>">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @title = "Green Smoothie"
   end
 
-  def about
-    @title = "About Green Smoothie"
+  def learn
+    @title = "What Is Green Smoothie?"
   end
 end
