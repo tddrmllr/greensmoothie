@@ -3,38 +3,48 @@
 @pinterest: #C92228;
 @google: #D34836;
 
-a.share {
+a.share, a.share:hover {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: 200;
   i {
-    font-size: 200%;
+    margin-right: 5px;
   }
 }
 
 .facebook {
-  color: @facebook;
-  :hover {
-    color: darken(@facebook, 10%);
-  }
+  background-color: @facebook;
+}
+
+.facebook:hover {
+  color: darken(@facebook, 10%);
 }
 
 .twitter {
-  color: @twitter;
-  :hover {
-    color: darken(@twitter, 10%);
-  }
+  background-color: @twitter;
+}
+
+.twitter:hover {
+  background-color: darken(@twitter, 10%);
 }
 
 .pinterest {
-  color: @pinterest;
-  :hover {
-    color: darken(@pinterest, 10%);
-  }
+  background-color: @pinterest;
+}
+
+.pinterest:hover {
+  background-color: darken(@pinterest, 10%);
 }
 
 .google {
-  color: @google;
-  :hover {
-    color: darken(@google, 10%);
-  }
+  background-color: @google;
+}
+
+.google:hover {
+  background-color: darken(@google, 10%);
 }
 
 .btn-twitter {
