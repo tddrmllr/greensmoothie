@@ -15,6 +15,7 @@
 //= require jquery-fileupload/basic
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap.dropdown
 //= require pnotify
 //= require jquery_nested_form
 //= require ckeditor/init
@@ -26,3 +27,11 @@
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.masonry
 //= require_tree .
+
+var ready;
+ready = function() {
+  $("[data-hover=\"dropdown\"]").dropdownHover({delay: 100})
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

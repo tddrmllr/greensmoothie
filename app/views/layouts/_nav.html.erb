@@ -11,14 +11,18 @@
 	  </div>
 	  <div class="collapse navbar-collapse" id="collapse">
 	    <ul class="nav navbar-nav navbar-right">
+	    	<li class=" dropdown <%= 'active' if action_name == 'basics' %>">
+	    		<a href="<%= basics_path %>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Green Smoothie Basics <b class="caret"></b></a>
+	    		<ul class="dropdown-menu">
+	        	<li><%= link_to "Making Green Smoothies", basics_path %></li>
+	          <li><%= link_to "Handy Tools & Gadgets", tools_path %></li>
+	        </ul>
+	    	</li>
 	      <li class="<%= 'active' if controller_name == 'recipes' %>"><a href="<%= recipes_path %>">Recipes</a></li>
-	      <li class="<%= 'active' if controller_name == 'ingredients' %>"><a href="<%= ingredients_path %>">Ingredients</a></li>
-	      <li class="<%= 'active' if controller_name == 'nutrients' %>"><a href="<%= nutrients_path %>">Nutrition</a></li>
 	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
-	      <li class="<%= 'active' if action_name == 'learn' %>"><a href="<%= learn_path %>">Learn</a></li>
 				<% if user_signed_in? %>
 					<li class="dropdown <%= 'active' if controller_name == 'users' %>">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Account <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><%= link_to "My Recipes", user_path(current_user) %></li>
 	            <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>

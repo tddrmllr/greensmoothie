@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   def index
     @search = Recipe.search(params[:q])
     @recipes = Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(8)
-    @title = "Recipes"
+    @title = "Green Smoothie Recipes"
   end
 
   def new

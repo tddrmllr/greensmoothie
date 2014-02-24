@@ -228,16 +228,35 @@ nav {
   a.navbar-brand {
     font-size: 20px;
   }
-  .navbar-inerse a.navbar-brand {
+  .navbar-inverse a.navbar-brand {
     margin-left: -15px;
   }
-  .navbar-inerse .navbar-toggle {
+  .navbar-inverse .navbar-toggle {
     margin-right: 0px;
   }
 }
 
 .navbar {
   border: none;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover {
+  background-color: rgba(131,229,40,0.75);
+  color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > .dropdown-menu {
+  background-color: rgba(0,0,0,0.5);
+  a {
+    color: #ffffff;
+    font-weight: 200;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top: -1px;
+  width: 100%;
+  font-size: 14px;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -318,6 +337,9 @@ select, select.form-control {
   }
   h2 {
     margin-bottom: 0px;
+  }
+  p.lead {
+    font-size: 140%;
   }
 }
 

@@ -24,6 +24,9 @@ ready = ->
       $("#page").val($("#pages").data("next"))
       $(".index-search").parent().submit()
 
+  $("[data-hover=\"dropdown\"]").click ->
+    window.location.href = $(this).attr("href")
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
