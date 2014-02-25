@@ -1,6 +1,6 @@
 <div id="social">
-	<%= link_to fa_icon("pinterest") + "Pin", "#pi", class: "pinterest share", data: {url: request.url, desc: sociable.name, media: (sociable.image.image.url(:medium) if sociable.image?), summary: (sociable.abstract if sociable.class.name == "Post")} %>
-	<%= link_to fa_icon("facebook") + "Share", "#fb", class: "facebook share", data: {url: request.url, media: (sociable.image.image.url(:medium) if sociable.image?), title: sociable.name, summary: (sociable.abstract if sociable.class.name == "Post")} %>
+	<%= link_to fa_icon("pinterest") + "Pin", "#pi", class: "pinterest share", data: {url: request.url, desc: sociable.name, media: (sociable.image.image.url(:medium) if sociable.image?), summary: (sociable.class.name == "Post" ? sociable.abstract : sociable.description)} %>
+	<%= link_to fa_icon("facebook") + "Share", "#fb", class: "facebook share", data: {url: request.url, media: (sociable.image.image.url(:medium) if sociable.image?), title: sociable.name, summary: (sociable.class.name == "Post" ? sociable.abstract : sociable.description)} %>
 	<%= link_to fa_icon("twitter") + "Tweet", "#tw", class: "twitter share", data: {url: request.url, desc: sociable.name} %>
 	<%= link_to fa_icon("google-plus") + "+1", "#go", class: "google share", data: {url: request.url} %>
 </div>

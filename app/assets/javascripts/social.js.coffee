@@ -4,7 +4,7 @@ ready = ->
   return unless $("#social").length > 0
 
   $(".facebook").click ->
-    sharer = "https://www.facebook.com/sharer/sharer.php?p[url]="
+    sharer = "https://www.facebook.com/sharer/sharer.php?s=100&p[url]="
     left = (screen.width/2)-(626/2);
     top = (screen.height/2)-(436/2);
     url = $(this).data('url')
