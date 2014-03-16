@@ -13,7 +13,7 @@ ready = ->
       valueKey: "name"
       local: ingredients
       limit: 10
-    ).off("typeahead:selected, typeahead:autocompleted").on "typeahead:selected, typeahead:autocompleted", (obj, datum, name) ->
+    ).off("typeahead:selected typeahead:autocompleted").on "typeahead:selected typeahead:autocompleted", (obj, datum, name) ->
       $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
      .off("typeahead:closed").on "typeahead:closed", ->
        name = $(this).val()

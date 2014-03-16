@@ -6,19 +6,23 @@
 		<div class="well">
 			<%= form_for @post do |f| %>
 				<%= render 'layouts/errors', object: @post if @post.errors.any? %>
+				<!--
 				<div class="row">
 					<div class="col-md-12">
 						<%= render 'tags/tag_list', taggable: @post %>
 					</div>
 				</div>
+				-->
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<%= f.label :name %>
 						<%= f.text_field :name, class: "form-control" %>
 					</div>
+					<!--
 					<div class="col-md-6">
 						<%= render 'tags/tag_form', taggable: @post %>
 					</div>
+					-->
 				</div>
 				<br>
 				<%= f.label :abstract %>

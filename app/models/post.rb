@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
 
   validates_length_of :abstract, :minimum => 50, :maximum => 400, :allow_blank => true
 
-  def named_url
+  def named_route
     self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
   end
 end

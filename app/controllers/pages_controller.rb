@@ -3,12 +3,12 @@ class PagesController < ApplicationController
     @title = "Green Smoothie"
   end
 
-  def learn
-    @title = "What Is Green Smoothie?"
-  end
-
   def basics
     @title = "Green Smoothie Basics"
+  end
+
+  def making
+    @title = "Making Green Smoothies"
   end
 
   def tools

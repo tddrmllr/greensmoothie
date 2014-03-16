@@ -8,7 +8,8 @@ module Searchable
 
   def searchable
     @search = controller_name.classify.constantize.search(params[:q])
-    instance_variable_set("@#{controller_name}", @search.result(distinct: true))
+
+    instance_variable_set("@#{controller_name}", Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(12))
     render 'layouts/index' if request.xhr?
   end
 end

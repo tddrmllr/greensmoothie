@@ -20,9 +20,10 @@ ready = ->
 
   $(window).scroll ->
     if $(window).scrollTop() + $(window).height() is $(document).height()
-      $("#pages").spin(spinner) unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
-      $("#page").val($("#pages").data("next"))
-      $(".index-search").parent().submit()
+      unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
+        $("#pages").spin(spinner)
+        $("#page").val($("#pages").data("next"))
+        $(".index-search").parent().submit()
 
   $("[data-hover=\"dropdown\"]").click ->
     window.location.href = $(this).attr("href")

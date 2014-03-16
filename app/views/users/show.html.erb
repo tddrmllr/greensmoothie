@@ -1,1 +1,19 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="well">
+			<% if current_user == @user %>
+				<% if @recipes.any? %>
+					<h4 class="ribbon">My Recipes</h4>
+				<% else %>
 
+				<% end %>
+			<% end %>
+			<% @recipes.each do |recipe| %>
+				<%= render 'recipe', recipe: recipe %>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<%= render 'layouts/sidebar' %>
+	</div>
+</div>

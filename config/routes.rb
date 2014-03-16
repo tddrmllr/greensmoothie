@@ -4,8 +4,9 @@ Greensmoothie::Application.routes.draw do
   devise_for :user, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
 
   get '/learn', to: 'pages#learn'
-  get '/green-smoothie-basics', to: 'pages#basics', as: :basics
+  get '/making-green-smoothies', to: 'pages#making', as: :making
   get '/green-smoothie-tools', to: 'pages#tools', as: :tools
+  get '/green-smoothie-basics', to: 'pages#basics', as: :basics
 
   resources :citations
   resources :images

@@ -1,4 +1,4 @@
-<div class="media ingredient">
+<div class="media ingredient" id="ingredient-<%= ingredient.id %>">
   <a class="pull-left" href="<%= ingredient_path(ingredient) %>">
     <% if ingredient.image? %>
   		<%= image_tag ingredient.image.image.url(:thumb), class: "media-object" %>

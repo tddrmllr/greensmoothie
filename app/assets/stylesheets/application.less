@@ -51,8 +51,9 @@
 
 div.sidebar {
 	font-weight: 200;
+	border-top: 5px solid #eeeeee;
 	div:first-child, p.title {
-		font-weight: bold;
+		font-weight: 400;
 		color: #ffffff;
 	}
 	div.overlay {
@@ -63,6 +64,8 @@ div.sidebar {
 
 a.sidebar {
 	border-width: 0px;
+	border-bottom: 5px solid #eeeeee;
+	margin-top: 0px;
 	text-align: left;
 	font-size: @font-size-base;
 	color: #ffffff;
@@ -77,20 +80,21 @@ a.sidebar {
 	p {
 		margin-bottom: 0px;
 	}
+	strong {
+	  font-weight: 400;
+	}
 }
 
-a#basics {
-	background: url(<%= image_path('recipes.jpg') %>) no-repeat center right;
-  background-size: 100%;
+a.sidebar:not(:first-child) {
+  border-top: 5px solid #eeeeee;
 }
 
-div#emails {
-	background: url(<%= image_path('fruits-veggies.jpg') %>) no-repeat center right;
-  background-size: 100%;
+a.sidebar + a.sidebar {
+  margin-top: 0px;
 }
 
-a#tools {
-	background: url(<%= image_path('blender.jpg') %>) no-repeat center right;
+div#sidebar {
+	background: image-url("sidebar.jpg") no-repeat center top;
   background-size: 100%;
 }
 

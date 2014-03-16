@@ -16,4 +16,4 @@
 <div id="recipes">
 	<%= render @recipes %>
 </div>
-<div class="row" id="pages" data-next="2" data-page-count="<%= (Recipe.all.count.to_f / 8.to_f).ceil %>"></div>
+<%= render 'layouts/infinite', model: Recipe, per: 8 %>

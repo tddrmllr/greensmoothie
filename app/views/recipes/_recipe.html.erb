@@ -1,6 +1,6 @@
 <div class="col-sm-3 grid <%= 'size' if @recipes && recipe == @recipes.first %>" id="recipe-<%= recipe.id %>">
 	<div class="recipe">
-	  <a href="<%= recipe_path(recipe) + "/#{recipe.named_url}" %>">
+	  <a href="<%= recipe.named_route %>">
 	  	<% if recipe.image? %>
 	  		<%= image_tag recipe.image.image.url(:large), class: "hover" %>
 	  	<% else %>
@@ -9,15 +9,13 @@
 	  </a>
 	  <%= render 'ratings/rating', recipe: recipe %>
 	  <div class="info">
-	    <%= content_tag :h4, link_to(recipe.name, recipe_path(recipe) + "/#{recipe.named_url}") if @recipes %>
+	    <%= content_tag :h4, link_to(recipe.name, recipe.named_route) if @recipes %>
 	    <%= recipe.description %>
 	  </div>
 	  <div class="ingredients">
     	<strong>Ingredients</strong>
     	<br>
-    	<% recipe.ingredients.each do |i| %>
-    		<%= link_to i.name, i %><%= ',' unless i == recipe.ingredients.last %>
-    	<% end %>
+    	<%= render 'ingredients', recipe: recipe %>
     </div>
   </div>
 </div>

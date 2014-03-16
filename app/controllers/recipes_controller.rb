@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to @recipe.named_route
     else
       @image = @recipe.image ||= @recipe.build_image
       render 'form'
@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to @recipe.named_route
       flash[:notice] = "Recipe saved successfully."
     else
       @image = @recipe.image ||= @recipe.build_image

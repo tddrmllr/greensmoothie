@@ -14,9 +14,15 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :measurements, allow_destroy: true
 
   validates :name, :description, presence: true
+  validate :has_ingredients
 
-  def named_url
-    self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
+  def named_route
+    text = self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
+    "/recipes/#{self.id}/#{text}"
+  end
+
+  def has_ingredients
+    self.errors.add(:base, "Your recipe must have at least one ingredient") unless self.measurements.collect {|x| x.ingredient }.any?
   end
 
   def update_rating

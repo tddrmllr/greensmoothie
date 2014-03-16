@@ -1,18 +1,31 @@
-<div class="visible-lg visible-md">
-	<a class="sidebar btn btn-lg btn-block" id="basics" style="margin-bottom: 10px;" href="<%= basics_path %>">
+<div class="visible-lg visible-md" id="sidebar">
+	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= basics_path %>">
+		<div class="overlay">
+			<div class="row">
+				<div class="col-xs-1 col-xs-offset-1">
+					<%= fa_icon "question-circle" %> &nbsp;
+				</div>
+				<div class="col-xs-10">
+					<strong>Green Smoothie Basics</strong>
+					<p>What is a green smoothie?</p>
+				</div>
+			</div>
+		</div>
+	</a>
+	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= making_path %>">
 		<div class="overlay">
 			<div class="row">
 				<div class="col-xs-1 col-xs-offset-1">
 					<%= fa_icon "book" %> &nbsp;
 				</div>
 				<div class="col-xs-10">
-					<strong>Green Smoothie Basics</strong>
+					<strong>Making Green Smoothies</strong>
 					<p>Simple steps to great smoothies</p>
 				</div>
 			</div>
 		</div>
 	</a>
-	<a class="sidebar btn btn-lg btn-block" id="tools" style="margin-bottom: 10px;" href="<%= tools_path %>">
+	<a class="sidebar btn btn-lg btn-block" id="tools" href="<%= tools_path %>">
 		<div class="overlay">
 			<div class="row">
 				<div class="col-xs-1 col-xs-offset-1">
@@ -32,7 +45,7 @@
 					<%= fa_icon "envelope" %> &nbsp;
 				</div>
 				<div class="col-xs-10">
-					<p class="title" style="margin-bottom: 0px">Email Updates</p>
+					<p style="margin-bottom: 0px">Email Updates</p>
 					<p style="margin-bottom: 5px; font-weight: 200">Get tips and recipes in your inbox</p>
 					<div class="input-group">
 						<input type="text" class="form-control input-sm" placeholder="Email address">

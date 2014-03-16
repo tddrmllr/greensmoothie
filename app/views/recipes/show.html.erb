@@ -9,11 +9,6 @@
 	    <div class="info">
 		    <%= @recipe.description %>
 		  </div>
-	    <% if @recipe.tags.any? %>
-			  <div class="tags">
-		    	<%= show_tags(@recipe) %>
-		    </div>
-		  <% end %>
 		  <div class="user">
 		  	<strong>Created by:</strong>
 		  	<%= link_to @recipe.user.username, @recipe.user %>
