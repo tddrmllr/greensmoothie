@@ -5,7 +5,7 @@ module HasImage
   end
 
   def image?
-    !self.image.nil? && self.image.image.url != "/images/original/missing.png"
+    !self.image.nil? && self.image.image.url != "/assets/glass.png"
   end
 
   def random_token

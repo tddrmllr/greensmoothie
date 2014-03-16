@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new(user_id: current_user.id)
-    @image = @recipe.build_image
     @measurements = @recipe.measurements
     @title = "New Recipe"
     render 'form'
@@ -21,7 +20,6 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @image = @recipe.image ||= @recipe.build_image
     @measurements = @recipe.measurements
     @title = "Edit Recipe"
     render 'form'
@@ -32,7 +30,6 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe.named_route
     else
-      @image = @recipe.image ||= @recipe.build_image
       render 'form'
     end
   end
@@ -51,7 +48,6 @@ class RecipesController < ApplicationController
       redirect_to @recipe.named_route
       flash[:notice] = "Recipe saved successfully."
     else
-      @image = @recipe.image ||= @recipe.build_image
       render 'form'
     end
   end

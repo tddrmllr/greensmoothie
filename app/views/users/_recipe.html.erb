@@ -1,14 +1,10 @@
-<div class="user-recipe row">
-	<div class="col-sm-12">
-		<div class="row">
-			<div class="col-sm-9">
-				<h3><%= link_to recipe.name, recipe.named_url %></h3> <%= render 'ratings/rating', recipe: recipe %>
-				<p>
-					<%= recipe.description %>
-					<br>
-					<span class="ingredients"><strong>Ingredients: </strong><%= render 'recipes/ingredients', recipe: recipe %></span>
-				</p>
-			</div>
-		</div>
-	</div>
+<div class="media user-recipe">
+  <a class="pull-left" href="<%= recipe.named_route %>">
+    <%= image_tag recipe.image.image.url(:thumb), class: "media-object" %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to recipe.name, recipe.named_route %></h4> <%= render 'ratings/rating', recipe: recipe %>
+    <p><%= recipe.description %></p>
+    <span class="ingredients"><strong>Ingredients: </strong><%= render 'recipes/ingredients', recipe: recipe %></span>
+  </div>
 </div>

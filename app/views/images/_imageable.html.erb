@@ -1,14 +1,16 @@
+
 <span id="img">
 	<% if resource.image? %>
-		<%= image_tag resource.image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
-		<%= link_to "Crop Photo", edit_image_path(@image, imageable_type: resource.class.name, imageable_id: resource.id), class: "btn btn-primary btn-block", remote: true %>
+		<% image = resource.image %>
+		<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
 	<% else %>
-		<%= fa_icon "picture-o", style: "font-size: 150px; color: #dddddd" %>
+		<%= image_tag "glass.png" %>
 	<% end %>
 </span>
-<%= form_for @image, remote: true, html: {id: "img-form"} do |image| %>
-	<%= image.file_field :image,  id: "img-file" %>
-	<%= link_to "New Photo", "#", class: "btn btn-primary btn-block", id: "img-btn" %>
+<%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
+	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3", id: "img-btn" %>
+	<%= image.file_field :image,  id: "img-file", class: "col-xs-6 col-xs-offset-3" %>
+
 	<%= image.hidden_field :imageable_id, value: resource.id %>
 	<%= image.hidden_field :imageable_type, value: resource.class.name %>
 	<%= image.hidden_field :token, value: resource.image_token %>

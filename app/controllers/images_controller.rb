@@ -1,12 +1,7 @@
 class ImagesController < ApplicationController
 
   def create
-    @image = Image.new(image_params)
-    if @image.save
-      render 'layouts/modal'
-    else
-      raise 'heck'
-    end
+    @image = Image.create(image_params)
   end
 
   def update

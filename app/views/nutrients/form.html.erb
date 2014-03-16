@@ -1,12 +1,14 @@
 <%= nested_form_for @nutrient, html: {id: "nutrient-form"} do |f| %>
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-8">
 			<div class="well">
 				<%= render 'layouts/errors', object: @nutrient if @nutrient.errors.any? %>
 				<%= render 'inputs', f: f %>
+				<%= link_to "Cancel", :back, class: "btn btn-default" %>
+				<%= f.submit "Save", class: "btn btn-success" %>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-4">
 			<div class="well">
 				<h4 class="ribbon" style="width: 100%">Cite Your Sources</h4>
 				<p>Green Smoothie is meant to be a resource for people who care about what they eat, so please provide accurate information.</p>
@@ -15,6 +17,4 @@
 			</div>
 		</div>
 	</div>
-	<%= link_to "Cancel", :back, class: "btn btn-default" %>
-	<%= f.submit "Save", class: "btn btn-success" %>
 <% end %>

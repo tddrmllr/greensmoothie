@@ -1,9 +1,5 @@
 <div class="row">
-	<div class="col-md-3 text-center">
-		<%= render 'images/imageable', resource: @ingredient %>
-		<br>
-	</div>
-	<div class="col-md-9">
+	<div class="col-md-8">
 		<div class="well">
 			<%= render 'layouts/errors', object: @ingredient if @ingredient.errors.any? %>
 			<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
@@ -12,5 +8,9 @@
 				<%= f.submit "Save", class: "btn btn-success" %>
 			<% end %>
 		</div>
+	</div>
+	<div class="col-md-4 text-center">
+		<%= render 'images/imageable', resource: @ingredient %>
+		<br>
 	</div>
 </div>

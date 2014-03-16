@@ -1,6 +1,7 @@
 module UpdateImage
   def self.included(base)
     base.instance_eval("after_filter :update_image, only: [:create, :update]")
+    base.instance_eval("after_filter :cleanup_images, only: [:update]")
   end
 
   private
@@ -11,5 +12,11 @@ module UpdateImage
     if image.any?
       image.first.update_attributes(imageable_id: @resource.id, imageable_type: @resource.class.name)
     end
+  end
+
+  def cleanup_images
+    @resource = instance_variable_get("@#{controller_name.singularize}")
+    images = Image.where(imageable_id: @resource.id, imageable_type: @resource.class.name).order('created_at ASC')
+    images.each {|i| i.destroy unless i == images.last}
   end
 end
