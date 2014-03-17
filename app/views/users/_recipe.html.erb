@@ -1,6 +1,10 @@
 <div class="media user-recipe">
   <a class="pull-left" href="<%= recipe.named_route %>">
-    <%= image_tag recipe.image.image.url(:thumb), class: "media-object" %>
+  	<% if recipe.image? %>
+    	<%= image_tag recipe.image.image.url(:thumb), class: "media-object" %>
+    <% else %>
+    	<%= image_tag "glass.png" %>
+    <% end %>
   </a>
   <div class="media-body">
     <h4 class="media-heading"><%= link_to recipe.name, recipe.named_route %></h4> <%= render 'ratings/rating', recipe: recipe %>

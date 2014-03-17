@@ -5,7 +5,7 @@
 			<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
 				<%= render 'inputs', f: f %>
 				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-success" %>
+				<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
 			<% end %>
 		</div>
 	</div>

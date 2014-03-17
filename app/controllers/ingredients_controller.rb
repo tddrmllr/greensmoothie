@@ -12,7 +12,6 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new(name: params[:name])
-    @image = @ingredient.build_image
     @elem = params[:elem]
     @title = "New Ingredient"
     respond_with(@ingredient) do |format|
@@ -23,7 +22,6 @@ class IngredientsController < ApplicationController
 
   def edit
     @ingredient = Ingredient.find(params[:id])
-    @image = @ingredient.image ||= @ingredient.build_image
     @title = "Edit Ingredient"
     render 'form'
   end
@@ -37,7 +35,6 @@ class IngredientsController < ApplicationController
         format.js {render 'layouts/create'}
       end
     else
-      @image = @ingredient.image ||= @ingredient.build_image
       respond_with(@ingredient) do |format|
         format.html {render 'form'}
         format.js {render 'layouts/errors'}
@@ -57,7 +54,6 @@ class IngredientsController < ApplicationController
       flash[:notice] = "Ingredient was updated."
       redirect_to @ingredient
     else
-      @image = @ingredient.image ||= @ingredient.build_image
       render 'form'
     end
   end

@@ -49,6 +49,9 @@
 @border-radius-base: 0px;
 @border-radius-large: 0px;
 
+@state-success-bg: #ffffff;
+@state-success-text: @brand-primary;
+
 
 // CUSTOM VARIABLES //
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700);
@@ -369,10 +372,18 @@ select, select.form-control {
 }
 
 div.media {
-
-  a img {
+  margin-bottom: 25px;
+  a:first-child img {
+    width: 100%;
+    height: auto;
+    min-height: 75px;
+  }
+  a:first-child {
     width: 75px;
     height: 75px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 50%;
   }
 }
 

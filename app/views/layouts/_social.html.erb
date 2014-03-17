@@ -8,12 +8,13 @@
 	<%= link_to fa_icon("twitter") + "Tweet", "#tw", class: "twitter share", data: {url: url, desc: name} %>
 	<%= link_to fa_icon("google-plus") + "+1", "#go", class: "google share", data: {url: url} %>
 </div>
-
-<%= content_for :head do %>
-	<meta property="og:title" content="<%= sociable.name %>" />
-	<meta property="og:description" content="<%= summary %>" />
-	<meta property="og:image" content="<%= image %>" />
-	<meta itemprop="name" content="<%= name %>">
-	<meta itemprop="description" content="<%= summary %>">
-	<meta itemprop="image" content="<%= image %>">
+<% if head == true %>
+	<%= content_for :head do %>
+		<meta property="og:title" content="<%= sociable.name %>" />
+		<meta property="og:description" content="<%= summary %>" />
+		<meta property="og:image" content="<%= image %>" />
+		<meta itemprop="name" content="<%= name %>">
+		<meta itemprop="description" content="<%= summary %>">
+		<meta itemprop="image" content="<%= image %>">
+	<% end %>
 <% end %>

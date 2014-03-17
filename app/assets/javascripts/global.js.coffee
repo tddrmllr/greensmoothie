@@ -1,3 +1,6 @@
+$(document).on "click", "[data-loading-text]", ->
+  $(this).button("loading")
+
 ready = ->
   $("[data-toggle='tooltip']").tooltip()
 

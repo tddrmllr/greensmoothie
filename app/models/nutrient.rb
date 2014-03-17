@@ -8,6 +8,7 @@ class Nutrient < ActiveRecord::Base
 
 
   validates :name, presence: true
+  validates_length_of :symbol, maximum: 3
 
 
 

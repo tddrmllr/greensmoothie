@@ -1,11 +1,8 @@
 <div class="media nutrient">
+	<a class="pull-left symbol" href="<%= nutrient_path(nutrient) %>">
+    <%= nutrient.symbol %>
+  </a>
   <div class="media-body">
     <h4 class="media-heading"><%= link_to nutrient.name, nutrient %></h4>
-    &nbsp;
-		<% if @ingredient %>
-			<% citation = nutrient.citers.where(citer_id: @ingredient.id, citer_type: "Ingredient").first %>
-			<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
-			<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
-		<% end %>
   </div>
 </div>

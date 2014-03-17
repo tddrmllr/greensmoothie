@@ -15,21 +15,37 @@ div.well.nutrient {
 }
 
 div.media.nutrient {
-  background-color: #ffffff;
-  padding: 13px;
-  .media-object {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
+  a.symbol {
+    background: rgb(92,184,92); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(92,184,92,1) 0%, rgba(131,229,49,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(92,184,92,1)), color-stop(100%,rgba(131,229,49,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(92,184,92,1) 0%,rgba(131,229,49,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(92,184,92,1) 0%,rgba(131,229,49,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(92,184,92,1) 0%,rgba(131,229,49,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(92,184,92,1) 0%,rgba(131,229,49,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cb85c', endColorstr='#83e531',GradientType=1 ); /* IE6-9 */
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 5px;
+  }
+  .media-body {
+    padding-top: 18px;
   }
   h4 {
-    display: inline;
-    font-family: @font-family-base;
-    font-size: 17px;
+    font-size: 25px;
   }
-  a.fa {
-    display: none;
-  }
+  a:first-child img {
+      width: 100%;
+      height: auto;
+      min-height: 60px;
+    }
+    a:first-child {
+      width: 60px;
+      height: 60px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      border-radius: 50%;
+    }
 }
 
 div.nutrient:hover {

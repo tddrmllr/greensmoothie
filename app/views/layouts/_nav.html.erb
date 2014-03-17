@@ -30,7 +30,7 @@
 	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
 				<% if user_signed_in? %>
 					<li class="dropdown <%= 'active' if controller_name == 'users' %>">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Account <b class="caret"></b></a>
+	          <a href="<%= user_path(current_user) %>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Account <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><%= link_to "My Recipes", user_path(current_user) %></li>
 	            <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>

@@ -4,11 +4,11 @@
 		<% image = resource.image %>
 		<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
 	<% else %>
-		<%= image_tag "glass.png" %>
+		<%= image_tag "#{resource.class.name.downcase}.png", class: "shadow" %>
 	<% end %>
 </span>
 <%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
-	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3", id: "img-btn" %>
+	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3", id: "img-btn", data: {loading_text: "Uploading..."} %>
 	<%= image.file_field :image,  id: "img-file", class: "col-xs-6 col-xs-offset-3" %>
 
 	<%= image.hidden_field :imageable_id, value: resource.id %>

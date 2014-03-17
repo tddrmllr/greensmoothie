@@ -3,9 +3,7 @@
     <% if ingredient.image? %>
   		<%= image_tag ingredient.image.image.url(:thumb), class: "media-object" %>
   	<% else %>
-    	<div class="well well-sm text-center" style="width: 30px; height: 30px; padding-top: 14px; margin-bottom: 0px">
-    		pic
-    	</div>
+    	<%= image_tag "ingredient.png" %>
     <% end %>
   </a>
   <div class="media-body">

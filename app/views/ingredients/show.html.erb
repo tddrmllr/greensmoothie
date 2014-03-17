@@ -3,7 +3,7 @@
 		<% if @ingredient.image? %>
 			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
 		<% else %>
-			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .1" %>
+			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .5" %>
 		<% end %>
 		<br>
 		<br>

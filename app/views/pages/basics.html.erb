@@ -1,7 +1,15 @@
+<% name = "Green Smoothie Basics" %>
+<% summary = "New to the idea of green smoothies? Well keep an open mind, because you'll totally miss out if you never give it a try!" %>
+<% image = image_path("basics.jpg") %>
+<%= render 'layouts/share', name: name, summary: summary, image: image, head: true %>
+<br>
 <div class="row">
 	<div class="col-md-8">
 		<div class="well">
 			<p class="lead">New to the idea of green smoothies? Well keep an open mind, because you'll totally miss out if you never give it a try!</p>
+			<%= image_tag "basics.jpg", style: "width: 100%" %>
+			<br>
+			<br>
 			<h4 class="ribbon" style="width: 50%">Green Smoothies</h4>
 			<p>What is a green smoothie, you ask? In short, a green smoothie is a smoothie composed primarily of fresh, leafy greens (kale, spinach, etc.), fruits, and herbs. You can also add superfoods and other ingredients to give it a little boost.</p>
 			<p>It's pretty simple. So what's the big deal? Well, green smoothies have lots of health benefits because of the fresh fruits and veggies that many people otherwise lack in their diets. Plus, you can get creative in your recipes.</p>
@@ -19,3 +27,4 @@
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>
+<%= render 'layouts/share', name: name, summary: summary, image: image, head: false %>

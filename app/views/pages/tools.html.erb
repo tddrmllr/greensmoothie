@@ -1,7 +1,15 @@
+<% name = "Green Smoothie Tools" %>
+<% summary = "Every smoothie maker needs a few tools to get started. Some can be expensive, but you can get by just fine with the cheaper options." %>
+<% image = image_path("tools.jpg") %>
+<%= render 'layouts/share', name: name, summary: summary, image: image, head: true %>
+<br>
 <div class="row">
 	<div class="col-md-8">
 		<div class="well">
 			<p class="lead">Every smoothie maker needs a few tools to get started. Some can be expensive, but you can get by just fine with the cheaper options.</p>
+			<%= image_tag "tools.jpg", style: "width: 100%" %>
+			<br>
+			<br>
 			<h4 class="ribbon">Blender</h4>
 			<p>Your blender is the most important tool, by far. It's also going to be the most expensive. But of all the expensive appliances out there, I would say that a high quality blender is definitely one of the most worthwhile. You can make soups, desserts, grind your own wheat, and tons more with a good blender. Totally worth it.</p>
 			<strong>So what's the best blender?</strong>
@@ -69,3 +77,4 @@
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>
+<%= render 'layouts/share', name: name, summary: summary, image: image, head: false %>

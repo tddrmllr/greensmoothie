@@ -61,7 +61,7 @@ class NutrientsController < ApplicationController
   private
 
   def nutrient_params
-    params.require(:nutrient).permit(:name, :description, benefits_attributes: [:name, :id, :description, :_destroy,  citation_attributes: [:citer_id, :citer_type, :citable_id, :citable_type, :_destroy, :id, :source]])
+    params.require(:nutrient).permit(:name, :description, :symbol, benefits_attributes: [:name, :id, :description, :_destroy,  citation_attributes: [:citer_id, :citer_type, :citable_id, :citable_type, :_destroy, :id, :source]])
   end
 
 end

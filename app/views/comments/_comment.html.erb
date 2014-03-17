@@ -1,6 +1,11 @@
+<% user = comment.user %>
 <div class="comment media" id="comment-<%= comment.id %>">
-	<a class="pull-left">
-    <%= image_tag(comment.user.image.image.url(:thumb)) %>
+	<a class="pull-left text-center" href="<%= user_path(user) %>">
+    <% if user.image? %>
+    	<%= image_tag(comment.user.image.image.url(:thumb)) %>
+    <% else %>
+    	<%= fa_icon "user", style: "color: #666666; font-size: 40px" %>
+    <% end %>
   </a>
   <div class="media-body">
     <h5 class="media-heading">

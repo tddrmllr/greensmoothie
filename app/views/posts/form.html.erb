@@ -28,7 +28,7 @@
 				<%= f.cktext_area :body %>
 				<br>
 				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-primary" %>
+				<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
 			<% end %>
 		</div>
 	</div>

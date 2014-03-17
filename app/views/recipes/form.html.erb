@@ -68,7 +68,7 @@
 				<br>
 				<br>
 				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-success" %>
+				<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
 			<% end %>
 		</div>
 	</div>

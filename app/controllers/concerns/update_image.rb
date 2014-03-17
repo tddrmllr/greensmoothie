@@ -17,6 +17,7 @@ module UpdateImage
   def cleanup_images
     @resource = instance_variable_get("@#{controller_name.singularize}")
     images = Image.where(imageable_id: @resource.id, imageable_type: @resource.class.name).order('created_at ASC')
-    images.each {|i| i.destroy unless i == images.last}
+    last = images.last
+    images.each {|i| i.destroy unless i == last}
   end
 end
