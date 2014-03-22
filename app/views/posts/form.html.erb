@@ -22,6 +22,9 @@
 					-->
 				</div>
 				<br>
+				<%= f.label :headline %>
+				<%= f.text_area :headline, class: "form-control", rows: 2 %>
+				<br>
 				<%= f.label :abstract %>
 				<%= f.text_area :abstract, class: "form-control", rows: 3 %>
 				<br>
@@ -29,6 +32,9 @@
 				<br>
 				<%= link_to "Cancel", :back, class: "btn btn-default" %>
 				<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
+				&nbsp;
+				<%= f.check_box :core_content %>
+				<%= f.label :core_content, "Core Content?", style: "margin-top: 6px; margin-left: 5px; position: absolute" %>
 			<% end %>
 		</div>
 	</div>

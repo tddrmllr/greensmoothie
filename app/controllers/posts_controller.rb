@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to @post.named_route
     else
       @image = @post.image ||= @post.build_image
       render 'form'
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to @post.named_route
       flash[:notice] = "Post saved successfully."
     else
       @image = @post.image ||= @post.build_image
@@ -52,9 +52,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def core_content
+    name = request.url.gsub(HOST + "/", "")
+    @post = Post.core.select {|x| x.dashed_name == name}.first
+    @comments = @post.comments
+    @title = @post.name
+    render 'show'
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:name, :body, :abstract, :user_id)
+    params.require(:post).permit(:name, :body, :abstract, :user_id, :headline, :core_content)
   end
 end
