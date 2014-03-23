@@ -175,11 +175,6 @@ body.cke-contents {
 body {
   padding-bottom: 25px;
   background-color: #eeeeee;
-  //background: image-url('bg-bw.jpg') no-repeat fixed top;
-  //-webkit-background-size: cover;
-  //-moz-background-size: cover;
-  //-o-background-size: cover;
-  //background-size: cover;
 }
 
 a:hover {
@@ -258,6 +253,7 @@ nav {
 }
 
 .navbar-inverse .navbar-nav > li > .dropdown-menu {
+  border: none;
   background-color: rgba(0,0,0,0.5);
   a {
     color: #ffffff;
@@ -265,8 +261,15 @@ nav {
   }
 }
 
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  border: none;
+  box-shadow: none;
+  a {
+    font-weight: 200;
+  }
+}
+
 .navbar-nav > li > .dropdown-menu {
-  margin-top: -1px;
   width: 100%;
   font-size: 14px;
   a {

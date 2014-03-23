@@ -4,7 +4,9 @@
 	<div class="col-md-8">
 		<div class="well" id="post">
 			<%= content_tag(:p, @post.headline, class: "lead") unless @post.headline.blank? %>
+			<div class="row" style="margin-left: -19px; margin-right: -19px">
 			<%= image_tag @post.image.image.url(:original), style: "width: 100%; margin-bottom: 15px" if @post.image? %>
+			</div>
 			<%= @post.body.html_safe %>
 			<%= show_tags(@post) %>
 		</div>

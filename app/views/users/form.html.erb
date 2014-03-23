@@ -1,10 +1,6 @@
 <div class="row">
-	<div class="col-md-3 text-center">
-		<%= render 'images/imageable', resource: @user %>
-		<br>
-	</div>
-	<%= form_for @user, html: {autocomplete: "off"} do |f| %>
-		<div class="col-md-9">
+	<div class="col-md-9">
+		<%= form_for @user, html: {autocomplete: "off"} do |f| %>
 			<%= f.hidden_field :image_token %>
 			<div class="row">
 				<div class="col-md-12">
@@ -13,12 +9,12 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<%= f.label :email %>
-									<%= f.email_field :email, class: "form-control" %>
-								</div>
-								<div class="form-group">
 									<%= f.label :username %>
 									<%= f.text_field :username, class: "form-control" %>
+								</div>
+								<div class="form-group">
+									<%= f.label :email %>
+									<%= f.email_field :email, class: "form-control" %>
 								</div>
 								<div class="form-group">
 									<%= f.label :name %>
@@ -38,17 +34,11 @@
 							<div class="col-md-6">
 								<div id="email-prefs">
 									<h3>Email Preferences</h3>
-									<p class="lead">Want to get smoothie recipes and articles in your inbox? Sign up for our mailing list!</p>
-									<strong>Get email updates for:</strong>
 									<div class="checkbox">
 								    <label>
-								      <%= f.check_box :recipes_email %> New and popular recipes
+								      <%= f.check_box :email_list %> Green Smoothie Community
 								    </label>
-								  </div>
-								  <div class="checkbox">
-								    <label>
-								      <%= f.check_box :general_email %> Blog articles and other info
-								    </label>
+								    <p>Get email updates with the freshest ideas and info from the community.</p>
 								  </div>
 								</div>
 								<br>
@@ -64,11 +54,14 @@
 						</div>
 						<br>
 						<%= link_to "Cancel", :back, class: "btn btn-default" %>
-						<%= f.submit "Save", class: "btn btn-primary" %>
+						<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
 					</div>
 				</div>
 			</div>
-		</div>
+		<% end %>
+	</div>
+	<div class="col-md-3 text-center">
+		<%= render 'images/imageable', resource: @user %>
 		<br>
-	<% end %>
+	</div>
 </div>

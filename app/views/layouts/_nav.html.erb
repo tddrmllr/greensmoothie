@@ -14,8 +14,8 @@
 	    	<li class=" dropdown <%= 'active' if action_name.in?(%w[basics making tools]) %>">
 	    		<a href="<%= basics_path %>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Green Smoothie Basics <b class="caret"></b></a>
 	    		<ul class="dropdown-menu">
-	    			<li><%= link_to "What's A Green Smoothie?", basics_path %></li>
-	        	<li><%= link_to "Making Green Smoothies", making_path %></li>
+	    			<li><%= link_to "About Green Smoothies", about_path %></li>
+	        	<li><%= link_to "Green Smoothie Basics", basics_path %></li>
 	          <li><%= link_to "Green Smoothie Tools", tools_path %></li>
 	        </ul>
 	    	</li>
@@ -27,7 +27,7 @@
 	          <li><%= link_to "Nutrition", nutrients_path %></li>
 	        </ul>
 	      </li>
-	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= posts_path %>">Blog</a></li>
+	      <li class="<%= 'active' if controller_name == 'posts' %>"><a href="<%= blog_path %>">Blog</a></li>
 				<% if user_signed_in? %>
 					<li class="dropdown <%= 'active' if controller_name == 'users' %>">
 	          <a href="<%= user_path(current_user) %>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Account <b class="caret"></b></a>

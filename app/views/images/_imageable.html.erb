@@ -4,7 +4,7 @@
 		<% image = resource.image %>
 		<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
 	<% else %>
-		<%= image_tag "#{resource.class.name.downcase}.png", class: "shadow" %>
+		<%= image_tag "#{resource.class.name.downcase}.png" %>
 	<% end %>
 </span>
 <%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>

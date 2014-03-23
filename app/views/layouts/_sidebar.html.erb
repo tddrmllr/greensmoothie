@@ -1,25 +1,25 @@
 <div class="visible-lg visible-md" id="sidebar">
-	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= basics_path %>">
+	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= about_path %>">
 		<div class="overlay">
 			<div class="row">
 				<div class="col-xs-1 col-xs-offset-1">
 					<%= fa_icon "question-circle" %> &nbsp;
 				</div>
 				<div class="col-xs-10">
-					<strong>Green Smoothie Basics</strong>
+					<strong>About Green Smoothies</strong>
 					<p>What is a green smoothie?</p>
 				</div>
 			</div>
 		</div>
 	</a>
-	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= making_path %>">
+	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= basics_path %>">
 		<div class="overlay">
 			<div class="row">
 				<div class="col-xs-1 col-xs-offset-1">
 					<%= fa_icon "cutlery" %> &nbsp;
 				</div>
 				<div class="col-xs-10">
-					<strong>Making Green Smoothies</strong>
+					<strong>Green Smoothie Basics</strong>
 					<p>Simple steps to great smoothies</p>
 				</div>
 			</div>
@@ -47,12 +47,15 @@
 				<div class="col-xs-10">
 					<p style="margin-bottom: 0px">Email Updates</p>
 					<p style="margin-bottom: 5px; font-weight: 200">Get tips and recipes in your inbox</p>
-					<div class="input-group">
-						<input type="text" class="form-control input-sm" placeholder="Email address">
-			      <span class="input-group-btn">
-			        <button class="btn btn-primary btn-sm" type="button">Submit</button>
-			      </span>
-			    </div>
+					<%= form_tag subscribe_path, remote: true do %>
+						<div class="input-group">
+							<%= text_field_tag :email, nil, class: "form-control input-sm", placeholder: "Email address" %>
+							<%= hidden_field_tag :id, "6a584771e4" %>
+				      <span class="input-group-btn">
+				      	<%= submit_tag "Submit", class: "btn btn-primary btn-sm", data: {loading_text: "Saving..."} %>
+				      </span>
+				    </div>
+			    <% end %>
 		    </div>
 			</div>
 		</div>

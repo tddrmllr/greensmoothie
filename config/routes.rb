@@ -4,7 +4,9 @@ Greensmoothie::Application.routes.draw do
   devise_for :user, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
 
   get '/learn', to: 'pages#learn'
-  get '/making-green-smoothies', to: 'posts#core_content', as: :making
+  get '/test', to: 'pages#test'
+  post '/subscribe', to: 'mailchimp#subscribe', as: :subscribe
+  get '/about-green-smoothies', to: 'posts#core_content', as: :about
   get '/green-smoothie-tools', to: 'posts#core_content', as: :tools
   get '/green-smoothie-basics', to: 'posts#core_content', as: :basics
 
@@ -17,6 +19,7 @@ Greensmoothie::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  get '/blog', to: 'posts#index', as: :blog
   get '/posts/:id/:title', to: 'posts#show'
   resources :recipes do
     resources :comments

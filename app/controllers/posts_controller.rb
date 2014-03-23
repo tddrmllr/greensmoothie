@@ -18,14 +18,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @image = @post.build_image
     @title = "New Post"
     render 'form'
   end
 
   def edit
     @post = Post.find(params[:id])
-    @image = @post.image ||= @post.build_image
     @title = "Edit Post"
     render 'form'
   end
@@ -35,7 +33,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post.named_route
     else
-      @image = @post.image ||= @post.build_image
       render 'form'
     end
   end
@@ -47,7 +44,6 @@ class PostsController < ApplicationController
       redirect_to @post.named_route
       flash[:notice] = "Post saved successfully."
     else
-      @image = @post.image ||= @post.build_image
       render 'form'
     end
   end

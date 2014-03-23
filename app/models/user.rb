@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   include HasImage
+  require 'mailchimp'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -15,6 +16,8 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, allow_nil: true
   validate :username_cannot_be_blank
+
+  before_save :update_mailchimp
 
   def admin?
     self.role == "Admin"
@@ -36,6 +39,35 @@ class User < ActiveRecord::Base
 
   def rating?(recipe)
     ratings.where(recipe_id: recipe.id).any?
+  end
+
+  def subscribe(mailchimp)
+    begin
+      mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
+    rescue Mailchimp::ListAlreadySubscribedError
+      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {email: self.changes["email"][1]} if self.email_changed?
+    rescue Mailchimp::Error => ex
+      puts "some error"
+    end
+  end
+
+  def unsubscribe(mailchimp)
+    begin
+      mailchimp.lists.unsubscribe("6a584771e4", {email: self.email})
+    rescue Mailchimp::EmailNotExistsError
+      puts "not subscribed"
+    end
+  end
+
+  def update_mailchimp
+    unless self.email.blank?
+      mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
+      if self.email_list
+        subscribe(mailchimp)
+      elsif self.email_list_changed?
+        unsubscribe(mailchimp)
+      end
+    end
   end
 
   def update_with_password(params, *options)

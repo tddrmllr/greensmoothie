@@ -6,10 +6,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @recipes = @user.recipes.page(params[:page]).per(10)
     @title = @user.username
+    flash[:notice] = "Flash it"
   end
 
   def edit
-    @image = @user.image ||= @user.build_image
     @title = "Edit Account"
     render 'form'
   end
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       flash[:notice] = "Account updated."
       redirect_to @user
     else
-      @image = @user.image ||= @user.build_image
       render 'form'
     end
   end
@@ -42,6 +41,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :recipes_email, :general_email, :image_token)
+    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :email_list, :image_token)
   end
 end
