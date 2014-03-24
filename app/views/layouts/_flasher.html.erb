@@ -8,7 +8,8 @@ $(document).ready(function(){
 	    icon: false,
 	    sticker: false,
 	    closer: true,
-	    styling: 'fontawesome'
+	    styling: 'fontawesome',
+	    stack: stack_bottomright
 		});
 	<% elsif flash[:notice] %>
 		$.pnotify({
@@ -29,7 +30,8 @@ $(document).ready(function(){
 	    icon: false,
 	    sticker: false,
 	    closer: true,
-	    styling: 'fontawesome'
+	    styling: 'fontawesome',
+	    stack: stack_bottomright
 		});
 	<% end %>
 });

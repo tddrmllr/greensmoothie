@@ -10,11 +10,6 @@ class IngredientsController < ApplicationController
     @title = "Ingredients"
   end
 
-  def list
-    params[:search] = {name_cont: params[:q]}
-    render json: Ingredient.search(params[:search]).result
-  end
-
   def new
     @ingredient = Ingredient.new(name: params[:name])
     @elem = params[:elem]

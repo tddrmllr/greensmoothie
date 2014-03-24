@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_one :image, as: :imageable
   has_many :ratings
 
-  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, allow_nil: true
+  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false
   validate :username_cannot_be_blank
 
   before_save :update_mailchimp
@@ -27,6 +27,12 @@ class User < ActiveRecord::Base
     self.email = auth.info.email if self.email.blank?
     self.name = auth.info.name if self.name.blank?
     authentications.build(provider: auth.provider, uid: auth.id)
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    login = conditions.delete(:username)
+    where(conditions).where(["lower(username) = :value", { :value => login.downcase }]).first
   end
 
   def password_required?
