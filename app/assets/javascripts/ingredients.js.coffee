@@ -11,8 +11,10 @@ ready = ->
     $(".ingredient-input").typeahead(
       name: "ingredients"
       valueKey: "name"
-      local: ingredients
-      limit: 10
+      remote:
+        url: "/ingredients?typeahead=true&q[name_cont]=%QUERY"
+        cache: false
+      limit: 5
     ).off("typeahead:selected typeahead:autocompleted").on "typeahead:selected typeahead:autocompleted", (obj, datum, name) ->
       $(this).closest("div.ingredient").find(".ingredient-id").val(datum["id"])
      .off("typeahead:closed").on "typeahead:closed", ->

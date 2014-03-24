@@ -10,8 +10,10 @@ ready = ->
     $(".nutrient-input").typeahead(
       name: "nutrients"
       valueKey: "name"
-      local: nutrients
-      limit: 10
+      remote:
+        url: "/nutrients?typeahead=true&q[name_cont]=%QUERY"
+        cache: false
+      limit: 5
     ).off("typeahead:selected typeahead:autocompleted").on "typeahead:selected typeahead:autocompleted", (obj, datum, name) ->
       $(this).closest("div.nutrient").find(".citable-id").val(datum["id"])
      .off("typeahead:closed").on "typeahead:closed", ->
