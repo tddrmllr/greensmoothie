@@ -17,9 +17,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if user.save
         flash.notice = "Signed in successfully."
         sign_in user
-        redirect_to user_path(current_user)
+        redirect_to edit_user_path(current_user, signup: true)
       else
-        flash.error = "Unable to authenticate."
+        flash[:error] = "Unable to authenticate."
         redirect_to new_user_session_path
       end
     end

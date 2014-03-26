@@ -52,7 +52,30 @@
 								</div>
 							</div>
 						</div>
-						<br>
+						<% unless @user.terms_of_service %>
+							<div class="form-group">
+								<%= f.check_box :terms_of_service %>
+								<label for="user_terms_of_service">
+									&nbsp;Agree to <%= link_to "Terms of Service", "#terms", data: {toggle: "modal"} %>
+								</label>
+							</div>
+							<div class="modal fade" id="terms">
+						    <div class="modal-dialog">
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+						          <h3 class="modal-title">Terms of Service</h3>
+						        </div>
+						        <div class="modal-body">
+						        	<%= render 'pages/terms_of_service' %>
+								    </div>
+						        <div class="modal-footer">
+						          <a data-dismiss="modal" class="btn btn-default">Close</a>
+						        </div>
+						      </div><!-- /.modal-content -->
+						    </div><!-- /.modal-dialog -->
+						  </div><!-- /.modal -->
+						<% end %>
 						<%= link_to "Cancel", :back, class: "btn btn-default" %>
 						<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
 					</div>

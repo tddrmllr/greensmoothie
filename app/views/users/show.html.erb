@@ -5,7 +5,9 @@
 				<% if @recipes.any? %>
 					<h4 class="ribbon">My Recipes</h4>
 				<% else %>
-
+					<h2>Welcome to Green Smoothie!</h2>
+					<p class="lead">Now that you're part of the community, you can start contributing! Create your own recipes, share your knowledge of ingredients and nutrition, and rate the best recipes.</p>
+					<%= link_to "Create Your Own Recipe", new_recipe_path, class: "btn btn-primary btn-lg" %>
 				<% end %>
 			<% end %>
 			<% @recipes.each do |recipe| %>

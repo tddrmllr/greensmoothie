@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @recipes = @user.recipes.page(params[:page]).per(10)
     @title = @user.username
-    flash[:notice] = "Flash it"
   end
 
   def edit
@@ -41,6 +40,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :email_list, :image_token)
+    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :email_list, :image_token, :terms_of_service)
   end
 end

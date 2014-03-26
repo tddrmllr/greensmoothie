@@ -23,7 +23,7 @@
 <body>
 	<%= render 'layouts/nav' %>
 	<div class="container">
-		<%= content_tag :h1, @title unless action_name == 'home' || controller_name == 'sessions' %>
+		<%= content_tag :h1, @title unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
 		<%= yield %>
 	</div>
 	<div id="modal-holder"></div>

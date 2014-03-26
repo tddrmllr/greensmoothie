@@ -9,10 +9,12 @@
 	    <div class="info" style="font-weight: 300">
 		    <%= @recipe.description %>
 		  </div>
-		  <div class="user">
-		  	<strong>Created by:</strong>
-		  	<%= link_to @recipe.user.username, @recipe.user %>
-		  </div>
+		  <% unless @recipe.user.nil? %>
+			  <div class="user">
+			  	<strong>Created by:</strong>
+			  	<%= link_to @recipe.user.username, @recipe.user %>
+			  </div>
+		  <% end %>
 		</div>
 	</div>
 	<br class="visible-xs">

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	var stack_bottomright = {"dir1": "down", "dir2": "left", "firstpos1": 95, "firstpos2": 25}
 	<% if flash[:error] %>
 		$.pnotify({
 	    text: '<%= flash[:error] %>',
@@ -8,8 +7,7 @@ $(document).ready(function(){
 	    icon: false,
 	    sticker: false,
 	    closer: true,
-	    styling: 'fontawesome',
-	    stack: stack_bottomright
+	    styling: 'fontawesome'
 		});
 	<% elsif flash[:notice] %>
 		$.pnotify({
@@ -19,8 +17,7 @@ $(document).ready(function(){
 	    icon: false,
 			sticker: false,
 	    closer: true,
-	    styling: 'fontawesome',
-	    stack: stack_bottomright
+	    styling: 'fontawesome'
 		});
 	<% elsif flash[:alert] %>
 		$.pnotify({
@@ -30,8 +27,7 @@ $(document).ready(function(){
 	    icon: false,
 	    sticker: false,
 	    closer: true,
-	    styling: 'fontawesome',
-	    stack: stack_bottomright
+	    styling: 'fontawesome'
 		});
 	<% end %>
 });

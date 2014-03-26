@@ -11,7 +11,7 @@ module Searchable
       instance_variable_set("@#{controller_name}", Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(12))
       if request.xhr? && params[:typeahead] == "true"
         render json: @search.result
-      else
+      elsif request.xhr?
         render 'layouts/index'
       end
   end

@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :recipes
-  has_many :authentications
-  has_many :comments
+  has_many :authentications, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_one :image, as: :imageable
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
-  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false
-  validate :username_cannot_be_blank
+  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false, allow_blank: true
+  validate :username_cannot_be_blank, :agree_to_terms_of_service
 
   before_save :update_mailchimp
 
@@ -23,10 +23,20 @@ class User < ActiveRecord::Base
     self.role == "Admin"
   end
 
+  def agree_to_terms_of_service
+    if self.sign_in_count > 0 && self.terms_of_service.blank?
+      errors.add(:base, "Please indicate that you agree to our terms of service")
+    end
+  end
+
   def apply_omniauth(auth)
     self.email = auth.info.email if self.email.blank?
     self.name = auth.info.name if self.name.blank?
     authentications.build(provider: auth.provider, uid: auth.id)
+  end
+
+  def email_required?
+    super && self.sign_in_count > 0
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
