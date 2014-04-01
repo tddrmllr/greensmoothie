@@ -1,26 +1,5 @@
 <div class="row">
-	<div class="col-md-4">
-		<div class="recipe" id="recipe-show">
-			<% if @recipe.image? %>
-	  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
-	  	<% else %>
-	    	<%= image_tag "glass.png", class: "hover" %>
-	    <% end %>
-	    <div class="info" style="font-weight: 300">
-		    <%= @recipe.description %>
-		  </div>
-		  <% unless @recipe.user.nil? %>
-			  <div class="user">
-			  	<strong>Created by:</strong>
-			  	<%= link_to @recipe.user.username, @recipe.user %>
-			  </div>
-		  <% end %>
-		</div>
-	</div>
-	<br class="visible-xs">
 	<div class="col-md-8">
-		<%= render 'layouts/social', sociable: @recipe, head: true %>
-		<br>
 		<div id="recipe" class="well">
 			<% if can?(:manage, @recipe) %>
 				<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary btn-sm manage" %>
@@ -41,6 +20,24 @@
 			<div class="col-md-7">
 				<%= render 'comments/commentable', commentable: @recipe %>
 			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="recipe" id="recipe-show">
+			<% if @recipe.image? %>
+	  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
+	  	<% else %>
+	    	<%= image_tag "glass.png", class: "hover" %>
+	    <% end %>
+	    <div class="info" style="font-weight: 300">
+		    <%= @recipe.description %>
+		  </div>
+		  <% unless @recipe.user.nil? %>
+			  <div class="user">
+			  	<strong>Created by:</strong>
+			  	<%= link_to @recipe.user.username, @recipe.user %>
+			  </div>
+		  <% end %>
 		</div>
 	</div>
 </div>

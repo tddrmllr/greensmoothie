@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  authorize_resource
+  authorize_resource except: [:core_content]
 
   include UpdateImage
   include UpdateTags

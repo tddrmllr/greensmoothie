@@ -1,13 +1,4 @@
 <div class="row">
-	<div class="col-md-3">
-		<% if @ingredient.image? %>
-			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
-		<% else %>
-			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .5" %>
-		<% end %>
-		<br>
-		<br>
-	</div>
 	<div class="col-md-9">
 		<div class="well">
 			<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" if can? :edit, @ingredient %>
@@ -20,6 +11,15 @@
 				<%= link_to nutrient.name, nutrient %><%= ', ' unless nutrient == @nutrients.last %>
 			<% end %>
 		</div>
+	</div>
+	<div class="col-md-3">
+		<% if @ingredient.image? %>
+			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
+		<% else %>
+			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .5" %>
+		<% end %>
+		<br>
+		<br>
 	</div>
 </div>
 

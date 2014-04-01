@@ -5,6 +5,9 @@ Greensmoothie::Application.routes.draw do
 
   get '/learn', to: 'pages#learn'
   get '/test', to: 'pages#test'
+  get '/terms', to: 'pages#terms', as: :terms
+  get '/privacy', to: 'pages#privacy', as: :privacy
+  get '/contact', to: 'pages#contact', as: :contact
   post '/subscribe', to: 'mailchimp#subscribe', as: :subscribe
   get '/about-green-smoothies', to: 'posts#core_content', as: :about
   get '/green-smoothie-tools', to: 'posts#core_content', as: :tools

@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title %></title>
-  <style>
-  	<%= yield :styles %>
-  </style>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>" />
-  <% if request.ssl? %>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-  <% else %>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-  <% end %>
-  <script>
-  	<%= yield :javascripts %>
-  	<%= render 'layouts/flasher', flash: flash %>
-  </script>
-  <%= yield :head %>
-</head>
-<body>
-	<%= render 'layouts/nav' %>
-	<div class="container">
-		<%= content_tag :h1, @title unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
-		<%= yield %>
-	</div>
-	<div id="modal-holder"></div>
-</body>
+	<head>
+	  <title><%= title %></title>
+	  <style>
+	  	<%= yield :styles %>
+	  </style>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	  <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>" />
+	  <% if request.ssl? %>
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	  <% else %>
+	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	  <% end %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <script>
+	  	<%= yield :javascripts %>
+	  	<%= render 'layouts/flasher', flash: flash %>
+	  </script>
+	  <%= yield :head %>
+	</head>
+	<body>
+		<%= render 'layouts/nav' %>
+		<div class="container">
+			<%= content_tag :h1, @title unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
+			<%= yield %>
+		</div>
+		<div id="modal-holder"></div>
+		<%= render 'layouts/footer' if action_name == "home" %>
+	</body>
 </html>

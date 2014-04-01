@@ -6,4 +6,12 @@ class PagesController < ApplicationController
   def test
 
   end
+
+  def terms
+    @title = "Terms of Service"
+  end
+
+  def privacy
+    @title = "Privacy Policy"
+  end
 end

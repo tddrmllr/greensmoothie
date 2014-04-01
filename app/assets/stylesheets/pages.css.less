@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@yellow: #f4ff4c;
-@yellow-hover: #d8e500;
-
 body.home {
 	background: image-url('home.jpg') no-repeat fixed top;
   -webkit-background-size: cover;
@@ -48,13 +45,6 @@ div#mission {
 .btn-hg {
   font-size: 30px;
   padding: 20px;
-  background-color: @yellow;
-  color: #333333;
-}
-
-.btn-hg:hover {
-	background-color: @yellow-hover;
-	color: #333333;
 }
 
 a.home-link {
@@ -65,10 +55,6 @@ a.home-link {
 	i {
 		margin-right: 5px;
 	}
-}
-
-a.home-link:hover {
-	color: @yellow-hover;
 }
 
 div#home {
@@ -95,6 +81,13 @@ div.jumbotron {
   .jumbotron h1 {
     font-size: 60px;
   }
+  #arrow {
+    position: absolute;
+    z-index: 999999;
+    width: 300px;
+    margin-top: 25px;
+    margin-left: -25px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -120,4 +113,16 @@ div.blenders {
 		width: 250px;
 		height: 250px;
 	}
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  a {
+    color: #ffffff;
+  }
 }

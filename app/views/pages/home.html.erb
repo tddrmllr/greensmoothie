@@ -7,6 +7,10 @@
 <div id="overlay">
 	<div class="container">
 		<div class="row">
+			<div class="col-md-4 hidden-lg" data-no-turbolink>
+				<br>
+				<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block", style: "margin-top: 10px" %>
+			</div>
 			<div class="col-md-8">
 				<div id="mission">
 					<p class="lead">A community for green smoothie enthusiasts where you can learn, contribute, and find the freshest ideas and information.</p>
@@ -23,12 +27,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4" data-no-turbolink>
+			<div class="col-md-4 visible-lg" data-no-turbolink>
 				<br>
-				<br class="hidden-xs">
-				<br class="hidden-xs">
-				<br class="hidden-xs">
-				<br class="hidden-xs">
+				<br>
+				<br>
+				<br>
+				<br>
 				<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block", style: "margin-top: 10px" %>
 			</div>
 		</div>
