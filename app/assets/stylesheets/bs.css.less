@@ -159,6 +159,12 @@ body.cke-contents {
   background-color: #eeeeee;
 }
 
+@media screen and (max-width: 768px) {
+  .btn-mobile-adj {
+    margin-top: 15px;
+  }
+}
+
 .brand-color {
   color: @brand-success;
 }
@@ -278,48 +284,6 @@ nav {
   }
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: 2px solid @input-border;
-}
-
-textarea, textarea.form-control {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: 2px solid @input-border;
-}
-
-select:hover, select:focus, select:active, select.form-control:hover, select.form-control:focus, select.form-control:active {
-  background-color: #d8d8d8;
-  color: #666666;
-  outline: none;
-}
-
-
-select, select.form-control {
-  -webkit-appearance: none;
-  position: relative;
-  height: 34px;
-  border: none;
-  font-size: 14px;
-  letter-spacing: .01em;
-  color: #666666;
-  background-color: #e0e0e0;
-  border-collapse: separate;
-  background-image: url("/assets/select-caret.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 100%;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding: 6px 12px;
-  line-height: 1.428571429;
-  vertical-align: middle;
-}
-
 .well {
   border: none;
   box-shadow: 1px 1px 2px #cccccc;
@@ -360,6 +324,10 @@ select, select.form-control {
   p.lead {
     font-size: 140%;
   }
+}
+
+.popover {
+  font-size: 13px;
 }
 
 @media screen and (max-width: 768px) {

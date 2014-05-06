@@ -4,7 +4,12 @@
 			<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" if can? :edit, @ingredient %>
 			<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger btn-sm manage", method: :delete if can? :manage, @ingredient %>
 			<h4 class="ribbon">Description</h4>
-			<p><%= @ingredient.description.html_safe %></p>
+			<% if !@ingredient.description.blank? %>
+				<p><%= @ingredient.description.html_safe %></p>
+			<% else %>
+				<br>
+				<p class='alert alert-info' style='margin-bottom: 0px'>No entry for this ingredient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
+			<% end %>
 			<br>
 			<%= content_tag :strong, "Nutrients:" if @nutrients.any? %>
 			<% @nutrients.each do |nutrient| %>
@@ -22,4 +27,3 @@
 		<br>
 	</div>
 </div>
-

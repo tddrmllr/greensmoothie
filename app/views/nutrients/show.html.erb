@@ -1,12 +1,15 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="well nutrient">
-			<% if can?(:manage, @nutrient) %>
-				<%= link_to "Edit", edit_nutrient_path(@nutrient), class: "btn btn-primary btn-sm manage" %>
-				<%= link_to "Delete", nutrient_path(@nutrient), class: "btn btn-danger btn-sm manage", method: :delete %>
-			<% end %>
+			<%= link_to "Edit", edit_nutrient_path(@nutrient), class: "btn btn-primary btn-sm manage" if can?(:edit, @nutrient) %>
+			<%= link_to "Delete", nutrient_path(@nutrient), class: "btn btn-danger btn-sm manage", method: :delete if can?(:manage, @nutrient) %>
 			<%= content_tag :h4, "Summary", class: "ribbon" %>
-			<%= @nutrient.description.html_safe %>
+			<% if !@nutrient.description.blank? %>
+				<p><%= @nutrient.description.html_safe %></p>
+			<% else %>
+				<br>
+				<p class='alert alert-info' style='margin-bottom: 0px'>No entry for this nutrient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
+			<% end %>
 			<% if @benefits.any? %>
 				<br>
 				<br>

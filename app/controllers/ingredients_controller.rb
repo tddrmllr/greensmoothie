@@ -12,12 +12,8 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new(name: params[:name])
-    @elem = params[:elem]
     @title = "New Ingredient"
-    respond_with(@ingredient) do |format|
-      format.js {render 'layouts/new'}
-      format.html {render 'form'}
-    end
+    render 'form'
   end
 
   def edit
@@ -28,17 +24,11 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    @elem = params[:elem]
+    find_or_create_nutrients
     if @ingredient.save
-      respond_with(@ingredient) do |format|
-        format.html {redirect_to @ingredient}
-        format.js {render 'layouts/create'}
-      end
+      redirect_to @ingredient
     else
-      respond_with(@ingredient) do |format|
-        format.html {render 'form'}
-        format.js {render 'layouts/errors'}
-      end
+      render 'form'
     end
   end
 
@@ -50,6 +40,7 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient = Ingredient.find(params[:id])
+    find_or_create_nutrients
     if @ingredient.update_attributes(ingredient_params)
       flash[:notice] = "Ingredient was updated."
       redirect_to @ingredient
@@ -62,5 +53,12 @@ class IngredientsController < ApplicationController
 
   def ingredient_params
     params.require(:ingredient).permit(:name, :description, citations_attributes: [:source, :citable_type, :citable_id, :id, :_destroy])
+  end
+
+  def find_or_create_nutrients
+    params[:ingredient][:citations_attributes].each do |k,v|
+      nutrient = Nutrient.find_or_create(v['nutrient']['name'].downcase)
+      params[:ingredient][:citations_attributes][k]['citable_id'] = nutrient.id
+    end
   end
 end

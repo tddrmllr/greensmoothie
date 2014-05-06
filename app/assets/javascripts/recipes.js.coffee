@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  return unless $("#recipes").length > 0
+
+  return if $("#recipes").length is 0 or $(window).width() <= 480
 
   $("#recipes").imagesLoaded ->
     $("#recipes").masonry

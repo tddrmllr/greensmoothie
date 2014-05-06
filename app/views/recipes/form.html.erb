@@ -42,7 +42,6 @@
 					  })
 					</script>
 				</div>
-				<span id="ingredients" data-array="<%= Ingredient.all.to_json %>"></span>
 				<%= label_tag :ingredients %>
 				<br>
 				<%= f.fields_for :measurements do |m| %>
@@ -77,4 +76,3 @@
 		<br>
 	</div>
 </div>
-

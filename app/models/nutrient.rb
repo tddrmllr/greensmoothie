@@ -10,6 +10,9 @@ class Nutrient < ActiveRecord::Base
   validates :name, presence: true
   validates_length_of :symbol, maximum: 3
 
-
+  def self.find_or_create(name)
+    nutrient = where(['lower(name) = ?', name]).first
+    return nutrient.blank? ? Nutrient.create(name: name.titleize) : nutrient
+  end
 
 end

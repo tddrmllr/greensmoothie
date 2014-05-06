@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	<% if flash[:error] %>
+	<% if flash[:error] || flash[:alert] %>
 		$.pnotify({
-	    text: '<%= flash[:error] %>',
+	    text: '<%= flash[:error] || flash[:alert] %>',
 	    type: 'error',
 	    history: false,
 	    icon: false,
@@ -9,9 +9,9 @@ $(document).ready(function(){
 	    closer: true,
 	    styling: 'fontawesome'
 		});
-	<% elsif flash[:notice] %>
+	<% elsif flash[:success] %>
 		$.pnotify({
-	    text: '<%= flash[:notice] %>',
+	    text: '<%= flash[:success] %>',
 	    type: 'success',
 	    history: false,
 	    icon: false,
@@ -19,9 +19,9 @@ $(document).ready(function(){
 	    closer: true,
 	    styling: 'fontawesome'
 		});
-	<% elsif flash[:alert] %>
+	<% elsif flash[:notice] %>
 		$.pnotify({
-	    text: '<%= flash[:alert] %>',
+	    text: '<%= flash[:notice] %>',
 	    type: 'notice',
 	    history: false,
 	    icon: false,

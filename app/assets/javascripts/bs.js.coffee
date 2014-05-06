@@ -1,7 +1,4 @@
-jQuery ->
-  # For performance reasons, the Tooltip and Popover data-apis are opt in.
-  # Uncomment the following line to enable tooltips
-  # $("[data-toggle='tooltip']").tooltip()
-
-  # Uncomment the following line to enable popovers
-  # $("[data-toggle='popover']").popover()
+$(document).on("mouseover", "[data-toggle='popover-hover']", ->
+  $(this).popover('show')
+).on 'mouseout', "[data-toggle='popover-hover']", ->
+  $(this).popover('hide')

@@ -1,4 +1,22 @@
 <div class="row">
+	<div class="col-md-4 visible-xs">
+		<div class="recipe" id="recipe-show">
+			<% if @recipe.image? %>
+				<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
+			<% else %>
+				<%= image_tag "glass.png", class: "hover" %>
+			<% end %>
+			<div class="info" style="font-weight: 300">
+				<%= @recipe.description %>
+			</div>
+			<% unless @recipe.user.nil? %>
+				<div class="user">
+					<strong>Created by:</strong>
+					<%= link_to @recipe.user.username, @recipe.user %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 	<div class="col-md-8">
 		<div id="recipe" class="well">
 			<% if can?(:manage, @recipe) %>
@@ -22,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 hidden-xs">
 		<div class="recipe" id="recipe-show">
 			<% if @recipe.image? %>
 	  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>

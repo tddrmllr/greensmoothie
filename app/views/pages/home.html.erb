@@ -7,7 +7,7 @@
 <div id="overlay">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 hidden-lg" data-no-turbolink>
+			<div class="col-md-4 hidden-lg hidden-md" data-no-turbolink>
 				<br>
 				<%= link_to "Find Recipes", recipes_path, class: "btn btn-primary btn-hg btn-block", style: "margin-top: 10px" %>
 			</div>
@@ -26,8 +26,9 @@
 						Live a healthy lifestyle by including fruits and veggies in your diet
 					</div>
 				</div>
+				<p class='text-center visible-xs'><%= link_to "Terms", terms_path %> | <%= link_to "Privacy", privacy_path %></p>
 			</div>
-			<div class="col-md-4 visible-lg" data-no-turbolink>
+			<div class="col-md-4 visible-lg visible-md" data-no-turbolink>
 				<br>
 				<br>
 				<br>

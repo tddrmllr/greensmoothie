@@ -4,9 +4,17 @@
 
 ready = ->
 
-  return unless $("#home").length > 0
+  if $("#home").length > 0
+    if App.mobile()
+      $("body").addClass("home-mobile")
+    else
+      $("body").addClass("home")
 
-  $("body").addClass("home")
+  unless $(document).height() > $(window).height()
+    $("footer").css
+      width: '100%'
+      position: 'absolute'
+      bottom: '5px'
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

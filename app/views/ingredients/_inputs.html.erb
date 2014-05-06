@@ -16,9 +16,8 @@
 	</script>
 </div>
 <% unless @elem %>
-	<%= label_tag :nutrients %>
+	<%= label_tag :nutrients %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'List the nutrients of this ingredient (Vitamin A, Vitamin C), and provide a link to the source where the information can be verified.'} %>
 	<br>
-	<span id="nutrients" data-array="<%= Nutrient.all.to_json %>"></span>
 	<%= f.fields_for :citations do |c| %>
 		<div class="row form-group add-ingredient">
 			<div class="col-xs-5 nutrient">

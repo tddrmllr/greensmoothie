@@ -28,15 +28,21 @@ ready = ->
         $("#page").val($("#pages").data("next"))
         $(".index-search").parent().submit()
 
-  $("[data-hover=\"dropdown\"]").click ->
-    window.location.href = $(this).attr("href")
+  unless App.mobile()
+    $("[data-hover=\"dropdown\"]").click ->
+      window.location.href = $(this).attr("href")
+
+  
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
+window.App = {}
 
+App.mobile = ->
+  mobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test navigator.userAgent
+  return mobile
 
-
-
-
-
+App.android = ->
+  mobile = (/Android/).test navigator.userAgent
+  return mobile
