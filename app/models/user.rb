@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false, allow_blank: true
   validate :username_cannot_be_blank, :agree_to_terms_of_service
 
-  before_save :update_mailchimp
+  before_save :update_mailchimp_subscription
 
   def admin?
     self.role == "Admin"
@@ -56,32 +56,48 @@ class User < ActiveRecord::Base
     ratings.where(recipe_id: recipe.id).any?
   end
 
-  def subscribe(mailchimp)
+  def subscribe_mailchimp
+    mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
-      mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
+      member = mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
     rescue Mailchimp::ListAlreadySubscribedError
-      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]} if self.email_changed?
+      puts "already subscribed"
     rescue Mailchimp::Error => ex
       puts "some error"
     end
+    self.update_column :mailchimp_member_id, member['euid']
   end
 
-  def unsubscribe(mailchimp)
+  def unsubscribe_mailchimp
+    mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
-      mailchimp.lists.unsubscribe("6a584771e4", {email: self.email})
+      mailchimp.lists.unsubscribe "6a584771e4", {email: self.email}
     rescue Mailchimp::EmailNotExistsError
       puts "not subscribed"
+    end
+    self.update_column :mailchimp_member_id, nil
+  end
+
+  def update_mailchimp_subscription
+    unless self.email.blank?
+      if self.mailchimp_member_id.nil? && self.email_list == true
+        subscribe_mailchimp
+      elsif !self.mailchimp_member_id.nil? && !self.changes[:email].blank? && self.email_list == true
+        update_mailchimp
+      elsif self.email_list == false
+        unsubscribe_mailchimp
+      end
     end
   end
 
   def update_mailchimp
-    unless self.email.blank?
-      mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
-      if self.email_list == true
-        subscribe(mailchimp)
-      elsif self.email_list == false
-        unsubscribe(mailchimp)
-      end
+    mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
+    begin
+      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]}
+    rescue Mailchimp::ListAlreadySubscribedError
+      puts "already subscribed"
+    rescue Mailchimp::Error => ex
+      puts "some error"
     end
   end
 

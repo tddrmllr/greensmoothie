@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326002712) do
+ActiveRecord::Schema.define(version: 20140508033139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20140326002712) do
     t.string   "username"
     t.boolean  "email_list",             default: true
     t.boolean  "terms_of_service",       default: false
+    t.string   "mailchimp_member_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
