@@ -19,9 +19,9 @@ $(document).ready(function(){
 	    closer: true,
 	    styling: 'fontawesome'
 		});
-	<% elsif flash[:notice] %>
+	<% elsif flash[:success] %>
 		$.pnotify({
-	    text: '<%= flash[:notice] %>',
+	    text: '<%= flash[:success] %>',
 	    type: 'notice',
 	    history: false,
 	    icon: false,

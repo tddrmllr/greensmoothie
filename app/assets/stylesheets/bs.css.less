@@ -289,7 +289,7 @@ nav {
   box-shadow: 1px 1px 2px #cccccc;
   background-color: #ffffff;
   font-weight: 200;
-  h1.ribbon, h2.ribbon, h3.ribbon, h4.ribbon, h5.ribbon {
+  .ribbon {
     position: relative;
     width: 30%;
     padding: 6px 20px 6px 40px;
@@ -300,7 +300,7 @@ nav {
     -moz-box-shadow: 1px 1px 2px #cccccc;
     box-shadow: 1px 1px 2px #cccccc;
   }
-  h1.ribbon:after, h2.ribbon:after, h3.ribbon:after, h4.ribbon:after, h5.ribbon:after {
+  .ribbon:after {
     content: ' ';
     position: absolute;
     width: 0;
@@ -337,8 +337,8 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  .well h1.ribbon, .well h2.ribbon, .well h3.ribbon, .well h4.ribbon, .well h5.ribbon  {
-    width: 80%;
+  .well .ribbon {
+    width: 95%;
   }
 }
 

@@ -42,7 +42,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     find_or_create_nutrients
     if @ingredient.update_attributes(ingredient_params)
-      flash[:notice] = "Ingredient was updated."
+      flash[:success] = "Ingredient was updated."
       redirect_to @ingredient
     else
       render 'form'

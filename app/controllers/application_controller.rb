@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       if current_user.email.blank? || current_user.username.blank? || !current_user.terms_of_service
         @user = current_user
         if @user.save
-          flash[:notice] = "Account updated."
+          flash[:success] = "Account updated."
           redirect_to @user
         else
           render 'users/form'

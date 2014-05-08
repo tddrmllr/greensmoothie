@@ -15,10 +15,10 @@ class UsersController < ApplicationController
 
   def update
     if !user_params[:password].blank? && @user.update_attributes(user_params)
-      flash[:notice] = "Account updated."
+      flash[:success] = "Account updated."
       redirect_to @user
     elsif user_params[:password].blank? && @user.update_without_password(user_params)
-      flash[:notice] = "Account updated."
+      flash[:success] = "Account updated."
       redirect_to @user
     else
       render 'form'

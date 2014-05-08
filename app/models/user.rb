@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   has_many :recipes
   has_many :authentications, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_one :image, as: :imageable
   has_many :ratings, dependent: :destroy
 
   validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false, allow_blank: true

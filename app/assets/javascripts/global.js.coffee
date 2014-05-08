@@ -32,7 +32,8 @@ ready = ->
     $("[data-hover=\"dropdown\"]").click ->
       window.location.href = $(this).attr("href")
 
-  
+  if App.mobile()
+    $(".ribbon").css 'width': "95%"
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

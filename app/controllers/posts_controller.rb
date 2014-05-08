@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     @post.update_attributes(post_params)
     if @post.save
       redirect_to @post.named_route
-      flash[:notice] = "Post saved successfully."
+      flash[:success] = "Post saved successfully."
     else
       render 'form'
     end

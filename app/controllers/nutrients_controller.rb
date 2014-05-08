@@ -51,7 +51,7 @@ class NutrientsController < ApplicationController
   def update
     @nutrient = Nutrient.find(params[:id])
     if @nutrient.update_attributes(nutrient_params)
-      flash[:notice] = "Nutrient updated"
+      flash[:success] = "Nutrient updated"
       redirect_to @nutrient
     else
       render 'form'

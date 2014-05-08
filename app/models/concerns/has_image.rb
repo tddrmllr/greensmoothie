@@ -2,6 +2,7 @@ module HasImage
   def self.included(base)
     base.instance_eval("after_initialize :random_token")
     base.instance_eval("attr_accessor :image_token")
+    base.instance_eval("has_one :image, as: :imageable")
   end
 
   def image?

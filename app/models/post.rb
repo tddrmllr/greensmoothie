@@ -5,7 +5,6 @@ class Post < ActiveRecord::Base
   end
 
   has_many :comments, as: :commentable
-  has_one :image, as: :imageable
 
   default_scope order: 'created_at DESC'
   scope :core, where(core_content: true)
