@@ -77,9 +77,9 @@ class User < ActiveRecord::Base
   def update_mailchimp
     unless self.email.blank?
       mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
-      if self.email_list
+      if self.email_list == true
         subscribe(mailchimp)
-      elsif self.email_list_changed?
+      elsif self.email_list == false
         unsubscribe(mailchimp)
       end
     end
