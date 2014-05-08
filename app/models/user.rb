@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
     begin
       mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
     rescue Mailchimp::ListAlreadySubscribedError
-      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {email: self.changes["email"][1]} if self.email_changed?
+      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]} if self.email_changed?
     rescue Mailchimp::Error => ex
       puts "some error"
     end
