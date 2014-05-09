@@ -2,6 +2,7 @@
 	<div class="col-md-9">
 		<div class="well" id="post-form">
 			<%= form_for @post do |f| %>
+				<%= f.hidden_field :image_token %>
 				<%= render 'layouts/errors', object: @post if @post.errors.any? %>
 				<!--
 				<div class="row">
