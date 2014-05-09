@@ -1,4 +1,7 @@
 $("#img, #img-mobile").html("<%= escape_javascript(render 'img') %>")
-$("#modal-holder").html("<%= escape_javascript(render('form')) %>")
-$("#<%= escape_javascript(controller_name.singularize.dasherize) %>-modal").modal('show')
 $("#img-btn, #img-trigger").button("reset")
+<% unless mobile_device? %>
+  $("#modal-holder").html("<%= escape_javascript(render('form')) %>")
+  $("#<%= escape_javascript(controller_name.singularize.dasherize) %>-modal").modal('show')
+<% end %>
+<%= render 'layouts/flasher' %>

@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.create(image_params)
+    flash.now[:success] = "Photo updated successfully."
   end
 
   def update
@@ -10,6 +11,7 @@ class ImagesController < ApplicationController
     if @image.cropping?
       @image.image.reprocess!
     end
+    flash.now[:success] = "Photo updated successfully."
   end
 
   def edit

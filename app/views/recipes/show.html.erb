@@ -51,7 +51,7 @@
 	    <div class="info" style="font-weight: 300">
 		    <%= @recipe.description %>
 		  </div>
-		  <% unless @recipe.user.nil? %>
+		  <% unless @recipe.user.nil? && !current_user.admin? %>
 			  <div class="user">
 			  	<strong>Created by:</strong>
 			  	<%= link_to @recipe.user.username, @recipe.user %>
