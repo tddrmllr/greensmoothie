@@ -18,6 +18,7 @@
 //= require bootstrap.dropdown
 //= require pnotify
 //= require jquery_nested_form
+//= require ckeditor/override
 //= require ckeditor/init
 //= require wysihtml5
 //= require jquery.Jcrop

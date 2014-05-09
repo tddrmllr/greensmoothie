@@ -26,7 +26,7 @@ gem 'nested_form', '0.3.2'
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 gem 'devise', '3.2.1'
 gem 'font-awesome-rails', '4.0.3.0'
-gem 'ckeditor', '4.0.6'
+gem 'ckeditor'
 gem 'bootstrap-datepicker-rails', '1.1.1.9'
 gem 'acts-as-taggable-on', '2.4.1'
 gem 'paperclip', '3.5.2'
