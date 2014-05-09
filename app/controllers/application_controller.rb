@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def check_user
-    if user_signed_in? && controller_name != "users" && action_name != "edit" && controller_name != "images"
+    if user_signed_in? && controller_name != "users" && action_name != "edit" && controller_name != "images" && controller_name != "sessions"
       if current_user.email.blank? || current_user.username.blank? || !current_user.terms_of_service
         @user = current_user
         if @user.save
