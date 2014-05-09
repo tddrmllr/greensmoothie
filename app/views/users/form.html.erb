@@ -47,6 +47,7 @@
 										<% unless params[:signup] == "true" %>
 											<%= link_to raw("<i class='fa fa-twitter' style='font-size: 115%'></i> &nbsp;Login With Twitter"), user_omniauth_authorize_path(:twitter), class: "btn btn-twitter btn-block" unless @user.provider?("twitter") %>
 											<%= link_to raw("<i class='fa fa-facebook'></i> &nbsp;Login With Facebook"), user_omniauth_authorize_path(:facebook), class: "btn btn-facebook btn-block" unless @user.provider?("facebook") %>
+											<br>
 										<% end %>
 									</div>
 								</div>

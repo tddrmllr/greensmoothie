@@ -1,7 +1,7 @@
 <div class="row">
-	<br>
-	<br>
-	<br>
+	<br class='hidden-xs'>
+	<br class='hidden-xs'>
+	<br class='hidden-xs'>
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="well">
 			<h2 style="margin-top: 0px">Signup </h2>
@@ -24,10 +24,10 @@
 			  	<%= f.password_field :password_confirmation, class: "form-control" %>
 			  </div>
 
-			  <%= f.submit "Signup", class: "btn btn-primary" %>
+			  <%= f.submit "Signup", class: "btn btn-primary btn-login", data: {loading_text: "Creating account..."} %>
 			  <%= render 'devise/shared/providers' %>
 			<% end %>
 		</div>
-		<%= link_to "Already have an account? Login!", new_user_session_path, class: 'btn btn-primary btn-block' %>
+		<%= link_to "Already have an account? Login!", new_user_session_path, class: 'btn btn-success btn-block' %>
 	</div>
 </div>

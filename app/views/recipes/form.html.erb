@@ -46,28 +46,32 @@
 				<br>
 				<%= f.fields_for :measurements do |m| %>
 					<div class="row form-group add-ingredient">
-						<div class="col-xs-5 ingredient">
+						<div class="col-sm-5 ingredient">
 							<%= m.fields_for :ingredient, Ingredient.where(id: m.object.ingredient_id).first do |i| %>
 								<%= i.text_field :name, class: "form-control ingredient-input", placeholder: "Name" %>
 							<% end %>
 							<%= m.hidden_field :ingredient_id, class: "ingredient-id" %>
 						</div>
-						<div class="col-xs-3">
-							<%= m.text_field :amount, class: "form-control", placeholder: "Amt." %>
+						<div class="col-sm-3">
+							<%= m.text_field :amount, class: "form-control", placeholder: "Amount" %>
 						</div>
-						<div class="col-xs-3">
+						<div class="col-sm-3">
 							<%= m.text_field :unit, class: "form-control", placeholder: "Unit" %>
 						</div>
-						<div class="col-xs-1">
-							<%= m.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg" %>
+						<div class="col-sm-1">
+							<%= m.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg hidden-xs" %>
+							<%= m.link_to_remove "Remove", class: "btn btn-xs btn-danger visible-xs pull-right" %>
 						</div>
 					</div>
 				<% end %>
 				<%= f.link_to_add "Add Ingredient", :measurements, class: "btn btn-xs btn-primary" %>
 				<br>
 				<br>
-				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
+				<div class='form-footer'>
+					<%= render 'images/mobile', resource: @recipe %>
+					<%= link_to "Cancel", :back, class: "btn btn-default" %>
+					<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
+				</div>
 			<% end %>
 		</div>
 	</div>

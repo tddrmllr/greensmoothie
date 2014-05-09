@@ -20,7 +20,7 @@
 	<br>
 	<%= f.fields_for :citations do |c| %>
 		<div class="row form-group add-ingredient">
-			<div class="col-xs-5 nutrient">
+			<div class="col-sm-5 nutrient">
 				<%= c.fields_for :nutrient, Nutrient.where(id: c.object.citable_id).first do |n| %>
 					<%= n.text_field :name, class: "form-control nutrient-input", placeholder: "Name" %>
 				<% end %>
@@ -29,11 +29,12 @@
 				<%= c.hidden_field :citer_type %>
 				<%= c.hidden_field :citer_id %>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-sm-5">
 				<%= c.text_field :source, class: "form-control", placeholder: "Citation" %>
 			</div>
-			<div class="col-xs-1">
-				<%= c.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg" %>
+			<div class="col-sm-1">
+				<%= c.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg hidden-xs" %>
+				<%= c.link_to_remove "Remove", class: "btn btn-xs btn-danger visible-xs pull-right" %>
 			</div>
 		</div>
 	<% end %>

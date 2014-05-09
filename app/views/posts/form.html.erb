@@ -30,11 +30,14 @@
 				<br>
 				<%= f.cktext_area :body %>
 				<br>
-				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
-				&nbsp;
-				<%= f.check_box :core_content %>
-				<%= f.label :core_content, "Core Content?", style: "margin-top: 6px; margin-left: 5px; position: absolute" %>
+				<div class='form-footer'>
+					<%= f.label :core_content, "Core Content?", style: "margin-top: 6px; margin-left: 5px" %>
+					<%= f.check_box :core_content %>
+
+					&nbsp;
+					<%= link_to "Cancel", :back, class: "btn btn-default" %>
+					<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
+				</div>
 			<% end %>
 		</div>
 	</div>

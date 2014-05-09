@@ -4,7 +4,7 @@ ready = ->
 
   $("#img-form").fileupload
     change: (e, data) ->
-      $("#img-btn").button("loading")
+      $("#img-btn, #img-trigger").button("loading")
 
 
   $("#img-file").mouseover ->
@@ -13,8 +13,9 @@ ready = ->
   $("#img-file").mouseout ->
     $("#img-btn").css "background-color", "#83e531"
 
-
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-
+$(document).on "click", "#img-trigger", (e) ->
+  e.preventDefault()
+  $("#img-file").click()

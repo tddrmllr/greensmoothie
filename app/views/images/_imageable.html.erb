@@ -1,5 +1,5 @@
 
-<span id="img">
+<span id="img" class='hidden-xs'>
 	<% if resource.image? %>
 		<% image = resource.image %>
 		<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
@@ -8,8 +8,8 @@
 	<% end %>
 </span>
 <%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
-	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3", id: "img-btn", data: {loading_text: "Uploading..."} %>
-	<%= image.file_field :image,  id: "img-file", class: "col-xs-6 col-xs-offset-3" %>
+	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3 hidden-xs", id: "img-btn", data: {loading_text: "Uploading..."} %>
+	<%= image.file_field :image,  id: "img-file", class: "col-xs-6 col-xs-offset-3 hidden-xs" %>
 
 	<%= image.hidden_field :imageable_id, value: resource.id %>
 	<%= image.hidden_field :imageable_type, value: resource.class.name %>

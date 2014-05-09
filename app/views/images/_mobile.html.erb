@@ -1,0 +1,10 @@
+<div id='img-mobile' class='visible-xs'>
+  <% if resource.image? %>
+    <% image = resource.image %>
+    <%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
+  <% else %>
+    <%= image_tag "#{resource.class.name.downcase}.png" %>
+  <% end %>
+</div>
+<br class='visible-xs'>
+<%= link_to "New Photo", "#", class: "btn btn-primary pull-left", id: "img-trigger", data: {loading_text: 'Uploading...'} %>

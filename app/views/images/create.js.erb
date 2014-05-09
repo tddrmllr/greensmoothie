@@ -1,4 +1,4 @@
-$("#img").html("<%= escape_javascript(render 'img') %>")
+$("#img, #img-mobile").html("<%= escape_javascript(render 'img') %>")
 $("#modal-holder").html("<%= escape_javascript(render('form')) %>")
 $("#<%= escape_javascript(controller_name.singularize.dasherize) %>-modal").modal('show')
-$("#img-btn").button("reset")
+$("#img-btn, #img-trigger").button("reset")

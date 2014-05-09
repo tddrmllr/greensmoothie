@@ -4,8 +4,11 @@
 			<%= render 'layouts/errors', object: @ingredient if @ingredient.errors.any? %>
 			<%= nested_form_for @ingredient, html: {id: "ingredient-form"} do |f| %>
 				<%= render 'inputs', f: f %>
-				<%= link_to "Cancel", :back, class: "btn btn-default" %>
-				<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
+				<div class='form-footer'>
+					<%= render 'images/mobile', resource: @ingredient %>
+					<%= link_to "Cancel", :back, class: "btn btn-default" %>
+					<%= f.submit "Save", class: "btn btn-success", data: {loading_text: "Saving..."} %>
+				</div>
 			<% end %>
 		</div>
 	</div>

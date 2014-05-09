@@ -3,6 +3,9 @@
 		<div class="well">
 			<% if current_user == @user %>
 				<% if @recipes.any? %>
+					<%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary visible-xs" %>
+					<br class='visible-xs'>
+					<%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary pull-right hidden-xs" %>
 					<h4 class="ribbon">My Recipes</h4>
 				<% else %>
 					<h2>Welcome to Green Smoothie!</h2>

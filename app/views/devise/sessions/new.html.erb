@@ -1,7 +1,7 @@
 <div class="row">
-	<br>
-	<br>
-	<br>
+	<br class='hidden-xs'>
+	<br class='hidden-xs'>
+	<br class='hidden-xs'>
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="well">
 			<h2 style="margin-top: 0px">Login</h2>
@@ -25,11 +25,11 @@
 			  <% end -%>
 
 			  <div>
-			  	<%= f.submit "Login", class: "btn btn-primary" %>
+			  	<%= f.submit "Login", class: "btn btn-primary btn-login", data: {loading_text: "Logging in..."} %>
 					<%= render 'devise/shared/providers' %>
 			  </div>
 			<% end %>
 		</div>
-		<%= link_to "Don't have an account? Signup!", new_user_registration_path, class: 'btn btn-primary btn-block' %>
+		<%= link_to "Don't have an account? Signup!", new_user_registration_path, class: 'btn btn-success btn-block' %>
 	</div>
 </div>
