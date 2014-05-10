@@ -42,3 +42,4 @@ gem 'rails_serve_static_assets'
 gem 'kaminari'
 gem 'nokogiri'
 gem 'mailchimp-api', '~> 2.0.4'
+gem 'rails_12factor', group: :production
