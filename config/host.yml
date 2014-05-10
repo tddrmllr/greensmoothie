@@ -2,4 +2,4 @@ development:
     "http://localhost:3001"
 
 production:
-    "http://greensmoothie.herokuapp.com"
+    "http://www.greensmoothie.me"
