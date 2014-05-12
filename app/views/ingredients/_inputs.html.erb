@@ -6,14 +6,12 @@
 
 <div class="form-group">
 	<%= f.label :description %>
-	<%= f.text_area :description, class: "form-control", id: "description", rows: 3, placeholder: "Describe the ingredient's physical attributes, flavor, culinary uses, etc." %>
-	<script>
-		$(document).ready(function(){
-	    $('#description').each(function(i, elem) {
-	      $(elem).wysihtml5({'font-styles': false, 'image': false, 'link': false});
-	    });
-	  })
-	</script>
+	<% if mobile_device? %>
+		<br>
+		<%= f.text_area :description, id: "description", class: "form-control summernote" %>
+	<% else %>
+		<%= f.cktext_area :description, id: "description", ckeditor: {toolbar: "Mini"} %>
+	<% end %>
 </div>
 <% unless @elem %>
 	<%= label_tag :nutrients %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'List the nutrients of this ingredient (Vitamin A, Vitamin C), and provide a link to the source where the information can be verified.'} %>

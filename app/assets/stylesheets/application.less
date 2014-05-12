@@ -12,6 +12,7 @@
  *= require pnotify.base
  *= require pnotify.icons
  *= require wysihtml5
+ *= require summernote
  *= require jquery.fileupload-ui
  *= require jquery.Jcrop
  *= require_self
@@ -144,6 +145,10 @@ ul.square {
 	list-style: square;
 }
 
+.index-search {
+  margin-bottom: 10px;
+}
+
 input[type="text"], input[type="email"], input[type="password"] {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -192,4 +197,8 @@ select, select.form-control {
 
 .wysihtml5-command-active i {
   color: #ffffff;
+}
+
+.btn-toolbar > .btn-group + .btn-group {
+  margin-left: 0px;
 }

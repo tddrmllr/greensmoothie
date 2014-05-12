@@ -2,6 +2,17 @@ $(document).on "click", "[data-loading-text]", ->
   $(this).button("loading")
 
 ready = ->
+
+  if App.mobile() && $(".summernote").length > 0
+    $(".summernote").summernote
+      lang: 'en-US'
+      toolbar: [
+        ['font', ['bold', 'italic', 'underline', 'clear']]
+        ['para', ['ul', 'ol']]
+        ['insert', ['link', 'picture']]
+        ['view', ['fullscreen', 'codeview']]
+      ]
+
   $("[data-toggle='tooltip']").tooltip()
 
   $(".index-search").off("keyup").on "keyup", ->

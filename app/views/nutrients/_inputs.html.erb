@@ -15,62 +15,34 @@
 
 <div class="form-group">
 	<%= f.label :description %>
-	<%= f.text_area :description, class: "form-control description", rows: 5, placeholder: "Describe general facts and common sources of this nutrient" %>
-</div>
-<% unless @elem %>
-	<%= label_tag :benefits %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'List the benefits of this nutrient (strong bones, antioxidants), and provide a link to the source where the information can be verified.'} %>
+	<% if mobile_device? %>
 		<br>
-		<%= f.fields_for :benefits do |b| %>
-			<div class="row form-group">
-				<div class="col-xs-12">
-					<div class="well add-benefit" style="margin-bottom: 0px">
-						<div class="row">
-							<div class="col-xs-12">
-								<%= b.text_field :name, class: "form-control input-sm", placeholder: "Name", style: "margin-bottom: 5px" %>
-								<%= b.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg x-benefit" %>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<%= b.text_area :description, class: "form-control input-sm benefit", placeholder: "Description", rows: 2, style: "margin-bottom: 5px" %>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<% benefit = b.object %>
-								<%= b.fields_for :citation, Citation.where(citable_type: benefit.class.name, citable_id: benefit.id).first_or_initialize do |c| %>
-									<%= c.text_field :source, class: "form-control input-sm", placeholder: "Citation" %>
-									<%= c.hidden_field :citable_type %>
-									<%= c.hidden_field :citable_id %>
-									<%= c.hidden_field :citer_type %>
-									<%= c.hidden_field :citer_id %>
-								<% end %>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<% end %>
-		<%= f.link_to_add "Add Benefit", :benefits, class: "btn btn-xs btn-primary" %>
-	<br>
-	<br>
-	<script>
-		$(document).ready(function(){
-	    $('.description').each(function(i, elem) {
-	      $(elem).wysihtml5({'font-styles': false, 'image': false, 'link': false});
-	    });
-	    $('textarea.benefit').each(function(i, elem) {
-	      $(elem).wysihtml5({
-	      	 "font-styles": false,
-			     "emphasis": false,
-			     "lists": false,
-			     "html": false,
-			     "link": false,
-			     "image": false,
-			     "color": false
-	      });
-	    });
-	  })
-	</script>
+		<%= f.text_area :description, id: "description", class: "form-control summernote" %>
+	<% else %>
+		<%= f.cktext_area :description, id: "description", ckeditor: {toolbar: "Mini"} %>
+	<% end %>
+</div>
+<%= label_tag :benefits %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'List the benefits of this nutrient (strong bones, antioxidants), and provide a link to the source where the information can be verified.'} %>
+<br>
+<%= f.fields_for :benefits do |b| %>
+	<div class="row form-group add-ingredient">
+		<div class="col-sm-5">
+			<%= b.text_field :name, class: "form-control input-sm", placeholder: "Name" %>
+		</div>
+		<div class="col-sm-5">
+			<% benefit = b.object %>
+			<%= b.fields_for :citation, Citation.where(citable_type: benefit.class.name, citable_id: benefit.id).first_or_initialize do |c| %>
+				<%= c.text_field :source, class: "form-control input-sm", placeholder: "Citation" %>
+				<%= c.hidden_field :citable_type %>
+				<%= c.hidden_field :citable_id %>
+				<%= c.hidden_field :citer_type %>
+				<%= c.hidden_field :citer_id %>
+			<% end %>
+		</div>
+		<div class="col-sm-1">
+			<%= b.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg hidden-xs" %>
+			<%= b.link_to_remove "Remove", class: "btn btn-xs btn-danger visible-xs pull-right" %>
+		</div>
+	</div>
 <% end %>
-<%= hidden_field_tag :elem, @elem %>
+<%= f.link_to_add "Add Benefit", :benefits, class: "btn btn-xs btn-primary" %>

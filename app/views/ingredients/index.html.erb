@@ -4,7 +4,7 @@
 			<%= f.text_field :name_or_description_or_nutrients_name_cont, id: "ingredient-search", class: "index-search form-control input-lg", placeholder: "Search", data: {type: "ingredient"} %>
 			<%= hidden_field_tag :page, 1 %>
 		<% end %>
-		<br>
+		<%= link_to "New Ingredient", new_ingredient_path, class: "btn btn-lg btn-primary btn-block visible-xs", style: "margin-bottom: 10px" if user_signed_in? %>
 		<div class="well" id="ingredients">
 			<%= render @ingredients %>
 		</div>
@@ -12,7 +12,7 @@
 		<%= render 'layouts/infinite', model: Ingredient, per: 12 %>
 	</div>
 	<div class="col-md-4">
-		<%= link_to "New Ingredient", new_ingredient_path, class: "btn btn-lg btn-primary btn-block", style: "margin-bottom: 10px" if user_signed_in? %>
+		<%= link_to "New Ingredient", new_ingredient_path, class: "btn btn-lg btn-primary btn-block hidden-xs", style: "margin-bottom: 10px" if user_signed_in? %>
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>

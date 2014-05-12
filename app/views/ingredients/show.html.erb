@@ -1,5 +1,14 @@
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-4 visible-xs">
+		<% if @ingredient.image? %>
+			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
+		<% else %>
+			<%= image_tag 'ingredient.png', style: "width: 100%; opacity: .5" %>
+		<% end %>
+		<br>
+		<br>
+	</div>
+	<div class="col-md-8">
 		<div class="well">
 			<%= link_to "Edit", edit_ingredient_path(@ingredient), class: "btn btn-primary btn-sm manage" if can? :edit, @ingredient %>
 			<%= link_to "Delete", ingredient_path(@ingredient), class: "btn btn-danger btn-sm manage", method: :delete if can? :manage, @ingredient %>
@@ -17,7 +26,7 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-4 hidden-xs">
 		<% if @ingredient.image? %>
 			<%= image_tag @ingredient.image.image.url(:medium), class: "shadow", style: "width: 100%" %>
 		<% else %>

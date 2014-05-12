@@ -1,6 +1,6 @@
 ready = ->
 
-	return unless $("#post-form").length > 0
+	return unless $("#post-form").length > 0 or $("#description").length > 0
 
 	CKEDITOR.config.fontSize_sizes = '14/14px;18/18px;20/20px;24/24px'
 
@@ -45,6 +45,23 @@ ready = ->
 	,
 	  name: "colors"
 	  items: ["TextColor", "BGColor"]
+	]
+
+	CKEDITOR.config.toolbar_Mini = [
+
+		name: "tools"
+		items: ["Maximize", "Source"]
+	,
+		name: "basicstyles"
+		groups: ["basicstyles", "cleanup"]
+		items: ["Bold", "Italic", "Underline", "Superscript"]
+	,
+		name: "paragraph"
+		groups: ["list", "indent", "blocks", "align", "bidi"]
+		items: ["NumberedList", "BulletedList", "-", "Outdent", "Indent", "-", "Blockquote", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"]
+	,
+		name: "insert"
+		items: ["Image", "Link", "Table", "HorizontalRule", "SpecialChar"]
 	]
 
 	CKEDITOR.editorConfig = (config) ->

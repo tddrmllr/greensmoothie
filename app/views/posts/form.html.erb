@@ -29,7 +29,12 @@
 				<%= f.label :abstract %>
 				<%= f.text_area :abstract, class: "form-control", rows: 3 %>
 				<br>
-				<%= f.cktext_area :body %>
+				<% if mobile_device? %>
+					<br>
+					<%= f.text_area :body, class: "form-control summernote" %>
+				<% else %>
+					<%= f.cktext_area :body, ckeditor: {height: 500} %>
+				<% end %>
 				<br>
 				<div class='form-footer'>
 					<%= f.label :core_content, "Core Content?", style: "margin-top: 6px; margin-left: 5px" %>
