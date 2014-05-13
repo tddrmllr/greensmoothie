@@ -20,7 +20,6 @@
 //= require jquery_nested_form
 //= require ckeditor/override
 //= require ckeditor/init
-//= require wysihtml5
 //= require jquery.Jcrop
 //= require typeahead
 //= require spin.min
@@ -29,11 +28,3 @@
 //= require masonry/jquery.masonry
 //= require summernote
 //= require_tree .
-
-var ready;
-ready = function() {
-  $("[data-hover=\"dropdown\"]").dropdownHover({delay: 100})
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);

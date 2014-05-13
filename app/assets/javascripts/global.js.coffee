@@ -40,6 +40,7 @@ ready = ->
         $(".index-search").parent().submit()
 
   unless App.mobile()
+    $("[data-hover=\"dropdown\"]").dropdownHover delay: 100
     $("[data-hover=\"dropdown\"]").click ->
       window.location.href = $(this).attr("href")
 
