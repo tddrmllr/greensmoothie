@@ -10,4 +10,4 @@
 		<% end %>
 	<% end %>
 </div>
-<%= content_tag :div, "Sign in to rate", class: "taste" unless user_signed_in? || @recipes || @user %>
+<%= content_tag(:div, link_to("Sign in to rate", new_user_session_path), class: "taste") unless user_signed_in? || @recipes || @user %>

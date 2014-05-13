@@ -6,13 +6,6 @@ div.recipe {
   border-radius: 0px;
   background-color: #ffffff;
   box-shadow: 1px 1px 2px #cccccc;
-  .leaves {
-    position: absolute;
-    display: none;
-    top: 5px;
-    padding-left: 10px;
-    font-size: 30px;
-  }
   img {
     width: 100%;
     border-top-left-radius: 0px;
@@ -36,16 +29,6 @@ div.recipe {
     padding: 10px;
     border-top: 1px solid #dddddd;
     font-size: 13px;
-  }
-}
-
-div.recipe:hover {
-  .leaves {
-    display: block;
-  }
-  a img.hover {
-    opacity:0.85;
-    filter:alpha(opacity=85);
   }
 }
 
@@ -116,12 +99,18 @@ i.green {
       text-align: left;
     }
   }
-}
-
-@media screen and (max-width: 768px) {
   div.add-ingredient {
     input {
       margin-top: -1px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  div.recipe:hover {
+    a img.hover {
+      opacity:0.85;
+      filter:alpha(opacity=85);
     }
   }
 }
