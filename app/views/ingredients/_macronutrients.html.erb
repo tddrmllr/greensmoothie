@@ -1,0 +1,9 @@
+<table class='nutrition'>
+  <% @ingredient.macronutrients.each do |n| %>
+    <tr>
+      <td><%= n.name %></td>
+      <td><%= n.amount %> <%= n.unit %></td>
+      <td><%= n.daily_value %></td>
+    </tr>
+  <% end %>
+</table>

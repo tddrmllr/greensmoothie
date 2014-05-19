@@ -20,9 +20,19 @@
 				<p class='alert alert-info' style='margin-bottom: 0px'>No entry for this ingredient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
 			<% end %>
 			<br>
-			<%= content_tag :strong, "Nutrients:" if @nutrients.any? %>
-			<% @nutrients.each do |nutrient| %>
-				<%= link_to nutrient.name, nutrient %><%= ', ' unless nutrient == @nutrients.last %>
+			<% if @ingredient.nutrients.any? %>
+				<%= content_tag :h4, "Nutrition", class: "ribbon" %>
+				<div class='row'>
+					<div class='col-sm-4'>
+						<%= render 'macronutrients' %>
+					</div>
+					<div class='col-sm-4'>
+						<%= render 'minerals' %>
+					</div>
+					<div class='col-sm-4'>
+						<%= render 'vitamins' %>
+					</div>
+				</div>
 			<% end %>
 		</div>
 	</div>

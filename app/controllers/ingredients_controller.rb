@@ -24,7 +24,6 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    find_or_create_nutrients
     if @ingredient.save
       redirect_to @ingredient
     else
@@ -34,13 +33,11 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
-    @nutrients = @ingredient.nutrients
     @title = @ingredient.name
   end
 
   def update
     @ingredient = Ingredient.find(params[:id])
-    find_or_create_nutrients
     if @ingredient.update_attributes(ingredient_params)
       flash[:success] = "Ingredient was updated."
       redirect_to @ingredient
@@ -52,7 +49,7 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :description, citations_attributes: [:source, :citable_type, :citable_id, :id, :_destroy])
+    params.require(:ingredient).permit(:name, :description)
   end
 
   def find_or_create_nutrients
