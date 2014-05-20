@@ -15,6 +15,8 @@ class Recipe < ActiveRecord::Base
   validates :name, :description, presence: true
   validate :has_ingredients
 
+  default_scope order('created_at DESC')
+
   def named_route
     text = self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
     "/recipes/#{self.id}/#{text}"

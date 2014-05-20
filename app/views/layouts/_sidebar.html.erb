@@ -1,63 +1,72 @@
 <div class="visible-lg visible-md" id="sidebar">
 	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= about_path %>">
 		<div class="overlay">
-			<div class="row">
-				<div class="col-xs-1 col-xs-offset-1">
-					<%= fa_icon "question-circle" %> &nbsp;
-				</div>
-				<div class="col-xs-10">
-					<strong>About Green Smoothies</strong>
-					<p>What is a green smoothie?</p>
-				</div>
-			</div>
+			<table>
+				<tr>
+					<th><%= fa_icon "question-circle" %></th>
+					<th><strong>About Green Smoothies</strong></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p>What is a green smoothie?</p></td>
+				</tr>
+			</table>
 		</div>
 	</a>
 	<a class="sidebar btn btn-lg btn-block" id="basics" href="<%= basics_path %>">
 		<div class="overlay">
-			<div class="row">
-				<div class="col-xs-1 col-xs-offset-1">
-					<%= fa_icon "cutlery" %> &nbsp;
-				</div>
-				<div class="col-xs-10">
-					<strong>Green Smoothie Basics</strong>
-					<p>Simple steps to great smoothies</p>
-				</div>
-			</div>
+			<table>
+				<tr>
+					<th><%= fa_icon "cutlery" %></th>
+					<th><strong>Green Smoothie Basics</strong></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p>Simple steps to great smoothies</p></td>
+				</tr>
+			</table>
 		</div>
 	</a>
 	<a class="sidebar btn btn-lg btn-block" id="tools" href="<%= tools_path %>">
 		<div class="overlay">
-			<div class="row">
-				<div class="col-xs-1 col-xs-offset-1">
-					<%= fa_icon "wrench" %> &nbsp;
-				</div>
-				<div class="col-xs-10">
-					<strong>Green Smoothie Tools</strong>
-					<p>Helpful gadgets and appliances</p>
-				</div>
-			</div>
+			<table>
+				<tr>
+					<th><%= fa_icon "wrench" %></th>
+					<th><strong>Green Smoothie Tools</strong></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p>Helpful gadgets and appliances</p></td>
+				</tr>
+			</table>
 		</div>
 	</a>
 	<div class="sidebar" id="emails">
 		<div class="overlay">
-			<div class="row">
-				<div class="col-xs-1 col-xs-offset-1">
-					<%= fa_icon "envelope" %> &nbsp;
-				</div>
-				<div class="col-xs-10">
-					<p style="margin-bottom: 0px">Email Updates</p>
-					<p style="margin-bottom: 5px; font-weight: 200">Get tips and recipes in your inbox</p>
-					<%= form_tag subscribe_path, remote: true do %>
-						<div class="input-group">
-							<%= text_field_tag :email, nil, class: "form-control input-sm", placeholder: "Email address" %>
-							<%= hidden_field_tag :id, "6a584771e4" %>
-				      <span class="input-group-btn">
-				      	<%= submit_tag "Submit", class: "btn btn-primary btn-sm", data: {loading_text: "Saving..."} %>
-				      </span>
-				    </div>
-			    <% end %>
-		    </div>
-			</div>
+			<table>
+				<tr>
+					<th><%= fa_icon "envelope" %></th>
+					<th><strong>Email Updates</strong></th>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p>Get tips & recipes in your inbox</p></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<%= form_tag subscribe_path, remote: true do %>
+							<div class="input-group">
+								<%= text_field_tag :email, nil, class: "form-control input-sm", placeholder: "Email address" %>
+								<%= hidden_field_tag :id, "6a584771e4" %>
+								<span class="input-group-btn">
+									<%= submit_tag "Submit", class: "btn btn-primary btn-sm", data: {loading_text: "Saving..."} %>
+								</span>
+							</div>
+						<% end %>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>
