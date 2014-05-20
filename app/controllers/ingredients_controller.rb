@@ -25,6 +25,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
+      flash[:success] = 'Ingredient successfully created.'
       redirect_to @ingredient
     else
       render 'form'

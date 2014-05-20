@@ -18,11 +18,11 @@
 						<%= f.cktext_area :description, id: "description", ckeditor: {toolbar: "Mini"} %>
 					<% end %>
 				</div>
-				<div class='alert alert-green alert-small'>
-					<p><strong>USDA Reference:</strong> <small><%= @ingredient.usda_name %></small></p>
+				<div class='alert alert-green alert-sm'>
+					<p><strong>USDA Reference:</strong> <small><%= @ingredient.usda_name.blank? ? 'None' : @ingredient.usda_name %></small></p>
 					<br>
 					Nutrition information is obtained from the U.S. Department of Agriculture's (USDA) National Nutrient Database for Standard Reference.
-					If the USDA reference above doesn't look right for this ingredient, visit the <%= link_to "USDA website", "http://ndb.nal.usda.gov/ndb/foods", class: 'label label-success' %> and search for the correct food.
+					If the USDA reference above doesn't look right for this ingredient, or if it's blank, visit the <%= link_to "USDA website", "http://ndb.nal.usda.gov/ndb/foods", class: 'label label-success', target: '_blank' %> and search for the correct food.
 					Once you've navigated to the correct food, copy and paste the url into the field below, then Green Smoothie will automatically retrieve the nutrition information.
 					<br>
 					<br>

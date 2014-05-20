@@ -1,6 +1,30 @@
 $(document).on "click", "[data-loading-text]", ->
   $(this).button("loading")
 
+$(".index-search").on "keyup", ->
+  $("#page").val(1)
+  $("#pages").data("next", 2)
+  $(this).parent().submit()
+
+$(window).on 'scroll', ->
+  if $(window).scrollTop() + $(window).height() is $(document).height()
+    unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
+      $("#pages").spin(spinner)
+      $("#page").val($("#pages").data("next"))
+      $(".index-search").parent().submit()
+
+spinner =
+  lines: 12, # The number of lines to draw
+  length: 5, # The length of each line
+  width: 2, # The line thickness
+  radius: 4, # The radius of the inner circle
+  color: '#000', #rgb or #rrggbb
+  speed: 1, # Rounds per second
+  trail: 60, # Afterglow percentage
+  shadow: false, # Whether to render a shadow
+  bottom: 0,
+  className: 'spinner'
+
 ready = ->
 
   if App.mobile() && $(".summernote").length > 0
@@ -14,30 +38,6 @@ ready = ->
       ]
 
   $("[data-toggle='tooltip']").tooltip()
-
-  $(".index-search").off("keyup").on "keyup", ->
-    $("#page").val(1)
-    $("#pages").data("next", 2)
-    $(this).parent().submit()
-
-  spinner =
-    lines: 12, # The number of lines to draw
-    length: 5, # The length of each line
-    width: 2, # The line thickness
-    radius: 4, # The radius of the inner circle
-    color: '#000', #rgb or #rrggbb
-    speed: 1, # Rounds per second
-    trail: 60, # Afterglow percentage
-    shadow: false, # Whether to render a shadow
-    bottom: 0,
-    className: 'spinner'
-
-  $(window).scroll ->
-    if $(window).scrollTop() + $(window).height() is $(document).height()
-      unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
-        $("#pages").spin(spinner)
-        $("#page").val($("#pages").data("next"))
-        $(".index-search").parent().submit()
 
   unless App.mobile()
     $("[data-hover=\"dropdown\"]").dropdownHover delay: 100
