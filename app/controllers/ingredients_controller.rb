@@ -49,7 +49,7 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :description)
+    params.require(:ingredient).permit(:name, :description, :source_url)
   end
 
   def find_or_create_nutrients

@@ -1,9 +1,9 @@
+<h4>General</h4>
 <table class='nutrition'>
   <% @ingredient.macronutrients.each do |n| %>
     <tr>
-      <td><%= n.name %></td>
+      <td><%= link_to n.name, n.nutrient %></td>
       <td><%= n.amount %> <%= n.unit %></td>
-      <td><%= n.daily_value %></td>
     </tr>
   <% end %>
 </table>

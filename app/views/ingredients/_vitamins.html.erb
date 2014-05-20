@@ -1,0 +1,9 @@
+<h4>Vitamins</h4>
+<table class='nutrition'>
+  <% @ingredient.vitamins.each do |n| %>
+    <tr>
+      <td><%= link_to n.name, n.nutrient %></td>
+      <td><%= n.amount %> <%= n.unit %></td>
+    </tr>
+  <% end %>
+</table>

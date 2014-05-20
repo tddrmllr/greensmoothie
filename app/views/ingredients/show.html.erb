@@ -24,15 +24,19 @@
 				<%= content_tag :h4, "Nutrition", class: "ribbon" %>
 				<div class='row'>
 					<div class='col-sm-4'>
-						<%= render 'macronutrients' %>
+						<%= render 'vitamins' %>
 					</div>
 					<div class='col-sm-4'>
 						<%= render 'minerals' %>
 					</div>
 					<div class='col-sm-4'>
-						<%= render 'vitamins' %>
+						<%= render 'macronutrients' %>
 					</div>
 				</div>
+				<p class='ingredient-source'>
+					<%= @ingredient.serving_size %><br>
+					<%= link_to "Source: USDA - #{@ingredient.usda_name}", @ingredient.source_url, target: "_blank" %>
+				</p>
 			<% end %>
 		</div>
 	</div>

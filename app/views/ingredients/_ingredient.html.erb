@@ -18,11 +18,4 @@
 			<% end %>
   	</h4>
   </div>
-  <% unless @recipe %>
-	  <span class="hidden-xs hidden-sm nutrients">
-	  	<% ingredient.nutrients.each do |i| %>
-	    	<%= link_to i.name, i, class: "nutrient" %>
-	    <% end %>
-	  </span>
-  <% end %>
 </div>

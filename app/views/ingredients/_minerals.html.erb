@@ -1,0 +1,9 @@
+<h4>Minerals</h4>
+<table class='nutrition'>
+  <% @ingredient.minerals.each do |n| %>
+    <tr>
+      <td><%= link_to n.name, n.nutrient %></td>
+      <td><%= n.amount %> <%= n.unit %></td>
+    </tr>
+  <% end %>
+</table>
