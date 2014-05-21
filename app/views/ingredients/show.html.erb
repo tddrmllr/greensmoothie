@@ -34,8 +34,8 @@
 					</div>
 				</div>
 				<p class='ingredient-source'>
-					<%= @ingredient.serving_size %><br>
-					<%= link_to "Source: USDA - #{@ingredient.usda_name}", @ingredient.source_url, target: "_blank" %>
+					<span class='label label-success'>Serving Size: <%= @ingredient.serving_size %></span><br>
+					<%= link_to "Source: USDA - #{@ingredient.usda_name}", @ingredient.source_url, target: "_blank", style: 'font-size: 75%' %>
 				</p>
 			<% end %>
 		</div>

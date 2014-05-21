@@ -1,0 +1,23 @@
+<div class='row'>
+  <div class='col-sm-8'>
+    <div class='well'>
+      <h4 class='ribbon'>Send A Message</h4>
+      <%= form_tag support_path, remote: true do %>
+        <div class='form-group'>
+          <%= label_tag :email %>
+          <%= text_field_tag :email, nil, class: 'form-control' %>
+        </div>
+        <div class='form-group'>
+          <%= label_tag :message %>
+          <%= text_area_tag :message, nil, class: "form-control", rows: 5 %>
+        </div>
+        <div class='form-footer'>
+          <%= submit_tag "Send", class: 'btn btn-primary', data: {loading_text: "Sending..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class='col-sm-4'>
+    <%= render 'layouts/sidebar' %>
+  </div>
+</div>

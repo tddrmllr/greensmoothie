@@ -33,7 +33,7 @@
 					<br>
 					<%= f.text_area :body, class: "form-control summernote" %>
 				<% else %>
-					<%= f.cktext_area :body, ckeditor: {height: 500} %>
+					<%= f.cktext_area :body, class: 'ckeditor', ckeditor: {height: 500} %>
 				<% end %>
 				<br>
 				<div class='form-footer'>

@@ -10,6 +10,20 @@ module Greensmoothie
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    config.action_mailer.default_url_options = { :host => 'http://www.greensmoothie.me' }
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :authentication => "plain",
+      :user_name => "todd.scalar",
+      :password => "d@Rkn3ss",
+      :enable_starttls_auto => true
+    }
+
+    #config.action_mailer.delivery_method = :postmark
+    #config.action_mailer.postmark_settings = { :api_key => "fd37d6ed-b5d4-479e-9556-cad4127993d5" }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

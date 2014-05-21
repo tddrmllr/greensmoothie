@@ -36,6 +36,8 @@ ready = ->
         ['insert', ['link', 'picture']]
         ['view', ['fullscreen', 'codeview']]
       ]
+      onfocus: ->
+        $(".cke").remove()
 
   $("[data-toggle='tooltip']").tooltip()
 

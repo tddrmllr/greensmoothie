@@ -10,6 +10,7 @@
 	  <%= csrf_meta_tags %>
 	  <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="p:domain_verify" content="fbdecc7dab85a7d24b7b89c5dabacef9"/>
 	  <script>
 	  	<%= yield :javascripts %>
 	  	<%= render 'layouts/flasher', flash: flash %>
@@ -26,7 +27,11 @@
 	<body>
 		<%= render 'layouts/nav' %>
 		<div class="container">
-			<%= content_tag :h1, @title unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
+			<% unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
+				<h1>
+					<%= @title %>
+				</h1>
+			<% end %>
 			<%= yield %>
 		</div>
 		<div id="modal-holder"></div>

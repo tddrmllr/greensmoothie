@@ -77,6 +77,28 @@
   text-align: right;
 }
 
+.navbar-nav > li > a.follow {
+  font-size: 15px;
+  margin-top: 25px;
+  border-radius: 50%;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+  float: right;
+  padding: 0px;
+  text-align: center;
+  i {
+    margin-top: 7px;
+  }
+}
+
+ul#follow {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
 .gradient {
 	background: -moz-linear-gradient(left,  rgba(92,184,92,1) 2%, rgba(65,130,65,1) 31%, rgba(0,0,0,0.01) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(2%,rgba(92,184,92,1)), color-stop(31%,rgba(65,130,65,1)), color-stop(100%,rgba(0,0,0,0.01))); /* Chrome,Safari4+ */
@@ -216,17 +238,4 @@ select, select.form-control {
 
 .btn-toolbar > .btn-group + .btn-group {
   margin-left: 0px;
-}
-
-table.nutrition {
-  font-size: 75%;
-  width: 100%;
-  margin-bottom: 15px;
-  td {
-    border: 1px solid #cccccc;
-    padding: 4px;
-  }
-  td:first-child {
-    width: 60%;
-  }
 }
