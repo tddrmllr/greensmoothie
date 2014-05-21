@@ -247,16 +247,16 @@ DEPENDENCIES
   ckeditor (= 4.0.11)
   coffee-rails (~> 4.0.0)
   devise (= 3.2.1)
-  font-awesome-rails
+  font-awesome-rails (= 4.1.0.0)
   jbuilder (~> 1.2)
   jquery-fileupload-rails (= 0.4.1)
   jquery-rails
-  kaminari
+  kaminari (= 0.15.1)
   less-rails (= 2.3.3)
   mailchimp-api (~> 2.0.4)
-  masonry-rails
+  masonry-rails (= 0.2.1)
   nested_form (= 0.3.2)
-  nokogiri
+  nokogiri (= 1.6.1)
   omniauth-facebook (= 1.4.1)
   omniauth-twitter (= 1.0.1)
   paperclip (= 3.5.2)
