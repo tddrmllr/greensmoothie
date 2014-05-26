@@ -16,7 +16,9 @@ Greensmoothie::Application.routes.draw do
 
   resources :citations
   resources :images
-  resources :ingredients
+  resources :ingredients do
+    resources :comments
+  end
   resources :nutrients do
     get 'add', on: :collection
   end

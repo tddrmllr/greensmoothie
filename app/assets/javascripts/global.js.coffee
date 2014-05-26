@@ -1,11 +1,6 @@
 $(document).on "click", "[data-loading-text]", ->
   $(this).button("loading")
 
-$(".index-search").on "keyup", ->
-  $("#page").val(1)
-  $("#pages").data("next", 2)
-  $(this).parent().submit()
-
 $(window).on 'scroll', ->
   if $(window).scrollTop() + $(window).height() is $(document).height()
     unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
@@ -26,6 +21,11 @@ spinner =
   className: 'spinner'
 
 ready = ->
+
+  $(".index-search").on "keyup", ->
+    $("#page").val(1)
+    $("#pages").data("next", 2)
+    $(this).parent().submit()
 
   if App.mobile() && $(".summernote").length > 0
     $(".summernote").summernote

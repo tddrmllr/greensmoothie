@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520005632) do
+ActiveRecord::Schema.define(version: 20140526011039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(version: 20140520005632) do
     t.string   "symbol"
     t.string   "nutrient_type"
     t.string   "usda_name"
+    t.decimal  "daily_value_amount"
+    t.string   "daily_value_unit"
   end
 
   create_table "posts", force: true do |t|

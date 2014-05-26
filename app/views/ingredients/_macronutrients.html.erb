@@ -3,7 +3,8 @@
   <% @ingredient.macronutrients.each do |n| %>
     <tr>
       <td><%= link_to n.name, n.nutrient %></td>
-      <td><%= n.amount %> <%= n.unit %></td>
+      <td><%= number_with_precision(n.amount, precision: 1, delimiter: ",") %> <%= n.unit %></td>
+      <td><%= number_to_percentage(n.daily_percent, precision: 1) %></td>
     </tr>
   <% end %>
 </table>

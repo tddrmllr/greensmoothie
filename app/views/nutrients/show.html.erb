@@ -8,35 +8,11 @@
 				<p><%= @nutrient.description.html_safe %></p>
 			<% else %>
 				<br>
-				<p class='alert alert-info' style='margin-bottom: 0px'>No entry for this nutrient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
-			<% end %>
-			<% if @benefits.any? %>
-				<br>
-				<br>
-				<%= content_tag :h4, "Benefits", class: "ribbon" %>
-				<% @benefits.each do |b| %>
-					<div class="benefit">
-				    <strong><%= b.name %><strong>
-				    <% citation = b.citation %>
-						<%= link_to "", citation.source, class: "fa fa-info-circle", target: "_blank", data: {toggle: "tooltip", title: "View source"} %>
-						<%= link_to "", edit_citation_path(citation), class: "fa fa-flag", data: {toggle: "tooltip", title: "Flag"}, remote: true %>
-				    <br>
-				    <p style="font-weight: 300"><%= b.description %></p>
-					</div>
-			  <% end %>
+				<p class='alert alert-green' style='margin-bottom: 0px'>No entry for this nutrient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
 			<% end %>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<% if @ingredients.any? %>
-			<div class="well food-sources">
-				<%= content_tag :h4, "Food Sources", style: "margin: 0px 0px 5px 0px" %>
-				<ul class="list-square">
-					<% @ingredients.each do |i| %>
-					 <%= content_tag(:li, link_to(i.name, i)) %>
-					<% end %>
-				</ul>
-			</div>
-		<% end %>
+
 	</div>
 </div>

@@ -39,6 +39,12 @@
 				</p>
 			<% end %>
 		</div>
+		<%= render 'layouts/social', sociable: @ingredient, head: false %>
+		<div class="row">
+			<div class="col-md-7">
+				<%= render 'comments/commentable', commentable: @ingredient %>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-4 hidden-xs">
 		<% if @ingredient.image? %>

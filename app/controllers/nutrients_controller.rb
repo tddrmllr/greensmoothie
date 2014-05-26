@@ -43,7 +43,6 @@ class NutrientsController < ApplicationController
 
   def show
     @nutrient = Nutrient.find(params[:id])
-    @benefits = @nutrient.benefits
     @ingredients = @nutrient.ingredients
     @title = @nutrient.name
   end

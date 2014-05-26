@@ -22,22 +22,14 @@
 		<%= f.cktext_area :description, class: 'ckeditor', id: "description", ckeditor: {toolbar: "Mini"} %>
 	<% end %>
 </div>
-<%= label_tag :benefits %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'List the benefits of this nutrient (strong bones, antioxidants), and provide a link to the source where the information can be verified.'} %>
+<%= label_tag :citations %> <%= fa_icon 'question-circle', data: {toggle: 'popover-hover', placement: 'right', content: 'Cite the sources of information used to provide content about this nutrient.'} %>
 <br>
-<%= f.fields_for :benefits do |b| %>
+<%= f.fields_for :citations do |b| %>
 	<div class="row form-group add-ingredient">
-		<div class="col-sm-5">
-			<%= b.text_field :name, class: "form-control input-sm", placeholder: "Name" %>
-		</div>
-		<div class="col-sm-5">
-			<% benefit = b.object %>
-			<%= b.fields_for :citation, Citation.where(citable_type: benefit.class.name, citable_id: benefit.id).first_or_initialize do |c| %>
-				<%= c.text_field :source, class: "form-control input-sm", placeholder: "Citation" %>
-				<%= c.hidden_field :citable_type %>
-				<%= c.hidden_field :citable_id %>
-				<%= c.hidden_field :citer_type %>
-				<%= c.hidden_field :citer_id %>
-			<% end %>
+		<div class="col-sm-11">
+			<%= b.text_field :source, class: "form-control input-sm", placeholder: "Source" %>
+			<%= b.hidden_field :citer_type %>
+			<%= b.hidden_field :citer_id %>
 		</div>
 		<div class="col-sm-1">
 			<%= b.link_to_remove raw(fa_icon "times-circle"), class: "btn-primary-bg hidden-xs" %>
@@ -45,4 +37,4 @@
 		</div>
 	</div>
 <% end %>
-<%= f.link_to_add "Add Benefit", :benefits, class: "btn btn-xs btn-primary" %>
+<%= f.link_to_add "Add Citation", :citations, class: "btn btn-xs btn-primary" %>
