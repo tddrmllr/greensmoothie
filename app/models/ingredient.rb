@@ -31,7 +31,7 @@ class Ingredient < ActiveRecord::Base
   end
 
   def rescrape_nutrients
-    if !self.changes[:source_url].blank? && self.created_at != self.updated_at
+    if !self.changes[:source_url].blank? && self.created_at != self.updated_at && !self.source_url.blank?
       self.scrape_nutrients(nil, self.source_url)
     end
   end
