@@ -2,7 +2,7 @@
 	<div class="col-md-8">
 		<div class="well nutrient">
 			<%= link_to "Edit", edit_nutrient_path(@nutrient), class: "btn btn-primary btn-sm manage" if can?(:edit, @nutrient) %>
-			<%= link_to "Delete", nutrient_path(@nutrient), class: "btn btn-danger btn-sm manage", method: :delete if can?(:manage, @nutrient) %>
+			<%= link_to "Delete", "#", class: "btn btn-danger btn-sm manage delete", data: {url: nutrient_path(@nutrient), title: "Delete Nutrient", text: "Are you sure you want to delete this nutrient?"} if can?(:manage, @nutrient) %>
 			<%= content_tag :h4, "Summary", class: "ribbon" %>
 			<% if !@nutrient.description.blank? %>
 				<p><%= @nutrient.description.html_safe %></p>

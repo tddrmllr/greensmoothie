@@ -32,10 +32,19 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.destroy
+    flash[:success] = 'Ingredient deleted.'
+    @redirect = ingredients_path
+    render 'layouts/destroy'
+  end
+
   def show
     @ingredient = Ingredient.find(params[:id])
     @comments = @ingredient.comments
     @title = @ingredient.name
+    @delete = true
   end
 
   def update
@@ -44,6 +53,7 @@ class IngredientsController < ApplicationController
       flash[:success] = "Ingredient was updated."
       redirect_to @ingredient
     else
+      @delete = true
       render 'form'
     end
   end

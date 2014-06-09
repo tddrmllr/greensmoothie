@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def edit
     @title = "Edit Account"
+    @delete = true
     render 'form'
   end
 
@@ -21,12 +22,18 @@ class UsersController < ApplicationController
       flash[:success] = "Account updated."
       redirect_to @user
     else
+      @delete = true
       render 'form'
     end
   end
 
   def destroy
-
+    @user = User.find(params[:id])
+    sign_out(@user)
+    @user.destroy
+    flash[:success] = 'Account deleted.'
+    @redirect = root_path
+    render 'layouts/destroy'
   end
 
   private

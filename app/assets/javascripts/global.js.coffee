@@ -49,6 +49,19 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
+$(document).on "click", ".delete", (e) ->
+    e.preventDefault()
+    $("#confirm-delete").button("reset")
+    text = $(this).data("text")
+    title = $(this).data("title")
+    url = $(this).data("url")
+    $("#confirm-delete").attr('href', url)
+    $("#delete-modal #text").html(text)
+    $("#delete-title").html(title)
+    $("#confirm-delete").button("reset")
+    $(".modal").modal("hide")
+    $("#delete-modal").modal("show")
+
 window.App = {}
 
 App.mobile = ->

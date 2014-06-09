@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @title = "Edit Post"
+    @delete = true
     render 'form'
   end
 
@@ -37,6 +38,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = "Post deleted."
+    @redirect = blog_path
+    render 'layouts/destroy'
+  end
+
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
@@ -44,6 +53,7 @@ class PostsController < ApplicationController
       redirect_to @post.named_route
       flash[:success] = "Post saved successfully."
     else
+      @delete = true
       render 'form'
     end
   end

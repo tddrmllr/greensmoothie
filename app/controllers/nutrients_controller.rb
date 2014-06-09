@@ -41,10 +41,19 @@ class NutrientsController < ApplicationController
     end
   end
 
+  def destroy
+    @nutrient = Nutrient.find(params[:id])
+    @nutrient.destroy
+    flash[:success] = 'Nutrient deleted.'
+    @redirect = nutrients_path
+    render 'layouts/destroy'
+  end
+
   def show
     @nutrient = Nutrient.find(params[:id])
     @ingredients = @nutrient.ingredients
     @title = @nutrient.name
+    @delete = true
   end
 
   def update
@@ -53,6 +62,7 @@ class NutrientsController < ApplicationController
       flash[:success] = "Nutrient updated"
       redirect_to @nutrient
     else
+      @delete = true
       render 'form'
     end
   end

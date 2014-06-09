@@ -49,6 +49,7 @@ class RecipesController < ApplicationController
       redirect_to @recipe.named_route
       flash[:success] = "Recipe saved successfully."
     else
+      @delete = true
       render 'form'
     end
   end
@@ -57,7 +58,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     flash[:success] = "Recipe deleted."
-    redirect_to recipes_path
+    @redirect = recipes_path
+    render 'layouts/destroy'
   end
 
   private

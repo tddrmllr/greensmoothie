@@ -82,6 +82,7 @@
 							<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
 						</div>
 					</div>
+					<%= link_to "Delete Account", "#", class: "delete", data: {url: user_path(@user), text: "Are you sure you want to delete your account? You'll no longer have access to your recipes.", title: "Delete Account"} %>
 				</div>
 			</div>
 		<% end %>
