@@ -17,6 +17,8 @@ class Ingredient < ActiveRecord::Base
   after_create :scrape_nutrients
   after_save :rescrape_nutrients
 
+  default_scope order('name ASC')
+
   def self.find_or_create(name)
     ingredient = where(['lower(name) = ?', name]).first
     return ingredient.blank? ? Ingredient.create(name: name.capitalize) : ingredient

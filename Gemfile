@@ -43,3 +43,4 @@ gem 'kaminari', '0.15.1'
 gem 'nokogiri', '1.6.1'
 gem 'mailchimp-api', '~> 2.0.4'
 gem 'rails_12factor', group: :production
+gem 'newrelic_rpm'
