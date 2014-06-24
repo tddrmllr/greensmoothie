@@ -1,6 +1,22 @@
 
 ready = ->
 
+  if $("#livefyre-comments").length > 0
+    (->
+      articleId = fyre.conv.load.makeArticleId(null)
+      fyre.conv.load {}, [
+        el: "livefyre-comments"
+        network: "livefyre.com"
+        siteId: "360774"
+        articleId: articleId
+        signed: false
+        collectionMeta:
+          articleId: articleId
+          url: fyre.conv.load.makeCollectionUrl()
+      ], ->
+      return
+    )()
+
   return unless $("#social").length > 0
 
   $(".facebook").click ->
