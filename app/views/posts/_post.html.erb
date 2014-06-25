@@ -4,7 +4,6 @@
 			<% image = image_tag post.image.image.url(:medium), style: "width: 100%" if post.image? %>
 			<%= link_to image, post.named_route %>
 			<div class="overlay">
-				<%= link_to fa_icon("comments") + " Comments" + comment_count(post), post.named_route + "#commentable" %>
 				<%= link_to "Edit", edit_post_path(post), class: "btn btn-xs btn-primary" if can? :manage, post %>
 			</div>
 		</div>
@@ -16,5 +15,3 @@
 		</div>
 	</div>
 </div>
-
-
