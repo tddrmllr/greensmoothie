@@ -40,6 +40,7 @@ class RecipesController < ApplicationController
     @ingredients = @recipe.ingredients
     @comments = @recipe.comments
     @title = @recipe.name
+    @delete = true
   end
 
   def update
