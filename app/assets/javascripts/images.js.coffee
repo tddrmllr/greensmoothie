@@ -6,7 +6,6 @@ ready = ->
     change: (e, data) ->
       $("#img-btn, #img-trigger").button("loading")
 
-
   $("#img-file").mouseover ->
     $("#img-btn").css "background-color", "#6ed31b"
 
@@ -19,3 +18,14 @@ $(document).on('page:load', ready)
 $(document).on "click", "#img-trigger", (e) ->
   e.preventDefault()
   $("#img-file").click()
+
+$(document).on 'paste', '#img-url', ->
+  that = $(this)
+  $("#img-btn, #img-trigger").button("loading")
+  setTimeout (->
+    that.closest('form').submit()
+  ), 100
+
+$(document).on 'keyup', '#img-url', (e) ->
+  code = ((if e.keyCode then e.keyCode else e.which))
+  $("#img-btn, #img-trigger").button("loading") if code is 13

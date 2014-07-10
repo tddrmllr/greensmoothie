@@ -8,10 +8,15 @@
 	<% end %>
 </span>
 <%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
-	<%= link_to "New Photo", "#", class: "btn btn-primary col-xs-6 col-xs-offset-3 hidden-xs", id: "img-btn", data: {loading_text: "Uploading..."} %>
-	<%= image.file_field :image,  id: "img-file", class: "col-xs-6 col-xs-offset-3 hidden-xs" %>
-
+	<%= link_to "Upload an Image", "#", class: "btn btn-primary hidden-xs", id: "img-btn", data: {loading_text: "Uploading..."} %>
+	<%= image.file_field :image,  id: "img-file", class: "hidden-xs" %>
 	<%= image.hidden_field :imageable_id, value: resource.id %>
 	<%= image.hidden_field :imageable_type, value: resource.class.name %>
 	<%= image.hidden_field :token, value: resource.image_token %>
+	<div style="height: 1px; background-color: #cccccc; text-align: center; margin-top: 15px; margin-bottom: 5px">
+	  <span style="background-color: #eeeeee; position: relative; top: -0.9em; padding: 0px 5px; font-size: 85%; color: #999999">
+	    or
+	  </span>
+	</div>
+	<%= image.text_field :image_url, placeholder: "Paste Image URL", class: 'form-control pull-left input-sm', style: 'margin-top: 10px; text-align: center', id: 'img-url' %>
 <% end %>

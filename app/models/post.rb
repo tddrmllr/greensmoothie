@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   end
 
   def named_route
-    title = self.name.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
+    title = self.name.strip.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
     return "/posts/#{self.id}/#{title}"
   end
 end
