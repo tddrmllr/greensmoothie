@@ -1,5 +1,5 @@
+<%= render 'layouts/flasher' %>
 <% if flash[:success] %>
    $("#message, #email").val("")
  <% end %>
- <%= render 'layouts/flasher' %>
 $(".btn").button("reset")

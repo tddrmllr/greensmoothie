@@ -50,3 +50,54 @@
 [07/10/14 02:08:39 -0600 Todds-MacBook-Air.local (18910)] INFO : Finished instrumentation
 [07/10/14 02:08:40 -0600 Todds-MacBook-Air.local (18910)] INFO : Doing deferred dependency-detection before Rack startup
 [07/10/14 02:08:40 -0600 Todds-MacBook-Air.local (18910)] INFO : Installing middleware-based Excon instrumentation
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : Starting the New Relic agent in "development" environment.
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : Reading configuration from config/newrelic.yml
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : New Relic Agent Developer Mode enabled.
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : Environment: development
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : Dispatcher: webrick
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] INFO : Application: My Application
+[07/11/14 10:18:37 -0600 Todds-MacBook-Air.local (2589)] WARN : Agent configured not to send data in this environment.
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing ActiveRecord 4 instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing Net instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing deferred Rack instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing Rails 4 Controller instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing Rails 4 view instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing Rails4 Error instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Finished instrumentation
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Doing deferred dependency-detection before Rack startup
+[07/11/14 10:18:38 -0600 Todds-MacBook-Air.local (2589)] INFO : Installing middleware-based Excon instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Starting the New Relic agent in "development" environment.
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Reading configuration from config/newrelic.yml
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : New Relic Agent Developer Mode enabled.
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Environment: development
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Dispatcher: webrick
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Application: My Application
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] WARN : Agent configured not to send data in this environment.
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing ActiveRecord 4 instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing Net instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing deferred Rack instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing Rails 4 Controller instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing Rails 4 view instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing Rails4 Error instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Finished instrumentation
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Doing deferred dependency-detection before Rack startup
+[07/11/14 10:32:42 -0600 Todds-MacBook-Air.local (2708)] INFO : Installing middleware-based Excon instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Starting the New Relic agent in "development" environment.
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Reading configuration from config/newrelic.yml
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : New Relic Agent Developer Mode enabled.
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Environment: development
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Dispatcher: webrick
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Application: My Application
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] WARN : Agent configured not to send data in this environment.
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing ActiveRecord 4 instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing Net instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing deferred Rack instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing Rails 4 Controller instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing Rails 4 view instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing Rails4 Error instrumentation
+[07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Finished instrumentation
+[07/11/14 10:34:47 -0600 Todds-MacBook-Air.local (2750)] INFO : Doing deferred dependency-detection before Rack startup
+[07/11/14 10:34:47 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing middleware-based Excon instrumentation
