@@ -101,3 +101,37 @@
 [07/11/14 10:34:46 -0600 Todds-MacBook-Air.local (2750)] INFO : Finished instrumentation
 [07/11/14 10:34:47 -0600 Todds-MacBook-Air.local (2750)] INFO : Doing deferred dependency-detection before Rack startup
 [07/11/14 10:34:47 -0600 Todds-MacBook-Air.local (2750)] INFO : Installing middleware-based Excon instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Starting the New Relic agent in "development" environment.
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Reading configuration from config/newrelic.yml
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : New Relic Agent Developer Mode enabled.
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Environment: development
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Dispatcher: webrick
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Application: My Application
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] WARN : Agent configured not to send data in this environment.
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing ActiveRecord 4 instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing Net instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing deferred Rack instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing Rails 4 Controller instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing Rails 4 view instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing Rails4 Error instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Finished instrumentation
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Doing deferred dependency-detection before Rack startup
+[08/03/14 17:45:25 -0600 Todds-MacBook-Air.local (15342)] INFO : Installing middleware-based Excon instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Starting the New Relic agent in "development" environment.
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Reading configuration from config/newrelic.yml
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : New Relic Agent Developer Mode enabled.
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Environment: development
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Dispatcher: webrick
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Application: My Application
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] WARN : Agent configured not to send data in this environment.
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing ActiveRecord 4 instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing Net instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing deferred Rack instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing Rails 4 Controller instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing Rails 4 view instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing Rails4 Error instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Finished instrumentation
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Doing deferred dependency-detection before Rack startup
+[08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing middleware-based Excon instrumentation

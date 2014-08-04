@@ -8,6 +8,10 @@ $(window).on 'scroll', ->
       $("#page").val($("#pages").data("next"))
       $(".index-search").parent().submit()
 
+$(document).on "click", "[data-slidetoggle]", (e) ->
+  e.preventDefault()
+  $($(this).data("slidetoggle")).slideToggle()
+
 spinner =
   lines: 12, # The number of lines to draw
   length: 5, # The length of each line
@@ -45,6 +49,11 @@ ready = ->
     $("[data-hover=\"dropdown\"]").dropdownHover delay: 100
     $("[data-hover=\"dropdown\"]").click ->
       window.location.href = $(this).attr("href")
+
+  clearPassword = ->
+    $(".password").val("")
+
+  setTimeout clearPassword, 1000
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

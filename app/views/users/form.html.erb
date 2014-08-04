@@ -9,26 +9,50 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<%= f.label :username %>
+									<%= f.label :username, "*Username" %>
 									<%= f.text_field :username, class: "form-control" %>
 								</div>
 								<div class="form-group">
-									<%= f.label :email %>
+									<%= f.label :email, "*Email" %>
 									<%= f.email_field :email, class: "form-control" %>
 								</div>
 								<div class="form-group">
 									<%= f.label :name %>
 									<%= f.text_field :name, class: "form-control" %>
 								</div>
-								<% unless params[:signup] == "true" %>
+								<div id='change-password' style='display:none'>
 									<div class="form-group">
 										<%= f.label :password, "Change password" %>
-										<%= f.password_field :password, class: "form-control" %>
+										<%= f.password_field :password, class: "form-control password", autocomplete: 'off' %>
 									</div>
 									<div class="form-group">
 										<%= f.label :password_confirmation %>
-										<%= f.text_field :password_confirmation, class: "form-control" %>
+										<%= f.text_field :password_confirmation, class: "form-control passworkd", autocomplete: 'off' %>
 									</div>
+								</div>
+								<% unless @user.terms_of_service %>
+									<div class="form-group">
+										<%= f.check_box :terms_of_service %>
+										<label for="user_terms_of_service">
+											&nbsp;Agree to <%= link_to "Terms of Service", "#terms", data: {toggle: "modal"} %>
+										</label>
+									</div>
+									<div class="modal fade" id="terms">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+													<h3 class="modal-title">Terms of Service</h3>
+												</div>
+												<div class="modal-body">
+													<%= render 'pages/terms_of_service' %>
+												</div>
+												<div class="modal-footer">
+													<a data-dismiss="modal" class="btn btn-default">Close</a>
+												</div>
+											</div><!-- /.modal-content -->
+										</div><!-- /.modal-dialog -->
+									</div><!-- /.modal -->
 								<% end %>
 							</div>
 							<div class="col-md-6">
@@ -53,35 +77,12 @@
 								</div>
 							</div>
 						</div>
-						<% unless @user.terms_of_service %>
-							<div class="form-group">
-								<%= f.check_box :terms_of_service %>
-								<label for="user_terms_of_service">
-									&nbsp;Agree to <%= link_to "Terms of Service", "#terms", data: {toggle: "modal"} %>
-								</label>
-							</div>
-							<div class="modal fade" id="terms">
-						    <div class="modal-dialog">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
-						          <h3 class="modal-title">Terms of Service</h3>
-						        </div>
-						        <div class="modal-body">
-						        	<%= render 'pages/terms_of_service' %>
-								    </div>
-						        <div class="modal-footer">
-						          <a data-dismiss="modal" class="btn btn-default">Close</a>
-						        </div>
-						      </div><!-- /.modal-content -->
-						    </div><!-- /.modal-dialog -->
-						  </div><!-- /.modal -->
-						<% end %>
 						<div class='form-footer'>
 							<%= link_to "Cancel", :back, class: "btn btn-default" %>
 							<%= f.submit "Save", class: "btn btn-primary", data: {loading_text: "Saving..."} %>
 						</div>
 					</div>
+					<%= link_to "Change Password", "#", data: {slidetoggle: '#change-password'} %><br>
 					<%= link_to "Delete Account", "#", class: "delete", data: {url: user_path(@user), text: "Are you sure you want to delete your account? You'll no longer have access to your recipes.", title: "Delete Account"} %>
 				</div>
 			</div>

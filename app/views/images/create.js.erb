@@ -1,8 +1,8 @@
+$("#img-btn, #img-trigger").button('reset')
+$("#img-url").val("")
 <% unless flash[:error] %>
   $("#img, #img-mobile").html("<%= escape_javascript(render 'img') %>")
 <% end %>
-$("#img-btn, #img-trigger").button("reset")
-$("#img-url").val("")
 <% unless mobile_device? || flash[:error] %>
   $("#modal-holder").html("<%= escape_javascript(render('form')) %>")
   $("#<%= escape_javascript(controller_name.singularize.dasherize) %>-modal").modal('show')

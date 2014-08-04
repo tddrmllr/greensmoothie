@@ -61,9 +61,7 @@ class User < ActiveRecord::Base
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
       member = mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
-    rescue Mailchimp::ListAlreadySubscribedError
-      puts "already subscribed"
-    rescue Mailchimp::Error => ex
+    rescue
       puts "some error"
     end
     self.update_column :mailchimp_member_id, member['euid']
@@ -73,8 +71,8 @@ class User < ActiveRecord::Base
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
       mailchimp.lists.unsubscribe "6a584771e4", {email: self.email}
-    rescue Mailchimp::EmailNotExistsError
-      puts "not subscribed"
+    rescue
+      puts 'some error'
     end
     self.update_column :mailchimp_member_id, nil
   end

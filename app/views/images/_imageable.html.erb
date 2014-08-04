@@ -8,7 +8,7 @@
 	<% end %>
 </span>
 <%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
-	<%= link_to "Upload an Image", "#", class: "btn btn-primary hidden-xs", id: "img-btn", data: {loading_text: "Uploading..."} %>
+	<%= link_to "Upload an Image", "#", class: "btn btn-primary hidden-xs", id: "img-btn2", data: {loading_text: "Uploading..."} %>
 	<%= image.file_field :image,  id: "img-file", class: "hidden-xs" %>
 	<%= image.hidden_field :imageable_id, value: resource.id %>
 	<%= image.hidden_field :imageable_type, value: resource.class.name %>
