@@ -63,6 +63,7 @@ class User < ActiveRecord::Base
       member = mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
     rescue
       puts "some error"
+      member ||= {}
     end
     self.update_column :mailchimp_member_id, member['euid']
   end

@@ -24,6 +24,12 @@
 			  	<%= f.password_field :password_confirmation, class: "form-control" %>
 			  </div>
 
+				<div class="checkbox">
+					<label>
+						<%= f.check_box :remember_me %> Remember me
+					</label>
+				</div>
+
 			  <%= f.submit "Signup", class: "btn btn-primary btn-login", data: {loading_text: "Signing up..."} %>
 			  <%= render 'devise/shared/providers' %>
 			<% end %>
