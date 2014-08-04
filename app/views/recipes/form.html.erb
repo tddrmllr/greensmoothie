@@ -14,7 +14,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<%= f.hidden_field :user_id, value: current_user.id %>
+							<%= f.hidden_field :user_id, value: current_user.id if @recipe.user_id.nil? %>
 							<%= f.label :name %>
 							<%= f.text_field :name, class: "form-control" %>
 						</div>
@@ -64,6 +64,10 @@
 				<%= f.link_to_add "Add Ingredient", :measurements, class: "btn btn-xs btn-primary" %>
 				<br>
 				<br>
+				<div class='alert alert-info'>
+					<p style='font-size: 14px'><strong>Tip</strong></p>
+					<p style='font-size: 14px'>When adding ingredients, don't use descriptive words like "fresh" or "organic." Simply use the name of the ingredient. This keeps our database consistent and avoids duplicate entries for the same food.</p>
+				</div>
 				<div class='form-footer'>
 					<%= render 'images/mobile', resource: @recipe %>
 					<%= link_to "Cancel", :back, class: "btn btn-default" %>

@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new(user_id: current_user.id)
+    @recipe = Recipe.new
     @measurements = @recipe.measurements
     @title = "New Recipe"
     render 'form'
