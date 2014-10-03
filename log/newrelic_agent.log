@@ -135,3 +135,20 @@
 [08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Finished instrumentation
 [08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Doing deferred dependency-detection before Rack startup
 [08/03/14 17:52:11 -0600 Todds-MacBook-Air.local (15512)] INFO : Installing middleware-based Excon instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Starting the New Relic agent in "development" environment.
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Reading configuration from config/newrelic.yml
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : New Relic Agent Developer Mode enabled.
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Environment: development
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Dispatcher: webrick
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Application: My Application
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] WARN : Agent configured not to send data in this environment.
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing ActiveRecord 4 instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing Net instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing deferred Rack instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing Rails 4 Controller instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing Rails 4 view instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing Rails4 Error instrumentation
+[10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Finished instrumentation
+[10/02/14 19:09:16 -0600 Todds-MacBook-Air.local (2768)] INFO : Doing deferred dependency-detection before Rack startup
+[10/02/14 19:09:16 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing middleware-based Excon instrumentation

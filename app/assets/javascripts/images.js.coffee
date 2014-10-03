@@ -21,7 +21,7 @@ $(document).on "click", "#img-trigger", (e) ->
 
 $(document).on 'paste', '#img-url', ->
   that = $(this)
-  $("#img-btn, #img-trigger").button("loading")
+  $("#img-btn, #img-trigger, #img-btn2").button("loading")
   setTimeout (->
     that.closest('form').submit()
   ), 100

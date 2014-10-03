@@ -29,18 +29,31 @@ body.home-mobile {
 	}
 }
 
-div#mission {
-	font-weight: 200;
-	padding: 30px 0px;
-	p.lead {
-		font-size: 30px;
-		font-family: 'Josefin Slab', serif;
+table#mission-table {
+	vertical-align: middle;
+	width: 100%;
+	tbody {
+		width: 100%;
 	}
-	div.statement {
-		font-size: 18px;
-		border-left: 1px solid #ffffff;
-		padding-left: 15px;
-		font-weight: 200;
+	td {
+		height: 250px;
+	}
+	tr > td:first-child {
+		width: 70%;
+		p.lead {
+			font-size: 30px;
+			font-family: 'Josefin Slab', serif;
+			margin: 0px;
+			margin-right: 100px;
+		}
+		div#mission {
+			font-weight: 200;
+			padding: 30px 0px;
+		}
+	}
+	tr > td:last-child {
+		width: 30%;
+		text-align: right;
 	}
 }
 
@@ -136,4 +149,11 @@ footer {
   a {
     color: #ffffff;
   }
+}
+
+#mobile-footer {
+	font-size: 12px;
+	a {
+		color: #ffffff;
+	}
 }
