@@ -31,7 +31,7 @@ ready = ->
     $("#pages").data("next", 2)
     $(this).parent().submit()
 
-  if App.mobile() && $(".summernote").length > 0
+  if $(".summernote").length > 0
     $(".summernote").summernote
       lang: 'en-US'
       toolbar: [
@@ -40,8 +40,6 @@ ready = ->
         ['insert', ['link', 'picture']]
         ['view', ['fullscreen', 'codeview']]
       ]
-      onfocus: ->
-        $(".cke").remove()
 
   $("[data-toggle='tooltip']").tooltip()
 

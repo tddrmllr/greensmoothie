@@ -5,7 +5,7 @@ class Nutrient < ActiveRecord::Base
 
   accepts_nested_attributes_for :citations
 
-  default_scope order: 'name ASC'
+  default_scope -> { order('name ASC') }
 
   validates :name, presence: true
   validates_length_of :symbol, maximum: 3

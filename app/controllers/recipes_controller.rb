@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   include UpdateTags
 
   def index
-    @search = Recipe.search(params[:q])
+    @search = Recipe.ransack(params[:q])
     @recipes = Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(8)
     @title = "Green Smoothie Recipes"
   end
@@ -38,7 +38,6 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
-    @comments = @recipe.comments
     @title = @recipe.name
     @delete = true
   end

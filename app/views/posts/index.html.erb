@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<%= search_form_for @search, remote: true do |f| %>
-			<%= f.text_field :name_or_body_or_abstract_or_tags_name_cont, id: "post-search", class: "index-search form-control input-lg", placeholder: "Search", data: {type: "post"} %>
+			<%= f.text_field :name_or_body_or_abstract_cont, id: "post-search", class: "index-search form-control input-lg", placeholder: "Search", data: {type: "post"} %>
 			<%= hidden_field_tag :page, 1 %>
 		<% end %>
 		<br>

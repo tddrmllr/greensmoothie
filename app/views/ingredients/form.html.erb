@@ -11,12 +11,8 @@
 
 				<div class="form-group">
 					<%= f.label :description %>
-					<% if mobile_device? %>
-						<br>
-						<%= f.text_area :description, id: "description", class: "form-control summernote" %>
-					<% else %>
-						<%= f.cktext_area :description, class: 'ckeditor', id: "description", ckeditor: {toolbar: "Mini"} %>
-					<% end %>
+					<br>
+					<%= f.text_area :description, id: "description", class: "form-control summernote" %>
 				</div>
 				<div class='alert alert-green alert-sm'>
 					<p><strong>USDA Reference:</strong> <span class='label label-success'><%= @ingredient.usda_name.blank? ? 'None' : @ingredient.usda_name %></span></p>

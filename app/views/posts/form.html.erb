@@ -4,23 +4,11 @@
 			<%= form_for @post do |f| %>
 				<%= f.hidden_field :image_token %>
 				<%= render 'layouts/errors', object: @post if @post.errors.any? %>
-				<!--
-				<div class="row">
-					<div class="col-md-12">
-						<%= render 'tags/tag_list', taggable: @post %>
-					</div>
-				</div>
-				-->
 				<div class="row">
 					<div class="col-md-12">
 						<%= f.label :name %>
 						<%= f.text_field :name, class: "form-control" %>
 					</div>
-					<!--
-					<div class="col-md-6">
-						<%= render 'tags/tag_form', taggable: @post %>
-					</div>
-					-->
 				</div>
 				<br>
 				<%= f.label :headline %>
@@ -29,15 +17,12 @@
 				<%= f.label :abstract %>
 				<%= f.text_area :abstract, class: "form-control", rows: 3 %>
 				<br>
-				<% if mobile_device? %>
-					<br>
-					<%= f.text_area :body, class: "form-control summernote" %>
-				<% else %>
-					<%= f.cktext_area :body, class: 'ckeditor', ckeditor: {height: 500} %>
-				<% end %>
+				<%= f.label :body %>
+				<br>
+				<%= f.text_area :body, class: "form-control summernote-post", rows: 5 %>
 				<br>
 				<div class='form-footer'>
-					<%= link_to "Delete Post", "#", class: 'pull-left btn btn-danger delete', data: {url: post_path(@post), title: "Delete Post", text: "Are you sure you want to delete this post?"} %>
+					<%= link_to "Delete Post", "#", class: 'pull-left btn btn-danger delete', data: {url: post_path(@post), title: "Delete Post", text: "Are you sure you want to delete this post?"} if @post.persisted? %>
 					<%= f.label :core_content, "Core Content?", style: "margin-top: 6px; margin-left: 5px" %>
 					<%= f.check_box :core_content %>
 

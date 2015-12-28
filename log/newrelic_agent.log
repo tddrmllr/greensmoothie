@@ -152,3 +152,131 @@
 [10/02/14 19:09:15 -0600 Todds-MacBook-Air.local (2768)] INFO : Finished instrumentation
 [10/02/14 19:09:16 -0600 Todds-MacBook-Air.local (2768)] INFO : Doing deferred dependency-detection before Rack startup
 [10/02/14 19:09:16 -0600 Todds-MacBook-Air.local (2768)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Environment: development
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Dispatcher: webrick
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Application: My Application
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Net instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Finished instrumentation
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Doing deferred dependency-detection before Rack startup
+[2015-12-27 22:49:37 -0700 Todds-MacBook-Pro.local (43101)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Environment: development
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Dispatcher: webrick
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Application: My Application
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Net instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Finished instrumentation
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Doing deferred dependency-detection before Rack startup
+[2015-12-27 22:50:02 -0700 Todds-MacBook-Pro.local (43128)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Environment: development
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Dispatcher: webrick
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Application: My Application
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Net instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 22:55:53 -0700 Todds-MacBook-Pro.local (43348)] INFO : Finished instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Environment: development
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Dispatcher: webrick
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Application: My Application
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Net instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 22:56:33 -0700 Todds-MacBook-Pro.local (43376)] INFO : Finished instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Environment: development
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Dispatcher: webrick
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Application: My Application
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Net instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Finished instrumentation
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Doing deferred dependency-detection before Rack startup
+[2015-12-27 22:56:58 -0700 Todds-MacBook-Pro.local (43408)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Environment: development
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Dispatcher: webrick
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Application: My Application
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Net instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Finished instrumentation
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Doing deferred dependency-detection before Rack startup
+[2015-12-27 23:11:32 -0700 Todds-MacBook-Pro.local (43769)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Environment: development
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : No known dispatcher detected.
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Application: My Application
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] WARN : Agent configured not to send data in this environment.
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Net instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rails 4 view instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Finished instrumentation
+[2015-12-28 00:01:16 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `name_or_description_or_tags_name_or_ingredients_name_cont' for Ransack::Search<class: Recipe, base: Grouping <combinator: and>>:Ransack::Search

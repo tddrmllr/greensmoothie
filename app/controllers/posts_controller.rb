@@ -11,8 +11,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @comments = @post.comments
+    @post = Post.find_by_url_name(params[:url_name])
     @title = @post.name
   end
 
@@ -60,8 +59,7 @@ class PostsController < ApplicationController
 
   def core_content
     name = request.url.gsub(HOST + "/", "")
-    @post = Post.core.select {|x| x.dashed_name == name}.first
-    @comments = @post.comments
+    @post = Post.core.select { |x| x.dashed_name == name }.first
     @title = @post.name
     render 'show'
   end

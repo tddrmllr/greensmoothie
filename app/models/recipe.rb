@@ -1,13 +1,9 @@
 class Recipe < ActiveRecord::Base
   include HasImage
-  unless (ARGV & ['assets:precompile', 'assets:clean']).any?
-    acts_as_taggable
-  end
 
   belongs_to :user
   has_many :measurements
   has_many :ingredients, through: :measurements
-  has_many :comments, as: :commentable
   has_many :ratings
 
   accepts_nested_attributes_for :measurements, allow_destroy: true
@@ -15,7 +11,7 @@ class Recipe < ActiveRecord::Base
   validates :name, :description, presence: true
   validate :has_ingredients
 
-  default_scope order('created_at DESC')
+  default_scope -> { order('created_at DESC') }
 
   def named_route
     text = self.name.strip.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")

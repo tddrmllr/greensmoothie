@@ -26,6 +26,7 @@
 			<% else %>
 				<%= render 'ratings/rate_it' %>
 			<% end %>
+			<p class='description'><%= @recipe.description %></p>
 			<%= content_tag :h4, "Ingredients", class: "ribbon" %>
 			<%= render @ingredients %>
 			<% unless @recipe.instructions.blank? %>
@@ -48,9 +49,6 @@
 	  	<% else %>
 	    	<%= image_tag "glass.png", class: "hover" %>
 	    <% end %>
-	    <div class="info" style="font-weight: 300">
-		    <%= @recipe.description %>
-		  </div>
 		  <% if !@recipe.user.nil? && user_signed_in? && current_user.admin? %>
 			  <div class="user">
 			  	<strong>Created by:</strong>

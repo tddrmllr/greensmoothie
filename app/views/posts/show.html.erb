@@ -8,7 +8,6 @@
 			<%= image_tag @post.image.image.url(:original), style: "width: 100%; margin-bottom: 15px" if @post.image? %>
 			</div>
 			<%= @post.body.html_safe %>
-			<%= show_tags(@post) %>
 		</div>
 	</div>
 	<div class="col-md-4">
