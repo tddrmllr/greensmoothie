@@ -53,6 +53,7 @@ class IngredientsController < ApplicationController
       redirect_to @ingredient
     else
       @delete = true
+      flash[:error] = @ingredient.errors.full_messages.join(', ')
       render 'form'
     end
   end
@@ -61,12 +62,5 @@ class IngredientsController < ApplicationController
 
   def ingredient_params
     params.require(:ingredient).permit(:name, :description, :source_url)
-  end
-
-  def find_or_create_nutrients
-    params[:ingredient][:citations_attributes].each do |k,v|
-      nutrient = Nutrient.find_or_create(v['nutrient']['name'].downcase)
-      params[:ingredient][:citations_attributes][k]['citable_id'] = nutrient.id
-    end
   end
 end

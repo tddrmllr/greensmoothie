@@ -1,0 +1,10 @@
+admin_user:
+  username: 'admin'
+  email: 'admin@greensmoothie.me'
+  terms_of_service: true
+  role: 'Admin'
+
+normal_user:
+  username: 'user'
+  email: 'user@greensmoothie.me'
+  terms_of_service: true

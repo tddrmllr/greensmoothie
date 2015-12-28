@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   helper_method :mobile_device?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    @title = 'Error'
+    render 'layouts/forbidden', status: :forbidden
+  end
+
   protected
 
   def check_user
