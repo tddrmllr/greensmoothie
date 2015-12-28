@@ -1,0 +1,4 @@
+sample_image:
+  image_file_name: 'sample_file.png'
+  image_content_type: 'image/png'
+  image_file_size: 2182

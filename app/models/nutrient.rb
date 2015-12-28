@@ -2,8 +2,6 @@ class Nutrient < ActiveRecord::Base
   has_many :ingredient_nutrients, dependent: :destroy
   has_many :ingredients, through: :ingredient_nutrients
 
-  accepts_nested_attributes_for :citations
-
   default_scope -> { order('name ASC') }
 
   validates :name, presence: true

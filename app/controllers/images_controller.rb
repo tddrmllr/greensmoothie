@@ -1,21 +1,24 @@
 class ImagesController < ApplicationController
 
   def create
-      @image = Image.new(image_params)
-      if @image.save
-        flash.now[:success] = "Photo updated successfully."
-      else
-        flash.now[:error] = "Invalid image or URL."
-      end
+    @image = Image.new(image_params)
+    if @image.save
+      flash.now[:success] = "Photo updated successfully."
+    else
+      flash.now[:error] = "Invalid image or URL."
+    end
   end
 
   def update
     @image = Image.find(params[:id])
-    @image.update_attributes(image_params)
-    if @image.cropping?
-      @image.image.reprocess!
+    if @image.update_attributes(image_params)
+      if @image.cropping?
+        @image.image.reprocess!
+      end
+      flash.now[:success] = "Photo updated successfully."
+    else
+      flash.now[:error] = "Invalid image or URL."
     end
-    flash.now[:success] = "Photo updated successfully."
   end
 
   def edit
