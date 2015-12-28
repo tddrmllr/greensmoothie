@@ -27,5 +27,4 @@ class Image < ActiveRecord::Base
     @image ||= {}
     @image[style] ||= Paperclip::Geometry.from_file(image.url(style))
   end
-
 end

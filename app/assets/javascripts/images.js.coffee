@@ -15,7 +15,7 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-$(document).on "click", "#img-trigger", (e) ->
+$(document).on "click", "#img-btn2", (e) ->
   e.preventDefault()
   $("#img-file").click()
 

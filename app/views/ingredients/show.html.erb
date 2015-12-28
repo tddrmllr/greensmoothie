@@ -17,7 +17,7 @@
 				<p><%= @ingredient.description.html_safe %></p>
 			<% else %>
 				<br>
-				<p class='alert alert-info' style='margin-bottom: 0px'>No entry for this ingredient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
+				<p class='alert alert-green' style='margin-bottom: 0px'>No entry for this ingredient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
 			<% end %>
 			<br>
 			<% if @ingredient.nutrients.any? %>
