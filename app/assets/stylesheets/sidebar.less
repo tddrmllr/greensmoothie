@@ -1,0 +1,74 @@
+.gradient {
+	background: -moz-linear-gradient(left,  rgba(92,184,92,1) 2%, rgba(65,130,65,1) 31%, rgba(0,0,0,0.01) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(2%,rgba(92,184,92,1)), color-stop(31%,rgba(65,130,65,1)), color-stop(100%,rgba(0,0,0,0.01))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cb85c', endColorstr='#03000000',GradientType=1 ); /* IE6-9 */
+}
+
+a.sidebar {
+	border-width: 0px;
+	border-bottom: 5px solid #eeeeee;
+	margin-top: 0px;
+	text-align: left;
+	font-size: @font-size-base;
+	color: #ffffff;
+	padding: 0px;
+	div.overlay {
+		.gradient;
+		padding: 15px 0px;
+	}
+	div.overlay:hover {
+		background-color: rgba(255,255,255,0.3)
+	}
+	p {
+		margin-bottom: 0px;
+	}
+	strong {
+	  font-weight: 400;
+	}
+  table {
+    width: 100%;
+    th:first-child {
+      padding-left: 8%;
+      width: 17%;
+    }
+  }
+}
+
+div.sidebar {
+	border-top: 5px solid #eeeeee;
+	div:first-child, p.title {
+		font-weight: 400;
+		color: #ffffff;
+	}
+	div.overlay {
+		.gradient;
+		padding: 15px 15px 15px 0px;
+	}
+  table {
+    width: 100%;
+    th:first-child {
+      padding-left: 8%;
+      width: 17%;
+    }
+    td {
+      font-weight: 200;
+    }
+  }
+}
+
+a.sidebar:not(:first-child) {
+  border-top: 5px solid #eeeeee;
+}
+
+a.sidebar + a.sidebar {
+  margin-top: 0px;
+}
+
+div#sidebar {
+	background: image-url("sidebar.jpg") no-repeat center top;
+  background-size: 100%;
+}

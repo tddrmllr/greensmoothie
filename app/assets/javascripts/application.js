@@ -24,5 +24,6 @@
 //= require jquery.spin
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.masonry
+//= require sidr
 //= require summernote
 //= require_tree .

@@ -280,3 +280,12 @@
 [2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Installing Rails 4 Error instrumentation
 [2015-12-27 23:51:15 -0700 Todds-MacBook-Pro.local (44454)] INFO : Finished instrumentation
 [2015-12-28 00:01:16 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `name_or_description_or_tags_name_or_ingredients_name_cont' for Ransack::Search<class: Recipe, base: Grouping <combinator: and>>:Ransack::Search
+[2015-12-28 10:40:05 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: .gradient is undefined
+[2015-12-28 10:51:17 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing partial layouts/_drawer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/toddmiller/Apps/greensmoothie/app/views"
+  * "/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/kaminari-0.16.3/app/views"
+  * "/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/devise-3.5.3/app/views"
+
+[2015-12-28 11:01:26 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unrecognised input
+[2015-12-28 11:01:52 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unrecognised input
+[2015-12-28 11:14:04 -0700 Todds-MacBook-Pro.local (43769)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `blog_bath' for #<#<Class:0x007f9269aafed0>:0x007f9269e45068>

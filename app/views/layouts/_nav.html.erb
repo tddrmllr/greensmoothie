@@ -1,12 +1,7 @@
 <nav class="navbar <%= action_name == "home" ? "navbar-inverse" : "navbar-default" %>" role="navigation">
 	<div class="container">
 	  <div class="navbar-header">
-	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
-	      <span class="sr-only">Toggle navigation</span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </button>
+			<%= link_to material_icon('menu'), '#', class: 'visible-xs', id: 'mobile-menu' %>
 	    <a class="navbar-brand" href="<%= root_path %>"><%= fa_icon "leaf" %> Green Smoothie</a>
 	  </div>
 	  <div class="collapse navbar-collapse" id="collapse">

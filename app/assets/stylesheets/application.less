@@ -9,71 +9,37 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *kk
  *= require font-awesome
+ *= require fontello
+ *= require material-icons
  *= require pnotify.base
  *= require pnotify.icons
+ *= require sidr
  *= require summernote
  *= require jquery.fileupload-ui
  *= require jquery.Jcrop
  *= require_self
  *= require pages
 
+ *= depend_on "drawer.less"
  *= depend_on "recipes.less"
+ *= depend_on "sidebar.less"
  */
 
 @import 'bs.less';
 
 @import 'benefits.less';
 @import 'comments.less';
+@import 'drawer.less';
 @import 'images.less';
 @import 'ingredients.less';
 @import 'nutrients.less';
 @import 'pnotify.less';
 @import 'posts.less';
 @import 'recipes.less';
+@import 'sidebar.less';
 @import 'social.less';
 @import 'tags.less';
 @import 'users.less';
-
-@font-face {
-  font-family: 'fontello';
-  src: font-url('fontello.eot?4317284');
-  src: font-url('fontello.eot?4317284#iefix') format('embedded-opentype'), font-url('fontello.woff?4317284') format('woff'), font-url('fontello.ttf?4317284') format('truetype'),  font-url('fontello.svg?4317284#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: .2em;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.icon-export:before { content: '\e80b'; } /* '' */
-.icon-doc-new:before { content: '\e803'; } /* '' */
-.icon-doc:before { content: '\e805'; } /* '' */
-.icon-report:before { content: '\e806'; } /* '' */
-.icon-book-open:before { content: '\e80a'; } /* '' */
-.icon-chart-pie:before { content: '\e800'; } /* '' */
-.icon-vcard:before { content: '\e807'; } /* '' */
-.icon-chart-bar:before { content: '\e801'; } /* '' */
-.icon-captable:before { content: '\e808'; } /* '' */
-.icon-chart:before { content: '\e809'; } /* '' */
-.icon-cup:before { content: '\e802'; } /* '' */
-.icon-chart-line:before { content: '\e804'; } /* '' */
 
 .form-footer {
   text-align: right;
@@ -93,81 +59,6 @@ a.follow, a.follow:hover {
   i {
     margin-top: 7px;
   }
-}
-
-.gradient {
-	background: -moz-linear-gradient(left,  rgba(92,184,92,1) 2%, rgba(65,130,65,1) 31%, rgba(0,0,0,0.01) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(2%,rgba(92,184,92,1)), color-stop(31%,rgba(65,130,65,1)), color-stop(100%,rgba(0,0,0,0.01))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(92,184,92,1) 2%,rgba(65,130,65,1) 31%,rgba(0,0,0,0.01) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5cb85c', endColorstr='#03000000',GradientType=1 ); /* IE6-9 */
-}
-
-div.sidebar {
-	border-top: 5px solid #eeeeee;
-	div:first-child, p.title {
-		font-weight: 400;
-		color: #ffffff;
-	}
-	div.overlay {
-		.gradient;
-		padding: 15px 15px 15px 0px;
-	}
-  table {
-    width: 100%;
-    th:first-child {
-      padding-left: 8%;
-      width: 17%;
-    }
-    td {
-      font-weight: 200;
-    }
-  }
-}
-
-a.sidebar {
-	border-width: 0px;
-	border-bottom: 5px solid #eeeeee;
-	margin-top: 0px;
-	text-align: left;
-	font-size: @font-size-base;
-	color: #ffffff;
-	padding: 0px;
-	div.overlay {
-		.gradient;
-		padding: 15px 0px;
-	}
-	div.overlay:hover {
-		background-color: rgba(255,255,255,0.3)
-	}
-	p {
-		margin-bottom: 0px;
-	}
-	strong {
-	  font-weight: 400;
-	}
-  table {
-    width: 100%;
-    th:first-child {
-      padding-left: 8%;
-      width: 17%;
-    }
-  }
-}
-
-a.sidebar:not(:first-child) {
-  border-top: 5px solid #eeeeee;
-}
-
-a.sidebar + a.sidebar {
-  margin-top: 0px;
-}
-
-div#sidebar {
-	background: image-url("sidebar.jpg") no-repeat center top;
-  background-size: 100%;
 }
 
 #delete-modal {
@@ -264,4 +155,11 @@ div.media {
 #img-btn {
   position: static;
   left: 0px;
+}
+
+#mobile-menu {
+  color: #ffffff;
+  font-size: 25px;
+  padding: 19px 10px 19px 19px;
+  float: left;
 }

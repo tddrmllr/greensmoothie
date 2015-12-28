@@ -1,22 +1,23 @@
-
-<span id="img" class='hidden-xs'>
-	<% if resource.image? %>
-		<% image = resource.image %>
-		<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
-	<% else %>
-		<%= image_tag "#{resource.class.name.downcase}.png" %>
+<div class='hidden-xs'>
+	<span id="img">
+		<% if resource.image? %>
+			<% image = resource.image %>
+			<%= image_tag image.image.url(:large), class: "img-thumbnail", style: "width: 100%" %>
+		<% else %>
+			<%= image_tag "#{resource.class.name.downcase}.png" %>
+		<% end %>
+	</span>
+	<%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
+		<%= link_to "Upload an Image", "#", class: "btn btn-primary", id: "img-btn2", data: {loading_text: "Uploading..."} %>
+		<%= image.file_field :image,  id: "img-file" %>
+		<%= image.hidden_field :imageable_id, value: resource.id %>
+		<%= image.hidden_field :imageable_type, value: resource.class.name %>
+		<%= image.hidden_field :token, value: resource.image_token %>
+		<div style="height: 1px; background-color: #cccccc; text-align: center; margin-top: 15px; margin-bottom: 5px">
+		  <span style="background-color: #eeeeee; position: relative; top: -0.9em; padding: 0px 5px; font-size: 85%; color: #999999">
+		    or
+		  </span>
+		</div>
+		<%= image.text_field :image_url, placeholder: "Paste Image URL", class: 'form-control pull-left input-sm', style: 'margin-top: 10px; text-align: center', id: 'img-url' %>
 	<% end %>
-</span>
-<%= form_for Image.new, remote: true, html: {id: "img-form"} do |image| %>
-	<%= link_to "Upload an Image", "#", class: "btn btn-primary hidden-xs", id: "img-btn2", data: {loading_text: "Uploading..."} %>
-	<%= image.file_field :image,  id: "img-file", class: "hidden-xs" %>
-	<%= image.hidden_field :imageable_id, value: resource.id %>
-	<%= image.hidden_field :imageable_type, value: resource.class.name %>
-	<%= image.hidden_field :token, value: resource.image_token %>
-	<div style="height: 1px; background-color: #cccccc; text-align: center; margin-top: 15px; margin-bottom: 5px">
-	  <span style="background-color: #eeeeee; position: relative; top: -0.9em; padding: 0px 5px; font-size: 85%; color: #999999">
-	    or
-	  </span>
-	</div>
-	<%= image.text_field :image_url, placeholder: "Paste Image URL", class: 'form-control pull-left input-sm', style: 'margin-top: 10px; text-align: center', id: 'img-url' %>
-<% end %>
+</div>
