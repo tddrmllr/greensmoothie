@@ -1,5 +1,4 @@
 class Nutrient < ActiveRecord::Base
-  has_many :citations, as: :citer, dependent: :destroy
   has_many :ingredient_nutrients, dependent: :destroy
   has_many :ingredients, through: :ingredient_nutrients
 

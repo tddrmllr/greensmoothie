@@ -8,7 +8,6 @@ class Ingredient < ActiveRecord::Base
   has_many :recipes, through: :measurements
   has_many :ingredient_nutrients, dependent: :destroy
   has_many :nutrients, through: :ingredient_nutrients
-  has_many :comments, as: :commentable
 
   accepts_nested_attributes_for :measurements
 

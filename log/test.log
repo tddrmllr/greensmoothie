@@ -1,0 +1,242 @@
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE EXTENSION IF NOT EXISTS "hstore"
+  [1m[36m (34.8ms)[0m  [1mCREATE TABLE "authentications" ("id" serial primary key, "provider" character varying(255), "uid" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "benefits" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "citations" ("id" serial primary key, "source" character varying(255), "flags" integer DEFAULT 0, "citable_id" integer, "citer_id" integer, "citable_type" character varying(255), "citer_type" character varying(255)) [0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "ckeditor_assets" ("id" serial primary key, "data_file_name" character varying(255) NOT NULL, "data_content_type" character varying(255), "data_file_size" integer, "assetable_id" integer, "assetable_type" character varying(30), "type" character varying(30), "width" integer, "height" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "idx_ckeditor_assetable" ON "ckeditor_assets" USING btree ("assetable_type", "assetable_id")[0m
+  [1m[35m (2.1ms)[0m  CREATE  INDEX  "idx_ckeditor_assetable_type" ON "ckeditor_assets" USING btree ("assetable_type", "type", "assetable_id")
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "comments" ("id" serial primary key, "body" text, "user_id" integer, "created_at" timestamp, "updated_at" timestamp, "commentable_id" integer, "commentable_type" character varying(255)) [0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "images" ("id" serial primary key, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "imageable_type" character varying(255), "imageable_id" integer, "token" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "ingredient_nutrients" ("id" serial primary key, "ingredient_id" integer, "nutrient_id" integer, "amount" character varying(255), "created_at" timestamp, "updated_at" timestamp, "daily_value" decimal, "unit" character varying(255)) [0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "ingredients" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "serving_size" character varying(255), "source_url" character varying(255), "usda_name" character varying(255)) 
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "measurements" ("id" serial primary key, "ingredient_id" integer, "recipe_id" integer, "amount" character varying(255), "unit" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "nutrients" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp, "symbol" character varying(255), "nutrient_type" character varying(255), "usda_name" character varying(255), "daily_value_amount" decimal, "daily_value_unit" character varying(255)) 
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "body" text, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp, "abstract" text, "user_id" integer, "headline" text, "core_content" boolean DEFAULT 'f', "url_name" character varying(255)) [0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "ratings" ("id" serial primary key, "user_id" integer, "recipe_id" integer, "rating" decimal(1,0), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "recipes" ("id" serial primary key, "name" character varying(255), "description" text, "instructions" text, "user_id" integer, "created_at" timestamp, "updated_at" timestamp, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "rating" decimal(1,0)) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "taggings" ("id" serial primary key, "tag_id" integer, "taggable_id" integer, "taggable_type" character varying(255), "tagger_id" integer, "tagger_type" character varying(255), "context" character varying(128), "created_at" timestamp) 
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings" USING btree ("tag_id")[0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" USING btree ("taggable_id", "taggable_type", "context")
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (9.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '', "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp, "role" character varying(255), "name" character varying(255), "username" character varying(255), "email_list" boolean DEFAULT 't', "recipe_updates" boolean DEFAULT 't', "terms_of_service" boolean DEFAULT 'f', "mailchimp_member_id" character varying(255)) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.9ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151228065115')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125023725')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131125024825')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125061250')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131125065429')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125070321')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131125070536')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125075556')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131129044739')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131129211405')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131201035108')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131201214652')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131206035915')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131206040511')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131207165856')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131210212255')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131221185257')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131222003541')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131227173325')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140105002704')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140107192312')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140108024652')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140108203319')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140109003018')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140109010408')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140110033457')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140204234947')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140214043149')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140214043601')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140215180005')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140316201439')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140317003938')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140322011315')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140322183415')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140322225506')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140323023643')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140326001040')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140326002712')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140508033139')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140515075529')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140517153914')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140517165534')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140517165948')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140517231323')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140519042112')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140519052957')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140519062137')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140520005632')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140526011039')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140609050450')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140609051059')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Unable to load nutrition, underlying cause No such file to load -- nutrition 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/rails.rb:203:in `test_helper'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:200:in `run_action'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:74:in `block (2 levels) in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/load_tracking.rb:7:in `features_loaded_by'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:73:in `block in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `catch'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:48:in `go'
+-e:1:in `<main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Unable to load nutrition, underlying cause No such file to load -- nutrition 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/Apps/greensmoothie/test/helpers/comments_helper_test.rb:1:in `require'
+/Users/toddmiller/Apps/greensmoothie/test/helpers/comments_helper_test.rb:1:in `<top (required)>'
+-e:1:in `require'
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Unable to load nutrition, underlying cause No such file to load -- nutrition 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/rails.rb:203:in `test_helper'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:200:in `run_action'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:74:in `block (2 levels) in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/load_tracking.rb:7:in `features_loaded_by'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:73:in `block in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `catch'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:48:in `go'
+-e:1:in `<main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Unable to load nutrition, underlying cause No such file to load -- nutrition 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/Apps/greensmoothie/test/models/ingredient_test.rb:1:in `require'
+/Users/toddmiller/Apps/greensmoothie/test/models/ingredient_test.rb:1:in `<top (required)>'
+-e:1:in `require'
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Unable to load benefit, underlying cause No such file to load -- benefit 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/rails.rb:203:in `test_helper'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:200:in `run_action'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:74:in `block (2 levels) in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/load_tracking.rb:7:in `features_loaded_by'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:73:in `block in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `catch'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:48:in `go'
+-e:1:in `<main>'
+Unable to load nutrition, underlying cause No such file to load -- nutrition 
+
+ /Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:348:in `require_or_load'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:307:in `depend_on'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:225:in `require_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:881:in `block in require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `each'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:879:in `require_fixture_classes'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.1.1/lib/active_record/fixtures.rb:857:in `fixtures'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:15:in `<class:TestCase>'
+/Users/toddmiller/Apps/greensmoothie/test/test_helper.rb:8:in `<top (required)>'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/rails.rb:203:in `test_helper'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:200:in `run_action'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:74:in `block (2 levels) in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus/load_tracking.rb:7:in `features_loaded_by'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:73:in `block in boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `catch'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:56:in `boot_steps'
+/Users/toddmiller/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/zeus-0.15.4/lib/zeus.rb:48:in `go'
+-e:1:in `<main>'

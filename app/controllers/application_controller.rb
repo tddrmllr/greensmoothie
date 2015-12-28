@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   helper_method :mobile_device?
 
-  def popular_recipes
-    @popular_recipes ||= Recipe.order(rating: :asc).limit(3)
-  end
-
   protected
 
   def check_user

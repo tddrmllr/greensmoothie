@@ -312,3 +312,20 @@
 [2015-12-28 12:08:36 -0700 Todds-MacBook-Pro.local (49074)] INFO : Finished instrumentation
 [2015-12-28 12:08:36 -0700 Todds-MacBook-Pro.local (49074)] INFO : Doing deferred dependency-detection before Rack startup
 [2015-12-28 12:08:36 -0700 Todds-MacBook-Pro.local (49074)] INFO : Installing middleware-based Excon instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Starting the New Relic agent in "development" environment.
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Reading configuration from config/newrelic.yml (/Users/toddmiller/Apps/greensmoothie)
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : New Relic Agent Developer Mode enabled.
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Environment: development
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : No known dispatcher detected.
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Application: My Application
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] WARN : Agent configured not to send data in this environment.
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Net instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing deferred Rack::Builder instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Rails 4 Controller instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Rails 4 view instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Installing Rails 4 Error instrumentation
+[2015-12-28 12:15:39 -0700 Todds-MacBook-Pro.local (49288)] INFO : Finished instrumentation
