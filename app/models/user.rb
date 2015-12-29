@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   include HasImage
   require 'mailchimp'
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -21,12 +19,6 @@ class User < ActiveRecord::Base
 
   def admin?
     self.role == "Admin"
-  end
-
-  def agree_to_terms_of_service
-    if self.sign_in_count > 0 && self.terms_of_service.blank?
-      errors.add(:base, "Please indicate that you agree to our terms of service")
-    end
   end
 
   def apply_omniauth(auth)
@@ -57,15 +49,32 @@ class User < ActiveRecord::Base
     ratings.where(recipe_id: recipe.id).any?
   end
 
+
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+
+  private
+
+  def agree_to_terms_of_service
+    if self.sign_in_count > 0 && self.terms_of_service.blank?
+      errors.add(:base, "Please indicate that you agree to our terms of service")
+    end
+  end
+
   def subscribe_mailchimp
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
       member = mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
     rescue
-      puts "some error"
       member ||= {}
     end
-    self.update_column :mailchimp_member_id, member['euid']
+    self.mailchimp_member_id = member['euid']
   end
 
   def unsubscribe_mailchimp
@@ -75,7 +84,7 @@ class User < ActiveRecord::Base
     rescue
       puts 'some error'
     end
-    self.update_column :mailchimp_member_id, nil
+    self.mailchimp_member_id = nil
   end
 
   def update_mailchimp_subscription
@@ -92,21 +101,9 @@ class User < ActiveRecord::Base
 
   def update_mailchimp
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
-    begin
-      mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]}
-    rescue Mailchimp::ListAlreadySubscribedError
-      puts "already subscribed"
-    rescue Mailchimp::Error => ex
-      puts "some error"
-    end
-  end
-
-  def update_with_password(params, *options)
-    if encrypted_password.blank?
-      update_attributes(params, *options)
-    else
-      super
-    end
+    mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]}
+  rescue
+    false
   end
 
   def username_cannot_be_blank

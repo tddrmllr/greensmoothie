@@ -1,0 +1,4 @@
+normal_user_facebook:
+  provider: 'facebook'
+  uid: 'randomstring'
+  user: 'normal_user'
