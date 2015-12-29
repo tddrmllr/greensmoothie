@@ -9,44 +9,10 @@ class NutrientsController < ApplicationController
     @title = "Nutrients"
   end
 
-  def new
-    @nutrient = Nutrient.new(name: params[:name])
-    @elem = params[:elem]
-    @title = "New Nutrient"
-    respond_with(@nutrient) do |format|
-      format.js {render 'layouts/new'}
-      format.html {render 'form'}
-    end
-  end
-
   def edit
     @nutrient = Nutrient.find(params[:id])
     @title = "Edit Nutrient"
     render 'form'
-  end
-
-  def create
-    @nutrient = Nutrient.new(nutrient_params)
-    @elem = params[:elem]
-    if @nutrient.save
-      respond_with(@nutrient) do |format|
-        format.html {redirect_to @nutrient}
-        format.js {render 'layouts/create'}
-      end
-    else
-      respond_with(@nutrient) do |format|
-        format.html {render 'form'}
-        format.js {render 'layouts/errors'}
-      end
-    end
-  end
-
-  def destroy
-    @nutrient = Nutrient.find(params[:id])
-    @nutrient.destroy
-    flash[:success] = 'Nutrient deleted.'
-    @redirect = nutrients_path
-    render 'layouts/destroy'
   end
 
   def show

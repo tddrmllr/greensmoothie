@@ -8092,3 +8092,840 @@ Processing by MailchimpController#subscribe as JS
   Rendered layouts/_flasher.html.erb (0.1ms)
 Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (2.0ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:21:13', '2015-12-29 06:21:13', 233574227)
+  [1m[36mFixture Delete (1.8ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:21:13', '2015-12-29 06:21:13', 820428662)
+  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:21:13', '2015-12-29 06:21:13', 312016764)
+  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:21:13', '2015-12-29 06:21:13', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:21:13', '2015-12-29 06:21:13', 403821611)[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '212b583218cdd0ace447'
+  [1m[36mNutrient Load (1.9ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (1.4ms)
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+  Rendered nutrients/index.html.erb within layouts/application (21.3ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+  Rendered layouts/_drawer.html.erb (1.3ms)
+Completed 200 OK in 5273ms (Views: 5238.3ms | ActiveRecord: 2.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:21:59', '2015-12-29 06:21:59', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:21:59', '2015-12-29 06:21:59', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:21:59', '2015-12-29 06:21:59', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:21:59', '2015-12-29 06:21:59', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:21:59', '2015-12-29 06:21:59', 403821611)[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c56d495a88924bc1452f'[0m
+  [1m[35mNutrient Load (1.8ms)[0m  SELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC
+  Rendered nutrients/_nutrient.html.erb (0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "nutrients"[0m
+  Rendered layouts/_infinite.html.erb (1.5ms)
+  Rendered layouts/_sidebar.html.erb (1.7ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+  Rendered layouts/_drawer.html.erb (1.1ms)
+Completed 200 OK in 4568ms (Views: 4538.2ms | ActiveRecord: 2.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:22:19', '2015-12-29 06:22:19', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:22:19', '2015-12-29 06:22:19', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:22:19', '2015-12-29 06:22:19', 312016764)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:22:19', '2015-12-29 06:22:19', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:22:19', '2015-12-29 06:22:19', 403821611)[0m
+  [1m[35m (7.7ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.7ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '5a978c36652b0898eb13'
+  Rendered layouts/forbidden.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+  Rendered layouts/_drawer.html.erb (2.0ms)
+Completed 403 Forbidden in 4659ms (Views: 4601.0ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.6ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '683c5c484915e08c02ce'
+  [1m[36mNutrient Load (1.9ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (1.2ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (2.1ms)
+  Rendered layouts/_sidebar.html.erb (2.2ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_drawer.html.erb (1.2ms)
+Completed 200 OK in 74ms (Views: 54.9ms | ActiveRecord: 2.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:33:20', '2015-12-29 06:33:20', 233574227)
+  [1m[36mFixture Delete (1.8ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:33:20', '2015-12-29 06:33:20', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:33:20', '2015-12-29 06:33:20', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:33:20', '2015-12-29 06:33:20', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:33:20', '2015-12-29 06:33:20', 403821611)[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '20c9c5d65e70cae8dfc5'
+  Rendered layouts/forbidden.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+  Rendered layouts/_drawer.html.erb (1.6ms)
+Completed 403 Forbidden in 4890ms (Views: 4840.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '21d9c537c861e5c9d5da'
+  [1m[36mNutrient Load (1.4ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (1.2ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (2.7ms)
+  Rendered layouts/_sidebar.html.erb (2.0ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered layouts/_drawer.html.erb (1.7ms)
+Completed 200 OK in 42ms (Views: 30.4ms | ActiveRecord: 2.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '0fb8bdde3e693f395032'
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_delete.html.erb (0.4ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 37ms (Views: 9.7ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:33:52', '2015-12-29 06:33:52', 233574227)
+  [1m[36mFixture Delete (1.5ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:33:52', '2015-12-29 06:33:52', 820428662)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:33:52', '2015-12-29 06:33:52', 312016764)
+  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:33:52', '2015-12-29 06:33:52', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:33:52', '2015-12-29 06:33:52', 403821611)[0m
+  [1m[35m (8.0ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'db5313636ef632b74804'
+  Rendered layouts/forbidden.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_nav.html.erb (5.0ms)
+  Rendered layouts/_drawer.html.erb (1.7ms)
+Completed 403 Forbidden in 5005ms (Views: 4952.6ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.6ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '416aa5b1a39915c206e2'
+  [1m[36mNutrient Load (3.6ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.9ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (1.7ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+  Rendered layouts/_drawer.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 26.2ms | ActiveRecord: 4.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'da3c18bbcdaf7d0f49b2'
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_delete.html.erb (0.4ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 9.6ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+NutrientsControllerTest::NoUser: test_update
+--------------------------------------------
+  [1m[35mNutrient Load (0.6ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3c276a6d660f373ec91e'[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 403 Forbidden in 10ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:35:59', '2015-12-29 06:35:59', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:35:59', '2015-12-29 06:35:59', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:35:59', '2015-12-29 06:35:59', 312016764)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:35:59', '2015-12-29 06:35:59', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:35:59', '2015-12-29 06:35:59', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_edit
+----------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '1ef8f9ec35fbcf5dbb50'[0m
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '57b00969558218b67a45'[0m
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  Rendered nutrients/_inputs.html.erb (20.3ms)
+  Rendered layouts/_sidebar.html.erb (1.7ms)
+  Rendered nutrients/form.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+  Rendered layouts/_drawer.html.erb (2.7ms)
+Completed 200 OK in 4779ms (Views: 4762.5ms | ActiveRecord: 1.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------------------
+NutrientsControllerTest::NormalUser: test_index
+-----------------------------------------------
+  [1m[36mNutrient Load (0.8ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'f3cc4f93703e97eb922e'[0m
+Processing by NutrientsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'fb806db0f2fc3b8925c8'[0m
+  [1m[35mNutrient Load (1.9ms)[0m  SELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC
+  Rendered nutrients/_nutrient.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "nutrients"[0m
+  Rendered layouts/_infinite.html.erb (2.5ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+  Rendered layouts/_drawer.html.erb (1.2ms)
+Completed 200 OK in 42ms (Views: 25.8ms | ActiveRecord: 3.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_show
+----------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2c60306e2afbc68e3a46'
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e5e41d9cb7a6aa7aa69a'
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (4.5ms)
+  Rendered layouts/_delete.html.erb (1.8ms)
+  Rendered layouts/_drawer.html.erb (1.7ms)
+Completed 200 OK in 53ms (Views: 19.4ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------------------------------
+NutrientsControllerTest::NormalUser: test_successful_update
+-----------------------------------------------------------
+  [1m[35mNutrient Load (0.5ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '275efe1a41d12d4cedc3'
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '59fb1fcc224e7dafa18e'
+  [1m[36mNutrient Load (3.0ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Completed 400 Bad Request in 11ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'cbfbaffc6939e57eae95'[0m
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_drawer.html.erb (1.9ms)
+Completed 403 Forbidden in 41ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '34766dd75303836219d8'[0m
+  [1m[35mNutrient Load (0.5ms)[0m  SELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC
+  Rendered nutrients/_nutrient.html.erb (0.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "nutrients"[0m
+  Rendered layouts/_infinite.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'ea466fdeade25e25d82e'[0m
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_delete.html.erb (0.0ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+NutrientsControllerTest::NoUser: test_update
+--------------------------------------------
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '71ba02bce0911932ad55'
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 403 Forbidden in 9ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:36:59', '2015-12-29 06:36:59', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:36:59', '2015-12-29 06:36:59', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:36:59', '2015-12-29 06:36:59', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:36:59', '2015-12-29 06:36:59', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:36:59', '2015-12-29 06:36:59', 403821611)[0m
+  [1m[35m (8.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'bd22b1d4096adaf8c6e1'
+  Rendered layouts/forbidden.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+  Rendered layouts/_drawer.html.erb (1.3ms)
+Completed 403 Forbidden in 4582ms (Views: 4547.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'f51921c9af57755399db'
+  [1m[36mNutrient Load (1.4ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.9ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (1.7ms)
+  Rendered layouts/_sidebar.html.erb (2.5ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+  Rendered layouts/_drawer.html.erb (1.1ms)
+Completed 200 OK in 35ms (Views: 25.4ms | ActiveRecord: 2.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[36mNutrient Load (1.0ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e29d63c2766a7e8f18a9'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_delete.html.erb (0.5ms)
+  Rendered layouts/_drawer.html.erb (0.8ms)
+Completed 200 OK in 34ms (Views: 8.6ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+NutrientsControllerTest::NoUser: test_update
+--------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '6eb1c8fdd1470c85d1f3'[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 403 Forbidden in 8ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_edit
+----------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'dba144e3cd0a2d932e8e'
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'efebb31fb43a7a7061ee'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered nutrients/_inputs.html.erb (4.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 17.2ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+NutrientsControllerTest::NormalUser: test_index
+-----------------------------------------------
+  [1m[35mNutrient Load (0.2ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '30f95edbfbb952183f93'
+Processing by NutrientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'fe6eef7c30649a032203'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 27ms (Views: 20.4ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_show
+----------------------------------------------
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '7c0bb848c91fac80813b'[0m
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c474964ae81d768128b9'[0m
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_delete.html.erb (0.0ms)
+  Rendered layouts/_drawer.html.erb (0.8ms)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------------------------------
+NutrientsControllerTest::NormalUser: test_successful_update
+-----------------------------------------------------------
+  [1m[36mNutrient Load (0.2ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '4ad15ebafa8845662abb'[0m
+Processing by NutrientsController#update as HTML
+  Parameters: {"nutrient"=>{"name"=>"Carbs"}, "id"=>"312016764"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'ec0156e376d6a042c233'[0m
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "nutrients" SET "name" = $1, "updated_at" = $2 WHERE "nutrients"."id" = 312016764  [["name", "Carbs"], ["updated_at", "2015-12-29 06:37:04.365715"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/nutrients/312016764
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:37:20', '2015-12-29 06:37:20', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:37:20', '2015-12-29 06:37:20', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:37:20', '2015-12-29 06:37:20', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:37:20', '2015-12-29 06:37:20', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:37:20', '2015-12-29 06:37:20', 403821611)[0m
+  [1m[35m (8.0ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_edit
+----------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '75ab9d3e63859c7d861f'[0m
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3939b5ee7a3fa3002d90'[0m
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  Rendered nutrients/_inputs.html.erb (17.9ms)
+  Rendered layouts/_sidebar.html.erb (2.0ms)
+  Rendered nutrients/form.html.erb within layouts/application (32.9ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+  Rendered layouts/_drawer.html.erb (1.1ms)
+Completed 200 OK in 4618ms (Views: 4603.8ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------------------
+NutrientsControllerTest::NormalUser: test_index
+-----------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e35150e3dbd5f3379b58'[0m
+Processing by NutrientsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c7145113f64c01919089'[0m
+  [1m[35mNutrient Load (1.4ms)[0m  SELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC
+  Rendered nutrients/_nutrient.html.erb (0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "nutrients"[0m
+  Rendered layouts/_infinite.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_show
+----------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'f70015f67a75701108ed'
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'fe4bbd0b489fa34b205d'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_delete.html.erb (0.3ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 7.9ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------------------
+NutrientsControllerTest::NormalUser: test_successful_update
+-----------------------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '207b8d9861bfb9bcd602'
+Processing by NutrientsController#update as HTML
+  Parameters: {"nutrient"=>{"name"=>"Carbs"}, "id"=>"312016764"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '4cff7d5f8506a9ffe259'
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "nutrients" SET "name" = $1, "updated_at" = $2 WHERE "nutrients"."id" = 312016764[0m  [["name", "Carbs"], ["updated_at", "2015-12-29 06:37:25.657402"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/nutrients/312016764
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.2ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '05d4204f2aefc0feb136'
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered layouts/_drawer.html.erb (1.2ms)
+Completed 403 Forbidden in 39ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.2ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2d6d2784e837a3a37da1'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.4ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '8c781d43da1bd43d76bd'
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_delete.html.erb (0.0ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+NutrientsControllerTest::NoUser: test_update
+--------------------------------------------
+  [1m[35mNutrient Load (0.2ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '5fba64da925a7ba73414'[0m
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_drawer.html.erb (0.9ms)
+Completed 403 Forbidden in 14ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:39:09', '2015-12-29 06:39:09', 233574227)
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:39:09', '2015-12-29 06:39:09', 820428662)
+  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-29 06:39:09', '2015-12-29 06:39:09', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:39:09', '2015-12-29 06:39:09', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:39:09', '2015-12-29 06:39:09', 403821611)[0m
+  [1m[35m (8.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_edit
+----------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e7bfc994d6b324586b17'[0m
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '707b7ff4ddb3403f58a1'[0m
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  Rendered nutrients/_inputs.html.erb (17.4ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+  Rendered nutrients/form.html.erb within layouts/application (32.8ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+  Rendered layouts/_drawer.html.erb (1.1ms)
+Completed 200 OK in 4642ms (Views: 4627.1ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------------
+NutrientsControllerTest::NormalUser: test_failed_update
+-------------------------------------------------------
+  [1m[36mNutrient Load (0.5ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '27be672ef8de176fff3a'[0m
+Processing by NutrientsController#update as HTML
+  Parameters: {"nutrient"=>{"name"=>nil}, "id"=>"312016764"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'a674d6d973c267e035dc'[0m
+  [1m[35mNutrient Load (0.6ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered layouts/_errors.html.erb (0.9ms)
+  Rendered nutrients/_inputs.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_delete.html.erb (0.4ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 27.9ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+NutrientsControllerTest::NormalUser: test_index
+-----------------------------------------------
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 403821611]]
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '4f058cd237482e8b3f5d'[0m
+Processing by NutrientsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '01ec2f3b7765ab17a032'[0m
+  [1m[35mNutrient Load (1.5ms)[0m  SELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC
+  Rendered nutrients/_nutrient.html.erb (1.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "nutrients"[0m
+  Rendered layouts/_infinite.html.erb (1.5ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 3.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+NutrientsControllerTest::NormalUser: test_show
+----------------------------------------------
+  [1m[35mNutrient Load (0.4ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2aed44c1c80281edd607'
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'cefccf712ab21e17343f'
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_delete.html.erb (0.1ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 33ms (Views: 8.2ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------------------
+NutrientsControllerTest::NormalUser: test_successful_update
+-----------------------------------------------------------
+  [1m[35mNutrient Load (0.3ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3f41498e054e4f104a38'
+Processing by NutrientsController#update as HTML
+  Parameters: {"nutrient"=>{"name"=>"Carbs"}, "id"=>"312016764"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2b8e23959239034f8114'
+  [1m[36mNutrient Load (0.2ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "nutrients" SET "name" = $1, "updated_at" = $2 WHERE "nutrients"."id" = 312016764[0m  [["name", "Carbs"], ["updated_at", "2015-12-29 06:39:14.852088"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/nutrients/312016764
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_edit
+------------------------------------------
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#edit as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '20a0f706752e6cbb06ac'
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_drawer.html.erb (1.1ms)
+Completed 403 Forbidden in 41ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+NutrientsControllerTest::NoUser: test_index
+-------------------------------------------
+  [1m[36mNutrient Load (0.2ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '8eb83480cddfa59da96a'
+  [1m[36mNutrient Load (0.4ms)[0m  [1mSELECT DISTINCT "nutrients".* FROM "nutrients"   ORDER BY name ASC[0m
+  Rendered nutrients/_nutrient.html.erb (0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "nutrients"
+  Rendered layouts/_infinite.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+NutrientsControllerTest::NoUser: test_show
+------------------------------------------
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+Processing by NutrientsController#show as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'b36ced0d73bc9ca9ca43'
+  [1m[36mNutrient Load (0.3ms)[0m  [1mSELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1[0m  [["id", 312016764]]
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_delete.html.erb (0.0ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+NutrientsControllerTest::NoUser: test_update
+--------------------------------------------
+  [1m[35mNutrient Load (0.2ms)[0m  SELECT  "nutrients".* FROM "nutrients"  WHERE "nutrients"."id" = $1  ORDER BY name ASC LIMIT 1  [["id", 312016764]]
+Processing by NutrientsController#update as HTML
+  Parameters: {"id"=>"312016764"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"  WHERE "images"."token" = '0f5de589310699b411fd'[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 403 Forbidden in 9ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
