@@ -58,7 +58,7 @@
 						<%= form_tag subscribe_path, remote: true do %>
 							<div class="input-group">
 								<%= text_field_tag :email, nil, class: "form-control input-sm", placeholder: "Email address" %>
-								<%= hidden_field_tag :id, "6a584771e4" %>
+								<%= hidden_field_tag :list_id, "6a584771e4" %>
 								<span class="input-group-btn">
 									<%= submit_tag "Submit", class: "btn btn-primary btn-sm", data: {loading_text: "Saving..."} %>
 								</span>

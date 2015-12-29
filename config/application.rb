@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module Greensmoothie
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.autoload_paths += %W( #{config.root}/app/services )
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.action_mailer.default_url_options = { :host => 'http://www.greensmoothie.me' }

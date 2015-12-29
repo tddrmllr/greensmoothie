@@ -8035,3 +8035,60 @@ Processing by IngredientsController#update as HTML
   Rendered layouts/_drawer.html.erb (0.5ms)
 Completed 403 Forbidden in 9ms (Views: 4.1ms | ActiveRecord: 0.4ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (2.2ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:05:22', '2015-12-29 06:05:22', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:05:22', '2015-12-29 06:05:22', 820428662)
+  [1m[36mFixture Delete (2.2ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (2.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:05:22', '2015-12-29 06:05:22', 764040363)
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:05:22', '2015-12-29 06:05:22', 403821611)[0m
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------------
+MailchimpControllerTest: test_successful_subscribe
+--------------------------------------------------
+Processing by MailchimpController#subscribe as JS
+  Parameters: {"email"=>"bob@test.com", "list_id"=>"some_id"}
+  Rendered layouts/_flasher.html.erb (1.5ms)
+  Rendered layouts/flasher.js.erb (19.4ms)
+Completed 200 OK in 61ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-29 06:06:13', '2015-12-29 06:06:13', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-29 06:06:13', '2015-12-29 06:06:13', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-29 06:06:13', '2015-12-29 06:06:13', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-29 06:06:13', '2015-12-29 06:06:13', 403821611)[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+MailchimpControllerTest: test_failed_subscribe
+----------------------------------------------
+Processing by MailchimpController#subscribe as JS
+  Parameters: {"email"=>"bob@test.com", "list_id"=>"some_id"}
+  Rendered layouts/_flasher.html.erb (0.6ms)
+  Rendered layouts/flasher.js.erb (13.9ms)
+Completed 200 OK in 48ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+--------------------------------------------------
+MailchimpControllerTest: test_successful_subscribe
+--------------------------------------------------
+Processing by MailchimpController#subscribe as JS
+  Parameters: {"email"=>"bob@test.com", "list_id"=>"some_id"}
+  Rendered layouts/_flasher.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
