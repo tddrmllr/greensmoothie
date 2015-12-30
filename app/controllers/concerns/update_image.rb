@@ -8,10 +8,8 @@ module UpdateImage
 
   def update_image
     @resource = instance_variable_get("@#{controller_name.singularize}")
-    image = Image.where(token: params["#{controller_name.singularize}"][:image_token])
-    if image.any?
-      image.first.update_attributes(imageable_id: @resource.id, imageable_type: @resource.class.name)
-    end
+    image = Image.where(token: params["#{controller_name.singularize}"][:image_token]).first
+    image.update_attributes(imageable_id: @resource.id, imageable_type: @resource.class.name) if image
   end
 
   def cleanup_images

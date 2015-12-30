@@ -32,3 +32,7 @@ class ControllerTest < ActionController::TestCase # inherits from ActiveSupport:
     Rails.cache.clear if File.directory?(cache_dir)
   end
 end
+
+def json_response
+  ActiveSupport::JSON.decode @response.body
+end

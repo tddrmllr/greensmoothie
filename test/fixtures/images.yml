@@ -2,3 +2,12 @@ sample_image:
   image_file_name: 'sample_file.png'
   image_content_type: 'image/png'
   image_file_size: 2182
+  token: 'sample_image_token'
+
+kale_image:
+  image_file_name: 'beets.png'
+  image_content_type: 'image/png'
+  image_file_size: 99
+  token: 'beets_image_token'
+  imageable_type: 'Ingredient'
+  imageable: 'beets'
