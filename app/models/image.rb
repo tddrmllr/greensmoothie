@@ -13,18 +13,16 @@ class Image < ActiveRecord::Base
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
 
-  def image_from_url
-    if !self.image_url.blank?
-      begin
-        self.image = URI.parse(self.image_url)
-      rescue
-        return false
-      end
-    end
-  end
-
   def image_geometry(style = :original)
     @image ||= {}
     @image[style] ||= Paperclip::Geometry.from_file(image.url(style))
+  end
+
+  private
+
+  def image_from_url
+    self.image = URI.parse(image_url) if image_url
+  rescue
+    errors[:base] << 'Invalid URL'
   end
 end
