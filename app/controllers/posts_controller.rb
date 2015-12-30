@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   authorize_resource except: [:core_content]
 
   include UpdateImage
-  include UpdateTags
   include Searchable
 
   def index
@@ -16,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(user_id: current_user.id)
     @title = "New Post"
     render 'form'
   end
@@ -55,13 +54,6 @@ class PostsController < ApplicationController
       @delete = true
       render 'form'
     end
-  end
-
-  def core_content
-    name = request.url.gsub(HOST + "/", "")
-    @post = Post.core.select { |x| x.dashed_name == name }.first
-    @title = @post.name
-    render 'show'
   end
 
   private

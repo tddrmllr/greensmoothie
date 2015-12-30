@@ -1,11 +1,15 @@
 class Post < ActiveRecord::Base
   include HasImage
 
-  has_many :comments, as: :commentable
+  belongs_to :user
 
   default_scope -> { order('created_at DESC') }
   scope :core,-> { where(core_content: true) }
 
+  validates :abstract, presence: true
+  validates :body, presence: true
+  validates :name, presence: true
+  validates_uniqueness_of :name
   validates_length_of :abstract, :minimum => 50, :maximum => 400, :allow_blank => true
 
   before_save :set_url_name

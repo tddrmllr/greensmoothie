@@ -8,9 +8,9 @@ Greensmoothie::Application.routes.draw do
   get '/privacy', to: 'pages#privacy', as: :privacy
   get '/contact', to: 'pages#contact', as: :contact
   post '/subscribe', to: 'mailchimp#subscribe', as: :subscribe
-  get '/about-green-smoothies', to: 'posts#core_content', as: :about
-  get '/green-smoothie-tools', to: 'posts#core_content', as: :tools
-  get '/green-smoothie-basics', to: 'posts#core_content', as: :basics
+  get '/about-green-smoothies', to: 'posts#show', as: :about, url_name: 'about-green-smoothies'
+  get '/green-smoothie-tools', to: 'posts#show', as: :tools, url_name: 'green-smoothie-tools'
+  get '/green-smoothie-basics', to: 'posts#show', as: :basics, url_name: 'green-smoothie-basics'
 
   resources :citations
   resources :images
