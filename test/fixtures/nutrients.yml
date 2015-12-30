@@ -2,3 +2,16 @@ carbs:
   name: 'Carbohydrates'
   description: 'Your body needs carbs.'
   daily_value_amount: 100
+  nutrient_type: <%= Nutrient::MACRONUTRIENT %>
+
+iron:
+  name: 'Iron'
+  description: 'A metal used to make weapons.'
+  daily_value_amount: 55
+  nutrient_type: <%= Nutrient::MINERAL %>
+
+vitamin_k:
+  name: 'Vitamin K'
+  description: 'A vitamin that ends with K.'
+  daily_value_amount: 55
+  nutrient_type: <%= Nutrient::VITAMIN %>

@@ -7,6 +7,10 @@ class Nutrient < ActiveRecord::Base
   validates :name, presence: true
   validates_length_of :symbol, maximum: 3
 
+  MACRONUTRIENT = 'Macronutrient'
+  MINERAL = 'Mineral'
+  VITAMIN = 'Vitamin'
+
   DV = {
     "Vitamin C" => {"amount" => "60", "unit" => "mg"},
     "Thiamin" => {"amount" => "1.5", "unit" => "mg"},

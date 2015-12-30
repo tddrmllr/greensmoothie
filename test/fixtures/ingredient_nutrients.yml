@@ -4,3 +4,17 @@ kale_carbs:
   daily_value: 50
   nutrient: 'carbs'
   ingredient: 'kale'
+
+kale_iron:
+  amount: '200'
+  unit: 'mg'
+  daily_value: 50
+  nutrient: 'iron'
+  ingredient: 'kale'
+
+kale_vitamin_k:
+  amount: '200'
+  unit: 'mg'
+  daily_value: 50
+  nutrient: 'vitamin_k'
+  ingredient: 'kale'
