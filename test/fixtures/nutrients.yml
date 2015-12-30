@@ -1,3 +1,4 @@
 carbs:
   name: 'Carbohydrates'
   description: 'Your body needs carbs.'
+  daily_value_amount: 100

@@ -1,0 +1,6 @@
+kale_carbs:
+  amount: '300'
+  unit: 'kg'
+  daily_value: 50
+  nutrient: 'carbs'
+  ingredient: 'kale'
