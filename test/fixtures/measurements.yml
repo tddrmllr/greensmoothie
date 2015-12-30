@@ -1,0 +1,5 @@
+kale_smoothie_kale:
+  ingredient: 'kale'
+  recipe: 'kale_smoothie'
+  amount: '1'
+  unit: 'cup'

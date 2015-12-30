@@ -15407,3 +15407,418 @@ Processing by PostsController#update as HTML
   Rendered layouts/_drawer.html.erb (1.6ms)
 Completed 403 Forbidden in 12ms (Views: 7.0ms | ActiveRecord: 0.4ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:14:48', '2015-12-30 05:14:48', 233574227)
+  [1m[36mFixture Delete (1.6ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 820428662)
+  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (1.4ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 982773358, 764040363)
+  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 340936797)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:14:48', '2015-12-30 05:14:48', 403821611)[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3d4db00ec1207b68e37a'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '58006609c3a7b1ea6360'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '70ed7da544ba1ebf0fbb'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:14:49.026907"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:14:49.026907"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '0d64e29890e87e8ccd97'
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 46ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:15:25', '2015-12-30 05:15:25', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 982773358, 764040363)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:15:25', '2015-12-30 05:15:25', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:15:26', '2015-12-30 05:15:26', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:15:26', '2015-12-30 05:15:26', 403821611)[0m
+  [1m[35m (8.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e1a2bd149bbb3b40d5d1'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '01f9b0114076da67ead3'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '5a9660b139242c7231ce'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:15:26.081589"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:15:26.081589"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '0111d735cd695609bd22'
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 37ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:15:51', '2015-12-30 05:15:51', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 982773358, 764040363)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:15:51', '2015-12-30 05:15:51', 403821611)[0m
+  [1m[35m (8.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'b92371a01023d6cf1f20'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '071bf6096510a19b9033'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'f7f47aed19add01546cc'
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:15:51.372684"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:15:51.372684"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '93a94232a232e857c0ed'
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 32ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:16:30', '2015-12-30 05:16:30', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 982773358, 764040363)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:16:30', '2015-12-30 05:16:30', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '8b88fc0ba6fa2d93ef63'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c569faf54e6ce8868f33'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'dd3cea2303bb295e04fd'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:16:30.559468"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:16:30.559468"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2c19adea6b48fe4f2248'
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 39ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 422429389, 403821611)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:17:07', '2015-12-30 05:17:07', 233574227)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 820428662)
+  [1m[36mFixture Delete (2.1ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 312016764)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 982773358, 764040363)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:17:07', '2015-12-30 05:17:07', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '5bb5c9b158a143b173bb'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '1803bc3a824decd98f57'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c3a0270f6e64df2a9ea6'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:17:07.450384"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:17:07.450384"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'e900b9db525ab74fdb23'
+  [1m[36m (9.2ms)[0m  [1mSELECT SUM("ratings"."rating") AS sum_id FROM "ratings"  WHERE "ratings"."recipe_id" = $1[0m  [["recipe_id", 340936797]]
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 42881ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:18:01', '2015-12-30 05:18:01', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 982773358, 764040363)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:18:01', '2015-12-30 05:18:01', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'f6eb26835efad67bed51'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '04c6a519e028b993326b'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'add02c2ab10c59113d07'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:18:01.633225"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:18:01.633225"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3f575c412f6141679530'
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("ratings"."rating") AS sum_id FROM "ratings"  WHERE "ratings"."recipe_id" = $1[0m  [["recipe_id", 340936797]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "ratings"  WHERE "ratings"."recipe_id" = $1  [["recipe_id", 340936797]]
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "recipes" SET "rating" = 5.0 WHERE "recipes"."id" = 340936797[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered ratings/_rating.html.erb (13.0ms)
+  Rendered ratings/create.js.erb (27.8ms)
+Completed 500 Internal Server Error in 98ms
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:18:24', '2015-12-30 05:18:24', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 982773358, 764040363)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:18:24', '2015-12-30 05:18:24', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '10dfa2660ceeb38fdde7'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3853ec0448d37e3f3256'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'c6dce01e2256c907ce7f'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:18:24.632616"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:18:24.632616"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '2c3aafbd4c3db9024b04'
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("ratings"."rating") AS sum_id FROM "ratings"  WHERE "ratings"."recipe_id" = $1[0m  [["recipe_id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "ratings"  WHERE "ratings"."recipe_id" = $1  [["recipe_id", 340936797]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "recipes" SET "rating" = 5.0 WHERE "recipes"."id" = 340936797[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered ratings/_rating.html.erb (10.3ms)
+  Rendered ratings/create.js.erb (24.1ms)
+Completed 500 Internal Server Error in 94ms
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:18:33', '2015-12-30 05:18:33', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 982773358, 764040363)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 340936797)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:18:33', '2015-12-30 05:18:33', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'a989d70fe6d60fddc472'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '138f48f10d6d64c9ef81'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'a68f359eeda365c75e83'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:18:33.174139"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:18:33.174139"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (1.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'a468ab323b377f80af85'
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("ratings"."rating") AS sum_id FROM "ratings"  WHERE "ratings"."recipe_id" = $1[0m  [["recipe_id", 340936797]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "ratings"  WHERE "ratings"."recipe_id" = $1  [["recipe_id", 340936797]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "recipes" SET "rating" = 5.0 WHERE "recipes"."id" = 340936797[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered ratings/_rating.html.erb (10.7ms)
+  Rendered ratings/create.js.erb (25.1ms)
+Completed 500 Internal Server Error in 101ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 05:19:10', '2015-12-30 05:19:10', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 820428662)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "measurements"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "measurements" ("amount", "unit", "created_at", "updated_at", "id", "recipe_id", "ingredient_id") VALUES ('1', 'cup', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 112587943, 340936797, 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "posts" ("abstract", "body", "name", "created_at", "updated_at", "id", "user_id") VALUES ('This post is about green smoothies. This needs to be at least 50 chars long.', 'This is everything you need to know about green smoothies.', 'Aboug Green Smoothies', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 982773358, 764040363)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "recipes"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "recipes" ("name", "created_at", "updated_at", "id") VALUES ('Kale Smoothie', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 340936797)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 05:19:10', '2015-12-30 05:19:10', 403821611)[0m
+  [1m[35m (8.2ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+RatingsControllerTest: test_create
+----------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 403821611]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '5bcc4608cf214e384bbb'
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '6e564046b95147a7ff41'
+Processing by RatingsController#create as JS
+  Parameters: {"rating"=>"5", "recipe_id"=>"340936797"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 403821611  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = '3b2b628c4f739e2b68f8'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "ratings" ("created_at", "rating", "recipe_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-12-30 05:19:10.522229"], ["rating", 5], ["recipe_id", 340936797], ["updated_at", "2015-12-30 05:19:10.522229"], ["user_id", 403821611]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["id", 340936797]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "images"  WHERE "images"."token" = 'ed5fc2961e78f6dced34'
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("ratings"."rating") AS sum_id FROM "ratings"  WHERE "ratings"."recipe_id" = $1[0m  [["recipe_id", 340936797]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "ratings"  WHERE "ratings"."recipe_id" = $1  [["recipe_id", 340936797]]
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "recipes" SET "rating" = 5.0 WHERE "recipes"."id" = 340936797[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered ratings/_rating.html.erb (0.9ms)
+  Rendered ratings/create.js.erb (15.0ms)
+Completed 200 OK in 86ms (Views: 42.1ms | ActiveRecord: 6.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m

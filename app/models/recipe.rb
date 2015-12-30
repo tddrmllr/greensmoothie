@@ -23,7 +23,6 @@ class Recipe < ActiveRecord::Base
   end
 
   def update_rating
-    rating = self.ratings.sum(&:rating).to_f / self.ratings.count.to_f
-    update_column(:rating, rating)
+    update_column :rating, ratings.sum(:rating).to_d / ratings.count.to_d
   end
 end
