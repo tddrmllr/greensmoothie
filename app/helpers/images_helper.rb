@@ -1,5 +1,4 @@
 module ImagesHelper
-
   def thumbnail(resource)
     if resource.image?
       thumb = "<img class='img-thumbnail media-object' src='#{resource.image.image.url(:thumbnail)}'>"
@@ -8,5 +7,4 @@ module ImagesHelper
     end
     return thumb.html_safe
   end
-
 end
