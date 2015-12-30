@@ -7,9 +7,10 @@ class Ability
       can :manage, :all
     elsif user.persisted?
       can :read, :all
-      can [:create, :update, :edit], [Nutrient, Ingredient]
+      can [:create, :update, :edit], Ingredient
+      can [:update, :edit], Nutrient
       can :manage, Recipe, user_id: user.id
-      can :manage, User, id: user.id
+      can [:update, :edit, :destroy], User, id: user.id
     else
       can :read, :all
     end
