@@ -1,2 +1,9 @@
 kale_smoothie:
   name: 'Kale Smoothie'
+  description: 'A smoothie with kale'
+  user: 'normal_user'
+
+beet_smoothie:
+  name: 'Beet Smoothie'
+  description: 'A smoothie with beets'
+  user: 'admin_user'

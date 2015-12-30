@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  authorize_resource except: [:core_content]
+  authorize_resource
 
   include UpdateImage
   include Searchable

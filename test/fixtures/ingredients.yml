@@ -1,3 +1,7 @@
 kale:
   name: 'Kale'
   description: 'A green leafy vegetable with lots of great nutrients.'
+
+beets:
+  name: 'Beets'
+  description: 'A red root plant with a slightly sweet flavor.'

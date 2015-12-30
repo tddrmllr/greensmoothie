@@ -3,7 +3,6 @@ class RecipesController < ApplicationController
   authorize_resource
 
   include UpdateImage
-  include UpdateTags
 
   def index
     @search = Recipe.ransack(params[:q])
@@ -56,6 +55,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    authorize! :manage, @recipe
     @recipe.destroy
     flash[:success] = "Recipe deleted."
     @redirect = recipes_path
