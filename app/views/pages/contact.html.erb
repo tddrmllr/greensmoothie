@@ -2,7 +2,7 @@
   <div class='col-sm-8'>
     <div class='well'>
       <h4 class='ribbon'>Send A Message</h4>
-      <%= form_tag support_path, remote: true do %>
+      <%= form_tag support_messages_path, remote: true, method: :post do %>
         <div class='form-group'>
           <%= label_tag :email %>
           <%= text_field_tag :email, nil, class: 'form-control' %>
@@ -12,7 +12,7 @@
           <%= text_area_tag :message, nil, class: "form-control", rows: 5 %>
         </div>
         <div class='form-footer'>
-          <%= submit_tag "Send", class: 'btn btn-primary', data: {loading_text: "Sending..."} %>
+          <%= submit_tag "Send", class: 'btn btn-primary', data: {loading_text: "Sending..."}, id: 'contact-submit' %>
         </div>
       <% end %>
     </div>

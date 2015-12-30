@@ -11005,3 +11005,446 @@ Processing by OmniauthCallbacksController#facebook as HTML
 Redirected to http://test.host/users/403821611
 Completed 302 Found in 379ms (ActiveRecord: 1.9ms)
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (1.8ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:42:47', '2015-12-30 03:42:47', 422429389, 403821611)
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:42:47', '2015-12-30 03:42:47', 233574227)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:42:47', '2015-12-30 03:42:47', 820428662)
+  [1m[36mFixture Delete (2.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:42:47', '2015-12-30 03:42:47', 312016764)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:42:47', '2015-12-30 03:42:47', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:42:47', '2015-12-30 03:42:47', 403821611)[0m
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.7ms)
+  Rendered pages/contact.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+  Rendered layouts/_drawer.html.erb (1.4ms)
+Completed 200 OK in 4703ms (Views: 4696.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:43:12', '2015-12-30 03:43:12', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:43:12', '2015-12-30 03:43:12', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:43:12', '2015-12-30 03:43:12', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:43:12', '2015-12-30 03:43:12', 312016764)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:43:12', '2015-12-30 03:43:12', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:43:12', '2015-12-30 03:43:12', 403821611)[0m
+  [1m[35m (8.6ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  Rendered pages/contact.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_nav.html.erb (5.6ms)
+  Rendered layouts/_drawer.html.erb (1.7ms)
+Completed 200 OK in 4747ms (Views: 4740.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:43:42', '2015-12-30 03:43:42', 422429389, 403821611)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:43:42', '2015-12-30 03:43:42', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:43:42', '2015-12-30 03:43:42', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:43:42', '2015-12-30 03:43:42', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:43:42', '2015-12-30 03:43:42', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:43:42', '2015-12-30 03:43:42', 403821611)[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (2.1ms)
+  Rendered pages/contact.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+  Rendered layouts/_drawer.html.erb (1.3ms)
+Completed 200 OK in 7183ms (Views: 7172.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_privacy
+---------------------------------
+Processing by PagesController#privacy as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:45:06', '2015-12-30 03:45:06', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:45:06', '2015-12-30 03:45:06', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:45:06', '2015-12-30 03:45:06', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:45:06', '2015-12-30 03:45:06', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:45:06', '2015-12-30 03:45:06', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:45:06', '2015-12-30 03:45:06', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+  Rendered pages/contact.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered layouts/_drawer.html.erb (1.3ms)
+Completed 200 OK in 4874ms (Views: 4865.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered layouts/_drawer.html.erb (0.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_privacy
+---------------------------------
+Processing by PagesController#privacy as HTML
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.6ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------
+PagesControllerTest: test_terms
+-------------------------------
+Processing by PagesController#terms as HTML
+  Rendered pages/_terms_of_service.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (1.2ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:47:22', '2015-12-30 03:47:22', 422429389, 403821611)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:47:22', '2015-12-30 03:47:22', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:47:22', '2015-12-30 03:47:22', 820428662)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:47:22', '2015-12-30 03:47:22', 312016764)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:47:22', '2015-12-30 03:47:22', 764040363)
+  [1m[36mFixture Insert (1.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:47:22', '2015-12-30 03:47:22', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+  Rendered pages/contact.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+  Rendered layouts/_drawer.html.erb (1.5ms)
+Completed 200 OK in 4804ms (Views: 4796.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+  Rendered layouts/_drawer.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_privacy
+---------------------------------
+Processing by PagesController#privacy as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------
+PagesControllerTest: test_terms
+-------------------------------
+Processing by PagesController#terms as HTML
+  Rendered pages/_terms_of_service.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (1.8ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:48:00', '2015-12-30 03:48:00', 422429389, 403821611)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:48:00', '2015-12-30 03:48:00', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:48:00', '2015-12-30 03:48:00', 820428662)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (3.4ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:48:00', '2015-12-30 03:48:00', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:48:00', '2015-12-30 03:48:00', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:48:00', '2015-12-30 03:48:00', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.9ms)
+  Rendered pages/contact.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_nav.html.erb (5.3ms)
+  Rendered layouts/_drawer.html.erb (2.1ms)
+Completed 200 OK in 5067ms (Views: 5058.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_privacy
+---------------------------------
+Processing by PagesController#privacy as HTML
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------
+PagesControllerTest: test_terms
+-------------------------------
+Processing by PagesController#terms as HTML
+  Rendered pages/_terms_of_service.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_drawer.html.erb (0.7ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 03:48:13', '2015-12-30 03:48:13', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 03:48:13', '2015-12-30 03:48:13', 233574227)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 03:48:13', '2015-12-30 03:48:13', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 03:48:13', '2015-12-30 03:48:13', 312016764)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 03:48:13', '2015-12-30 03:48:13', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 03:48:13', '2015-12-30 03:48:13', 403821611)[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_contact
+---------------------------------
+Processing by PagesController#contact as HTML
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+  Rendered pages/contact.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+  Rendered layouts/_drawer.html.erb (2.0ms)
+Completed 200 OK in 4747ms (Views: 4740.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+PagesControllerTest: test_home
+------------------------------
+Processing by PagesController#home as HTML
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered layouts/_drawer.html.erb (0.5ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------
+PagesControllerTest: test_privacy
+---------------------------------
+Processing by PagesController#privacy as HTML
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_drawer.html.erb (2.3ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------
+PagesControllerTest: test_terms
+-------------------------------
+Processing by PagesController#terms as HTML
+  Rendered pages/_terms_of_service.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_drawer.html.erb (0.4ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (1.4ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 04:10:51', '2015-12-30 04:10:51', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 04:10:51', '2015-12-30 04:10:51', 233574227)
+  [1m[36mFixture Delete (1.7ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 04:10:51', '2015-12-30 04:10:51', 820428662)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 04:10:51', '2015-12-30 04:10:51', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 04:10:51', '2015-12-30 04:10:51', 764040363)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 04:10:51', '2015-12-30 04:10:51', 403821611)[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------------
+Support::MessagesControllerTest: test_successful_create
+-------------------------------------------------------
+Processing by Support::MessagesController#create as JS
+  Parameters: {"email"=>"bob@email.com", "message"=>"Help me please!"}
+  Rendered layouts/_flasher.html.erb (0.6ms)
+  Rendered support/messages/create.js.erb (14.8ms)
+Completed 200 OK in 49ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 04:11:17', '2015-12-30 04:11:17', 422429389, 403821611)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 04:11:17', '2015-12-30 04:11:17', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 04:11:17', '2015-12-30 04:11:17', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 04:11:17', '2015-12-30 04:11:17', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 04:11:17', '2015-12-30 04:11:17', 764040363)
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 04:11:17', '2015-12-30 04:11:17', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------------
+Support::MessagesControllerTest: test_successful_create
+-------------------------------------------------------
+Processing by Support::MessagesController#create as JS
+  Parameters: {"email"=>"bob@email.com", "message"=>"Help me please!"}
+  Rendered layouts/_flasher.html.erb (0.7ms)
+  Rendered support/messages/create.js.erb (15.1ms)
+Completed 200 OK in 49ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "authentications" DISABLE TRIGGER ALL;ALTER TABLE "benefits" DISABLE TRIGGER ALL;ALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" DISABLE TRIGGER ALL;ALTER TABLE "ingredients" DISABLE TRIGGER ALL;ALTER TABLE "measurements" DISABLE TRIGGER ALL;ALTER TABLE "nutrients" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "ratings" DISABLE TRIGGER ALL;ALTER TABLE "recipes" DISABLE TRIGGER ALL;ALTER TABLE "taggings" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "authentications"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "authentications" ("provider", "uid", "created_at", "updated_at", "id", "user_id") VALUES ('facebook', 'randomstring', '2015-12-30 04:12:01', '2015-12-30 04:12:01', 422429389, 403821611)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "images"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "images" ("image_file_name", "image_content_type", "image_file_size", "created_at", "updated_at", "id") VALUES ('sample_file.png', 'image/png', 2182, '2015-12-30 04:12:01', '2015-12-30 04:12:01', 233574227)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "ingredients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "ingredients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Kale', 'A green leafy vegetable with lots of great nutrients.', '2015-12-30 04:12:01', '2015-12-30 04:12:01', 820428662)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "nutrients"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "nutrients" ("name", "description", "created_at", "updated_at", "id") VALUES ('Carbohydrates', 'Your body needs carbs.', '2015-12-30 04:12:01', '2015-12-30 04:12:01', 312016764)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("username", "email", "terms_of_service", "role", "created_at", "updated_at", "id") VALUES ('admin', 'admin@greensmoothie.me', 't', 'Admin', '2015-12-30 04:12:01', '2015-12-30 04:12:01', 764040363)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "terms_of_service", "created_at", "updated_at", "id") VALUES ('user', 'user@greensmoothie.me', 't', '2015-12-30 04:12:01', '2015-12-30 04:12:01', 403821611)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authentications" ENABLE TRIGGER ALL;ALTER TABLE "benefits" ENABLE TRIGGER ALL;ALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "ckeditor_assets" ENABLE TRIGGER ALL;ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "ingredient_nutrients" ENABLE TRIGGER ALL;ALTER TABLE "ingredients" ENABLE TRIGGER ALL;ALTER TABLE "measurements" ENABLE TRIGGER ALL;ALTER TABLE "nutrients" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "ratings" ENABLE TRIGGER ALL;ALTER TABLE "recipes" ENABLE TRIGGER ALL;ALTER TABLE "taggings" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------
+Support::MessagesControllerTest: test_failed_create
+---------------------------------------------------
+Processing by Support::MessagesController#create as JS
+  Rendered layouts/_flasher.html.erb (0.6ms)
+  Rendered support/messages/create.js.erb (14.6ms)
+Completed 200 OK in 48ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------------
+Support::MessagesControllerTest: test_successful_create
+-------------------------------------------------------
+Processing by Support::MessagesController#create as JS
+  Parameters: {"email"=>"bob@email.com", "message"=>"Help me please!"}
+  Rendered layouts/_flasher.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m

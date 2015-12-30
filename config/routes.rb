@@ -8,7 +8,6 @@ Greensmoothie::Application.routes.draw do
   get '/privacy', to: 'pages#privacy', as: :privacy
   get '/contact', to: 'pages#contact', as: :contact
   post '/subscribe', to: 'mailchimp#subscribe', as: :subscribe
-  post '/support', to: 'pages#support', as: :support
   get '/about-green-smoothies', to: 'posts#core_content', as: :about
   get '/green-smoothie-tools', to: 'posts#core_content', as: :tools
   get '/green-smoothie-basics', to: 'posts#core_content', as: :basics
@@ -32,6 +31,11 @@ Greensmoothie::Application.routes.draw do
     resources :ratings
   end
   get '/recipes/:id/:title', to: 'recipes#show'
+
+  namespace :support do
+    resources :messages, only: :create
+  end
+
   resources :tags
   resources :users
 
