@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
 
   def show
-    @user = User.find(params[:id])
     @recipes = @user.recipes.page(params[:page]).per(10)
     @title = @user.username
   end
@@ -28,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     sign_out(@user)
     @user.destroy
     flash[:success] = 'Account deleted.'
@@ -37,14 +35,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def authorize
-    @user = User.find(params[:id])
-    if cannot? :manage, @user
-      flash[:error] = "The page you attempted to view is unavailable."
-      redirect_to current_user
-    end
-  end
 
   def user_params
     params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :email_list, :image_token, :terms_of_service)

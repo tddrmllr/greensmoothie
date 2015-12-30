@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_many :authentications, dependent: :destroy
-  has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
   validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false, allow_blank: true
+  validates :username, presence: true
   validates_uniqueness_of :email, allow_blank: true
   validate :username_cannot_be_blank, :agree_to_terms_of_service
 
