@@ -15,3 +15,4 @@ vitamin_k:
   description: 'A vitamin that ends with K.'
   daily_value_amount: 55
   nutrient_type: <%= Nutrient::VITAMIN %>
+  usda_name: 'Vitamin K (phylloquinone)'

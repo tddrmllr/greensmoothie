@@ -36,3 +36,7 @@ end
 def json_response
   ActiveSupport::JSON.decode @response.body
 end
+
+def nutrition_info_html
+  Rails.root + 'test/fixtures/files/kale_nutrition.html'
+end

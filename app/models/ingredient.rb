@@ -13,8 +13,8 @@ class Ingredient < ActiveRecord::Base
 
   validates :name, presence: true
 
-  after_create :scrape_nutrients
-  after_save :rescrape_nutrients
+  after_create :create_nutrition_info
+  after_save :update_nutrition_info
 
   default_scope -> { order('name ASC') }
 
@@ -32,20 +32,20 @@ class Ingredient < ActiveRecord::Base
   end
 
   def vitamins
-    self.ingredient_nutrients.select {|x| x.nutrient.nutrient_type == "Vitamin"}
+    ingredient_nutrients.vitamins
   end
 
   private
 
-  def rescrape_nutrients
+  def update_nutrition_info
     if source_url.blank?
       ingredient_nutrients.destroy_all
     elsif changes[:source_url] && created_at != updated_at
-      scrape_nutrients(url: source_url, ingredient: self)
+      create_nutrition_info(url: source_url, ingredient: self)
     end
   end
 
-  def scrape_nutrients(args = {})
-    Nutrients::Scrape.run(args)
+  def create_nutrition_info(args = { url: source_url, ingredient: self })
+    # Ingredients::UpdateNutrition.run(args)
   end
 end
