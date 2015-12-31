@@ -102,9 +102,6 @@ class Nutrient < ActiveRecord::Base
       n.nutrient_type = "Macronutrient"
       n.save
     end
-  end
-
-  def self.set_daily_values
     DV.each do |k,v|
       n = self.find_by_name(k)
       n.update_column :daily_value_amount, v["amount"]

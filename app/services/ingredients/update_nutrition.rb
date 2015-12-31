@@ -6,20 +6,22 @@ module Ingredients
       new(args).run
     end
 
-    def initialize(args)
-      @ingredient = args[:ingredient]
-      @url = args[:url]
-      @name = args[:name] || @ingredient.name
-    end
-
     def run
       nutrition_info = Nutrients::Scrape.run(url: url, name: name)
       ingredient.ingredient_nutrients.destroy_all
       return if nutrition_info.is_a?(Nutrients::MissingInfo)
-      update_ingredient(nutrition_info)
+      update_ingredient(nutrition_info, url)
       create_ingredient_nutrients(nutrition_info)
     rescue
-      ingredient.source_url = "Error"
+      ingredient.source_url = "An error occurred"
+    end
+
+    private
+
+    def initialize(args)
+      @ingredient = args[:ingredient]
+      @url = args[:url]
+      @name = args[:name] || @ingredient.name
     end
 
     def create_ingredient_nutrients(info)
@@ -36,9 +38,9 @@ module Ingredients
       ) if info.has_nutrient?(nutrient)
     end
 
-    def update_ingredient(info)
+    def update_ingredient(info, url)
       ingredient.update_column :serving_size, info.serving_size
-      ingredient.update_column :source_url, info.url
+      ingredient.update_column :source_url, url
       ingredient.update_column :usda_name, info.usda_name
     end
   end
