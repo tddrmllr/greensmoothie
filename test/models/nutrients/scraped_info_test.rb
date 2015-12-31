@@ -22,6 +22,10 @@ module Nutrients
       assert_equal "1 \n  \tcup 1\" pieces, loosely packed\n  \t", info.serving_size
     end
 
+    test 'unit' do
+      assert_equal "µg", info.unit(nutrient)
+    end
+
     test 'usda_name' do
       assert_equal "\n       \n     Basic Report: \n   \n        11233, Kale, raw\n   \n     \n      \n   \n   \n       ", info.usda_name
     end
