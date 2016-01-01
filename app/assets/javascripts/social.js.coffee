@@ -1,24 +1,5 @@
-
-ready = ->
-
-  if $("#livefyre-comments").length > 0
-    (->
-      articleId = fyre.conv.load.makeArticleId(null)
-      fyre.conv.load {}, [
-        el: "livefyre-comments"
-        network: "livefyre.com"
-        siteId: "360774"
-        articleId: articleId
-        signed: false
-        collectionMeta:
-          articleId: articleId
-          url: fyre.conv.load.makeCollectionUrl()
-      ], ->
-      return
-    )()
-
+$(document).on 'ready page:load', ->
   return unless $("#social").length > 0
-
   $(".facebook").click ->
     sharer = "https://www.facebook.com/sharer/sharer.php?s=100&p[url]="
     left = (screen.width/2)-(626/2);
@@ -49,7 +30,3 @@ ready = ->
     top = (screen.height/2)-(400/2);
     url = $(this).data('url')
     window.open sharer + url, "sharer", "menubar=no,toolbar=no,status=no,width=550,height=400,toolbar=no,left=" + left + ",top=" + top
-
-
-$(document).ready(ready)
-$(document).on('page:load', ready)

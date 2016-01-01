@@ -1,5 +1,5 @@
 class Ingredient < ActiveRecord::Base
-
+  include Disqusable
   include HasImage
   require 'nokogiri'
   require 'open-uri'

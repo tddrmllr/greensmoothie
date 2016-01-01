@@ -1,5 +1,0 @@
-<%= form_for [commentable, Comment.new], remote: true do |f| %>
-	<%= f.text_area :body, class: "form-control", placeholder: "Comment on this #{commentable.class.name.downcase}", id: "comment" %>
-	<%= f.hidden_field :user_id, value: current_user.id %>
-	<%= f.submit "Submit", class: "btn btn-primary btn-sm", style: "margin-top: 10px", data: {loading_text: "Submitting..."} %>
-<% end %>

@@ -42,7 +42,8 @@
 		<%= render 'layouts/social', sociable: @ingredient, head: false %>
 		<div class="row">
 			<div class="col-md-12">
-				<%= render 'comments/commentable' %>
+				<br>
+				<%= disqus_comments(@ingredient) %>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include Disqusable
   include HasImage
 
   belongs_to :user

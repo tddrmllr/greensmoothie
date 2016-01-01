@@ -18,6 +18,7 @@
 <%= render 'layouts/social', sociable: @post, head: false %>
 <div class="row">
 	<div class="col-md-8">
-		<%= render 'comments/commentable' %>
+		<br>
+		<%= disqus_comments(@post) if request.fullpath.include?('/blog') %>
 	</div>
 </div>
