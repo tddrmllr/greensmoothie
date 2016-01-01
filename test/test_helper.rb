@@ -3,6 +3,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require "minitest/reporters"
 
+# require test double classes
+Dir[Rails.root.join('test', 'doubles', '*.rb')].each {|file| require file }
+
 Minitest::Reporters.use!([Minitest::Reporters::DefaultReporter.new(:color => true)])
 
 class ActiveSupport::TestCase
@@ -38,5 +41,5 @@ def json_response
 end
 
 def nutrition_info_html
-  Rails.root + 'test/fixtures/files/kale_nutrition.html'
+  Rails.root.join('test', 'fixtures', 'files', 'kale_nutrition.html')
 end

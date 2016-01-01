@@ -44,7 +44,7 @@ class PostsControllerTest < ControllerTest
     end
 
     test 'show' do
-      get :show, id: blog_post.id
+      get :show, url_name: blog_post.url_name
       assert_response :success
     end
 
@@ -95,7 +95,7 @@ class PostsControllerTest < ControllerTest
     end
 
     test 'show' do
-      get :show, id: blog_post.id
+      get :show, url_name: blog_post.url_name
       assert_response :success
     end
 

@@ -38,9 +38,11 @@ class ImagesControllerTest < ControllerTest
   end
 
   test 'edit' do
-    xhr :get, :edit, id: image.id
-    assert_response :success
-    assert_template 'layouts/modal'
+    Paperclip::Geometry.stub :from_file, GeometryDouble.new do
+      xhr :get, :edit, id: image.id
+      assert_response :success
+      assert_template 'layouts/modal'
+    end
   end
 
   private

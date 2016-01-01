@@ -35,16 +35,4 @@ class ImageTest < UnitTest
     image.save
     assert_equal 'logo.png', image.image_file_name
   end
-
-  private
-
-  class GeometryDouble
-    def height
-      262
-    end
-
-    def width
-      262
-    end
-  end
 end
