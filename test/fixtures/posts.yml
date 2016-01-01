@@ -1,5 +1,6 @@
 admin_post:
   abstract: 'This post is about green smoothies. This needs to be at least 50 chars long.'
   body: 'This is everything you need to know about green smoothies.'
-  name: 'Aboug Green Smoothies'
+  name: 'About Green Smoothies'
   user: 'admin_user'
+  url_name: 'about-green-smoothies'
