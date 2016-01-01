@@ -11,6 +11,10 @@ class Nutrient < ActiveRecord::Base
   MINERAL = 'Mineral'
   VITAMIN = 'Vitamin'
 
+  scope :macronutrients, -> { where(nutrient_type: MACRONUTRIENT) }
+  scope :minerals, -> { where(nutrient_type: MINERAL) }
+  scope :vitamins, -> { where(nutrient_type: VITAMIN) }
+
   DV = {
     "Vitamin C" => {"amount" => "60", "unit" => "mg"},
     "Thiamin" => {"amount" => "1.5", "unit" => "mg"},
@@ -72,11 +76,6 @@ class Nutrient < ActiveRecord::Base
     "Fiber" => "Fiber, total dietary",
     "Sugar" => "Sugars, total"
   }
-
-  def self.find_or_create(name)
-    nutrient = where(['lower(name) = ?', name]).first
-    return nutrient.blank? ? Nutrient.create(name: name.titleize) : nutrient
-  end
 
   def self.populate
     self.destroy_all

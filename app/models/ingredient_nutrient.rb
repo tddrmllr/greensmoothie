@@ -2,9 +2,9 @@ class IngredientNutrient < ActiveRecord::Base
   belongs_to :ingredient
   belongs_to :nutrient
 
-  scope :macronutrients, -> { joins(:nutrient).where(nutrients: { nutrient_type: Nutrient::MACRONUTRIENT }) }
-  scope :minerals, -> { joins(:nutrient).where(nutrients: { nutrient_type: Nutrient::MINERAL }) }
-  scope :vitamins, -> { joins(:nutrient).where(nutrients: { nutrient_type: Nutrient::VITAMIN }) }
+  scope :macronutrients, -> { joins(:nutrient).merge(Nutrient.macronutrients) }
+  scope :minerals, -> { joins(:nutrient).merge(Nutrient.minerals) }
+  scope :vitamins, -> { joins(:nutrient).merge(Nutrient.vitamins) }
 
   delegate :name, to: :nutrient
 
