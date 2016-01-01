@@ -1,6 +1,8 @@
 class Ability
   include CanCan::Ability
 
+  ADMIN = 'Admin'
+
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     if user.admin?

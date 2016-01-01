@@ -1,5 +1,5 @@
 <div class="rating">
-	<% if !user_signed_in? || current_user.rating?(@recipe) %>
+	<% if !user_signed_in? || current_user.has_rated?(@recipe) %>
 		<%= render 'ratings/rating', recipe: @recipe %>
 	<% else %>
 		<%= form_for [@recipe, Rating.new], remote: true do |f| %>

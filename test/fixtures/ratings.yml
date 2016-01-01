@@ -2,3 +2,8 @@ admin_user_kale_smoothie_rating:
   rating: 5
   user: 'admin_user'
   recipe: 'kale_smoothie'
+
+normal_user_beet_smoothie_rating:
+  rating: 1
+  user: 'normal_user'
+  recipe: 'beet_smoothie'

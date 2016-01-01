@@ -10,26 +10,12 @@ class User < ActiveRecord::Base
   has_many :authentications, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
-  validates :username, uniqueness: true, format: {with: /\A[A-Za-z\d_]+\Z/}, case_sensitive: false, allow_blank: true
+  validates :username, uniqueness: true, format: { with: /\A[A-Za-z\d_]+\Z/ }, case_sensitive: false, allow_blank: true
   validates :username, presence: true
   validates_uniqueness_of :email, allow_blank: true
   validate :username_cannot_be_blank, :agree_to_terms_of_service
 
   before_save :update_mailchimp_subscription
-
-  def admin?
-    self.role == "Admin"
-  end
-
-  def apply_omniauth(auth)
-    self.email = auth.info.email if self.email.blank?
-    self.name = auth.info.name if self.name.blank?
-    authentications.build(provider: auth.provider, uid: auth.id)
-  end
-
-  def email_required?
-    super && self.sign_in_count > 0
-  end
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -37,19 +23,31 @@ class User < ActiveRecord::Base
     where(conditions).where(["lower(username) = :value", { :value => login.downcase }]).first
   end
 
-  def password_required?
-    super && !self.authentications.any?
+  def admin?
+    role == Ability::ADMIN
   end
 
-  def provider?(provider)
+  def apply_omniauth(auth)
+    self.email = auth.info.email if email.blank?
+    self.name = auth.info.name if name.blank?
+    authentications.build(provider: auth.provider, uid: auth.id)
+  end
+
+  def email_required?
+    super && sign_in_count > 0
+  end
+
+  def has_authentication_for?(provider)
     authentications.where(provider: provider.to_s).any?
   end
 
-  def rating?(recipe)
+  def has_rated?(recipe)
     ratings.where(recipe_id: recipe.id).any?
   end
 
-
+  def password_required?
+    super && !self.authentications.any?
+  end
 
   def update_with_password(params, *options)
     if encrypted_password.blank?
