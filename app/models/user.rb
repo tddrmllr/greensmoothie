@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    super && !self.authentications.any?
+    super && !authentications.any?
   end
 
   def update_with_password(params, *options)
@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   private
 
   def agree_to_terms_of_service
-    if self.sign_in_count > 0 && self.terms_of_service.blank?
+    if sign_in_count > 0 && terms_of_service.blank?
       errors.add(:base, "Please indicate that you agree to our terms of service")
     end
   end
@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
   def subscribe_mailchimp
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
-      member = mailchimp.lists.subscribe "6a584771e4", {email: self.email}, {}, {}, double_optin: false
+      member = mailchimp.lists.subscribe "6a584771e4", {email: email}, {}, {}, double_optin: false
     rescue
       member ||= {}
     end
@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   def unsubscribe_mailchimp
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
     begin
-      mailchimp.lists.unsubscribe "6a584771e4", {email: self.email}
+      mailchimp.lists.unsubscribe "6a584771e4", {email: email}
     rescue
       puts 'some error'
     end
@@ -86,12 +86,12 @@ class User < ActiveRecord::Base
   end
 
   def update_mailchimp_subscription
-    unless self.email.blank?
-      if self.mailchimp_member_id.nil? && self.email_list == true
+    unless email.blank?
+      if mailchimp_member_id.nil? && email_list == true
         subscribe_mailchimp
-      elsif !self.mailchimp_member_id.nil? && !self.changes[:email].blank? && self.email_list == true
+      elsif !mailchimp_member_id.nil? && !changes[:email].blank? && email_list == true
         update_mailchimp
-      elsif self.email_list == false
+      elsif email_list == false
         unsubscribe_mailchimp
       end
     end
@@ -99,13 +99,13 @@ class User < ActiveRecord::Base
 
   def update_mailchimp
     mailchimp = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
-    mailchimp.lists.update_member "6a584771e4", {email: self.changes["email"][0]}, {"new-email" => self.changes["email"][1]}
+    mailchimp.lists.update_member "6a584771e4", {email: changes["email"][0]}, {"new-email" => changes["email"][1]}
   rescue
     false
   end
 
   def username_cannot_be_blank
-    if self.sign_in_count > 0 && self.username.blank?
+    if sign_in_count > 0 && username.blank?
       errors.add(:username, "can't be blank")
     end
   end
