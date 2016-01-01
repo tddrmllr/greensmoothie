@@ -4,7 +4,7 @@ class RatingTest < UnitTest
   attr_accessor :rating
 
   setup do
-    @rating = ratings(:admin_kale_smoothie_rating)
+    @rating = ratings(:admin_user_kale_smoothie_rating)
   end
 
   test 'recipe' do

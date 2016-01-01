@@ -14,15 +14,16 @@ class Recipe < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   def named_route
-    text = self.name.strip.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
-    "/recipes/#{self.id}/#{text}"
-  end
-
-  def has_ingredients
-    self.errors.add(:base, "Your recipe must have at least one ingredient") unless self.measurements.collect {|x| x.ingredient }.any?
+    "/recipes/#{id}/#{name.strip.downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")}"
   end
 
   def update_rating
     update_column :rating, ratings.sum(:rating).to_d / ratings.count.to_d
+  end
+
+  private
+
+  def has_ingredients
+    errors.add(:base, "Your recipe must have at least one ingredient") unless self.measurements.collect {|x| x.ingredient }.any?
   end
 end
