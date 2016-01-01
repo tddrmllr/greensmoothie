@@ -16,9 +16,6 @@ Greensmoothie::Application.routes.draw do
   get '/blog', to: 'posts#index', as: :blog
   get '/blog/:url_name', to: 'posts#show'
 
-  # legacy blog path
-  get '/posts/:id/:url_name', to: 'posts#show'
-
   # mailchimp subscribe
   post '/subscribe', to: 'mailchimp#subscribe', as: :subscribe
 
@@ -27,6 +24,10 @@ Greensmoothie::Application.routes.draw do
   resources :ingredients
   resources :nutrients
   resources :posts
+
+  # legacy blog path
+  get '/posts/:id/:url_name', to: 'posts#show'
+  
   resources :recipes do
     resources :ratings
   end
