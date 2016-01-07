@@ -21,7 +21,7 @@ class Image < ActiveRecord::Base
   private
 
   def image_from_url
-    self.image = URI.parse(image_url) if image_url
+    self.image = URI.parse(image_url) if image_url.present?
   rescue
     errors[:base] << 'Invalid URL'
   end
