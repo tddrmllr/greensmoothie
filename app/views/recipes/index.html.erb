@@ -6,14 +6,11 @@
 		<% end %>
 	</div>
 	<div class="col-md-4">
-		<% if user_signed_in? %>
-			<%= link_to "New Recipe", new_recipe_path, class: "btn btn-lg btn-primary btn-block" %>
-		<% else %>
-			<%= link_to "Sign in to Create Your Own", new_user_session_path, class: "btn btn-lg btn-primary btn-block btn-mobile-adj" %>
-		<% end %>
+		<%= link_to "Sign in to Create Your Own", new_user_session_path, class: "btn btn-lg btn-primary btn-block btn-mobile-adj" unless user_signed_in? %>
 	</div>
 </div>
 <div id="recipes">
 	<%= render @recipes %>
 </div>
 <%= render 'layouts/infinite', model: Recipe, per: 8 %>
+<%= link_to material_icon('plus'), new_recipe_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Recipe' } if user_signed_in? %>
