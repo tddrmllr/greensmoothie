@@ -1,11 +1,5 @@
 <div class="media ingredient" id="ingredient-<%= ingredient.id %>">
-  <a class="pull-left" href="<%= ingredient_path(ingredient) %>">
-    <% if ingredient.image? %>
-  		<%= image_tag ingredient.image.image.url(:thumb), class: "media-object" %>
-  	<% else %>
-    	<%= image_tag "ingredient.png" %>
-    <% end %>
-  </a>
+  <%= link_to '', ingredient_path(ingredient), class: 'pull-left ingredient-image', style: "background-image: url(#{media_object_url(ingredient)})" %>
   <div class="media-body">
   	<h4 class="media-heading">
   		<%= link_to ingredient.name, ingredient %>

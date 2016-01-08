@@ -8,7 +8,7 @@
 	    <% end %>
 	  </a>
 	  <div class="info">
-			<%= render 'ratings/rating', recipe: recipe %>
+			<%#= render 'ratings/rating', recipe: recipe %>
 	    <%= content_tag :h4, link_to(recipe.name, recipe.named_route) if @recipes %>
 	    <%= recipe.description %>
 	  </div>

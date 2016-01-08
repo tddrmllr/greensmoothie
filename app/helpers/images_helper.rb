@@ -1,10 +1,9 @@
 module ImagesHelper
-  def thumbnail(resource)
+  def media_object_url(resource)
     if resource.image?
-      thumb = "<img class='img-thumbnail media-object' src='#{resource.image.image.url(:thumbnail)}'>"
+      resource.image.image.url(:thumb)
     else
-      thumb = "<i class='fa fa-leaf media-object' style='font-size: 50px'></i>"
+      asset_path "#{resource.class.name.downcase}.png"
     end
-    return thumb.html_safe
   end
 end
