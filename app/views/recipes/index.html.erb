@@ -13,4 +13,4 @@
 	<%= render @recipes %>
 </div>
 <%= render 'layouts/infinite', model: Recipe, per: 8 %>
-<%= link_to material_icon('plus'), new_recipe_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Recipe' } if user_signed_in? %>
+<%= link_to material_icon('plus'), new_recipe_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Recipe', placement: 'left' } if user_signed_in? %>
