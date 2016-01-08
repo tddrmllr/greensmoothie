@@ -12,7 +12,7 @@
 		<%= render 'layouts/infinite', model: Post, per: 12 %>
 	</div>
 	<div class="col-md-4">
-		<%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg btn-block", style: "margin-bottom: 10px" if can? :manage, Post %>
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>
+<%= link_to material_icon('plus'), new_post_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Post', placement: 'left' } if can?(:manage, Post) %>
