@@ -7,7 +7,7 @@ class PostsControllerTest < ControllerTest
     attr_accessor :blog_post
 
     setup do
-      @blog_post = posts(:admin_post)
+      @blog_post = posts(:published_post)
       sign_in users(:admin_user)
     end
 
@@ -66,7 +66,7 @@ class PostsControllerTest < ControllerTest
     attr_accessor :blog_post
 
     setup do
-      @blog_post = posts(:admin_post)
+      @blog_post = posts(:published_post)
     end
 
     test 'create' do

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_url_name(params[:url_name])
+    @post = Post.unscoped.find_by_url_name(params[:url_name])
     @title = @post.name
   end
 
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.unscoped.find(params[:id])
     @title = "Edit Post"
     @delete = true
     render 'form'
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.unscoped.find(params[:id])
     @post.destroy
     flash[:success] = "Post deleted."
     @redirect = blog_path
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.unscoped.find(params[:id])
     @post.update_attributes(post_params)
     if @post.save
       redirect_to @post.named_route
@@ -59,6 +59,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :body, :abstract, :user_id, :headline, :core_content)
+    params.require(:post).permit(:name, :body, :abstract, :user_id, :headline, :published_at)
   end
 end

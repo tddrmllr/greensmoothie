@@ -9,7 +9,7 @@ class AbilityTest < UnitTest
     end
 
     test 'can manage posts' do
-      assert ability.can? :manage, posts(:admin_post)
+      assert ability.can? :manage, posts(:published_post)
     end
   end
 
@@ -135,15 +135,15 @@ class AbilityTest < UnitTest
 
     # post privelages
     test 'cannot update a post' do
-      refute ability.can? :update, posts(:admin_post)
+      refute ability.can? :update, posts(:published_post)
     end
 
     test 'cannot edit a post' do
-      refute ability.can? :edit, posts(:admin_post)
+      refute ability.can? :edit, posts(:published_post)
     end
 
     test 'can read a post' do
-      assert ability.can? :read, posts(:admin_post)
+      assert ability.can? :read, posts(:published_post)
     end
 
     test 'cannot create a post' do
@@ -151,7 +151,7 @@ class AbilityTest < UnitTest
     end
 
     test 'cannot destroy a post' do
-      refute ability.can? :destroy, posts(:admin_post)
+      refute ability.can? :destroy, posts(:published_post)
     end
   end
 
@@ -163,7 +163,7 @@ class AbilityTest < UnitTest
     end
 
     test 'can read any post' do
-      assert ability.can? :read, posts(:admin_post)
+      assert ability.can? :read, posts(:published_post)
     end
 
     test 'can read any recipe' do
@@ -179,7 +179,7 @@ class AbilityTest < UnitTest
     end
 
     test 'cannot manage any posts' do
-      refute ability.can? :manage, posts(:admin_post)
+      refute ability.can? :manage, posts(:published_post)
     end
 
     test 'cannot manage any users' do

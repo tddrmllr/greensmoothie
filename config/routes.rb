@@ -24,10 +24,13 @@ Greensmoothie::Application.routes.draw do
   resources :ingredients
   resources :nutrients
   resources :posts
+  namespace :unpublished do
+    resources :posts, only: :index
+  end
 
   # legacy blog path
   get '/posts/:id/:url_name', to: 'posts#show'
-  
+
   resources :recipes do
     resources :ratings
   end

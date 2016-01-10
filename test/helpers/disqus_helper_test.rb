@@ -4,7 +4,7 @@ class DisqusHelperTest < HelperTest
   include DisqusHelper
 
   test 'disqus_comments' do
-    disqusable = posts(:admin_post)
+    disqusable = posts(:published_post)
     html = Nokogiri::HTML.fragment(disqus_comments(disqusable)).children.first
     assert_equal 'disqus_thread', html.attr('id')
     assert_equal "post-#{disqusable.id}", html.attr('data-id')

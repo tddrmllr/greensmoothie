@@ -1,6 +1,14 @@
-admin_post:
+published_post:
   abstract: 'This post is about green smoothies. This needs to be at least 50 chars long.'
   body: 'This is everything you need to know about green smoothies.'
   name: 'About Green Smoothies'
   user: 'admin_user'
   url_name: 'about-green-smoothies'
+  published_at: <%= Time.at(1451939082) %>
+
+unpublished_post:
+  abstract: 'This post is about being vegan. This needs to be at least 50 chars long.'
+  body: 'This is everything you need to know about being vegan.'
+  name: 'Being Vegan'
+  user: 'admin_user'
+  url_name: 'being-vegan'

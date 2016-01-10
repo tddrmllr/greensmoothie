@@ -3,16 +3,22 @@
 		<%= search_form_for @search, remote: true do |f| %>
 			<%= f.text_field :name_or_body_or_abstract_cont, id: "post-search", class: "index-search form-control input-lg", placeholder: "Search", data: {type: "post"} %>
 			<%= hidden_field_tag :page, 1 %>
-		<% end %>
-		<br>
+			<br>
+		<% end unless request.fullpath.include?('unpublished') %>
 		<div id="posts">
-			<%= render @posts %>
+			<% @posts.each do |post| %>
+				<%= render 'posts/post', post: post %>
+			<% end %>
 		</div>
 		<br>
 		<%= render 'layouts/infinite', model: Post, per: 12 %>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 hidden-md">
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>
-<%= link_to material_icon('plus'), new_post_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Post', placement: 'left' } if can?(:manage, Post) %>
+<% if can?(:manage, Post) %>
+	<%= link_to material_icon('plus'), new_post_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Post', placement: 'left' } %>
+	<%= link_to material_icon('collection-text'), unpublished_posts_path, class: 'btn btn-info btn-fab',
+		data: { toggle: 'tooltip', title: 'Unpublished', placement: 'left' }, style: 'bottom: 100px' unless request.fullpath.include?('unpublished') %>
+<% end %>
