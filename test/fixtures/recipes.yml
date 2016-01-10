@@ -2,6 +2,7 @@ kale_smoothie:
   name: 'Kale Smoothie'
   description: 'A smoothie with kale'
   user: 'normal_user'
+  url_name: 'kale-smoothie'
 
 beet_smoothie:
   name: 'Beet Smoothie'

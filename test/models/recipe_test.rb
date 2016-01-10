@@ -23,6 +23,11 @@ class RecipeTest < UnitTest
     assert_includes recipe.ratings, ratings(:admin_user_kale_smoothie_rating)
   end
 
+  test 'sets url_name on save' do
+    recipe.update_attributes(name: 'Foo Recipe')
+    assert_equal 'foo-recipe', recipe.url_name
+  end
+
   test 'update_rating should calculate average of all ratings' do
     recipe.ratings.destroy_all
     recipe.ratings.create(rating: 3)

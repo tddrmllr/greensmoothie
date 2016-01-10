@@ -30,8 +30,13 @@ class RecipesControllerTest < ControllerTest
       assert_response :success
     end
 
-    test 'show' do
+    test 'show should render with id in url' do
       get :show, id: recipe.id
+      assert_response :success
+    end
+
+    test 'show should render with url_name in url' do
+      get :show, id: recipe.url_name
       assert_response :success
     end
 

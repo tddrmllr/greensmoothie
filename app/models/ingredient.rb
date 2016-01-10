@@ -13,7 +13,8 @@ class Ingredient < ActiveRecord::Base
   validates_uniqueness_of :name
 
   after_create :create_nutrition_info
-  after_save :set_url_name, :update_nutrition_info
+  after_save :update_nutrition_info
+  before_save :set_url_name
 
   default_scope -> { order('name ASC') }
 

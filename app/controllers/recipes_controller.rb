@@ -35,7 +35,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    # find_by_id is for legacy urls
+    @recipe = Recipe.find_by_url_name(params[:id]) || Recipe.find_by_id(params[:id])
     @ingredients = @recipe.ingredients
     @title = @recipe.name
     @delete = true

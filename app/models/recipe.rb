@@ -11,6 +11,9 @@ class Recipe < ActiveRecord::Base
 
   validates :name, :description, presence: true
   validate :has_ingredients
+  validates_uniqueness_of :name, message: 'There is already a recipe with the name you have chosen'
+
+  before_save :set_url_name
 
   default_scope -> { order('created_at DESC') }
 
@@ -26,5 +29,9 @@ class Recipe < ActiveRecord::Base
 
   def has_ingredients
     errors.add(:base, "Your recipe must have at least one ingredient") unless self.measurements.collect {|x| x.ingredient }.any?
+  end
+
+  def set_url_name
+    self.url_name = (name || '').downcase.gsub(/[^0-9a-z ]/i, '').gsub(" ", "-")
   end
 end

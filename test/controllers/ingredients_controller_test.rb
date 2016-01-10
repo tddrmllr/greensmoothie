@@ -42,8 +42,8 @@ class IngredientsControllerTest < ControllerTest
       assert_template :show
     end
 
-    test 'show should work with ingredient name route' do
-      get :show, id: ingredient.name.downcase
+    test 'show should work with ingredient url_name route' do
+      get :show, id: ingredient.url_name
       assert_response :success
       assert_template :show
     end
