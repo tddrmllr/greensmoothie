@@ -41,7 +41,8 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    # find_by_id is to support legacy urls
+    @ingredient = Ingredient.find_by_name(params[:id]) || Ingredient.find_by_id(params[:id])
     @title = @ingredient.name
     @delete = true
   end

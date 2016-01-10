@@ -1,8 +1,6 @@
 class Ingredient < ActiveRecord::Base
   include Disqusable
   include HasImage
-  require 'nokogiri'
-  require 'open-uri'
 
   has_many :measurements, dependent: :destroy
   has_many :recipes, through: :measurements
@@ -12,11 +10,16 @@ class Ingredient < ActiveRecord::Base
   accepts_nested_attributes_for :measurements
 
   validates :name, presence: true
+  validates_uniqueness_of :name
 
   after_create :create_nutrition_info
   after_save :update_nutrition_info
 
   default_scope -> { order('name ASC') }
+
+  def self.find_by_name(name)
+    where('lower(name) = ?', name.downcase).first
+  end
 
   def self.find_or_create(name)
     ingredient = where(['lower(name) = ?', name.downcase]).first

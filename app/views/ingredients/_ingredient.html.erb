@@ -1,8 +1,8 @@
 <div class="media ingredient" id="ingredient-<%= ingredient.id %>">
-  <%= link_to '', ingredient_path(ingredient), class: 'pull-left ingredient-image', style: "background-image: url(#{thumbnail_image_path(ingredient)})" %>
+  <%= link_to '', named_ingredient_path(ingredient), class: 'pull-left ingredient-image', style: "background-image: url(#{thumbnail_image_path(ingredient)})" %>
   <div class="media-body">
   	<h4 class="media-heading">
-  		<%= link_to ingredient.name, ingredient %>
+  		<%= link_to ingredient.name, named_ingredient_path(ingredient) %>
   		<% if @recipe %>
 			  <% measurement = @recipe.measurements.where(ingredient_id: ingredient.id).first %>
 		  	<small>

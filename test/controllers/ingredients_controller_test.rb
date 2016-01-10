@@ -1,15 +1,15 @@
 require 'test_helper'
 
 class IngredientsControllerTest < ControllerTest
-  class NoUser < ControllerTest
-    tests IngredientsController
+  tests IngredientsController
 
-    attr_accessor :ingredient
+  attr_accessor :ingredient
 
-    setup do
-      @ingredient = ingredients(:kale)
-    end
+  setup do
+    @ingredient = ingredients(:kale)
+  end
 
+  class NoUser < IngredientsControllerTest
     test 'create' do
       post :create
       assert_response :forbidden
@@ -36,8 +36,14 @@ class IngredientsControllerTest < ControllerTest
       assert_response :forbidden
     end
 
-    test 'show' do
+    test 'show should work with ingredient id route' do
       get :show, id: ingredient.id
+      assert_response :success
+      assert_template :show
+    end
+
+    test 'show should work with ingredient name route' do
+      get :show, id: ingredient.name.downcase
       assert_response :success
       assert_template :show
     end
@@ -48,13 +54,8 @@ class IngredientsControllerTest < ControllerTest
     end
   end
 
-  class NormalUser < ControllerTest
-    tests IngredientsController
-
-    attr_accessor :ingredient
-
+  class NormalUser < IngredientsControllerTest
     setup do
-      @ingredient = ingredients(:kale)
       sign_in users(:normal_user)
     end
 
@@ -103,13 +104,8 @@ class IngredientsControllerTest < ControllerTest
     end
   end
 
-  class AdminUser < ControllerTest
-    tests IngredientsController
-
-    attr_accessor :ingredient
-
+  class AdminUser < IngredientsControllerTest
     setup do
-      @ingredient = ingredients(:kale)
       sign_in users(:admin_user)
     end
 

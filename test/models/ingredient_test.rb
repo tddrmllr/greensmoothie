@@ -13,6 +13,12 @@ class IngredientTest < ActiveSupport::TestCase
     assert_equal 27, _ingredient.ingredient_nutrients.count
   end
 
+  test 'find_by_name should find ingredient regardless of case' do
+    assert_equal ingredient, Ingredient.find_by_name(ingredient.name.upcase)
+    assert_equal ingredient, Ingredient.find_by_name(ingredient.name.downcase)
+    assert_equal ingredient, Ingredient.find_by_name(ingredient.name.capitalize)
+  end
+
   test 'find_or_create creates new if does not exist' do
     Ingredients::UpdateNutrition.stub :run, true do
       record = Ingredient.find_or_create('Foo seeds')
