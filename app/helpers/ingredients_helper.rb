@@ -1,5 +1,5 @@
 module IngredientsHelper
   def named_ingredient_path(ingredient)
-    "/ingredients/#{ingredient.name.downcase}"
+    "/ingredients/#{ingredient.url_name}"
   end
 end

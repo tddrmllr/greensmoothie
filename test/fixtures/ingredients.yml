@@ -1,6 +1,7 @@
 kale:
   name: 'Kale'
   description: 'A green leafy vegetable with lots of great nutrients.'
+  url_name: 'kale'
 
 beets:
   name: 'Beets'

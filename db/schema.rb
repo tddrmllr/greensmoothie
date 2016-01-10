@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228065115) do
+ActiveRecord::Schema.define(version: 20160110050423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20151228065115) do
     t.string   "serving_size"
     t.string   "source_url"
     t.string   "usda_name"
+    t.string   "url_name"
   end
 
   create_table "measurements", force: true do |t|
