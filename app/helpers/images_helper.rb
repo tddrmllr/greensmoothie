@@ -5,19 +5,25 @@ module ImagesHelper
     end
   end
 
-  def large_image_path(resource)
-    if resource.image?
-      resource.image.image.url(:large)
-    else
-      asset_path "#{resource.class.name.downcase}.png"
-    end
-  end
-
   def thumbnail_image_path(resource)
     if resource.image?
       resource.image.image.url(:thumb)
     else
-      asset_path "#{resource.class.name.downcase}.png"
+      fallback_image_path(resource)
+    end
+  end
+
+  private
+
+  def fallback_image_path(resource)
+    asset_path "#{resource.class.name.downcase}.png"
+  end
+
+  def large_image_path(resource)
+    if resource.image?
+      resource.image.image.url(:large)
+    else
+      fallback_image_path(resource)
     end
   end
 end

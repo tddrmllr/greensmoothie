@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IngredientsHelperTest < UnitTest
+class IngredientsHelperTest < HelperTest
   include IngredientsHelper
 
   test 'named_ingredient_path' do

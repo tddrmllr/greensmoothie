@@ -37,6 +37,11 @@ class ControllerTest < ActionController::TestCase # inherits from ActiveSupport:
   end
 end
 
+class HelperTest < UnitTest
+  include Rails.application.routes.url_helpers
+  include ActionView::Helpers
+end
+
 def json_response
   ActiveSupport::JSON.decode @response.body
 end

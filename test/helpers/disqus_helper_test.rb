@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DisqusHelperTest < UnitTest
+class DisqusHelperTest < HelperTest
   include DisqusHelper
 
   test 'disqus_comments' do
