@@ -1,17 +1,8 @@
-<div class="post">
-	<div class="row">
-		<div class="col-sm-5">
-			<% image = image_tag post.image.image.url(:medium), style: "width: 100%" if post.image? %>
-			<%= link_to image, post.named_route %>
-			<div class="overlay">
-				<%= link_to "Edit", edit_post_path(post), class: "btn btn-xs btn-primary" if can? :manage, post %>
-			</div>
-		</div>
-		<div class="col-sm-7">
-			<div class="abstract">
-				<h2><a href="<%= post.named_route %>"><%= post.name %></a></h2>
-				<p><%= post.abstract %></p>
-			</div>
-		</div>
+<a class="post" href="<%= post.named_route %>">
+	<%= content_tag :div, style: "background-image: url(#{large_image_path(post)})", class: 'post-image' do %>
+		<h2 class='post-title'><%= post.name %></h2>
+	<% end %>
+	<div class='post-abstract'>
+		<p><%= post.abstract %></p>
 	</div>
-</div>
+</a>
