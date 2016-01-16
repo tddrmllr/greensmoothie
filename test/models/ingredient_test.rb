@@ -63,6 +63,12 @@ class IngredientTest < ActiveSupport::TestCase
     assert_equal 27, ingredient.ingredient_nutrients.count
   end
 
+  test 'instructions should be set to blank string if only contains empty <p>' do
+    ingredient.description = "<p><br></p>"
+    ingredient.save
+    assert_equal '', ingredient.description
+  end
+
   test 'sets url_name on save' do
     ingredient.update_attributes(name: 'Super kale')
     assert_equal 'super-kale', ingredient.url_name

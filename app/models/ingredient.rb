@@ -14,7 +14,7 @@ class Ingredient < ActiveRecord::Base
 
   after_create :create_nutrition_info
   after_save :update_nutrition_info
-  before_save :set_url_name
+  before_save :set_url_name, :cleanup_instructions
 
   default_scope -> { order('name ASC') }
 
@@ -36,6 +36,10 @@ class Ingredient < ActiveRecord::Base
   end
 
   private
+
+  def cleanup_instructions
+    self.description = '' if description == "<p><br></p>"
+  end
 
   def create_nutrition_info(args = { url: source_url, ingredient: self })
     Ingredients::UpdateNutrition.run(args)
