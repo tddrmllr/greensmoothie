@@ -42,6 +42,9 @@ class HelperTest < UnitTest
   include ActionView::Helpers
 end
 
+class ViewTest < ActionView::TestCase
+end
+
 def json_response
   ActiveSupport::JSON.decode @response.body
 end
