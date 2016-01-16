@@ -3,12 +3,9 @@
 		<div class="well" id='ingredient'>
 			<%= gradient_image(@ingredient) %>
 			<div class='ingredient-container'>
-				<h4 class="ribbon">About</h4>
-				<% if !@ingredient.description.blank? %>
-					<p><%= @ingredient.description.html_safe %></p>
-				<% else %>
-					<br>
-					<p class='alert alert-green' style='margin-bottom: 0px'>No entry for this ingredient yet. <%= user_signed_in? ? 'Tell us what you know about it!' : link_to('Sign up', new_user_registration_path )+ ' and tell us what you know about it!' %></p>
+				<% unless @ingredient.description.blank? %>
+					<h4 class="ribbon">About</h4>
+					<%= content_tag :p, @ingredient.description.html_safe %>
 				<% end %>
 				<br>
 				<% if @ingredient.nutrients.any? %>
