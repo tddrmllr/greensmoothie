@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def title
-    @title ||= "Green Smoothie"
+    instance_variable_get("@#{controller_name.singularize}").try(:title) || @title || 'Green Smoothie'
   end
 end
