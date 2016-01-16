@@ -19,7 +19,7 @@
 		<div class="container">
 			<% unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
 				<h1>
-					<%= @title %>
+					<%= title %>
 				</h1>
 			<% end %>
 			<%= yield %>

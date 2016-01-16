@@ -3,20 +3,12 @@
 		<div id="recipe" class="well">
 			<p class='description'><%= @recipe.description %></p>
 			<div id="recipe-image">
-				<% if @recipe.image? %>
-		  		<%= image_tag @recipe.image.image.url(:large), class: "hover" %>
-		  	<% else %>
-		    	<%= image_tag "glass.png", class: "hover" %>
-		    <% end %>
+	  		<%= image_tag guaranteed_image_path(@recipe, :large) %>
 			</div>
 			<div class='recipe-container'>
+				<%= @recipe.instructions.html_safe unless @recipe.instructions.blank? %>
 				<%= content_tag :h4, "Ingredients", class: "ribbon" %>
-				<%= render @ingredients %>
-				<% unless @recipe.instructions.blank? %>
-					<br>
-					<%= content_tag :h4, "Instructions", class: "ribbon" unless @recipe.instructions.blank? %>
-					<span><%= @recipe.instructions.html_safe %></span>
-				<% end %>
+				<%= render @recipe.ingredients %>
 			</div>
 		</div>
 		<%= render 'layouts/social', sociable: @recipe, head: false %>
