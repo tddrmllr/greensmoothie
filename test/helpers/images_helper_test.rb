@@ -29,6 +29,18 @@ class ImagesHelperTest < HelperTest
     end
   end
 
+  test 'guaranteed_image_path should return resource image if present' do
+    imageable.stub :image, ImageDouble do
+      assert_equal '/image.png', guaranteed_image_path(imageable)
+    end
+  end
+
+  test 'guaranteed_image_path should return fallback image if resource has no image' do
+    imageable.stub :image?, false do
+      assert_equal '/ingredient.png', thumbnail_image_path(imageable)
+    end
+  end
+
   test 'thumbnail_image_path should return resource image url if present' do
     imageable.stub :image, ImageDouble do
       assert_equal '/image.png', thumbnail_image_path(imageable)

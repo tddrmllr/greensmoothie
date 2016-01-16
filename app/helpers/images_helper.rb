@@ -5,6 +5,14 @@ module ImagesHelper
     end
   end
 
+  def guaranteed_image_path(resource, size = :medium)
+    if resource.image?
+      resource.image.image.url(size)
+    else
+      fallback_image_path(resource)
+    end
+  end
+
   def large_image_path(resource)
     guaranteed_image_path(resource, :large)
   end
@@ -18,14 +26,6 @@ module ImagesHelper
   end
 
   private
-
-  def guaranteed_image_path(resource, size = :medium)
-    if resource.image?
-      resource.image.image.url(size)
-    else
-      fallback_image_path(resource)
-    end
-  end
 
   def fallback_image_path(resource)
     asset_path "#{resource.class.name.downcase}.png"
