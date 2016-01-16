@@ -35,11 +35,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # find_by_id is for legacy urls
-    @recipe = Recipe.find_by_url_name(params[:id]) || Recipe.find_by_id(params[:id])
-    @ingredients = @recipe.ingredients
-    @title = @recipe.name
-    @delete = true
+    @recipe = Recipes::ShowPresenter.new(id: params[:id], view_context: view_context)
   end
 
   def update
@@ -49,7 +45,6 @@ class RecipesController < ApplicationController
       redirect_to @recipe.named_route
       flash[:success] = "Recipe saved successfully."
     else
-      @delete = true
       render 'form'
     end
   end
