@@ -13,7 +13,7 @@ class Recipe < ActiveRecord::Base
   validate :has_ingredients
   validates_uniqueness_of :name, message: 'There is already a recipe with the name you have chosen'
 
-  before_save :set_url_name
+  before_save :set_url_name, :cleanup_instructions
 
   default_scope -> { order('created_at DESC') }
 
@@ -26,6 +26,10 @@ class Recipe < ActiveRecord::Base
   end
 
   private
+
+  def cleanup_instructions
+    self.instructions = '' if instructions == "<p><br></p>"
+  end
 
   def has_ingredients
     errors.add(:base, "Your recipe must have at least one ingredient") unless self.measurements.collect {|x| x.ingredient }.any?

@@ -37,6 +37,12 @@ class RecipeTest < UnitTest
     assert_equal (8/2).to_d, recipe.rating
   end
 
+  test 'instructions should be set to blank string if only contains empty <p>' do
+    recipe.instructions = "<p><br></p>"
+    recipe.save
+    assert_equal '', recipe.instructions
+  end
+
   test 'user' do
     assert_kind_of User, recipe.user
   end
