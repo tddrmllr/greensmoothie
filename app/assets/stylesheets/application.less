@@ -17,12 +17,15 @@
  *= require summernote
  *= require jquery.fileupload-ui
  *= require jquery.Jcrop
+ *= require mdl
  *= require_self
  *= require pages
 
  *= depend_on "alerts.less"
  *= depend_on "buttons.less"
  *= depend_on "drawer.less"
+ *= depend_on "material.less"
+ *= depend_on "navbar.less"
  *= depend_on "posts.less"
  *= depend_on "ratings.less"
  *= depend_on "recipes.less"
@@ -38,6 +41,8 @@
 @import 'drawer.less';
 @import 'images.less';
 @import 'ingredients.less';
+@import 'material.less';
+@import 'navbar.less';
 @import 'nutrients.less';
 @import 'pnotify.less';
 @import 'posts.less';
@@ -160,6 +165,10 @@ div.media {
   h4 {
     font-weight: 300;
     font-size: 18px;
+    small {
+      font-weight: 500;
+      color: #666666;
+    }
   }
 }
 

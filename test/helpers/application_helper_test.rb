@@ -1,7 +1,14 @@
 require 'test_helper'
 
-class IngredientsHelperTest < HelperTest
+class ApplicationHelperTest < HelperTest
   include ApplicationHelper
+
+  attr_accessor :renderer
+
+  test 'infinite_index' do
+    infinite_index(OpenStruct.new(type: 'nutrient', search_terms: :name_cont, index: Nutrient.all))
+    assert_equal 'shared/infinite_index', renderer.partial
+  end
 
   test 'material_icon' do
     html = Nokogiri::HTML.fragment(material_icon('foo', class: 'bold', style: 'font-size: 20px')).children.first
@@ -33,5 +40,18 @@ class IngredientsHelperTest < HelperTest
 
   def controller_name
     'foos'
+  end
+
+  def render(partial, options = {})
+    @renderer = TestRenderer.new(partial, options)
+  end
+
+  class TestRenderer
+    attr_accessor :partial, :options
+
+    def initialize(partial = nil, options = {})
+      @partial = partial
+      @options = options
+    end
   end
 end

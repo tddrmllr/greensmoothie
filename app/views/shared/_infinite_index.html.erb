@@ -1,0 +1,9 @@
+<%= search_form_for indexable.ransack, remote: true do |f| %>
+  <%= f.text_field indexable.search_terms, id: "#{indexable.type}-search", class: "index-search form-control input-lg", placeholder: "Search", data: { type: indexable.type } %>
+  <%= hidden_field_tag :page, 1 %>
+<% end %>
+<div id="<%= indexable.type.pluralize %>" class="<%= html_options[:container_class] || 'well' %>">
+  <%= render indexable.index %>
+</div>
+<br>
+<div class="row" id="pages" data-next="2" data-page-count="<%= (indexable.total_count / indexable.per).ceil %>"></div>

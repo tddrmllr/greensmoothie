@@ -29,6 +29,7 @@
 	          <ul class="dropdown-menu">
 							<%= content_tag :li, link_to("My Recipes", user_path(current_user)) %>
 	            <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>
+							<%= content_tag :li, link_to("Unpublished", unpublished_posts_path) if can? :manage, Post %>
 	            <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 	          </ul>
 	        </li>

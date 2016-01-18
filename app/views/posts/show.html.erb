@@ -21,4 +21,4 @@
 		<%= disqus_comments(@post) if request.fullpath.include?('/blog') %>
 	</div>
 </div>
-<%= link_to material_icon('edit'), edit_post_path(@post), class: "btn btn-success btn-fab" if can?(:manage, @post) %>
+<%= link_to material_icon('edit'), edit_post_path(@post.presentable), class: "btn btn-success btn-fab" if can?(:manage, @post) %>

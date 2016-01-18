@@ -25,7 +25,7 @@ Greensmoothie::Application.routes.draw do
   resources :nutrients
   resources :posts
   namespace :unpublished do
-    resources :posts, only: :index
+    resources :posts, only: [:index, :show]
   end
 
   # legacy blog path

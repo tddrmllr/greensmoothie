@@ -4,10 +4,13 @@ class IngredientsController < ApplicationController
   authorize_resource
 
   include UpdateImage
-  include Searchable
 
   def index
-    @title = "Ingredients"
+    @ingredients = Ingredients::IndexPresenter.new(params: params)
+    respond_to do |format|
+      format.js { render 'shared/index' }
+      format.html
+    end
   end
 
   def new
@@ -44,7 +47,6 @@ class IngredientsController < ApplicationController
     # find_by_id is to support legacy urls
     @ingredient = Ingredient.find_by_url_name(params[:id]) || Ingredient.find_by_id(params[:id])
     @title = @ingredient.name
-    @delete = true
   end
 
   def update
@@ -53,7 +55,6 @@ class IngredientsController < ApplicationController
       flash[:success] = "Ingredient was updated."
       redirect_to @ingredient
     else
-      @delete = true
       flash[:error] = @ingredient.errors.full_messages.join(', ')
       render 'form'
     end

@@ -3,10 +3,12 @@ class NutrientsController < ApplicationController
   respond_to :js, :html
   authorize_resource
 
-  include Searchable
-
   def index
-    @title = "Nutrients"
+    @nutrients = Nutrients::IndexPresenter.new(params: params)
+    respond_to do |format|
+      format.js { render 'shared/index' }
+      format.html
+    end
   end
 
   def edit
@@ -19,7 +21,6 @@ class NutrientsController < ApplicationController
     @nutrient = Nutrient.find(params[:id])
     @ingredients = @nutrient.ingredients
     @title = @nutrient.name
-    @delete = true
   end
 
   def update
@@ -28,7 +29,6 @@ class NutrientsController < ApplicationController
       flash[:success] = "Nutrient updated"
       redirect_to @nutrient
     else
-      @delete = true
       render 'form'
     end
   end

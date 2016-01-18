@@ -15,10 +15,16 @@ class NutrientsControllerTest < ControllerTest
       assert_response :forbidden
     end
 
-    test 'index' do
+    test 'index html' do
       get :index
       assert_response :success
       assert_template :index
+    end
+
+    test 'index js' do
+      xhr :get, :index
+      assert_response :success
+      assert_template 'shared/index'
     end
 
     test 'show' do

@@ -7,7 +7,11 @@ module Unpublished
       authorize! :manage, Post
       @posts = Post.unpublished
       @title = 'Unpublished Posts'
-      render 'posts/index'
+    end
+
+    def show
+      @post = Posts::ShowPresenter.new(url_name: params[:id])
+      render 'posts/show'
     end
   end
 end

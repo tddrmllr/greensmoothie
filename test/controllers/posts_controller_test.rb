@@ -12,7 +12,7 @@ class PostsControllerTest < ControllerTest
     end
 
     test 'successful create' do
-      post :create, post: { name: 'Test', abstract: 'Here is some meta text about this post. It needs to be 50 chars long.', body: 'Test text' }
+      post :create, post: { name: 'Test', description: 'Here is some meta text about this post. It needs to be 50 chars long.', body: 'Test text' }
       assert_redirected_to assigns(:post).named_route
     end
 
@@ -33,9 +33,15 @@ class PostsControllerTest < ControllerTest
       assert_response :success
     end
 
-    test 'index' do
+    test 'index html' do
       get :index
       assert_response :success
+    end
+
+    test 'index js' do
+      xhr :get, :index
+      assert_response :success
+      assert_template 'shared/index'
     end
 
     test 'new' do

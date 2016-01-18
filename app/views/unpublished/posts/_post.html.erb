@@ -1,0 +1,5 @@
+<tr>
+  <td class="mdl-data-table__cell--non-numeric"><b><%= link_to post.name, "/unpublished/posts/#{post.url_name}" %></b></td>
+  <td class="mdl-data-table__cell--non-numeric hidden-xs hidden-sm"><%= post.description.truncate(100) %></td>
+  <td><%= link_to material_icon('edit', style: 'font-size: 18px'), edit_post_path(post) %></td>
+</tr>

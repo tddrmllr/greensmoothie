@@ -3,15 +3,17 @@ class PostsController < ApplicationController
   authorize_resource
 
   include UpdateImage
-  include Searchable
 
   def index
-    @title = "The Green Smoothie Blog"
+    @posts = Posts::IndexPresenter.new(params: params, per: 8)
+    respond_to do |format|
+      format.js { render 'shared/index' }
+      format.html
+    end
   end
 
   def show
-    @post = Post.unscoped.find_by_url_name(params[:url_name])
-    @title = @post.name
+    @post = Posts::ShowPresenter.new(url_name: params[:url_name])
   end
 
   def new
@@ -23,14 +25,13 @@ class PostsController < ApplicationController
   def edit
     @post = Post.unscoped.find(params[:id])
     @title = "Edit Post"
-    @delete = true
     render 'form'
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post.named_route
+      redirect_to after_save_path(@post)
     else
       render 'form'
     end
@@ -48,17 +49,20 @@ class PostsController < ApplicationController
     @post = Post.unscoped.find(params[:id])
     @post.update_attributes(post_params)
     if @post.save
-      redirect_to @post.named_route
+      redirect_to after_save_path(@post)
       flash[:success] = "Post saved successfully."
     else
-      @delete = true
       render 'form'
     end
   end
 
   private
 
+  def after_save_path(post)
+    post.published? ? post.named_route : "/unpublished/posts/#{post.url_name}"
+  end
+
   def post_params
-    params.require(:post).permit(:name, :body, :abstract, :user_id, :headline, :published_at)
+    params.require(:post).permit(:name, :body, :description, :user_id, :headline, :published_at)
   end
 end

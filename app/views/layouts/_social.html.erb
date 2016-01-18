@@ -1,4 +1,4 @@
-<% summary = sociable.class.name == "Post" ? sociable.abstract : sociable.description %>
+<% summary = sociable.description %>
 <% image = sociable.image.image.url(:medium) if sociable.image? %>
 <% name = sociable.name %>
 <% url = request.url %>

@@ -8,6 +8,9 @@
   .shadow;
   .post-abstract {
     padding: 19px;
+    p {
+      font-size: 16px;
+    }
   }
   .post-image {
     height: 350px;
@@ -87,5 +90,13 @@
 #post-form {
   .note-editable {
     height: 500px;
+  }
+}
+
+#unpublished-posts {
+  td:first-child {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

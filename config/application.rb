@@ -9,6 +9,7 @@ Bundler.require(:default, Rails.env)
 module Greensmoothie
   class Application < Rails::Application
     config.autoload_paths += %W( #{config.root}/app/presenters )
+    config.autoload_paths += %W( #{config.root}/app/presenters/concerns )
     config.autoload_paths += %W( #{config.root}/app/services )
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 

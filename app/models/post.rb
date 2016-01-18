@@ -6,11 +6,11 @@ class Post < ActiveRecord::Base
 
   default_scope -> { where.not(published_at: nil).order('created_at DESC') }
 
-  validates :abstract, presence: true
+  validates :description, presence: true
   validates :body, presence: true
   validates :name, presence: true
   validates_uniqueness_of :name
-  validates_length_of :abstract, minimum: 50, maximum: 400, allow_blank: true
+  validates_length_of :description, minimum: 50, maximum: 400, allow_blank: true
 
   before_save :set_url_name
 

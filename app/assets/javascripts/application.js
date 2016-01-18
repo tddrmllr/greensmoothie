@@ -26,4 +26,5 @@
 //= require masonry/jquery.masonry
 //= require sidr
 //= require summernote
+//= require mdl
 //= require_tree .

@@ -6,6 +6,10 @@ class Presenter
     after_initialize(atts)
   end
 
+  def title
+    fail NotImplementedError, "All presenters must implement the 'title' method"
+  end
+
   private
 
   def after_initialize(atts)
