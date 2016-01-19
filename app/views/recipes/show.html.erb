@@ -24,4 +24,4 @@
 		<%= render 'layouts/sidebar' %>
 	</div>
 </div>
-<%= link_to material_icon('edit'), edit_recipe_path(@recipe), class: "btn btn-success btn-fab" if can?(:manage, @recipe) %>
+<%= link_to material_icon('edit'), edit_recipe_path(@recipe.presentable), class: "btn btn-success btn-fab" if can?(:manage, @recipe) %>
