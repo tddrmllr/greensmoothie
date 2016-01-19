@@ -1,6 +1,9 @@
 $(document).on "click", "[data-loading-text]", ->
   $(this).button("loading")
 
+$(document).on "click", "[data-url]", ->
+  Turbolinks.visit($(this).data('url'))
+
 $(window).on 'scroll', ->
   if $(window).scrollTop() + $(window).height() is $(document).height()
     unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))

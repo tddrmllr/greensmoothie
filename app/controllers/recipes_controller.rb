@@ -5,9 +5,7 @@ class RecipesController < ApplicationController
   include UpdateImage
 
   def index
-    @search = Recipe.ransack(params[:q])
-    @recipes = Kaminari.paginate_array(@search.result(distinct: true)).page(params[:page]).per(8)
-    @title = "Green Smoothie Recipes"
+    @recipes = Recipes::IndexPresenter.new(params: params, per: 8)
   end
 
   def new

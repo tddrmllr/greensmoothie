@@ -10,6 +10,7 @@ class IngredientsController < ApplicationController
     respond_to do |format|
       format.js { render 'shared/index' }
       format.html
+      format.json { render json: @ingredients.index }
     end
   end
 

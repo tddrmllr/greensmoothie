@@ -1,7 +1,7 @@
 <% if params[:page].to_i > 1 %>
   $(".spinner").remove()
   unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
-    $("#recipes").append("<%= escape_javascript(render @recipes) %>")
+    $("#recipes").append("<%= escape_javascript(render @recipes.index) %>")
     $("#pages").data("next", <%= params[:page].to_i + 1 %>)
     ids = <%= @recipes.map(&:id).to_json %>
     elems = []
@@ -12,7 +12,7 @@
       for i of ids
         $("#recipe-" + ids[i]).fadeIn()
 <% else %>
-  $("#recipes").html "<%= escape_javascript(render @recipes) %>"
+  $("#recipes").html "<%= escape_javascript(render @recipes.index) %>"
   $("#recipes").imagesLoaded ->
     $("#recipes").masonry
       itemSelector: ".grid"

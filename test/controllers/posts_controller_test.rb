@@ -11,8 +11,13 @@ class PostsControllerTest < ControllerTest
       sign_in users(:admin_user)
     end
 
-    test 'successful create' do
+    test 'successful create of unpublished post redirects to unpublished post path' do
       post :create, post: { name: 'Test', description: 'Here is some meta text about this post. It needs to be 50 chars long.', body: 'Test text' }
+      assert_redirected_to "/unpublished/posts/#{assigns(:post).url_name}"
+    end
+
+    test 'successful create of published post redirects to published post path' do
+      post :create, post: { name: 'Test', description: 'Here is some meta text about this post. It needs to be 50 chars long.', body: 'Test text', published_at: Time.now }
       assert_redirected_to assigns(:post).named_route
     end
 
@@ -54,10 +59,16 @@ class PostsControllerTest < ControllerTest
       assert_response :success
     end
 
-    test 'successful update' do
+    test 'successful update for published post' do
       put :update, id: blog_post.id, post: { name: 'New name' }
       assert_redirected_to blog_post.reload.named_route
       assert_equal 'New name', blog_post.reload.name
+    end
+
+    test 'successful update for unpublished post' do
+      put :update, id: blog_post.id, post: { name: 'New name', published_at: nil }
+      assert_redirected_to "/unpublished/posts/#{blog_post.reload.url_name}"
+      assert_equal 'New name', blog_post.name
     end
 
     test 'failed update' do

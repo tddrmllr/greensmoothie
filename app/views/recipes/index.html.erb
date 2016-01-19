@@ -1,16 +1,6 @@
 <div class="row">
-	<div class="col-md-8">
-		<%= search_form_for @search, remote: true do |f| %>
-			<%= f.text_field :name_or_description_or_ingredients_name_cont, id: "recipe-search", class: "index-search form-control input-lg", placeholder: "Search", data: {type: "recipe"} %>
-			<%= hidden_field_tag :page, 1 %>
-		<% end %>
-	</div>
-	<div class="col-md-4">
-		<%= link_to "Sign in to Create Your Own", new_user_session_path, class: "btn btn-lg btn-primary btn-block btn-mobile-adj" unless user_signed_in? %>
+	<div class="col-md-12">
+		<%= infinite_index(@recipes, container_class: '') %>
 	</div>
 </div>
-<div id="recipes">
-	<%= render @recipes %>
-</div>
-<%= render 'layouts/infinite', model: Recipe, per: 8 %>
 <%= link_to material_icon('plus'), new_recipe_path, class: "btn btn-success btn-fab", data: { toggle: 'tooltip', title: 'New Recipe', placement: 'left' } if user_signed_in? %>

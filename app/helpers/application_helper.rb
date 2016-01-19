@@ -12,6 +12,12 @@ module ApplicationHelper
   end
 
   def title
-    instance_variable_get("@#{controller_name.singularize}").try(:title) || @title || 'Green Smoothie'
+    controller_instance_variable || @title || 'Green Smoothie'
+  end
+
+  private
+
+  def controller_instance_variable
+    instance_variable_get("@#{controller_name.singularize}").try(:title) || instance_variable_get("@#{controller_name}").try(:title)
   end
 end

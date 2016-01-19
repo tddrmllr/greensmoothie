@@ -1,7 +1,7 @@
 module Unpublished
   class PostsController < ApplicationController
 
-    before_filter :authenticate_user!
+    before_filter :authenticate_user!, :authorize_user
 
     def index
       authorize! :manage, Post
@@ -12,6 +12,12 @@ module Unpublished
     def show
       @post = Posts::ShowPresenter.new(url_name: params[:id])
       render 'posts/show'
+    end
+
+    private
+
+    def authorize_user
+      authorize! :manage, Post
     end
   end
 end
