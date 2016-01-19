@@ -3,7 +3,7 @@
   unless parseInt($("#pages").data("next")) > parseInt($("#pages").data("page-count"))
     $("#recipes").append("<%= escape_javascript(render @recipes.index) %>")
     $("#pages").data("next", <%= params[:page].to_i + 1 %>)
-    ids = <%= @recipes.map(&:id).to_json %>
+    ids = <%= @recipes.ids.to_json %>
     elems = []
     for i of ids
       $("#recipe-" + ids[i]).hide()
