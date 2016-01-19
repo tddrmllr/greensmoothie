@@ -21,8 +21,8 @@ module InfiniteIndex
     fail NotImplementedError, "InfiniteIndex presenters must implement the 'search_terms' method"
   end
 
-  def total_count
-    presentable.count
+  def total_pages
+    (total_count / per).ceil
   end
 
   private
@@ -30,9 +30,13 @@ module InfiniteIndex
   def after_initialize(atts)
     @params = atts[:params]
     @page = params[:page]
-    @per = atts[:per] || 12
+    @per = (atts[:per] || 12).to_d
     @type = @params[:controller].singularize
     @presentable = @type.classify.constantize
     @query = @params[:q]
+  end
+
+  def total_count
+    presentable.count.to_d
   end
 end

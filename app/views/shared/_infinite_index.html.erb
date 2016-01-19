@@ -6,4 +6,4 @@
   <%= render indexable.index %>
 </div>
 <br>
-<div class="row" id="pages" data-next="2" data-page-count="<%= (indexable.total_count / indexable.per).ceil %>"></div>
+<div class="row" id="pages" data-next="2" data-page-count="<%= indexable.total_pages %>"></div>

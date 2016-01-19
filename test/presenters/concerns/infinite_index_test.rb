@@ -41,8 +41,11 @@ class InfiniteIndexTest < ViewTest
     end
   end
 
-  test 'total_count should return the number of records for the presentable class' do
-    assert_equal Nutrient.count, presenter.total_count
+  test 'total_pages should return the correct number of pages' do
+    presenter.per = 1
+    assert_equal 3, presenter.total_pages
+    presenter.per = 2
+    assert_equal 2, presenter.total_pages
   end
 
   private
