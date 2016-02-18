@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-md-8">
 		<div id="recipe" class="well">
-			<p class='description'><%= @recipe.description %></p>
+			<h2 class='description'><%= @recipe.description %></h2>
 			<div id="recipe-image">
 	  		<%= image_tag guaranteed_image_path(@recipe, :large) %>
 			</div>
 			<div class='recipe-container'>
 				<%= @recipe.instructions.html_safe unless @recipe.instructions.blank? %>
-				<%= content_tag :h4, "Ingredients", class: "ribbon" %>
+				<%= content_tag :h3, "Ingredients", class: "ribbon" %>
 				<%= render @recipe.ingredients %>
 			</div>
 		</div>
