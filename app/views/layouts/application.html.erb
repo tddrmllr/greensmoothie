@@ -14,11 +14,11 @@
 		<meta name="p:domain_verify" content="fbdecc7dab85a7d24b7b89c5dabacef9"/>
 	  <%= yield :head %>
 	</head>
-	<body>
+	<body class='<%= controller_name %>' id='<%= action_name %>'>
 		<%= render 'layouts/nav' %>
 		<div class="container">
 			<% unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
-				<h1>
+				<h1 class='<%= controller_name %>' id='<%= action_name %>'>
 					<%= title %>
 				</h1>
 			<% end %>

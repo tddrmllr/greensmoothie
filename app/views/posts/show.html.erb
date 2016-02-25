@@ -1,24 +1,28 @@
-<%= render 'layouts/social', sociable: @post, head: true %>
-<br>
-<div class="row">
-	<div class="col-md-8">
-		<div class="well" id="post">
-			<%= content_tag(:h2, @post.headline) unless @post.headline.blank? %>
-			<div class="row" style="margin-left: -19px; margin-right: -19px">
-			<%= image_tag @post.image.image.url(:original), style: "width: 100%; margin-bottom: 15px" if @post.image? %>
+<%= content_tag(:div, nil, id: 'post-image-url', data: { url: guaranteed_image_path(@post, :original) }) %>
+<div class='post-container'>
+	<div class='container'>
+		<div class="row">
+			<div class='col-lg-7'>
+				<div id="post">
+					<br>
+					<br>
+					<%= render 'layouts/social', sociable: @post, head: false %>
+					<br>
+					<%= content_tag(:h2, @post.headline, id: 'post-headline') unless @post.headline.blank? %>
+					<%= @post.body.html_safe %>
+					<%= render 'layouts/social', sociable: @post, head: false %>
+					<br>
+					<%= disqus_comments(@post) if request.fullpath.include?('/blog') %>
+					<br>
+					<br>
+				</div>
 			</div>
-			<%= @post.body.html_safe %>
+			<div class='col-lg-4 col-lg-offset-1'>
+				<br>
+				<br>
+				<%= render 'layouts/sidebar' %>
+			</div>
 		</div>
-	</div>
-	<div class="col-md-4">
-		<%= render 'layouts/sidebar' %>
-	</div>
-</div>
-<%= render 'layouts/social', sociable: @post, head: false %>
-<div class="row">
-	<div class="col-md-8">
-		<br>
-		<%= disqus_comments(@post) if request.fullpath.include?('/blog') %>
 	</div>
 </div>
 <%= link_to material_icon('edit'), edit_post_path(@post.presentable), class: "btn btn-success btn-fab" if can?(:manage, @post) %>
