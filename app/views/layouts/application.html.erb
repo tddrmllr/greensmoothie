@@ -17,11 +17,6 @@
 	<body class='<%= controller_name %>' id='<%= action_name %>'>
 		<%= render 'layouts/nav' %>
 		<div class="container">
-			<% unless action_name == 'home' || controller_name == 'sessions' || (action_name == "new" && controller_name == "registrations") %>
-				<h1 class='<%= controller_name %>' id='<%= action_name %>'>
-					<%= title %>
-				</h1>
-			<% end %>
 			<%= yield %>
 		</div>
 		<div id="modal-holder"></div>

@@ -1,5 +1,10 @@
 <%= content_tag(:div, nil, id: 'post-image-url', data: { url: guaranteed_image_path(@post, :original) }) %>
 <div class='post-container'>
+	<h1 id='post-h1'>
+		<div class='container'>
+			<%= title %>
+		</div>
+	</h1>
 	<div class='container'>
 		<div class="row">
 			<div class='col-lg-7'>
