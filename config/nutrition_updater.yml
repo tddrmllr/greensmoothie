@@ -1,0 +1,8 @@
+development:
+    "Ingredients::UpdateNutrition"
+
+production:
+    "Ingredients::UpdateNutrition"
+
+test:
+  "NutritionUpdaterDouble"

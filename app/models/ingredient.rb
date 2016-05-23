@@ -41,7 +41,7 @@ class Ingredient < ActiveRecord::Base
   end
 
   def create_nutrition_info(args = { url: source_url, ingredient: self })
-    Ingredients::UpdateNutrition.run(args)
+    NUTRITION_UPDATER.run(args)
   end
 
   def set_url_name
