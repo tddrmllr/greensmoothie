@@ -18,9 +18,8 @@ class Ingredient < ActiveRecord::Base
 
   default_scope -> { order('name ASC') }
 
-  def self.find_or_create(name)
-    ingredient = where(['lower(name) = ?', name.downcase]).first
-    ingredient || Ingredient.create(name: name.capitalize)
+  def self.find_or_initialize(name)
+    where(['lower(name) = ?', name.downcase]).first || Ingredient.new(name: name.capitalize)
   end
 
   def macronutrients

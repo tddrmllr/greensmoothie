@@ -65,6 +65,8 @@ class RecipesControllerTest < ControllerTest
     test 'successful create' do
       post :create, recipe: valid_recipe_params
       assert_redirected_to "#{HOST}#{assigns(:recipe).named_route}"
+      assert_includes assigns(:recipe).ingredients, ingredients(:beets)
+      assert_equal 1, assigns(:recipe).ingredients.count
     end
 
     test 'falied create' do
@@ -103,6 +105,7 @@ class RecipesControllerTest < ControllerTest
       put :update, id: recipe.id, recipe: { name: 'Foo Recipe', measurements_attributes: {} }
       assert_redirected_to "#{HOST}#{assigns(:recipe).named_route}"
       assert_equal "Recipe saved successfully.", flash[:success]
+      assert_equal 1, assigns(:recipe).ingredients.count
     end
 
     test 'failed update' do
@@ -120,12 +123,9 @@ class RecipesControllerTest < ControllerTest
         description: 'A yummy recipe',
         measurements_attributes: {
           '0' => {
-            ingredient: {
-              name: ingredient.name
-            },
-            ingredient_id: ingredient.id,
+            ingredient_name: ingredient.name,
             amount: '1',
-            unit: 'beet'
+            unit: 'beets'
           }
         }
       }

@@ -23,7 +23,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    find_or_create_ingredients
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to @recipe.named_route
@@ -38,7 +37,6 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    find_or_create_ingredients
     if @recipe.update_attributes(recipe_params)
       redirect_to @recipe.named_route
       flash[:success] = "Recipe saved successfully."
@@ -59,13 +57,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :instructions, :user_id, measurements_attributes: [:amount, :unit, :ingredient_id, :id, :_destroy])
-  end
-
-  def find_or_create_ingredients
-    params[:recipe][:measurements_attributes].each do |k,v|
-      ingredient = Ingredient.find_or_create(v['ingredient']['name'].downcase)
-      params[:recipe][:measurements_attributes][k]['ingredient_id'] = ingredient.id
-    end
+    # the measurements_attributes needs to have the :id attr to prevent duplicate objects getting created
+    params.require(:recipe).permit(:name, :description, :instructions, :user_id, measurements_attributes: [:amount, :unit, :ingredient_id, :ingredient_name, :id, :_destroy])
   end
 end
