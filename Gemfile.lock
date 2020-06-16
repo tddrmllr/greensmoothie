@@ -132,7 +132,7 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.4.0)
     minitest (5.8.3)
     minitest-reporters (1.1.7)
       ansi
@@ -145,8 +145,8 @@ GEM
     nenv (0.2.0)
     nested_form (0.3.2)
     newrelic_rpm (3.14.1.311)
-    nokogiri (1.6.7.1)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.10.8)
+      mini_portile2 (~> 2.4.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
