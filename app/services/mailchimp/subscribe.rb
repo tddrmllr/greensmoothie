@@ -7,7 +7,7 @@ module Mailchimp
     end
 
     def initialize(args = {})
-      @api = Mailchimp::API.new("fc59b4a51e93628dcc7152f899c97358-us8")
+      @api = Mailchimp::API.new()
       @email = args[:email]
       @list_id = args[:list_id]
     end
